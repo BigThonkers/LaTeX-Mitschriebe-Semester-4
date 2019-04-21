@@ -20,17 +20,17 @@ Please note that there is no guarantee as to the correctness and completeness of
 
 ## Contributing
 
-Please read [cuntributing](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on the process for submitting pull requests to this project.
+Please read [cuntributing](https://github.com/BigThonkers/LaTeX-Mitschriebe-Semester-4/wiki/Contributing) for details on the process for submitting pull requests to this project.
 
 ## Authors
 
 * **Markus Österle**
 
 * **Damian anzenstiel**
-  
+
 **Become an author yourself by creating pull requests!**
 
-Learn how in our [contributing](https://github.com/your/project/wikilink) guide.
+Learn how to, in our [contributing](https://github.com/BigThonkers/LaTeX-Mitschriebe-Semester-4/wiki/Contributing) guide.
 
 ## Acknowledgments
 
@@ -41,7 +41,7 @@ Learn how in our [contributing](https://github.com/your/project/wikilink) guide.
 
 ## Support us!
 
-If you like this project and think the notes helped you please consider **helping us out** with a small donation over at Patreon [Link](https://www.patreon.com/user?u=19413712).
+If you like this project and think the notes helped you please consider **helping us out** with a small donation over at [Patreon](https://www.patreon.com/user?u=19413712).
 
 ## Note to coauthors within BigThonkers
 
