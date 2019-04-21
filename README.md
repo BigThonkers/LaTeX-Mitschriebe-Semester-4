@@ -26,7 +26,7 @@ Please read [Contributing](https://github.com/BigThonkers/LaTeX-Mitschriebe-Seme
 
 * **Markus Österle**
 
-* **Damian anzenstiel**
+* **Damian Lanzenstiel**
 
 **Become an author yourself by creating pull requests!**
 
@@ -46,4 +46,5 @@ If you like this project and think the notes helped you please consider **helpin
 ## Note to coauthors within BigThonkers
 
 Any unauthorized commits (pushes) will be discarted immediately with the next update of the repository. Please only use **pull requests** for any unscheduled changes.
+
 For any important commits please contact Markus Österle in advance.
