@@ -41,7 +41,7 @@ Learn how in our [contributing](https://github.com/your/project/wikilink) guide.
 
 ## Support us!
 
-If you like this project and think the notes helped you please consider **helping us out** with a small donation over at Patreon/Paypal [Link](https://www.patreon.com/user?u=19413712).
+If you like this project and think the notes helped you please consider **helping us out** with a small donation over at Patreon [Link](https://www.patreon.com/user?u=19413712).
 
 ## Note to coauthors within BigThonkers
 
