@@ -2,7 +2,7 @@
 
 This repository contains inofficial notes to the following Lectures:
 
-"Theoretical Physics III", "Experimental Physics IV", "Higher Mathematics", and "Experimental Methods I".
+"Theoretical Physics III", "Experimental Physics IV", "Higher Mathematics", and "Experimental Methods".
 
 ## Built With
 
@@ -14,19 +14,19 @@ All the graphics and illustrations were made within LaTeX using the Tikz package
 
 ## Latest Version
 
-New versions of the script will be available as soon as we have had the time to TeX the lectures. This might take up to a few days after the lecture. The date of the last commit can be seen in the commitment message.
+New versions of the script will be available as soon as we have had the time to TeX the lectures. This might take up to a few days after the lecture. The date of the last commit can be seen in the commit message.
 
 Please note that there is no guarantee as to the correctness and completeness of the notes.
 
 ## Contributing
 
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
+Please read [cuntributing](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on the process for submitting pull requests to this project.
 
 ## Authors
 
 * **Markus Österle**
 
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
+* **Damian anzenstiel**
 
 **Become an author yourself by creating pull requests!**
 
@@ -41,7 +41,7 @@ Learn how in our [contributing](https://github.com/your/project/wikilink) guide.
 
 ## Support us!
 
-If you like this project and think the notes helped you please consider **helping us out** with a small donation over at Patreon/Paypal [Link](https://link).
+If you like this project and think the notes helped you please consider **helping us out** with a small donation over at Patreon/Paypal [Link](https://www.patreon.com/user?u=19413712).
 
 ## Note to coauthors within BigThonkers
 
