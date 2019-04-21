@@ -27,7 +27,7 @@ Please read [cuntributing](https://gist.github.com/PurpleBooth/b24679402957c63ec
 * **Markus Österle**
 
 * **Damian anzenstiel**
- 
+
 **Become an author yourself by creating pull requests!**
 
 Learn how in our [contributing](https://github.com/your/project/wikilink) guide.
