@@ -20,7 +20,7 @@ Please note that there is no guarantee as to the correctness and completeness of
 
 ## Contributing
 
-Please read [cuntributing](https://github.com/BigThonkers/LaTeX-Mitschriebe-Semester-4/wiki/Contributing) for details on the process for submitting pull requests to this project.
+Please read [Contributing](https://github.com/BigThonkers/LaTeX-Mitschriebe-Semester-4/wiki/Contributing) for details on the process for submitting pull requests to this project.
 
 ## Authors
 
@@ -30,7 +30,7 @@ Please read [cuntributing](https://github.com/BigThonkers/LaTeX-Mitschriebe-Seme
 
 **Become an author yourself by creating pull requests!**
 
-Learn how to, in our [contributing](https://github.com/BigThonkers/LaTeX-Mitschriebe-Semester-4/wiki/Contributing) guide.
+Learn how to, in our [Contributing](https://github.com/BigThonkers/LaTeX-Mitschriebe-Semester-4/wiki/Contributing) guide.
 
 ## Acknowledgments
 
