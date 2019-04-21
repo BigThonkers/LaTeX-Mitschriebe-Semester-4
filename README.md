@@ -27,7 +27,7 @@ Please read [Contributing](https://github.com/BigThonkers/LaTeX-Mitschriebe-Seme
 * **Markus Österle**
 
 * **Damian Lanzenstiel**
- 
+
 **Become an author yourself by creating pull requests!**
 
 Learn how to, in our [Contributing](https://github.com/BigThonkers/LaTeX-Mitschriebe-Semester-4/wiki/Contributing) guide.
