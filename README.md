@@ -24,7 +24,7 @@ Please read [Contributing](https://github.com/BigThonkers/LaTeX-Mitschriebe-Seme
 
 Our intesive studies of the statistics from last semesters GitHub repository have shown a strong correlation between the cooperation on the scripts and the reputation of the individual. The findings of our research are shown in the graphic below:
 
-![Alt-Text](https://raw.githubusercontent.com/BigThonkers/LaTeX-Mitschriebe-Semester-4/assets/document.png "research findings")
+![Alt-Text](https://raw.githubusercontent.com/BigThonkers/LaTeX-Mitschriebe-Semester-4/assets/document2.png "research findings")
 
 ## Authors
 
