@@ -13,7 +13,7 @@
 	\end{equation*}
 	Korrespondenzprinzip
 	\begin{align*}
-	\vec{r} &= \hat{\vec{r}} \qquad \hat{\vec{r}} \Psi(\vec{r}) = \Psi'(\vec{r}) = \vec{r} \Psi(\vec{r}) \qquad \quad ; \quad \rmbox{\hat{x} \Psi(x) = x \Psi(x) = \Psi'(x)} \\
+	\vec{r} &= \hat{\vec{r}} \qquad \hat{\vec{r}} \Psi(\vec{r}) = \Psi'(\vec{r}) = \vec{r} \Psi(\vec{r}) \qquad \quad ; \quad \, \rmbox{\hat{x} \Psi(x) = x \Psi(x) = \Psi'(x)} \\
 	\vec{p} &= \hat{\vec{p}} \qquad \hat{\vec{p}} \Psi(\vec{r}) = \Psi'(\vec{r}) = - i \hbar \vabla \Psi(\vec{r}) \quad ; \quad \rmbox{\hat{p}_{x} \Psi(x) = - i \hbar \prd{}{x} \Psi(x) = \Psi'(x) }
 	\end{align*}
 	$ \hat{\ham} = $ Hamiltonian oder Hamilton-Operator. $ \hat{\ham} = \hat{\ham}(\hat{\vec{r}} , \hat{\vec{p}}) $
@@ -170,29 +170,278 @@
 	\end{equation*}
 	\begin{equation*}
 	\Delta x \cdot \Delta p \ge \frac{1}{2} \left| i \hbar \right| = \frac{\hbar}{2}
-	\end{equation*}
-	
-	\subsection*{Morgen:}
-	
-	Operatoren die vertauschen: Drehimpulsoperator $ \vec{l} $ mit den Komponenten $ l_x, l_y, l_z $ und $ l^2 $. Es gilt $ \left[l^2, l_z\right] = 0 $
-	\begin{equation*}
-	\Delta l^2 \cdot \Delta l_z \ge 0
-	\end{equation*}
-	Man kann also Zustände finden, bei denen $ \Delta l^2 = 0 $; $ \Delta l_z = 0 $ sind. Diese Zustände können im Prinzip existieren und verletzen die Unschärferelation nicht! Diese Zustände sind dann gleichzeitig Eigenzustände von $ l^2 $ und $ l_z $.
-	
-	\subsubsection*{Exkurs: Varianz und Standardabweichung in der Quantenmechanik}
-	
-	Wellenfunktion $ \Psi(x) $ mit Wahrscheinlichkeit $ P(x) = |\Psi(x)|^2 $
-	\begin{align*}
-	\mu &= \int x P(x) \dd x = \int x | \Psi(x) | ^2 \dd x \\
-	\sigma   &= \int x^2 P(x) \dd x = \int x^2 | \Psi(x) | ^2 \dd x
-	\end{align*}
-	Die Varianz ist definiert als:
-	\begin{align*}
-	\sigma^2 = \int (x - \mu)^2 P(x) \dd x &= \int (x^2 + \mu^2 - 2 \mu x) P(x) \dd x \\
-	&= \int x^2 P(x) \dd x + \mu^2 \int P(x) \dd x - 2 \mu \int x P(x) \dd x\\
-	&= \int x^2 P(x) \dd x + \mu^2 - 2 \mu \mu = \int x^2 P(x) \dd x - \mu^2 \\
-	&= \langle x ^2 \rangle - \langle x \rangle ^2
-	\end{align*}
-	
+	\end{equation*}	
 \end{enumerate}
+
+\subsection*{Morgen:}
+
+Operatoren die vertauschen: Drehimpulsoperator $ \vec{l} $ mit den Komponenten $ l_x, l_y, l_z $ und $ l^2 $. Es gilt $ \left[l^2, l_z\right] = 0 $
+\begin{equation*}
+\Delta l^2 \cdot \Delta l_z \ge 0
+\end{equation*}
+Man kann also Zustände finden, bei denen $ \Delta l^2 = 0 $; $ \Delta l_z = 0 $ sind. Diese Zustände können im Prinzip existieren und verletzen die Unschärferelation nicht! Diese Zustände sind dann gleichzeitig Eigenzustände von $ l^2 $ und $ l_z $.
+
+\subsubsection*{Exkurs: Varianz und Standardabweichung in der Quantenmechanik}
+
+Wellenfunktion $ \Psi(x) $ mit Wahrscheinlichkeit $ P(x) = |\Psi(x)|^2 $
+\begin{align*}
+\mu &= \int x P(x) \dd x = \int x | \Psi(x) | ^2 \dd x \\
+\sigma   &= \int x^2 P(x) \dd x = \int x^2 | \Psi(x) | ^2 \dd x
+\end{align*}
+Die Varianz ist definiert als:
+\begin{align*}
+\sigma^2 = \int (x - \mu)^2 P(x) \dd x &= \int (x^2 + \mu^2 - 2 \mu x) P(x) \dd x \\
+&= \int x^2 P(x) \dd x + \mu^2 \int P(x) \dd x - 2 \mu \int x P(x) \dd x\\
+&= \int x^2 P(x) \dd x + \mu^2 - 2 \mu \mu = \int x^2 P(x) \dd x - \mu^2 \\
+&= \langle x ^2 \rangle - \langle x \rangle ^2
+\end{align*}
+
+% 26.04.19
+
+\subsection{Programm Heute}
+
+\begin{itemize}
+	\item Drehimpulsoperator
+	\item Kugelflächenfunktionen (Wasserstoffatom)
+	\item Vektormodell (klassische Darstellung)\\
+	\lcom{Macht es leichter z.B. die Wechselwirkung zwischen Drehimpulsoperator und Magnetfeld zu verstehen. Dieses klassische Modell macht voraussagen über die QM.}
+	\item Experimente (Spektrum des Wasserstoffatoms)
+	\item Schrödinger Gleichung des Wasserstoffatoms
+\end{itemize}
+
+\section{Drehimpulsoperator}
+
+
+\begin{minipage}{.5\linewidth}
+	\begin{equation*}
+	\vec{l} = \vec{r} \times \vec{p} = \vec{r} \times m \vec{v}
+	\end{equation*}
+	\begin{align*}
+	\vec{r} & \Rightarrow \hat{\vec{r}} = \vec{r} \\
+	\vec{p} & \Rightarrow \hat{ \vec{p}} = - i \hbar \vabla \\
+	\vec{l} & \Rightarrow \hat{\vec{l}} = \vec{r} \times (- i \hbar \vabla) = - i \hbar \vec{r} \times \vabla
+	\end{align*}
+\end{minipage}%
+\begin{minipage}{.5\linewidth}
+	\flushright
+	%t1:
+	\begin{tikzpicture}[scale=.6]
+		\draw[thick, ->] (0,0) -- (0,3);
+		\draw (0,0) ellipse(2cm and 1cm);
+		\coordinate (a) at (0,-1);
+		\node[right] at (0,2) {$\vec{\mu}$};
+		\node[anchor=north west] at (a) {$q,m$};
+		\draw[very thick,->] (0,0) -- node[left] {$ \vec{r} $} (a);
+		\draw[thick,->] (a) -- (2.5,-1) node[right] {$\vec{v}$};
+	\end{tikzpicture}
+\end{minipage}%
+\\[5pt]
+\begin{equation*}
+\hat{\vec{l}} = - i \hbar \begin{pmatrix}
+\vec{u}_x & \vec{u}_y & \vec{u}_x \\
+x & y & z \\
+\prt{}{x} & \prt{}{y} & \prt{}{z}
+\end{pmatrix} = - i \hbar
+\end{equation*}
+
+%T2
+\begin{tikzpicture}[scale=0.6]
+	\draw[->] (0,0) -- (3,0) node[anchor=north west] {$ y $};
+	\draw[->] (0,0) -- (0,3) node[anchor=south east] {$ z $};
+	\draw[->] (0,0) -- (-2,-2) node[anchor=north east] {$ x $};
+	\draw[red, thick, ->] (0.5,0.2) -- node[above] {$ \vec{u_y} $} ++(1,0);
+	\draw[red, thick, ->] (-0.2,0.5) -- node[left] {$ \vec{u_z} $} ++(0,1);
+	\draw[red, thick, ->] (0.0,-0.3) -- node[anchor=north west] {$ \vec{u_x} $} ++(-0.8,-0.8);
+\end{tikzpicture}
+
+\begin{align*}
+l_x &= - i \hbar \left\{ y \prt{}{z} - z \prt{}{y} \right\} \\
+l_y &= - i \hbar \left\{ z \prt{}{x} - x \prt{}{z} \right\} \\
+l_z &= - i \hbar \left\{ x \prt{}{y} - y \prt{}{x} \right\}
+\end{align*}
+\begin{align*}
+\left[l_x, l_y\right] = l_x l_y - l_y l_x \neq 0
+\end{align*}
+
+\subsection*{Vertauschungsregeln}
+
+\begin{align*}
+\left[l_x, l_y\right] &= i \hbar l_z \\
+\left[l_y, l_z\right] &= i \hbar l_x \\
+\left[l_z, l_x\right] &= i \hbar l_y
+\end{align*}
+Das Betragsquadrat berechnet sich wie folgt: $ l^2 = l_x^2 + l_y^2 l_z^2 $
+
+\subsection*{Vertauschungregeln}
+
+\begin{equation*}
+\left[l^2, l_x\right] = \left[l^2, l_y\right] = \left[l^2, l_z\right] = 0
+\end{equation*}
+Wir werden bevorzugt $ l_z $ verwenden.\\[10pt]
+\noindent
+Die Eigenzustände von $ l_z $
+\begin{equation*}
+l_z = - i \hbar \left\{ x \prt{}{y} - y \prt{}{x} \right\} = - i \hbar \prt{}{\varphi}
+\end{equation*}
+
+%T3
+
+\noindent
+$ l_z \Rightarrow $ Drehung um die $ z $-Achse\\[10pt]
+\noindent
+Wir suchen die Operatoren $ \Phi(\varphi) $. Hierzu stellen wir eine Eigenwertgleichung auf und lösen diese.
+\begin{equation*}
+l_z \Phi(\varphi) = m \hbar \Phi(\varphi) \quad \Rightarrow \quad - i \cancel{\hbar} \prt{}{\varphi} \Phi(\varphi) = m \cancel{\hbar} \Phi(\varphi) \quad \Rightarrow \quad \frac{\partial \Phi}{\Phi} = i m \partial \varphi
+\end{equation*}
+\begin{equation*}
+\int \frac{\partial \Phi}{\Phi} = \int i m \partial \varphi \quad \Rightarrow \quad \Phi(\varphi) = a e^{i m \varphi}
+\end{equation*}
+Aufgrund der Definition von $ \varphi $ erwarten wir, dass unsere Funktion bei den Winkeln $ \varphi_0 $ und $ \varphi_0 + n \cdot 2 \pi $ ($ n \in \mathbb{Z} $) gleich sind. $ \Phi(\varphi_0) = \Phi(\varphi_0 + 2 \pi) $
+\begin{equation*}
+\Rightarrow \quad \cancel{a} \cancel{e^{i m \varphi_0}} = \cancel{a} \cancel{e^{i m \varphi_0}} e^{i m 2 \pi} \quad \Rightarrow \quad e^{i m 2 \pi} = 1
+\end{equation*}
+\begin{align*}
+m &= 0 \\
+m &= 1 \quad \Rightarrow \quad e^{i 2 \pi} = 1 ! \\
+m &= 2 \quad \Rightarrow \quad e^{i 4 \pi} = 1 ! \\
+m &= -1 \quad \Rightarrow \quad e^{-i 2 \pi} = 1 ! \\
+m &= -2 \quad \Rightarrow \quad e^{-i 4 \pi} = 1 ! \\
+\end{align*}
+\begin{equation*}
+m = 0, \pm 1, \pm 2, \pm 3, \dots
+\end{equation*}
+\begin{equation*}
+\rmbox{m = \tx{Magnetische Quantenzahl}}
+\end{equation*}
+$ \Rightarrow $ Zeemann Effekt
+\begin{equation*}
+l_x \Phi(\varphi) = m \hbar \Phi_m(\varphi) \qquad \qquad \Phi_m(\varphi) = a e^{i m \varphi}
+\end{equation*}
+\begin{equation*}
+\int_{0}^{2 \pi} \dd \varphi \Phi_{m}^{*}(\varphi) \Phi_m(\varphi) = 1 \quad \Rightarrow \quad a = \frac{1}{\sqrt{2 \pi}}
+\end{equation*}
+\begin{equation*}
+\rmbox{\Phi_m(\varphi) = \frac{1}{\sqrt{2 \pi}} e^{i m \varphi}}
+\end{equation*}
+
+\subsubsection*{Eigenzustände \texorpdfstring{$ l^2 $}{l2}}
+
+\begin{equation*}
+\left\{ \begin{array}{c}
+l^2 \mathcal{Y}_{l,m} (\theta, \varphi) = l(l + 1) \hbar^2 \mathcal{Y}_{l,m} (\theta, \varphi) \\
+l_z \mathcal{Y}_{l,m} (\theta, \varphi) = m \hbar \mathcal{Y}_{l,m} (\theta, \varphi)
+\end{array} \right.
+\end{equation*}
+$ \hat{l^2} = l^2 $, $ \hat{l_z} = l_z $; beide Ausdrücke sind Operatoren, auch wenn sie ohne Dach geschrieben werden.\\[10pt]
+Operatoren $ \hat{A} \rho(\vec{r}) = a \rho (\vec{r}) \quad \Rightarrow $ Eigenzustände und Eigenwerte.\\[10pt]
+$ m =  $ magnetische Quantenzahl\\
+$ l =  $ Drehimpuls Quantenzahl
+\begin{equation*}
+\mathcal{Y}_{l,m} (\theta, \varphi) \propto e^{i m \varphi} P_{l}^{m}(\cos(\theta)) \cdot a
+\end{equation*}
+$ P_{l}^{m} $ sind die \textbf{Legendre Polynome}.\\[10pt]
+Wir haben bereits gesehen, dass $ m = 0, \pm 1, \pm 2, \dots \in \mathbb{Z} $ und $ l = 0, 1, 2, \dots \in \mathbb{N} $ sein müssen. Es gilt $ - l \le m \le l $.\par
+Also $ m = - l, m = - l + 1, m = - l + 2, \dots, m = 0, \dots, m = l - 2, m = l - 1, m = l  $
+\begin{equation*}
+\int \dd \Omega \mathcal{Y}_{l, m}^{*}(\theta, \varphi) \mathcal{Y}_{l,m} (\theta, \varphi) = \delta_{l l'} \delta_{m m'} \qquad \qquad \dd \Omega = \sin \theta \dd \theta \dd \varphi
+\end{equation*}
+\begin{equation*}
+\begin{array}{c}
+l' = l \\
+m' = m
+\end{array} \quad \Rightarrow \quad \int \dd \Omega \left|\mathcal{Y}_{l,m} (\theta, \varphi)\right|^2 = 1
+\end{equation*}
+\begin{equation*}
+l' = l \quad \Rightarrow \quad \delta_{ll'} = 0 \quad \Rightarrow \quad \int\dd \Omega \mathcal{Y}_{0,m}^{*} (\theta, \varphi) \mathcal{Y}_{0,m} (\theta, \varphi) = 0
+\end{equation*}
+
+\subsection*{Kugelflächenfunktionen}
+
+$ l=0 $, $ m=0 \quad \Rightarrow \quad $ 
+$$ \mathcal{Y}_{0,0} (\theta, \varphi) = \frac{1}{\sqrt{4 \pi}} $$
+$ l=1 $, $ m=-1 $
+\begin{equation*}
+\mathcal{Y}_{1, -1} (\theta, \varphi) = \sqrt{\frac{3}{8 \pi}} \ub{\sin \theta}_{P_{l}^{m}(\cos \theta)} e^{- i \varphi}
+\end{equation*}
+$ l=1 $, $ m=0 $
+\begin{equation*}
+\mathcal{Y}_{1, 0} (\theta, \varphi) = \sqrt{\frac{3}{4 \pi}} \cos \theta
+\end{equation*}
+$ l=1 $, $ m=1 $
+\begin{equation*}
+\mathcal{Y}_{1, 0} (\theta, \varphi) = \sqrt{\frac{3}{8 \pi}} \cos \theta e^{i \varphi}
+\end{equation*}
+\folie{Betragsquarat der Kugelflächenfunktionen} (Darstellung der Elektronen-Orbitale)\\[10pt]
+$ \mathcal{Y}_{l,m}(\theta, \varphi) $
+\begin{align*}
+l=0 \quad &\Rightarrow \quad b-\tx{Obrital} \\
+l=1 \quad &\Rightarrow \quad p-\tx{Obrital} \\
+l=2 \quad &\Rightarrow \quad d-\tx{Obrital} \\
+l=3 \quad &\Rightarrow \quad f-\tx{Obrital}
+\end{align*}
+
+\section{Vektormodell}
+
+Die Kugelflächenfunktionen sind die Eigenzustände von $ l^2 $ und $ l_z $ und liefern die Eigenwerte $ l(l+1) \hbar^2 $ und $ m \hbar $.\par
+Die Länge von $ \vec{l} $ ist $ \sqrt{l(l+1) \hbar^2} $, die von der $ z $-Komponente $ l_z $ ist $ m \hbar $.
+
+%T4
+
+\begin{equation*}
+\langle l_x \rangle = \langle \mathcal{Y}_{l,m}(\theta, \varphi) | l_x | \mathcal{Y}_{l,m}(\theta, \varphi) \rangle = \int \mathcal{Y}_{l,m}^{*}(\theta, \varphi) l_x \mathcal{Y}_{l,m}(\theta, \varphi) = 0
+\end{equation*}
+Das selbe gilt auch für $ l_y $. $ \langle l_y \rangle = 0 $
+
+%T5
+
+\begin{align*}
+| \vec{l} | &= \sqrt{ l ( l+1) \hbar^2} \\
+l_z &= m \hbar \\
+\langle l_x \rangle &= 0 \\
+\langle l_y \rangle &= 0
+\end{align*}
+\textbf{Beispiel:}\\
+$ l=2 $, $ m = -2, -1, 0, 1, 2 $\\[5pt]
+$ \Rightarrow |\vec{l}| = \sqrt{6}\hbar $
+
+%T6
+
+%T7
+
+\section{Experimente: Wasserstoffatom Spektrum}
+
+Präsentation auf Folien: Wasserstoffatom\\[5pt]
+\folie{Balmer Series: Wasserstoffatom}\\
+Es gibt verschiedene Zustände im Atom. Man misst das Licht, dass von diesem Atom emittiert wird mit einem Spektrometer. Man erhält Spektrallinien (zunächst einmal die \textbf{Balmer Serie}). Beispielsweise die schwarzen Absorptionslinien im Sonnenspektrum oder diskrete Emissionslinien im Wasserstoffspektrum. Die Linien befinden sich im sichtbaren Spektrum und im nahen UV Die Position der Linien führte auf die \textbf{Balmer Gleichung}:
+\begin{equation*}
+\lambda = B \left(\frac{m^2}{m^2 - 4}\right)
+\end{equation*}
+\folie{Lyman Series: Wasserstoffatom}
+Später wurde dann die \textbf{Lyman Serie}. Diese Linien sind eher im UV Bereich zu finden. Auch für ihre Positionen konnte eine Gleichung aufgestellt werden.
+\begin{equation*}
+\lambda = \frac{1}{R_H} \left(\frac{m^2}{m^2 - 1}\right)
+\end{equation*}
+\folie{Bohrsches Atommodell}\\
+Im Bohrschen Atommodell geht man von festen Umlaufbahnen der Elektronen um den Atomkern aus. Bohr hat eine Quantisierung des Drehimpulses eingeführt als die Stationären Zustände der De-Broglie Wellenlänge der Elektronen.\\
+Mit der Quantisierung der Umlaufbahnen kommt man zu Schlussfolgerung, dass die Energie der Elektronen nicht beliebig sondern diskret ist. Durch die Energie der emittierten Photonen konnte die \textbf{Rydberg-Formel} aufgestellt werden, die die Wellenlängen der Balmer- und der Lyman-Serie beschreibt.
+\begin{equation*}
+\lambda = \frac{h c}{R_{y}} \left(\frac{m^2 n^2}{m^2 - n^2}\right)
+\end{equation*}
+\folie{Rydberg Saal in Lund}\\
+Bild der Originalen Gleichung von Rydman an einer Wand verewigt.\\[10pt]
+Wie man an der allgemeineren Rydberg-Formel kann man erkennen, dass die Balmer Serie ein Spezialfall für $ n = 2 $ und die Lyman-Serie ein Spezialfall für $ n = 1 $ ist.\\
+\folie{Übergänge zwischen stationären Zuständen}\\
+Alle weiteren bekannten Serien wie: Balmer, Lyman, Paschen, Brackett, und Pfund.
+
+\subsection*{Morgen}
+
+\begin{itemize}
+	\item Energie des Wasserstoffatoms
+	\item Korrespondenzprinzip: ($ \vec{r} \to \vec{r} $, $ \vec{p} \to - i \hbar \vabla $) Zeitunabhängige Schrödingergleichung
+	\item Energiezustände und Eigenwerte
+	\item Drehimpulsoperator $ \vec{l} $ und Kugelflächenfunktionen $ \mathcal{Y}_{l,m}(\theta, \varphi) $
+\end{itemize}
+
+
+
+
