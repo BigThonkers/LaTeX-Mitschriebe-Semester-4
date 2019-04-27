@@ -7,9 +7,9 @@
 	\begin{equation*}
 	P = \int_{V} \left|\Psi ( \vec{r})\right|^2 \dd \vec{r} \quad \tx{Wahrscheinlichkeit} \qquad \quad \int_{V} \left|\Psi(\vec{r})\right|^2 \dd \vec{r} = 1 \quad \tx{Normierungsbedingung}
 	\end{equation*}
-	\item \textbf{Operatoren} $ \hat{O} $
+	\item \textbf{Operatoren} $ \hat{\mathcal{O}} $
 	\begin{equation*}
-	\hat{O} \Psi(\vec{r}) = \Psi'(\vec{r})
+	\hat{\mathcal{O}} \Psi(\vec{r}) = \Psi'(\vec{r})
 	\end{equation*}
 	Korrespondenzprinzip
 	\begin{align*}
@@ -40,45 +40,45 @@
 	
 	\subsection*{Stationäre Zustände}
 	
-	Jeder messbaren Physikalische Größe ist ein Operator $ \hat{O} $ zugeordnet. Bei einer physikalischen Messung wir der \textbf{Erwartungswert} gemessen: $ \langle \hat{O} \rangle = \langle \Psi | \hat{O} | \Psi \rangle $.
+	Jeder messbaren Physikalische Größe ist ein Operator $ \hat{\mathcal{O}} $ zugeordnet. Bei einer physikalischen Messung wird der \textbf{Erwartungswert} gemessen: $ \langle \hat{\mathcal{O}} \rangle = \langle \Psi | \hat{\mathcal{O}} | \Psi \rangle $.
 	\begin{equation*}
-	\langle \hat{O} \rangle = \langle \Psi(\vec{r}) | \hat{O} | \Psi(\vec{r}) \rangle = \int \Psi^*(\vec{r}) \ \ub{ \hat{O} \ \ \Psi(\vec{r}) }_{\Psi'(\vec{r})} \dd \vec{r}
+	\langle \hat{\mathcal{O}} \rangle = \langle \Psi(\vec{r}) | \hat{\mathcal{O}} | \Psi(\vec{r}) \rangle = \int \Psi^*(\vec{r}) \ \ub{ \hat{O} \ \ \Psi(\vec{r}) }_{\Psi'(\vec{r})} \dd \vec{r}
 	\end{equation*}
 	\begin{equation*}
-	\langle \hat{O}(t) \rangle = \langle \Psi(\vec{r},t) | \hat{O} | \Psi(\vec{r},t) \rangle = \int \Psi^*(\vec{r},t) \hat{O} \Psi(\vec{r},t) \dd \vec{r}
+	\langle \hat{\mathcal{O}}(t) \rangle = \langle \Psi(\vec{r},t) | \hat{\mathcal{O}} | \Psi(\vec{r},t) \rangle = \int \Psi^*(\vec{r},t) \hat{\mathcal{O}} \Psi(\vec{r},t) \dd \vec{r}
 	\end{equation*}
 	Diese Gleichung können wir wie folgt umformen:
 	\begin{equation*}
 	\Psi(\vec{r},t) = \Psi(\vec{r},t = 0) \ub{e^{- \nicefrac{i E t}{\hbar}}}_{\tx{Phasenfaktor}}
 	\end{equation*}
 	\begin{align*}
-	\langle \hat{O} \rangle &= \int \Psi^*(\vec{r}, t = 0) \cancel{e^{\nicefrac{i E t}{\hbar}}} \hat{O} \Psi(\vec{r}, t = 0) \cancel{e^{- \nicefrac{i E t}{\hbar}}} \dd \vec{r} \\
-	&= \int \Psi^*(\vec{r}, t = 0) \hat{O} \Psi(\vec{r} , t = 0) \dd \vec{r} \overset{*}{=} \langle \hat{O}(t = 0) \rangle
+	\langle \hat{\mathcal{O}} \rangle &= \int \Psi^*(\vec{r}, t = 0) \cancel{e^{\nicefrac{i E t}{\hbar}}} \hat{O} \Psi(\vec{r}, t = 0) \cancel{e^{- \nicefrac{i E t}{\hbar}}} \dd \vec{r} \\
+	&= \int \Psi^*(\vec{r}, t = 0) \hat{\mathcal{O}} \Psi(\vec{r} , t = 0) \dd \vec{r} \overset{*}{=} \langle \hat{O}(t = 0) \rangle
 	\end{align*}
-	$ *: $ wenn $ \hat{O} $ nicht Zeitabhängig ist.\\[5pt]
+	$ *: $ wenn $ \hat{\mathcal{O}} $ nicht Zeitabhängig ist.\\[5pt]
 	\textbf{Stationäre Zustände}
 	\begin{equation*}
-	i \hbar \prt{}{t} \Psi(\vec{r}, t) = \hat{\ham} \Psi(\vec{r}, t) \qquad \tx{mit} \qquad \Psi(\vec{r},t) e^{- \nicefrac{i E t}{\hbar}} \Psi(\vec{r} ,t = 0)
+	i \hbar \prt{}{t} \Psi(\vec{r}, t) = \hat{\ham} \Psi(\vec{r}, t) \qquad \tx{mit} \qquad \Psi(\vec{r},t) e^{- \frac{i E t}{\hbar}} \Psi(\vec{r} ,t = 0)
 	\end{equation*}
 	\begin{equation*}
 	\frac{\partial \Psi}{\Psi} = - i \frac{\hat{\ham}}{\hbar} \partial t
 	\end{equation*}
 	Lösung der DGL mittels Variablen-Trennung
 	\begin{equation*}
-	\ln\left[\frac{\Psi(\vec{r},t)}{\Psi(\vec{r}, t = 0)}\right] = - \frac{i \hat{\ham} t}{\hbar} \quad \Rightarrow \quad \Psi(\vec{r}, t) = e^{- \nicefrac{i \hat{\ham} t}{\hbar}} \Psi(\vec{r}, t = 0)
+	\ln\left[\frac{\Psi(\vec{r},t)}{\Psi(\vec{r}, t = 0)}\right] = - \frac{i \hat{\ham} t}{\hbar} \quad \Rightarrow \quad \Psi(\vec{r}, t) = e^{- \frac{i \hat{\ham} t}{\hbar}} \Psi(\vec{r}, t = 0)
 	\end{equation*}
 	\begin{equation*}
 	\hat{\ham} \Psi(\vec{r} , t = 0) = E \Psi(\vec{r}, t = 0)
 	\end{equation*}
 	Taylor Entwicklung:
 	\begin{equation*}
-	e^{x} = e^{- \nicefrac{i \hat{\ham} t}{\hbar}} = a \left(\hat{\ham}\right)^0 + b \left(\hat{\ham}\right)^1 + c \left(\hat{\ham}\right)^2 + \dots
+	e^{x} = e^{- \frac{i \hat{\ham} t}{\hbar}} = a \left(\hat{\ham}\right)^0 + b \left(\hat{\ham}\right)^1 + c \left(\hat{\ham}\right)^2 + \dots
 	\end{equation*}
 	\begin{align*}
-	e^{- \nicefrac{i \hat{\ham} t}{\hbar}} \Psi(\vec{r}, t = 0)&= a \Psi(\vec{r}, t = 0) + b \hat{\ham} \Psi(\vec{r}, t = 0) + c \hat{\ham} \cdot \hat{\ham} \Psi(\vec{r}, t = 0) + \dots \\
+	e^{- \frac{i \hat{\ham} t}{\hbar}} \Psi(\vec{r}, t = 0)&= a \Psi(\vec{r}, t = 0) + b \hat{\ham} \Psi(\vec{r}, t = 0) + c \hat{\ham} \cdot \hat{\ham} \Psi(\vec{r}, t = 0) + \dots \\
 	&= a \Psi(\vec{r}, t = 0) + b E \Psi(\vec{r}, t = 0) + c E^2 \Psi(\vec{r}, t = 0) + \dots \\
 	&= (a + bE + c E^2 + \dots) \cdot \Psi(\vec{r}, t = 0) \\
-	&= e^{- \nicefrac{i E t}{\hbar}} \Psi(\vec{r}, t = 0)
+	&= e^{- \frac{i E t}{\hbar}} \Psi(\vec{r}, t = 0)
 	\end{align*}
 	\lcom{Wir können einen Operator in der $ e $-Funktion schreiben, da diese mit der Taylorentwicklung als Reihe entwickelt werden kann.}
 	\item \textbf{Spin} (Elektronen)
@@ -128,19 +128,19 @@
 	&= i \hbar \Psi(x) = \Psi'(x)
 	\end{align*}
 	\begin{equation*}
-	\rmbox{\left[\hat{x}, \hat{p}\right] = i \hbar} \quad \Rightarrow \quad \tx{die zwei Operatore vertauschen nicht !!!}
+	\rmbox{\left[\hat{x}, \hat{p}\right] = i \hbar} \quad \Rightarrow \quad \tx{die zwei Operatoren vertauschen nicht !!!}
 	\end{equation*}
 	
 	\subsection*{Eigenschaft Kommutator}
 	
 	$ \hat{A} $; $ \hat{B} $
 	\begin{equation*}
-	\Delta A \cdot \Delta B \ge \frac{1}{2} \left| \langle \left[\hat{A}, \hat{B}\right] \rangle \right|
+	\Delta A \cdot \Delta B \ge \frac{1}{2} \left| \left\langle \left[\hat{A}, \hat{B}\right] \right\rangle \right|
 	\end{equation*}
 	$ \left[\hat{A}, \hat{B}\right] $ Operator $ \Rightarrow $
 	\begin{align*}
-	\langle \left[\hat{A}, \hat{B}\right] \rangle &= \langle \hat{A} \hat{B} - \hat{B} \hat{A} \rangle \\
-	&= \langle \Psi | \hat{A} \hat{B} - \hat{B} \hat{A} | \Psi \rangle \\
+	\left\langle \left[\hat{A}, \hat{B}\right] \right\rangle &= \left\langle \hat{A} \hat{B} - \hat{B} \hat{A} \right\rangle \\
+	&= \left\langle \Psi | \hat{A} \hat{B} - \hat{B} \hat{A} | \Psi \right\rangle \\
 	&= \int \Psi^* \left(\hat{A} \hat{B} - \hat{B} \hat{A}\right) \Psi \dd \vec{r}
 	\end{align*}
 	$ \Delta A $, $ \Delta B $ Standardabweichung
@@ -166,7 +166,7 @@
 	
 	$ \hat{A} = \hat{x} $, $ \hat{B} = \hat{p} $. $ \left[\hat{x}, \hat{p}\right] = i \hbar $
 	\begin{equation*}
-	\Delta A \cdot \Delta B \ge \frac{1}{2} \left| \langle \left[\hat{A}, \hat{B}\right] \rangle \right|
+	\Delta A \cdot \Delta B \ge \frac{1}{2} \left| \left\langle \left[\hat{A}, \hat{B}\right] \right\rangle \right|
 	\end{equation*}
 	\begin{equation*}
 	\Delta x \cdot \Delta p \ge \frac{1}{2} \left| i \hbar \right| = \frac{\hbar}{2}
@@ -326,10 +326,14 @@ l_x \Phi(\varphi) = m \hbar \Phi_m(\varphi) \qquad \qquad \Phi_m(\varphi) = a e^
 
 \subsubsection*{Eigenzustände \texorpdfstring{$ l^2 $}{l2}}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Das { soll hier zeigen, dass beide zusammen gehoeren. Eine Box waere vielleicht klarer und schoener. %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \begin{equation*}
 \left\{ \begin{array}{c}
 l^2 \mathcal{Y}_{l,m} (\theta, \varphi) = l(l + 1) \hbar^2 \mathcal{Y}_{l,m} (\theta, \varphi) \\
-l_z \mathcal{Y}_{l,m} (\theta, \varphi) = m \hbar \mathcal{Y}_{l,m} (\theta, \varphi)
+l_z \mathcal{Y}_{l,m} (\theta, \varphi) = m \hbar \mathcal{Y}_{l,m} (\theta, \varphi)\phantom{hhhhl}
 \end{array} \right.
 \end{equation*}
 $ \hat{l^2} = l^2 $, $ \hat{l_z} = l_z $; beide Ausdrücke sind Operatoren, auch wenn sie ohne Dach geschrieben werden.\\[10pt]
