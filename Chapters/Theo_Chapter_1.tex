@@ -34,3 +34,116 @@ Weitere Quantenmechaniker: E. Teller, A. Sacharov, L. Landau, J. Belt, M. Gutzwi
 \textbf{Korrespondenzprinzip:} Wie korrespondieren die QM-Theorien mit den klassischen Theorien? Wie sieht der Übergang vom diskreten zu einem kontinuierlichen Spektrum aus?\\[5pt]
 \textbf{Beispiel:} Atommodell mit quantisierten Elektronen-Orbitalen von Bohr und dem Klassischeren Modell von Rutherford und kontinuierlichen Kepler-Orbitalen.\\
 Die Energieniveaus eines Wasserstoff Atoms sind: $ E = \frac{1}{2n^2} $. Daraus folgt, dass höhere Energieniveaus immer näher aneinander liegen. Die Einergiedifferenzen $ E_{n+1} - E_{n} \sim \hbar \omega_{\tx{Kepler}} $ werden also immer geringer. Die Umlauffrequenz kann also mit zunehmender Hauptquantenzahl immer genauer bestimmbar.
+
+% 29.04.19
+
+\section{Wave-particle duality at the double-slit}
+
+% T1
+\hft
+
+caption: Double-slit Experiment by Young (1803)\\\\
+\textbf{For Waves} the complex amplitudes $ E_1(x) $ and $ E_{2}(x) $ coming from slits 1 and 2 and arriving at point $ x $ on the screen add up
+\begin{equation}
+E(x) = E_1(x) + E_2(x)
+\end{equation}
+The corresponding intensity reads:
+\begin{equation}
+I(x) \propto |E(x)|^2 = \ub{|E_1(x)|^2 + |E_2(x)|^2}_{\substack{\tx{``classical'' intensities} \\ \tx{e.g. with Tennis balls} \\ \tx{\textbf{ladder} contribution} }} + \ub{2 \Re \left(E_1^{*}(x) E_2(x)\right)}_{\substack{\tx{intererence term} \\ \sim \cos (\varphi_2(x) - \varphi_1(x) ) \\ \tx{contains phase information} \\\ \tx{\textbf{cross} term}}}
+\end{equation}
+\hft
+\begin{equation*} % T2
+\begin{array}{c}
+E_1 - E_1^* \\
+E_2 - E_2^*
+\end{array} \quad \begin{array}{c}
+E_1 \\ E_2
+\end{array} \times \begin{array}{c}
+E_1^* \\ E_2^*
+\end{array} \quad \Rightarrow \quad |E_1 + E_2|^2 = (E_1 + E_2) (E_1^* + E_2^*) = |E_1|^2 + |E_2|^2 + 2 \Re| E_1^* E_2|
+\end{equation*}
+$ \rightarrow $ \textbf{Light is a wave phenomenon}\\[10pt]
+
+%T3
+\noindent
+\hft
+
+\noindent
+If we make the source weaker and weaker and have a sufficiently sensitive screen/detector, we observe the arrival of \textbf{single point-like} photons on the screen (photo-electric effect Einstein (1905) ($ \to $ corpusculan hypothesis))\par
+By making the source sufficiently weak, we can ensure that at most 1 photon is present in the interferometer at a given time. $ \rightarrow $ no possible interaction between photons!\par
+\begin{center}
+	\ribox{If we \textbf{integrate} over many single detection events, we recover the interference pattern.}
+\end{center}
+We can make statistical predictions about the position of individual detection events (the integrated signal forms a probabilistic distribution) but the individual photons clearly don't have a deterministic trajectory (otherwise no interference).
+
+\subsection*{Summary}
+
+\begin{itemize}
+	\item Upon detection, light behaves like an assembly of particles.
+	\item The density of detection events reproduces the predictions of the wave picture (classical electromagnetism).
+	\item We cannot explain the appearance of an interference pattern if we treat the photons as classical particles. Each photon goes through both slits 1 and 2: two classically exclusive alternatives.
+\end{itemize}
+
+\subsection{Consequences and terminology}
+
+The agreement of the probability distribution for individual detections events with the predictions of optics (classical field theory) justifies referring to $ E(x,t) $ as a \textbf{probability amplitude} of the photons. $ |E(x,t)|^2 $ is the corresponding \textbf{probability density} (normalized, real, other attributes \dots) for detection at point $ x $ and time $ t $. Later on, we use $ \Psi(x,t) $ instead of $ E(x,t) $ for the \textbf{wavefunction}.\par
+The appearance of both wave and particle properties in the behavior of microscopic objects is known as \textbf{wave-particle duality}.\par
+This raises the question of the ``\textbf{critical scale}'' below which these phenomenon take place and above which our classical representations hold.
+
+\subsubsection*{\emph{Remarks:}}
+
+\begin{enumerate}[I)]
+	\item In optics, interference follows from the superposition principle, which is a consequence of the linearity of the field equations.\par
+	Correspondingly the equations of QM are also linear and the superpositions principle applies.
+	\item The probabilistic predictions of the wave picture can only be accessed by accumulating many individual detection events, i.e. by repeating the same experiment.\par
+	Individual events are not predictable, QM only makes statistical predictions.
+	\item These is a strong effect to push this critical scale function into the macroscopic world (e.g. experiments M. Arndt, Vienna interference of $ C_{60} $ molecules).
+\end{enumerate}
+
+\section{Measure, filtering and spectral decomposition}
+
+%T4
+\noindent
+\hft
+caption: Linearly polarized beam of monochromatic light\\[10pt]
+
+\noindent
+Classical field:
+\begin{equation}
+\vec{E}(\vec{r},t) = E_0 \hat{e}_{\varphi} e^{i (k z - \omega t)}
+\end{equation}
+\begin{align*}
+\vec{E}(\vec{r},t) = \ \ & E_0 \cos \theta \vec{e}_x e^{i(kz - \omega t)}\\
++ & E_0 \sin \theta \vec{e}_{y} e^{i(kz - \omega t)}
+\end{align*}
+After the filter $ \vec{E}(\vec{r},t) = E_0 \cos\theta \vec{e}_{x}e^{i(kz - \omega t)} $\\
+Intensity:
+\begin{equation*}
+I' \propto | E' |^2 \qquad I \propto | E | ^2
+\end{equation*}
+\frbox{Malus' law}{
+\begin{equation}
+I' = I \cos^2 \theta
+\label{Malus}
+\end{equation}}
+\noindent
+What happens if we weaken the source to obtain single photons?\\
+$ \rightarrow $ 2 possible options:
+\begin{itemize}
+	\item a single photons passes completely (click on detector): event ``1''
+	\item or it does not pass at all (no click): event ``0''
+\end{itemize}
+For each photon, the outcome cannot be predicted with certainty.\par
+Upon averaging over a large number of photons, the fraction which makes it through is:
+\begin{equation*}
+\frac{N_1}{n_1 + n_0} \to \cos^2 \theta
+\end{equation*}
+in accordance with Malus' law \eqref{Malus}.\\[10pt]
+E.g.: \texttt{10010001110101}\\[5pt]
+Special casses:
+\begin{itemize}
+	\item $ \theta = \phantom{0}0^\circ \quad \to $ all photons go through: $\phantom{1}$\texttt{1111\dots1}
+	\item $ \theta = 90^\circ \quad \to $ no photon goes through: \texttt{0000\dots0}
+\end{itemize}
+$ \Rightarrow $ in this case the output is certain but experiment must be repeated many times to prove that this is the case.\\[10pt]
+In these cases, we say that the photon finds itself in an \textbf{eigenstate}. One state: $ |1\rangle $ for $ \hat{e}_x $ polarized and one state $ |0\rangle $ for $ \hat{e}_y $ polarized which is associated with the particular outcomes for \textbf{eigenvalues} 1 and 0.
