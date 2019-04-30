@@ -1,3 +1,5 @@
+\renewcommand{\thechapter}{\Roman{chapter}}  % just don't do this :)
+
 \chapter{Quantenmechanik - Intro}
 
 Quantenmechanik (QM) beschreibt den Mikrokosmos (im Gegensatz zum Makrokosmos).
@@ -86,7 +88,7 @@ We can make statistical predictions about the position of individual detection e
 
 \subsection{Consequences and terminology}
 
-The agreement of the probability distribution for individual detections events with the predictions of optics (classical field theory) justifies referring to $ E(x,t) $ as a \textbf{probability amplitude} of the photons. $ |E(x,t)|^2 $ is the corresponding \textbf{probability density} (normalized, real, other attributes \dots) for detection at point $ x $ and time $ t $. Later on, we use $ \Psi(x,t) $ instead of $ E(x,t) $ for the \textbf{wavefunction}.\par
+The agreement of the probability distribution for individual detections events with the predictions of optics (classical field theory) justifies referring to $ E(x,t) $ as a \textbf{probability amplitude} of the photons. $ |E(x,t)|^2 $ is the corresponding \textbf{probability density} (normalized, real, other attributes \dots) for detection at point $ x $ and time $ t $. Later on, we use $ \psi(x,t) $ instead of $ E(x,t) $ for the \textbf{wavefunction}.\par
 The appearance of both wave and particle properties in the behavior of microscopic objects is known as \textbf{wave-particle duality}.\par
 This raises the question of the ``\textbf{critical scale}'' below which these phenomenon take place and above which our classical representations hold.
 
@@ -102,6 +104,8 @@ This raises the question of the ``\textbf{critical scale}'' below which these ph
 
 \section{Measure, filtering and spectral decomposition}
 
+(Messung, Filterung und spektrale Zerlegung)
+
 %T4
 \noindent
 \hft
@@ -110,13 +114,14 @@ caption: Linearly polarized beam of monochromatic light\\[10pt]
 \noindent
 Classical field:
 \begin{equation}
-\vec{E}(\vec{r},t) = E_0 \hat{e}_{\varphi} e^{i (k z - \omega t)}
+\vec{E}(\vec{r},t) = E_0 \hat{e}_{p} e^{i (k z - \omega t)}
 \end{equation}
 \begin{align*}
 \vec{E}(\vec{r},t) = \ \ & E_0 \cos \theta \vec{e}_x e^{i(kz - \omega t)}\\
 + & E_0 \sin \theta \vec{e}_{y} e^{i(kz - \omega t)}
 \end{align*}
-After the filter $ \vec{E}(\vec{r},t) = E_0 \cos\theta \vec{e}_{x}e^{i(kz - \omega t)} $\\
+After the filter
+$$ \vec{E}(\vec{r},t) = E_0 \cos\theta \vec{e}_{x}e^{i(kz - \omega t)} $$
 Intensity:
 \begin{equation*}
 I' \propto | E' |^2 \qquad I \propto | E | ^2
@@ -146,4 +151,32 @@ Special casses:
 	\item $ \theta = 90^\circ \quad \to $ no photon goes through: \texttt{0000\dots0}
 \end{itemize}
 $ \Rightarrow $ in this case the output is certain but experiment must be repeated many times to prove that this is the case.\\[10pt]
-In these cases, we say that the photon finds itself in an \textbf{eigenstate}. One state: $ |1\rangle $ for $ \hat{e}_x $ polarized and one state $ |0\rangle $ for $ \hat{e}_y $ polarized which is associated with the particular outcomes for \textbf{eigenvalues} 1 and 0.
+In these cases, we say that the photon finds itself in an \textbf{eigenstate}. One state: $ |1\rangle $ for $ \hat{e}_x $ polarized and one state $ |0\rangle $ for $ \hat{e}_y $ polarized which is associated with the particular outcomes for \textbf{eigenvalues} 1 and 0.\\[10pt]
+
+% 30.04.19
+
+\noindent
+Sichere (Quanten-) Ereignisse gibt es allein für $ \hat{e}_p = \hat{e}_x $ bzw. $ \hat{e}_p = \hat{e}_y $. Diese Polarisationsrichtungen definieren die \textbf{Eigenzustände} $ |1\rangle \ (\hat{e}_x) $ bzw. $ |0\rangle \ (\hat{e}_y) $ zu den \textbf{Eigenwerten} 1 bzw. 0.\\[10pt]
+Für eine allgemeine Wahl von $ \hat{e}_p $ haben wir die Orthogonalzerlegung 
+\begin{equation}
+\hat{e}_p = \hat{e}_x \cos\theta + \hat{e}_y \sin 
+\theta
+\label{spektrale zerlegung}
+\end{equation}
+Die Wahrscheinlichkeit für ,,0`` \textbf{oder} ,,1`` ergibt sich als:,
+\begin{equation}
+\cos^2 \theta + \sin^2 \theta = 1
+\label{cos2sin2}
+\end{equation}
+wie gewünscht.\par
+\eqref{spektrale zerlegung} kann als ,,\textbf{spektrale Zerlegung}`` des Polarisationszustandes $ \hat{e}_p $ in die durch den Messapparat/Filter definierten Eigenzustände $ \hat{e}_x $ und $ \hat{e}_y $ bzw. $ |1\rangle $ und $ |0\rangle $.\par
+Lässt man Photonen, die durch $ F $ transmittiert werden, durch einen weiteren Filter $ F' $ der selben Orientierung wie $ F $ gehen, so folgt ein \textbf{sicheres} Ereignis, da das Photon durch $ F $ im Eigenzustand $ \hat{e}_x $ von $ F' $ \textbf{präpariert} wurde.\par
+In diesem Sinne: Zustandspräparation $ \equiv $ Filterung (-smessung)
+
+\subsubsection*{\emph{Bemerkung}}
+
+\begin{enumerate}[(1)]
+	\item Um sich davon zu überzeugen, dass das System in einem Eigenzustand präpariert wurde, muss Statistik über viele ($ N \gg 1 $) Photonen betrieben werden.
+	\item \eqref{spektrale zerlegung} und \eqref{cos2sin2} legen bereits de essentielle Vektorraumstruktur des QM mit vorzugsweise orthonormierten Basisvektoren fest.
+	\item Systeme, die sich mit $ |0\rangle $ und $ |1\rangle $ vollständig beschreiben lassen heißen: \textbf{Zweiniveausysteme}
+\end{enumerate}
