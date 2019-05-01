@@ -42,9 +42,52 @@ Die Energieniveaus eines Wasserstoff Atoms sind: $ E = \frac{1}{2n^2} $. Daraus 
 \section{Wave-particle duality at the double-slit}
 
 % T1
-\hft
-
-caption: Double-slit Experiment by Young (1803)\\\\
+\begin{figure}[h]
+	\begin{tikzpicture}
+	\coordinate (a) at (0,0);
+	\coordinate (b) at (1.2,0);
+	\coordinate (c) at (3.5,0);
+	\coordinate (d) at (6,0);
+	
+	%a
+	\filldraw[black] (a) circle (1mm);
+	\foreach \c in {1.5,0.75,0,-0.75,-1.5}
+	\draw (a) -- (1,\c);
+	
+	%b
+	\draw ($(b) + (0,0.7)$) -- ($(b) + (0,2.2)$);
+	\draw ($(b) + (0,0.5)$) node[right] {$S_2$} -- ($(b) + (0,-0.5)$) node[right] {$S_1$};
+	\draw ($(b) + (0,-0.7)$) -- ($(b) + (0,-2.2)$);
+	
+	%c
+	\draw ($(c) + (0,-2.2)$) -- ($(c) + (0,2.2)$);
+	\draw ($(c) + (0,-2.1)$) .. controls ($(c) + (0,-1.8)$) and ($(c) + (-0.4,-1.7)$) .. ($(c) + (-0.4,-1.4)$);
+	\draw ($(c) + (-0.4,-1.4)$) .. controls ($(c) + (-0.4,-1.1)$) and ($(c) + (0,-1)$) .. ($(c) + (0,-0.7)$);
+	\draw ($(c) + (0,-0.7)$) .. controls ($(c) + (0,-0.4)$) and ($(c) + (-0.8,-0.3)$) .. ($(c) + (-0.8,0)$);
+	\draw ($(c) + (-0.8,0)$) .. controls ($(c) + (-0.8,0.3)$) and ($(c) + (0,0.4)$) .. ($(c) + (0,0.7)$);
+	\draw ($(c) + (0,2.1)$) .. controls ($(c) + (0,1.8)$) and ($(c) + (-0.4,1.7)$) .. ($(c) + (-0.4,1.4)$);
+	\draw ($(c) + (-0.4,1.4)$) .. controls ($(c) + (-0.4,1.1)$) and ($(c) + (0,1)$) .. ($(c) + (0,0.7)$);
+	\node[below] at ($(c) + (0,-2.1)$) {Light, Water};
+	\node[below] at ($(c) + (0,-2.5)$) {etc Waves};
+	
+	%d
+	\draw ($(d) + (0,-2.2)$) -- ($(d) + (0,2.2)$);
+	\draw[red] ($(d) + (-0.8,0.5)$) .. controls ($(d) + (-0.8,0.2)$) and ($(d) + (0,0.1)$) .. ($(d) + (0,-0.5)$);
+	\draw[red] ($(d) + (-0.8,0.5)$) .. controls ($(d) + (-0.8,0.8)$) and ($(d) + (0,0.9)$) .. ($(d) + (0,1.5)$);
+	\draw[blue] ($(d) + (-0.8,-0.5)$) .. controls ($(d) + (-0.8,-0.2)$) and ($(d) + (0,-0.1)$) .. ($(d) + (0,0.5)$);
+	\draw[blue] ($(d) + (-0.8,-0.5)$) .. controls ($(d) + (-0.8,-0.8)$) and ($(d) + (0,-0.9)$) .. ($(d) + (0,-1.5)$);
+	\draw[green] ($(d) + (-0.85,-0.3)$) .. controls ($(d) + (-0.85,-0.5)$) and ($(d) + (0,-0.7)$) .. ($(d) + (0,-1.5)$);
+	\draw[green] ($(d) + (-0.85,0.3)$) .. controls ($(d) + (-0.85,0.5)$) and ($(d) + (0,0.7)$) .. ($(d) + (0,1.5)$);
+	\draw[green] ($(d) + (-0.85,0.3)$) .. controls ($(d) + (-0.85,0.2)$) and ($(d) + (-0.7,0.1)$) .. ($(d) + (-0.7,0)$);
+	\draw[green] ($(d) + (-0.85,-0.3)$) .. controls ($(d) + (-0.85,-0.2)$) and ($(d) + (-0.7,-0.1)$) .. ($(d) + (-0.7,0)$);
+	\node[right] at ($(d) + (0.5,1)$) {Red: Slit 1 closed};
+	\node[right] at ($(d) + (0.5,-1)$) {Blue: Slit 2 closed};
+	\node[right] at ($(d) + (0.5,0)$) {Green: Both slits open};
+	\node[below] at ($(d) + (0,-2.3)$) {Tennisballs};
+	\end{tikzpicture}
+	\centering
+	\caption{Double-slit Experiment by Young (1803)}
+\end{figure}
 \textbf{For Waves} the complex amplitudes $ E_1(x) $ and $ E_{2}(x) $ coming from slits 1 and 2 and arriving at point $ x $ on the screen add up
 \begin{equation}
 E(x) = E_1(x) + E_2(x)
@@ -53,22 +96,79 @@ The corresponding intensity reads:
 \begin{equation}
 I(x) \propto |E(x)|^2 = \ub{|E_1(x)|^2 + |E_2(x)|^2}_{\substack{\tx{``classical'' intensities} \\ \tx{e.g. with Tennis balls} \\ \tx{\textbf{ladder} contribution} }} + \ub{2 \Re \left(E_1^{*}(x) E_2(x)\right)}_{\substack{\tx{intererence term} \\ \sim \cos (\varphi_2(x) - \varphi_1(x) ) \\ \tx{contains phase information} \\\ \tx{\textbf{cross} term}}}
 \end{equation}
-\hft
 \begin{equation*} % T2
-\begin{array}{c}
-E_1 - E_1^* \\
-E_2 - E_2^*
-\end{array} \quad \begin{array}{c}
-E_1 \\ E_2
-\end{array} \times \begin{array}{c}
-E_1^* \\ E_2^*
-\end{array} \quad \Rightarrow \quad |E_1 + E_2|^2 = (E_1 + E_2) (E_1^* + E_2^*) = |E_1|^2 + |E_2|^2 + 2 \Re| E_1^* E_2|
+|E_1 + E_2|^2 = (E_1 + E_2) (E_1^* + E_2^*) = |E_1|^2 + |E_2|^2 + 2 \Re| E_1^* E_2|
 \end{equation*}
-$ \rightarrow $ \textbf{Light is a wave phenomenon}\\[10pt]
+\begin{figure}[h]
+	\begin{tikzpicture}[decoration=brace]
+	\draw (0,0) node[left] {$E_2$} -- (0.5,0) node[right] {$E_2^*$};
+	\draw (0,0.8) node[left] {$E_1$} -- (0.5,0.8) node[right] {$E_1^*$};
+	\draw[decorate, yshift=2ex]  (-0.5,1) -- node[above=0.4ex] {ladder contribution}  (1,1);
+	\draw[decorate, yshift=2ex]  (1.1,-0.8) -- (-0.5,-0.8);
+	\node at (0.8,-1.2) {$|E_1|^2+|E_2|^2$};
+	\draw (4,0) node[left] {$E_2$} -- (5,0.8) node[right] {$E_2^*$};
+	\draw (4,0.8) node[left] {$E_1$} -- (5,0) node[right] {$E_1^*$};
+	\draw[decorate, yshift=2ex]  (3.5,1) -- node[above=0.4ex] {cross contribution}  (5.5,1);
+	\draw[decorate, yshift=2ex]  (5.5,-0.8) -- (3.5,-0.8);
+	\node at (4,-1.2) {$2 \Re(E_1^*E_2)$};
+	\node at (2.5,-1.2) {$+$};
+	\end{tikzpicture}
+	\centering
+\end{figure}\\
 
+$ \rightarrow $ \textbf{Light is a wave phenomenon}\\[10pt]
+\newpage
 %T3
 \noindent
-\hft
+\begin{figure}[h]
+	\begin{tikzpicture}
+	\coordinate (a) at (0,0);
+	\coordinate (b) at (1.2,0);
+	\coordinate (c) at (3.5,0);
+	\coordinate (d) at (6,0);
+	
+	%a
+	\filldraw[gray] ($(a) + (0.5,-1.5)$) -- ($(a) + (0.86,-1.5)$) -- ($(a) + (0.8,1.5)$) -- ($(a) + (0.5,1.5)$) -- ($(a) + (0.5,-1.5)$);
+	\node at ($(a) + (0.5,1.8)$) {Filter};
+	\filldraw[black] (a) circle (1mm);
+	\foreach \c in {1.5,0.75,0,-0.75,-1.5}
+	\draw (a) -- (1,\c);
+	
+	%b
+	\draw ($(b) + (0,0.7)$) -- ($(b) + (0,2.2)$);
+	\draw ($(b) + (0,0.5)$) node[right] {$S_2$} -- ($(b) + (0,-0.5)$) node[right] {$S_1$};
+	\draw ($(b) + (0,-0.7)$) -- ($(b) + (0,-2.2)$);
+	
+	%c
+	\draw ($(c) + (0,-2.2)$) -- ($(c) + (0,2.2)$);
+	\draw ($(c) + (0,-2.1)$) .. controls ($(c) + (0,-1.8)$) and ($(c) + (-0.4,-1.7)$) .. ($(c) + (-0.4,-1.4)$);
+	\draw ($(c) + (-0.4,-1.4)$) .. controls ($(c) + (-0.4,-1.1)$) and ($(c) + (0,-1)$) .. ($(c) + (0,-0.7)$);
+	\draw ($(c) + (0,-0.7)$) .. controls ($(c) + (0,-0.4)$) and ($(c) + (-0.8,-0.3)$) .. ($(c) + (-0.8,0)$);
+	\draw ($(c) + (-0.8,0)$) .. controls ($(c) + (-0.8,0.3)$) and ($(c) + (0,0.4)$) .. ($(c) + (0,0.7)$);
+	\draw ($(c) + (0,2.1)$) .. controls ($(c) + (0,1.8)$) and ($(c) + (-0.4,1.7)$) .. ($(c) + (-0.4,1.4)$);
+	\draw ($(c) + (-0.4,1.4)$) .. controls ($(c) + (-0.4,1.1)$) and ($(c) + (0,1)$) .. ($(c) + (0,0.7)$);
+	\node[below] at ($(c) + (0,-2.1)$) {Light, Water};
+	\node[below] at ($(c) + (0,-2.5)$) {etc Waves};
+	
+	%d
+	\draw ($(d) + (0,-2.2)$) -- ($(d) + (0,2.2)$);
+	\draw[red] ($(d) + (-0.8,0.5)$) .. controls ($(d) + (-0.8,0.2)$) and ($(d) + (0,0.1)$) .. ($(d) + (0,-0.5)$);
+	\draw[red] ($(d) + (-0.8,0.5)$) .. controls ($(d) + (-0.8,0.8)$) and ($(d) + (0,0.9)$) .. ($(d) + (0,1.5)$);
+	\draw[blue] ($(d) + (-0.8,-0.5)$) .. controls ($(d) + (-0.8,-0.2)$) and ($(d) + (0,-0.1)$) .. ($(d) + (0,0.5)$);
+	\draw[blue] ($(d) + (-0.8,-0.5)$) .. controls ($(d) + (-0.8,-0.8)$) and ($(d) + (0,-0.9)$) .. ($(d) + (0,-1.5)$);
+	\draw[green] ($(d) + (-0.85,-0.3)$) .. controls ($(d) + (-0.85,-0.5)$) and ($(d) + (0,-0.7)$) .. ($(d) + (0,-1.5)$);
+	\draw[green] ($(d) + (-0.85,0.3)$) .. controls ($(d) + (-0.85,0.5)$) and ($(d) + (0,0.7)$) .. ($(d) + (0,1.5)$);
+	\draw[green] ($(d) + (-0.85,0.3)$) .. controls ($(d) + (-0.85,0.2)$) and ($(d) + (-0.7,0.1)$) .. ($(d) + (-0.7,0)$);
+	\draw[green] ($(d) + (-0.85,-0.3)$) .. controls ($(d) + (-0.85,-0.2)$) and ($(d) + (-0.7,-0.1)$) .. ($(d) + (-0.7,0)$);
+	\node[right] at ($(d) + (0.5,1)$) {Red: Slit 1 closed};
+	\node[right] at ($(d) + (0.5,-1)$) {Blue: Slit 2 closed};
+	\node[right] at ($(d) + (0.5,0)$) {Green: Both slits open};
+	\node[below] at ($(d) + (0,-2.3)$) {Tennisballs};
+	
+	\end{tikzpicture}
+	\centering
+	\caption{T3 Doppelspalt mit Filter}
+\end{figure}
 
 \noindent
 If we make the source weaker and weaker and have a sufficiently sensitive screen/detector, we observe the arrival of \textbf{single point-like} photons on the screen (photo-electric effect Einstein (1905) ($ \to $ corpusculan hypothesis))\par
@@ -108,9 +208,22 @@ This raises the question of the ``\textbf{critical scale}'' below which these ph
 
 %T4
 \noindent
-\hft
-caption: Linearly polarized beam of monochromatic light\\[10pt]
-
+\begin{figure}[h]
+	\begin{tikzpicture}
+	\draw[->] (0,0) -- (5,0) node[right] {$z$};
+	\draw[->] (0,0) -- (0,1) node[above] {$\vec{e_x}$};
+	\draw[->] (0,0) -- (-0.55,-0.55) node[below] {$\vec{e_y}$};
+	\draw[->] (0,0) -- (-0.6,0.6) node[left] {$\vec{E}$};
+	\centerarc[](0,0)(90:135.5:0.5);
+	\draw[->] (0.5,0.5) -- (-0.15,0.3);
+	\node at (0.6,0.5) {$\theta$};
+	\draw[thick,<->] (3,1.1) node[above] {$\parallel \text{ to } \vec{e_x}$} -- (3,-1.1);
+	\node at (3,2) {Polarisationsfilter};
+	\filldraw (4.5,0) node[above] {Detektor} circle (0.1cm);
+	\end{tikzpicture}
+	\centering
+	\caption{Linearly polarized beam of monochromatic light}
+\end{figure}
 \noindent
 Classical field:
 \begin{equation}
