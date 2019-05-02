@@ -452,6 +452,34 @@ Alle weiteren bekannten Serien wie: Balmer, Lyman, Paschen, Brackett, und Pfund.
 	\item Drehimpulsoperator $ \vec{l} $ und Kugelflächenfunktionen $ \mathcal{Y}_{l,m}(\theta, \varphi) $
 \end{itemize}
 
+% 2.05.19
 
+\hfw Damians aufschrieb
 
+\begin{equation*}
+\left|\psi_{nkm}(\vec{r})\right|^2  \quad \Rightarrow \quad r^2 \dd r \sin \theta \dd \theta \dd \varphi
+\end{equation*}
+\begin{align*}
+\int \left|\psi_{nlm}(\vec{r})\right|^2 \dd \vec{r} &= \int_{r_0}^{r_1} \dd r \int_{\Omega} \sin \theta \dd \theta \dd \varphi \left|\psi_{nlm}(\vec{r})\right|^2 \\
+&= \int_{r_0}^{r_1} r^2 \dd r \int_{\Omega} \sin \theta \dd \theta \dd \varphi \left|R_{nl}(\vec{r})\right|^2 \cdot \left|\mathcal{Y}_{lm}(\theta, \varphi)\right|^2 \\
+&= \int_{r_0}^{r_1} r^2 \left|R_{nl}(\vec{r})\right|^2  \dd r \ub{\int_{\Omega} \sin \theta \left|\mathcal{Y}_{lm}(\theta, \varphi)\right|^2 \dd \theta \dd \varphi}_{\Omega = 4 \pi} \\
+&= \int_{r_0}^{r_1} r^2 \left|R_{nl}(\vec{r})\right|^2 \dd r
+\end{align*}
 
+\subsection{Spektrometer}
+
+%T2
+\hft
+\folie{Spektrometer}
+
+NIST Database für Spektrallinien von Atomen und Molekülen. \texttt{https://www.nist.gov/pml/atomic-spectra-database} und \verb|https://physics.nist.gov/PhysRefData/ASD/lines_form.html|.\\[10pt]
+\noindent
+Balmer Linie
+\begin{align*}
+n = 3 \quad &\Rightarrow \quad n = 2 ! \\
+n = 4 \quad &\Rightarrow \quad n = 2 ! \\
+n = 5 \quad &\Rightarrow \quad n = 2 !? \\
+n = 6 \quad &\Rightarrow \quad n = 2 !?? \\
+\end{align*}
+\folie{Transmission  von $ SiO_2 $ bei verschiedenen Wellenlängen}\\
+\folie{Extreme ultraviolet (XUV) Spektrometer}
