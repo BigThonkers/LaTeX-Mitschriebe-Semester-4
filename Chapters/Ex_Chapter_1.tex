@@ -520,7 +520,87 @@ Alle weiteren bekannten Serien wie: Balmer, Lyman, Paschen, Brackett, und Pfund.
 
 % 2.05.19
 
-\hfw Damians aufschrieb
+\subsection*{Lach und Sachgeschichten, heute mit:}
+\begin{itemize}
+	\item Wasserstoffatom mit Schrödingergleichung
+	\begin{itemize}
+		\item Wellenfunktion (Quantenzahlen)
+		\item Energieniveaus (Entartung)
+	\end{itemize}
+	\item Spektroskopie
+	\begin{itemize}
+		\item Wasserstoffatom
+		\item Spektrometer
+		\item Balmar-Serie
+	\end{itemize}
+	\item Zeeman Effekt
+	\item und natürlich mit der Maus
+\end{itemize}
+%T1
+\hft\\
+Energie des Wasserstoffatoms:
+$$E=\frac{p_k^2}{2M}+\frac{p_e}{2m_e}+V(r)=\ub{\frac{p_k^2}{2M}}_\text{Kern}+\ub{\frac{p_e^2}{2m_e}}_\text{Elektron}-\ub{\frac{e^2}{4\pi\epsilon_0}\frac{1}{r}}_\text{Coulomb}$$
+$$\vec{R_k}=\vec{R_{cM}}+\vec{r_k}$$
+$$\vec{R_1}=\vec{R_{cM}}+\vec{r_1}$$
+Energie des Wasserstoffatoms im Schwerpunktsystem:
+$$E=\frac{p^2_{cM}}{2M_{tot}}+\frac{p^2}{2\mu}-\frac{e^2}{4\pi\epsilon_0}\frac{1}{r}$$
+\begin{itemize}
+	\item $M_{tot}=M+m$
+	\item $\vec{m_{cM}}=(m_e+M)\vec{v_{cM}}$ Impuls des Schwerpunktes
+	\item $\mu=\frac{m_eM}{m_e+M}=\frac{m_e}{\frac{m_e}{M}+1}\approx m_e$ Reduzierte Masse mit $m_e \ll M$
+	\item $\vec{p}=\frac{1}{M+m_e}[m_e\vec{p}_k-M\vec{p_1}]$ relatives Moment
+\end{itemize}
+
+Hamiltonoperator lässt sich in ähnlicher Weise auseinander ziehen.
+$$E_{cM}=\frac{p_{cm}^2}{2M_{tot}} \qquad \qquad E_0=\frac{p^2}{2\mu}-\frac{e^2}{4\pi \epsilon_0}\frac{1}{r}$$
+$$E\Rightarrow \hat{H}\equiv H$$
+$$H=H_{cM}+H_0$$
+\begin{align*}
+&H_{cm}=\frac{p^2_{cM}}{2M_{tot}}\overset{*}{=}-\frac{\hbar^2}{2M_{tot}}\nabla^2_{cM}\\
+&H_0=\frac{p^2}{2\mu}-\frac{e^2}{4\pi \epsilon_0}\frac{1}{r}=-\frac{\hbar^2}{2\mu}\nabla^2-\frac{e^2}{4\pi \epsilon_0}\frac{1}{r}
+\end{align*}
+$(*)$ $p_{cM}$ als Operator da $H$ ein Operator ist: $ p_{cM}=-i\hbar \nabla_{cM} $
+Eigenzustände für $H_{cM}$ und $H_0$:\\
+\ \\
+$H_{cm}$ ist der Hamilton für ein freies Teilchen
+$$\overset{\text{Schrödinger GL}}{\Rightarrow} H_{cM}*\Psi_{cM}=E_{cM}\Psi_{cM}\Rightarrow\frac{-\hbar^2}{2M_{tot}}\nabla^2\Psi_{cM}=E_{cM}\Psi_{cM}$$
+Für die Wellengleichung eines freien Teilchens gilt:
+$$\Psi_{cM}(\vec{R_{cM}})=Ce^{i(\vec{p_{cM}}\vec{R_{cM}})}\frac{1}{\hbar}$$
+$$\Rightarrow -\frac{\hbar^2}{2M_{tot}}\nabla^2\Psi_{cM}=-\frac{\cancel{\hbar^2}}{2M_{tot}}\frac{-\vec{p_{cM}^2}}{\cancel{\hbar^2}}\cancel{\Psi_{cM}}=E_{cM}\cancel{\Psi_{cM}}$$
+$$\Rightarrow \frac{\vec{p}^2_{cM}}{2M_{tot}}=E_{cM}$$
+Schwerpunkt:
+$$H_0=\frac{p^2}{2\mu}-\frac{e^2}{4\pi\epsilon_0}\frac{1}{r}\overset{\mu=m_e}{\approx}\frac{p^2}{2m_e}-\frac{e^2}{4\pi\epsilon_0}$$
+Relative Bewegung des Wasserstoffs:
+$$\Rightarrow \rmbox{-\frac{\hbar}{2m_e}\nabla^2\Psi(\vec{r})-\frac{e^2}{4\pi\epsilon_0}\frac{1}{r}\Psi(\vec{r})=E_0\Psi(\vec{r})}$$
+Lösen der Gleichung mit Kugelkoordinaten:
+$$\nabla^2=\frac{1}{r^2}\frac{\partial}{\partial r}(r^2\frac{\partial}{\partial r})-\frac{l^2}{\hbar^2r^2}$$
+$l^2=$ Drehimpulsoperator deshalb verwenden wir Kugelflächenfunktionen da wir dort diesen auch vorfinden.\\
+Aufspalten der Wellenfunktion in einen Radial und einen Winkelanteil:
+$$\Psi(r)=\ub{R_{E_0,l}(r)}_{\text{Radialteil}}\text{ }\ub{\ssf_{l,m}(\theta,\phi)}_{\text{Winkelanteil}}$$
+$$\Rightarrow -\frac{\hbar^2}{2m_e}\left[\frac{1}{r^2}\frac{\partial}{\partial r}(r^2\frac{\partial}{\partial r})-\frac{l(l+1)\hbar^2}{\hbar^2r^2}\right]R_{E_0,l}(r)-\frac{e^2}{4\pi\epsilon_0}\frac{1}{r}R_{E_0,l}(r)=E_0R_{E_0,l}(r)$$
+$$l^2\ssf_{l,m}(\theta,\phi)=l(l+1)\hbar^2\ssf_{l,m}(\theta\phi)$$
+$$U_{E_0,l}(r)=rR{E_0,l}(r)$$
+\begin{equation}
+\frac{d^2U_{E_0,l}(r)}{dr^2}+\frac{2m_e}{\hbar}\left[E_0-V_{eff}(r)\right]U_{E_0,l}(r)=0
+\end{equation}
+$$V_{eff}(r)=\ub{-\frac{l^2}{4\pi\epsilon_0}\frac{1}{r}}_{\text{Coulomb Potential}}+\ub{\frac{l(l+1)\hbar^2}{2m_er^2}}{\text{Zentrifugalpotential}}$$
+\folie{Zentrifugalpotential}\\
+Durch lösen von (1.1) erhält man die Hauptquantenzahlen $n$\\
+$$\Psi_{l,n,m}(r)=R_{n,l}(r)\ssf_{l,m}(\theta,\phi)$$
+Dies sind die drei Quantenzahlen die die Wellenfunktion eines Wasserstoffatoms beschreiben.
+\begin{itemize}
+\item $n=1,2,3,4,...$
+\item $0\leq l \leq (n-1)$
+\item $-l\leq m \leq l$
+\end{itemize}
+\subsection*{Beispiel}
+$$n=2\Rightarrow l=0 \rightarrow m=0$$
+$$\Rightarrow l=1 \rightarrow m=1,m=0,m=-1$$
+Energie hängt im Wasserstoffatom nur von der Hauptquantenzahl ab, im Gegensatz zur Wellenfunktion die von drei abhängig ist.\\
+$$E_n=-\frac{1}{2n^2}\frac{e^2}{4\pi\epsilon_0}\frac{m_e}{\hbar^2}$$
+Radialer Anteil der Wellenfunktion mit $n=1\Rightarrow l=0$\\
+$$R_{10}=2(\frac{1}{a_0})^{\frac{3}{2}}e^{-\frac{r}{a_0}} \qquad \qquad \ub{a_0=\frac{4\pi \epsilon_0 \hbar^2}{m_el^2}}_{\text{Bohrradius (erste Umlaufbahn)}}$$
+\folie{Radialer Anteil der Wellenfunktion: $R_{n,l}(r)$}
 
 \begin{equation*}
 \left|\psi_{nkm}(\vec{r})\right|^2  \quad \Rightarrow \quad r^2 \dd r \sin \theta \dd \theta \dd \varphi
