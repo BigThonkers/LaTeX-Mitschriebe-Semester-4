@@ -282,10 +282,212 @@ außerdem gilt auch:
 	\end{equation*}
 	Hierbei sind $ \Re(s_m) $ Partialsummen von $ \displaystyle \sum_{n=0}^{\infty} \Re(a_n) $\\
 	$ \Rightarrow $ Konvergenz analog für $ \displaystyle \sum \Im(a_n) $
-	\item $ |s_n - s_m| = | \Re(s_n - s_m) + i \Im(s_n - s_m) | \le \ub{|\Re(s_n - s_m)|}_{< \nicefrac{\epsilon}{2}} + \ub{|\Im(s_n - s_m)|}_{< \nicefrac{\epsilon}{2}} < \epsilon $ für $ m,n > n_0 $
+	\item $ |s_n - s_m| = | \Re(s_n - s_m) + i \Im(s_n - s_m) | \le \ub{|\Re(s_n - s_m)|}_{< \nicefrac{\epsilon}{2}} + \ub{|\Im(s_n - s_m)|}_{< \nicefrac{\epsilon}{2}} < \epsilon \quad $ für $ m,n > n_0 $
 \end{enumerate}
 
+% 3.05.19
 
+\noindent
+(neue Vorlesung aber anscheinend selbe Aufzählung)
+
+\begin{enumerate}[a)]
+	\item Ist $ \sum_{k=0}^{\infty} a_k $ absolut konvergent: $ \epsilon, n_0 $, sodass $ \left[s_n = \sum_{k=0}^{\infty} |a_k|\right] $ $ |s_n - s_m| < \epsilon \quad $ für $ n,m > n_0 $
+	\begin{equation*}
+	\epsilon > | s_n - s_m | \ub{\ge}_{m > m'} \left|\sum_{k = m'-1}^{m} |a_k| \right| \ge  \left|\sum_{k = m'-1}^{m} |\Re(a_k)\right| = |s_m^{\tx{Re,abs}} - s_n^{\tx{Re,abs}}|
+	\end{equation*}
+	da gilt: $ |a_k| \ge | \Re(a_k) | $
+	\begin{equation*}
+	\Rightarrow \quad \sum_{k=0}^{\infty} | \Re(a_k) | \quad \tx{konvergent} \quad \Rightarrow \quad \sum_{k=0}^{\infty} | \Re(a_k) | \quad \tx{absolut konvergent}
+	\end{equation*}
+	\item Sind $ \sum |\Re(a_k)| $ und $ \sum |\Im(a_k)| $ konvergent, so folgt $ \Rightarrow \sum|a_k| $ ist ebenfalls konvergent.
+	\begin{equation*}
+	\frac{\epsilon}{2} > \left| \sum_{k = m'-1}^{m} |\Re(a_k)| \right| \quad \tx{mit } m, m' > n
+	\end{equation*}
+	\begin{equation*}
+	\tx{Analog für: } \quad \sum_{k=m'-1}^{m} \Im(a_k) \quad \tx{für} \frac{\epsilon}{2} \tx{und} \hat{m}, \hat{m}' \ge \tilde{n}
+	\end{equation*}
+	$ \hat{n} = \tx{max}(n, \tilde{n}) $
+	\begin{align*}
+	\frac{\epsilon}{2} + \frac{\epsilon}{2} &> \left|\sum_{k = m'+1}^{m} |\Re(a_k)| \right| + \left|\sum_{k = m'+1}^{m} |\Im(a_k)|\right| \qquad \tx{für} m > m' \tx{und} m,m' > \hat{n} \\
+	&> \left|\sum_{k = m'+1}^{m} |\Re(a_k)| + |\Im(a_k)|\right| \ge \left|\sum_{k = m'+1}^{m} |a_k| \right| \quad \Rightarrow \quad \tx{konvergenz von } \sum|a_k|
+	\end{align*}
+\end{enumerate}
+
+\subsection*{Satz: Majoranten-/Minorantenkriterium}
+
+Die Motivation bei diesem Konvergenzkriterium ist der \textbf{Vergleich von Reihen}.\\[10pt]
+Sei $ (b_k) $ eine reelle, positive Folge:
+\begin{enumerate}[a)]
+	\item gilt $ |a_k| \le b_k \quad \forall k > n_0 $ und ist $ \sum_{k=0}^{\infty} b_k $ konvergent
+	\begin{equation*}
+	\Rightarrow \quad \sum_{k=0}^{\infty} a_k \quad \tx{ist konvergent}
+	\end{equation*}
+	
+	%T1
+	\hft
+	
+	\item ist $ |a_k| \ge b_k \quad \forall k > n_0 $ und $ \sum_{k=0}^{\infty} b_k $ divergent
+	\begin{equation*}
+	\phantom{ \sim \tx{nicht absolut konvergent}} \Rightarrow \quad \sum_{k=0}^{\infty} |a_k| \quad \tx{ist divergent} \sim \tx{nicht absolut konvergent}
+	\end{equation*}
+\end{enumerate}
+
+\subsection*{Satz: Quotientenkriterium}
+
+Geometrische Reihe $ + $ Majoranten-/Minorantenkriterium
+\begin{equation*}
+\sum_{k=0}^{\infty} a_n \quad (\tx{endlich viele } a_k = 0)
+\end{equation*}
+\begin{enumerate}[a)]
+	\item Gibt es ein reelles $ q < 1 $ und $ n \in \mathbb{N} $, sodass
+	\begin{equation*}
+	\left|\frac{a_{n+1}}{a_n}\right| \le q \quad \forall k > n,
+	\end{equation*}
+	dann konvergiert die Reihe absolut.
+	\item Gibt es ein $ n \in \mathbb{N} $, sodass
+	\begin{equation*}
+	\left|\frac{a_{n+1}}{a_n}\right| > 1 \quad \forall m > n,
+	\end{equation*}
+	dann divergiert die Reihe
+\end{enumerate}
+Beispiel:
+\begin{enumerate}[a)]
+	\item 
+	\begin{align*}
+    \left|a_{k+1}\right| &= \left|\frac{a_{k+1}}{a_k}\right| \left|\frac{a_k}{a_{k-1}}\right| \dots \bigg|{\frac{a_{k+1}}{a_k}}\bigg| a_n \\
+	&\le q \cdot q \cdot \dots \cdot |a_n| \\
+	&= \ub{q^{k-n} \cdot |a_n|}_{b_{k+1}}
+	\end{align*}
+	\begin{align*}
+	|a_n| \sum_{k=0}^{\infty} q^{k} \overset{*}{=} \frac{|a_k|}{1-q} \quad \tx{ist konvergent}
+	\end{align*}
+	$ * $: für $ 0 \le q < 1 $
+	\item
+	\begin{equation*}
+	\left|a_{k+1}\right| = \left|\frac{a_{m+1}}{a_{m}}\right| \left|\frac{a_m}{a_{m-1}}\right| \dots a_n \ge |a_n|
+	\end{equation*}
+	$ \Rightarrow $ alle $ |a_m| $ keine Nullfolge\\
+	$ \Rightarrow $ Reihe $ \sum |a_m| $ nicht konvergent
+\end{enumerate}
+
+\subsection*{Satz: Rechnen mit Reihen}
+
+Seien $ \displaystyle A = \sum_{k=0}^{\infty} a_k $, $ \displaystyle B = \sum_{k=0}^{\infty} b_k $ konvergente, komplexe Reihen.
+\begin{enumerate}[a)]
+	\item Für $ \alpha, \beta \in \mathbb{C} $ konvergiert auch
+	\begin{equation*}
+	\sum_{k=0}^{\infty} (\alpha a_k + \beta b_k) = \alpha A + \beta B
+	\end{equation*}
+	\item Falls $ \sum a_k $ absolut konvergiert, so ist auch das ,,Cauchy Produkt`` konvergent mit:
+	\begin{equation*}
+	A B = \sum_{k=0}^{\infty} a_n \qquad a_n = \sum_{m=0}^{n} (a_m b_m)
+	\end{equation*}
+	generell gilt für Produkte von endlichen Summen:
+	\begin{equation*}
+	\sum_{k=0}^{m_1} a_k \times \sum_{k=0}^{m_2} b_k
+	\end{equation*}
+	Dieses Produkt ergibt eine Matrix mit den Einträgen:
+	\begin{equation*}
+	\begin{pmatrix}
+	a_{0}b_{0} & \dots & a_0 b_{m_2} \\
+	\vdots & & \vdots \\
+	a_{m_1}B_0 & \dots & a_{m_1}b_{m_2}
+	\end{pmatrix}
+	\end{equation*}
+	Die einzelnen Einträge können bei endlichen Summen in beliebiger Reihenfolge aufsummiert werden. Bei unendlichen Summen geht man hier vor wie bei der Aufzählung der Rationalen Zahlen in Cantors erstem Diagonalbeweis (also immer die Summe von diagonalen angefangen oben bei $ a_0 b_0 $).
+	$ \Rightarrow $ Beweis siehe Übung
+\end{enumerate}
+
+\section{Elementare Funktionen}
+
+Motivation: Reihen $ \sim $ Approximation, Potenzreihen, Polynome, rationale Funktionen $ \sim $ natürliche Erweiterung reeller Funktionen ins Komplexe.
+
+\subsection*{Def: Reihen im komplexen}
+
+\begin{align*}
+\exp(z) &= \sum_{k=0}^{\infty} \frac{z^k}{k!} \qquad (\exp(z) \sim e^{z}) \\
+\cos(z) &= \sum_{k=0}^{\infty} (-1)^k \frac{z^{2k}}{(2k)!} \\
+\sin(z) &= \sum_{k=0}^{\infty} (-1)^k \frac{z^{2k+1}}{(2k+1)!}
+\end{align*}
+
+\subsection*{Satz:}
+
+Die Reihen $ \exp(z), \cos(z) $ und $ \sin(z) $ konvergieren auf $ \mathbb{C} $ und erfüllen die Relationen:
+\begin{align*}
+\exp(iz) &= \cos(z) + i \sin(z) \qquad \forall z \in \mathbb{C} \\
+\exp(z_1 + z_2) &= \exp(z_1) \cdot \exp(z_2) \qquad \forall z_1, z_2 \in \mathbb{C}
+\end{align*}
+
+\subsubsection*{\emph{Beweis}}
+
+\begin{enumerate}[a)]
+	\item Konvergenz:
+	\begin{enumerate}[(i)]
+		\item $z = 0$ $ \quad \displaystyle \sum_{k=0}^{\infty} \frac{z^k}{k!} = 1 + \sum_{k=0}^{\infty} 0 = 1 $
+		\item $z \neq 0$\\
+		mit ii) Quotientenkriterium:
+		\begin{equation*}
+		\left|\frac{a_{m+1}}{a_m}\right| = \left|\frac{z^{m+1}}{(m+1)!} \frac{m!}{z^{m}}\right| = \left|\frac{z}{m+1}\right| \le q < 1 \quad \tx{für} m > |z|
+		\end{equation*}
+		$ \Rightarrow $ Kriterium erfüllt für $ m \ge n_0 $ $ \quad $ (es muss gelten $ n_0 \ge |z| $)
+	\end{enumerate}
+	Ähnliches Vorgehen für $ \cos(z) $ und $ \sin(z) $
+	\item Relationen
+	\begin{enumerate}[i)]
+		\item
+		\begin{equation*}
+		\cos(z) = \sum_{\substack{k=0 \\ n \tx{ gerade}}}^{\infty} (i)^n \frac{z^k}{k!}
+		\end{equation*}
+		$ (i)^n = (i)^{2k} = (i^2)^k = (-1)^k $
+		\begin{align*}
+		i \sin(z) &= i \sum_{k=0}^{\infty} (-1)^k \frac{z^{2k+1}}{(2k+1)!}\\
+		&= \sum_{k=0}^{\infty} (i)^{2k+1} \frac{z^{2k+1}}{(2k+1)!} = \sum_{\substack{m=0 \\ m \tx{ ungerade}}}^{\infty} \frac{(iz)^m}{m!}
+		\end{align*}
+		\begin{align*}
+		\cos(z) + i \sin(z) &= \sum_{m=0}^{\infty} \frac{(iz)^m}{m!} = \exp(iz)
+		\end{align*}
+		\item
+		\begin{equation*}
+		\exp(z_1 + z_2) = \exp(z_1) \cdot \exp(z_2)
+		\end{equation*}
+		$ \rightarrow $ Skriptum
+	\end{enumerate}
+	weitere Relationen
+	\begin{equation*}
+	\exp(-z) = \frac{1}{\exp(z)}
+	\end{equation*}
+	\textbf{\emph{Beweis}}:\\[10pt]
+	$ \exp(z) \cdot \exp(-z) = \exp(z-z) = \exp(0) = 1 $\\
+	$ \rightarrow \quad \exp(-z) = \frac{1}{\exp(z)} $\\[10pt]
+	weitere Relationen:
+	\begin{equation*}
+	\exp(z) = \exp(x + i y) = \exp(x) \cdot \exp(iy) = \exp(x) \cdot (\cos(y) + i \sin(y))
+	\end{equation*}
+	für $ z = x + i y $
+	\begin{align*}
+	\cos(-z) &= \cos(z) \\
+	\sin(-z) &= - \sin(z)
+	\end{align*}
+	\begin{equation*}
+	1 = \cos^2(z) + \sin^2(z) = \exp(iz) \cdot \exp(-iz) = \left[\cos(z) + i \sin(z)\right] + \left[\cos(z) - i \sin(z)\right]
+	\end{equation*}
+\end{enumerate}
+
+\section{Topologie}
+
+Motivation: Komplexe Zahlenebene, Kugeloberfläche, Doughnut oder Torus, usw. und Erweiterungen von $ \mathbb{C} $.
+\begin{enumerate}[a)]
+	\item Topologie $ \rightarrow $ offene Menge $ \rightarrow $ \textbf{Stetigkeit}
+	\item 1-dimensionale Integrale in Teilen von $ \mathbb{C} $
+	
+	
+	%T2
+	\hft
+	
+	
+	\noindent
+	,,Äquivalenz`` von Kurven, Besonderheit geschlossener Kurven, das auslassen gewisser Bereiche in der komplexen Zahlenebene zur Lösung von Integralen.
+\end{enumerate}
 
 
 

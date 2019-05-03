@@ -629,3 +629,220 @@ n = 6 \quad &\Rightarrow \quad n = 2 !?? \\
 \end{align*}
 \folie{Transmission  von $ SiO_2 $ bei verschiedenen Wellenlängen}\\
 \folie{Extreme ultraviolet (XUV) Spektrometer}
+
+% 3.05.19
+
+\subsection*{Programm Heute}
+
+\begin{itemize}
+	\item Wasserstoffatom: Energie Entartung
+	\item Normaler Zeeman Effekt $ \quad $ Magnetfeld $ \vec{B} $
+	\item Stern-Gerlach Experiment $ \ \Rightarrow \ $ Spin $ \vec{s} $
+	\item Spin $ \vec{s} $
+	\item Zusammenfassung zweier Drehimpulsen $ \vec{l} $, $ \vec{s} $ $ \ \Rightarrow \ $ $ \vec{l} + \vec{s} $
+	\item Feinstruktur der Energie des Wasserstoffatoms
+\end{itemize}
+
+\subsection{Energie; Entartung}
+
+\begin{equation*}
+\rmbox{E_n = - \frac{1}{2 n^2} \left(\frac{e^2}{4 \pi \epsilon_0}\right) \frac{m_e}{\hbar^2} }
+\end{equation*}
+\begin{equation*}
+n = 1 \qquad l = 0 \qquad m = 0 \quad \Rightarrow \quad 1 \qquad 1 s
+\end{equation*}
+
+\hfw
+
+% hier für n=2 und n = 3 von Damians Aufschrieb in Arrays packen
+
+
+
+\noindent
+Entartungsgrad
+\begin{equation*}
+K = \sum_{l=0}^{n-1} (2l + 1) = n^2
+\end{equation*}
+Radialanteil der Wellenfunktionen
+\begin{equation*}
+n = 1 \qquad l = 0 \qquad R_{10}(r) = 2 \left(\frac{1}{a_0}\right)^{\nicefrac{3}{2}} e^{-\nicefrac{r}{a_0}}
+\end{equation*}
+\begin{equation*}
+n = 2 \qquad l = 0 \qquad R_{20}(r) = 2 \left(\frac{1}{a_0}\right)^{\nicefrac{3}{2}} \left(1 - \frac{r}{2  a_0}\right) e^{-\nicefrac{r}{2 a_0}}
+\end{equation*}
+\begin{equation*}
+n = 2 \qquad l = 1 \qquad R_{21}(r) = \frac{1}{\sqrt{3}} \left(\frac{1}{2 a_0}\right)^{\nicefrac{3}{2}} \frac{r}{a_0} e^{-\nicefrac{r}{2 a_0}}
+\end{equation*}
+
+\subsection{Zeeman Effekt}
+
+\subsubsection{Klassisches Modell:}
+
+%T1 
+\hft
+
+\noindent
+\textbf{Drehimpuls} $ \vec{l} = \vec{r} \times \vec{p} $\\
+\textbf{Strom} $ I = \frac{-e}{T} = -e \frac{v}{2 \pi R} $\\
+\textbf{Magnetisches Moment}$ \vec{p}_m $
+\begin{equation*}
+\vec{p}_m = I \cdot A \cdot \vec{u}_n = I \pi R^2 \cdot \vec{u}_n = - \frac{e v}{2 \cancel{\pi} \cancel{R}} \cancel{\pi} R^{\cancel{2}} \vec{u}_n = - \frac{e v R \vec{u}_n}{2}
+\end{equation*}
+\begin{equation*}
+\left\{ \begin{array}{l}
+\vec{p}_m = - \frac{e v R \vec{u}n}{2} \\[5pt] \vec{l} = \vec{r} \times \vec{p} = m_2 v R \vec{u}_n
+\end{array} \right.
+\end{equation*}
+\begin{equation*}
+\vec{p}_m = - \frac{e}{2 m_e} m_e v R \vec{u_n = - \frac{e}{2 m_e}}  \cdot \vec{l} = - \frac{e \hbar}{2 m_e \hbar} \vec{l} = - \mu_{B} \frac{\vec{l}}{\hbar}
+\end{equation*}
+\begin{equation*}
+\mu_B = \frac{e \hbar}{2 m_e} = 9{,}27 \cdot 10^{-24} \, \frac{\tx{J}}{\tx{T}} \qquad \tx{\textbf{Bohrsches Magneton}}
+\end{equation*}
+\textbf{Elektrisches Feld}
+\begin{equation*}
+E = - \vec{p}_{el} \cdot \vec{E}
+\end{equation*}
+\textbf{Magnetisches Feld}
+\begin{equation*}
+E = - \vec{p}_{m} \cdot \vec{B} \quad \Rightarrow \quad E = \mu_B \frac{\vec{l}}{\hbar} \cdot \vec{B} = \mu_B \frac{l_z}{\hbar} \cdot B
+\end{equation*}
+\begin{equation*}
+\vec{B} = B \vec{u}_z
+\end{equation*}
+Damit erhalten wir:
+\begin{equation*}
+\rmbox{E = \mu_B \frac{1}{\hbar} \cdot B l_z}
+\end{equation*}
+mit $ l_z = m \hbar $ führt dieser Zusammenhang zu:
+\begin{equation*}
+E m = \mu_B \frac{1}{\cancel{\hbar}} B m \cancel{\hbar} = m \mu_B \cdot B
+\end{equation*}
+
+%T2
+\hft
+
+\noindent
+Die Differenz der Entarteten Energieniveaus ist $ \mu_B B $.\\[10pt]
+\noindent
+\textbf{Hamilton Operator}
+\begin{equation*}
+\hat{\ham}_0 = \ham_0 \qquad \tx{Wasserstoffatom}
+\end{equation*}
+\begin{equation*}
+\hat{\ham} = \ham = \ham_0 + \ham_B = \ham_0 + \mu_B \frac{1}{\hbar} B l_z
+\end{equation*}
+Das $ \ham_B $ stammt aus der Wechselwirkung zwischen Wasserstoffatom und $ \vec{B} $-Feld.\\[5pt]
+Wir haben gesehen, dass die Operatoren $ l^2 $ und $ l_z $ vertauschen.
+\begin{equation*}
+\tx{Wasserstoffatom} \qquad \left[l^2 , l_z\right] = 0 \quad \ssf_{lm}(\theta, \varphi)
+\end{equation*}
+$$ \left\{\ham_0; l^2, l_z\right\} \Rightarrow \psi_{nlm}(\vec{r}) $$
+\begin{align*}
+\ham_0 \psi_{nlm}(\vec{r}) &= E_n \quad \psi_{nlm}(\vec{r})\\
+l^2 \psi_{nlm}(\vec{r}) &= l(l+1) \hbar^2 \ \ \psi_{nlm}(\vec{r})\\
+l_z \psi_{nlm}(\vec{r}) &= m \hbar \quad \psi_{nlm}(\vec{r})
+\end{align*}
+$ \left[\ham_0 \ham_B\right] = 0 $
+\begin{equation*}
+\ham_B = \frac{\mu_B}{\hbar} B l_z \qquad \ham_{B} | \psi_{nlm}(\vec{r}) \rangle = \frac{\mu_B B}{\hbar} l_z | \psi_{nlm}(\vec{r}) \rangle = \frac{\mu_B B}{\cancel{\hbar}} \cdot m \cancel{\hbar} | \psi_{nlm}(\vec{r})
+\end{equation*}
+\begin{align*}
+\langle \psi_{nlm}(\vec{r}) | \ham_B | \psi_{nlm}(\vec{r}) \rangle = \langle \psi_{nlm}(\vec{r}) | \mu_B B m | \psi_{nlm}(\vec{r}) \rangle = \mu_B B m \langle \psi_{nlm}(\vec{r}) | \psi_{nlm}(\vec{r}) \rangle = \rmbox{\mu_B B m}
+\end{align*}
+
+\subsection{Stern-Gerlach Experiment}
+
+\begin{equation*}
+Ag = \ub{\left[Kr\right] 4 d^{10}}_{\tx{volle Schale}} 5 s^{1}
+\end{equation*}
+
+%T3
+\hft
+
+\noindent
+$ \Rightarrow $ Wasserstoffähnlich !\\[5pt]
+s Zustand $ l=0 \Rightarrow m = 0 $
+\begin{equation*}
+\vec{F} = - \vabla E_m = \vec{p}_m \cdot \vabla \vec{B}
+\end{equation*}
+Dieses Modell beschreibt die experimentelle Beobachtungen nicht ausreichend. Daher wurde die Hypothese aufgestellt, dass das Elektron einen weiteren Freiheitsgrad besitzt: den \textbf{Spin}.
+
+\subsection{Spin}
+
+\begin{equation*}
+\vec{\mu}_s = - g_s \frac{\mu_B}{\hbar} \vec{s} \qquad \tx{Spinimpuls}
+\end{equation*}
+\begin{equation*}
+\vec{p}_m = \vec{\mu} e = - \frac{\mu_B}{\hbar} \vec{l} \qquad \tx{Bahndrehimpuls}
+\end{equation*}
+Hierbei ist $ g_s $ der Land\'e Faktor.\\[5pt]
+Da wir festgestellt haben, dass bei bekanntem $ l $, $ m $ nur die ganzzahligen Werte zwischen $ -l $ und $ l $ annehmen kann ($-l \le m \le l$).\par
+Da wir für den Spin nur 2 Möglichkeiten haben werden diese $ s = + \frac{1}{2} $ sodass:
+\begin{equation*}
+\Rightarrow \quad m_s = -\frac{1}{2}; +\frac{1}{2}
+\end{equation*}
+Da wir fordern $ -s \le m_s \le s $
+
+
+
+% kommentar von Damian
+
+
+
+\noindent
+$ \vec{s} $ Spin-Operator: $ \vec{s} $: $ s_x; s_y; s_z $
+\begin{align*}
+\left[s_x, s_y\right] &= i \hbar s_z \qquad \left[s_x, s_z\right] \neq 0 \qquad \left[s_y, s_z\right] \neq 0 \\
+\left[l_x, l_y\right] &= i \hbar l_z \qquad \left[l_x, l_z\right] \neq 0 \qquad \left[l_y, l_z\right] \neq 0
+\end{align*}
+\begin{align*}
+\left[s^2, s_z\right] = \left[s^2, s_x\right] = \left[s^2, s_y\right] = 0 \\
+\left[l^2, l_z\right] = \left[l^2, l_x\right] = \left[l^2, l_y\right] = 0
+\end{align*}
+\begin{align*}
+l &\qquad \tx{Drehimpuls Quantenzahl} \qquad -l \le m \le +l\\
+s &\qquad \tx{Spinquantenzahl} \qquad \qquad \quad \ \ -s \le m_s \le +s \qquad \overset{\mathclap{\substack{\tx{Elektronen} \\ (\tx{Fermionen})}}}{\Rightarrow} \qquad s = \frac{1}{2}
+\end{align*}
+\begin{align*}
+l^2;l_z \quad \Rightarrow \quad \ssf_{lm}(\theta, \varphi) \qquad l^2 \ssf_{lm}(\theta, \varphi) &= l(l+1) \hbar^2 \ssf_{lm}(\theta, \varphi) \\
+l_z \ssf_{lm}(\theta, \varphi) &= m \hbar \ssf_{lm}(\theta, \varphi)
+\end{align*}
+\begin{align*}
+s^2;s_z \quad \Rightarrow \quad \chi_{\nicefrac{1}{2}, m_s} \qquad &s^2 \chi_{\nicefrac{1}{2}, m_s} = s(s+1)\hbar^2 \chi_{\nicefrac{1}{2}, m_s} = \frac{1}{2} \left(\frac{3}{2}\right)\hbar^2 \chi_{\nicefrac{1}{2}, m_s} = \frac{3}{4} \hbar^2 \chi_{\nicefrac{1}{2}, m_s} \\
+&b_2 \chi_{\nicefrac{1}{2}, m_s} = m_s \hbar \chi_{\nicefrac{1}{2}, m_s} \\
+\end{align*}
+
+\hfw
+% oben im align nachtragen |\alpha \rangle und beta und die zwilen dazu
+
+
+%T3
+\hft
+
+\noindent
+$ |\alpha \rangle $: $ s^2 | \alpha \rangle = \frac{3}{4} \hbar^2 | \alpha \rangle $ $ \Rightarrow | \vec{s} | = \frac{\sqrt{3}}{2} \hbar $\\
+$ s_z | \alpha \rangle = \frac{\hbar}{2} | \alpha \rangle $\\
+$ \chi_{\frac{1}{2}, \frac{1}{2}} $\\
+spin-up
+
+\noindent
+$ | \beta \rangle $: $ s^2 | \beta \rangle = \frac{3}{4} \hbar^2 | \beta \rangle $ $ \Rightarrow |\vec{s}| = \frac{\sqrt{3}}{2} \hbar $\\
+$ s_z | \beta \rangle = - \frac{\hbar}{2} | \beta \rangle $\\
+$ \chi_{\frac{1}{2}, - -\frac{1}{2}} $\\
+spin-down
+
+\subsubsection{Wasserstoffatom}
+
+$ \psi_{nlm}(\vec{r}) $\\[10pt]
+Spin: $ \chi_{\frac{1}{2}, m_s} $\\[10pt]
+Die gesamte Wellenfunktion des Wasserstoffatoms
+\begin{equation*}
+\psi(q) = \ub{\psi_{nlm}(\vec{r})}_{\mathclap{\substack{\tx{Räumlicher} \\ \tx{Anteil}}}} \ub{\chi_{\frac{1}{2}, m_s}}_{\mathclap{\substack{\tx{Spin} \\ \tx{Anteil}}}} \qquad \tx{mit} \quad q \equiv (\vec{r}, s)
+\end{equation*}
+\begin{align*}
+\vec{l} \quad & \Rightarrow \quad \vec{p}_m = \vec{\mu}_l = - \frac{\mu_B}{\hbar} \vec{l} \\
+\vec{s} \quad & \Rightarrow \quad \vec{\mu}_s = - g_s \frac{\mu_B}{\hbar} \vec{s}
+\end{align*}
+$ g_s = $ $ g $-Faktor = 2 $ \Rightarrow $ Q.E.D
+
