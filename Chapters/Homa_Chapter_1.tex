@@ -489,6 +489,156 @@ Motivation: Komplexe Zahlenebene, Kugeloberfläche, Doughnut oder Torus, usw. un
 	,,Äquivalenz`` von Kurven, Besonderheit geschlossener Kurven, das auslassen gewisser Bereiche in der komplexen Zahlenebene zur Lösung von Integralen.
 \end{enumerate}
 
+% 8.05.19
 
+\begin{itemize}
+	\item offene, geschlossene, kompakte Menge:\\
+	$ \epsilon $-Umfang:
+	\begin{equation*}
+	D_{\epsilon}(z_1) = \left\{ z \big| | z - z_0 | < \epsilon , \epsilon \in \mathbb{R}^+ , \ z, z_0 \in \mathbb{C}\right\}
+	\end{equation*}
+	
+	
+	%T1
+	\hft
+	
+	
+	\noindent
+	\textbf{offene Mengen:}
+	\begin{enumerate}[1)]
+		\item \begin{equation*}
+		\mathcal{O} \subseteq \mathbb{C} , \tx{ sodass für jeden } z \in \mathcal{O} \exists D_\epsilon (z) \subseteq \mathcal{O}
+		\end{equation*}
+		
+		
+		%T2
+		\hft
+		
+		
+		\item Leere Menge: $ \emptyset $
+		\item gesamte Menge $ \mathbb{C} $
+	\end{enumerate}
+	Intuition: Schnitt \& Vereinigung funktionieren auf natürliche Art und Weise\\[10pt]
+	\textbf{abgeschlossene Mengen:} Komplemente der $ \mathcal{O} $ in $ \mathbb{C} $
+	\begin{equation*}
+	\mathbb{C} \setminus \mathbb{O}
+	\end{equation*}
+	\textbf{kompakte Menge:} jede offene Überdeckung enthält endliche Überdeckungen
+	$ \mathbb{C} $ ist nicht kompakt aber eine Abdeckung von $ \mathbb{C} $ also $ \ol{\mathbb{C}} $ wie z.B. die Riemannsche Sphäre ist kompakt.\par
+	Umgebung $ U $ eines Punktes $ z \in U \subseteq \mathbb{C} \quad \exists D_3 (z) \subseteq U $
+	
+	
+	
+	%T3
+	%T4
+	\hft
+	\hft
+	
+	
+	\noindent
+	\item \textbf{Topologischer Raum:} Menge $ M + $ System offener Mengen $ \left\{ \mathcal{O}_i\right\} $
+	\item \textbf{Hausdorff Raum:} Topologischer Raum + \textbf{Trennungsaxiom}\\[5pt]
+	\textbf{Trennungsaxiom:} für beliebige $ z_1, z_2 \in M \ \exists U_{1,2} $ mit  $ z_1 \in U_1 $, $ z_2 \in U_2 $ und $ U_1 \cap U_2 = \emptyset $\\[5pt]
+	Intuition: eindeutige Grenze für konvergente Folgen, Begriff stetiger Funktionen\\[5pt]
+	Hier: $ \begin{array}{c}
+	\mathbb{C} + \tx{ Metrik } d(z_1, z_2) \\
+	\ol{\mathbb{C}} + \tx{ Metrik } \chi(z_1, z_2)
+	\end{array} \Rightarrow $ implizieren $ \mathbb{C}, \ol{\mathbb{C}} $ Topologische Räume + Hausdorff Eigenschaft.\\[10pt]
+	Eigenschaften: kompakte Menge in $ \mathbb{C} $ sind die abgeschlossene \& beschränkte Menge. z.B. $ K = \left\{ z \big| | z | \le R \in \mathbb{R}^2 \right\} $.\par
+	Durchschnitt (Vereinigung) endlich vieler offener (abgeschlossener) Mengen gibt offene (abgeschlossene) Menge.
+	\begin{equation*}
+	A_n = \left[ \frac{1}{n + 1} , 1 - \frac{1}{n + 1}\right] \quad n \in \mathbb{N} \qquad A_n \subseteq \mathbb{R} \qquad \cup_{n} A_n = (0,1)
+	\end{equation*}
+	
+	
+	%T5
+	\hft
+	
+	
+	\item \textbf{Grenzwerte:}\\
+	\textbf{Häufungspunkt} $ z_0 $ einer Menge $ M $: in jeder $ D_{\epsilon}(z_0) $ liegt zumindest ein $ z + z_0 , z \in M $.\\[5pt]
+	Intuition: ,,innerer Punkt``\\[10pt]
+	
+	
+	
+	%T6
+	%T7
+	%T8
+	\hft \hft \hft
+	
+	
+	\noindent
+	\textbf{Isolierter Punkt} $ z_0 $ von Menge $ M $: falls $ \exists D_{\epsilon}(z_0) $, so dass $ D_{\epsilon}(z_0) \cap M = z_0 $.
+	\item zusammenhängende Mengen, Gebiete:\\
+	\textbf{stetiger Weg} $ \alpha \subseteq \mathbb{C} $ von $ a \in \mathbb{C} $ nach $ b \in \mathbb{C} $ mit:
+	\begin{equation*}
+	\alpha = \left\{ z(t) \in \mathbb{C} \big| z(t) = x(t) + i y(t) , 0 \le t, z(0) = a, z(1) = b, x(t), y(t) \tx{ stetige Funktionen} \right\}
+	\end{equation*}
+	
+	
+	%T9
+	%T10
+	\hft \hft stetiger und nicht stetiger Weg
+	
+	
+	\noindent
+	\textbf{zusammenhängende Menge:}\\[5pt]
+	Je zwei Punkte $ z_1, z_2 \in  M $ lassen sich durch den stetigen Weg $ \alpha $ verbinden, der ganz in $ M $ liegt; $ \alpha \subseteq M $.
+	
+	
+	%T11
+	%T12
+	\hft \hft zusammenhängend und $ \alpha $ zwischen Mengen
+	
+	
+	\noindent
+	\textbf{einfach zusammenhängende Menge:}\\[5pt]
+	jeder geschossene stetiger Weg $ \alpha $ mit $ a = b $ lässt sich in $ M $ auf einen Punkt Zusammenziehen.
+	
+	
+	%T13
+	\hft zusammenhängend und nicht zusammenhängend
+	
+	
+	\noindent
+	\textbf{Gebiet:} zusammenhängende, offene Menge\\[10pt]
+	\textbf{Rand:} $ z \in M $ Randpunkt einer Menge $ M $, falls jede Umgebung von $ z $ mindestens einen Punkt von $ M $ und von $ \mathbb{C} \setminus M $ enthält.
+	
+	
+	%T14
+	\hft
+	
+	
+	\noindent
+	$ \partial U = $ Rand der Menge $ U $
+	\begin{equation*}
+	D_{\epsilon} \cap M \neq \emptyset \qquad D_{\epsilon} \cap (\mathbb{C} \setminus M) \neq \emptyset \qquad \epsilon \tx{ beliebig}
+	\end{equation*}
+	Eigenschaft: stetiger Weg von $ a \in U $ nach $ b \in \mathbb{C} \setminus U $ enthält mindestens einen Randpunkt $ z_0 \in \partial U $
+\end{itemize}
+
+\section{Holomorphe Funktionen}
+
+Motivation: ausgezeichnete Funktionen durch Stetigkeit \& Differenzierbarkeit $ \to $ besondere ,,physikalische Eigenschaften``
+
+\begin{enumerate}[1)]
+	\item Stetigkeit \& Grenzwert:\\[5pt]
+	komplexe Funktion $ f : D \to W $ mit $ D = $ Definitionsbereich, $ W = $ Wertebereich; $ D, W \subseteq \ol{\mathbb{C}} $
+	\begin{equation*}
+	f(z) = u(x,y) + i v(x,y) \qquad x,y \in \mathbb{R}, z = x + i y , \ u,v \tx{ reelle Funktionen}
+	\end{equation*}
+	
+	\subsubsection*{Def: Stetigkeit}
+	
+	komplexe Funktion $ f: D \to W $ heißt stetig in $ z_0 \in D $, wenn für jede $ D_{\epsilon}(w_0) \in W $ mit $ w_0 = f(z_0) $ eine $ D_{\delta}(z_0) $ existiert, so dass $ f(z) \in D_{\epsilon}(w_0) $ für $ z \in D_{\delta}(z_0) $.
+	
+	
+	%T15
+	\hft
+	
+	
+	\noindent
+	
+\end{enumerate}
 
 
