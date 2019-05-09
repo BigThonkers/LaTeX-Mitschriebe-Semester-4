@@ -237,11 +237,11 @@ Die Varianz ist definiert als:
 \end{minipage}%
 \\[5pt]
 \begin{equation*}
-\hat{\vec{l}} = - i \hbar \begin{pmatrix}
+\hat{\vec{l}} = - i \hbar \begin{vmatrix}
 \vec{u}_x & \vec{u}_y & \vec{u}_x \\
 x & y & z \\
 \prt{}{x} & \prt{}{y} & \prt{}{z}
-\end{pmatrix} = - i \hbar
+\end{vmatrix} = - i \hbar
 \end{equation*}
 
 %t2
@@ -407,7 +407,7 @@ Klassisch wissen wir $ z $-Komponente Länge $ |\vec{l}| $ und müssen für die 
 \langle l_x \rangle = \langle \mathcal{Y}_{l,m}(\theta, \varphi) | l_x | \mathcal{Y}_{l,m}(\theta, \varphi) \rangle = \int \mathcal{Y}_{l,m}^{*}(\theta, \varphi) l_x \mathcal{Y}_{l,m}(\theta, \varphi) \overset{*}{=} 0
 \end{equation*}
 $ (*) $ kann mathematisch gezeigt werden, ist aber nicht Teil der Vorlesung.\\[10pt]
-Das selbe gilt auch für $ l_y $: $ \langle l_y \rangle = 0 $
+Das selbe gilt auch für $ l_y $: $ \langle l_y \rangle = 0 $\\
 %t5
 \begin{minipage}[h]{0.45\textwidth}
 \begin{tikzpicture}[decoration={brace,amplitude=10pt}]
@@ -426,22 +426,22 @@ Das selbe gilt auch für $ l_y $: $ \langle l_y \rangle = 0 $
 \draw[dashed,red] (0,1.9) ellipse (2.55 and 1);
 \end{tikzpicture}\\
 \captionof{figure}{Intuitives Model wobei die rote Kreisbahn den Abstand $\sqrt{l(l+1)\hbar^2}$ zum Mittelpunkt hat und parallel zur $x,y$-Achse liegt}
-\end{minipage}
-\begin{minipage}[h]{0.35\textwidth}
+\end{minipage}%
+\begin{minipage}[h]{0.55\textwidth}
 	\begin{align*}
 	| \vec{l} | &= \sqrt{ l ( l+1) \hbar^2} \\
 	l_z &= m \hbar \\
 	\langle l_x \rangle &= 0 \\
 	\langle l_y \rangle &= 0
 	\end{align*}
-\end{minipage}
+\end{minipage}%
 \newpage
 \textbf{Beispiel:}\\
 $ l=2 $, $ m = -2, -1, 0, 1, 2 $\\[5pt]
 $ \Rightarrow |\vec{l}| = \sqrt{6}\hbar $
 
 %t6
-\begin{minipage}[t]{0.5\textwidth}
+\begin{minipage}[ht]{0.5\textwidth}
 \begin{tikzpicture}[decoration={brace,amplitude=10pt}]
 \draw[->,thick] (0,-2.5) -- (0,2.5) node[above] {$z$};
 %\centerarc[](0,0)(0:360:2);
@@ -471,7 +471,7 @@ $ \Rightarrow |\vec{l}| = \sqrt{6}\hbar $
 \end{tikzpicture}
 \centering
 \captionof{figure}{Präzession um die $ z $-Achse hängt von der Quantenzahl $ m $ ab.}
-\end{minipage}
+\end{minipage}%
 %t7
 \begin{minipage}[t]{0.5\textwidth}
 \begin{tikzpicture}
@@ -482,7 +482,7 @@ $ \Rightarrow |\vec{l}| = \sqrt{6}\hbar $
 \end{tikzpicture}
 \centering
 \captionof{figure}{Zeeman Effekt}
-\end{minipage}
+\end{minipage}%
 
 \section{Experimente: Wasserstoffatom Spektrum}
 
@@ -618,7 +618,7 @@ $$R_{10}=2(\frac{1}{a_0})^{\frac{3}{2}}e^{-\frac{r}{a_0}} \qquad \qquad \ub{a_0=
 \hft
 \folie{Spektrometer}
 
-NIST Database für Spektrallinien von Atomen und Molekülen. \texttt{https://www.nist.gov/pml/atomic-spectra-database} und \verb|https://physics.nist.gov/PhysRefData/ASD/lines_form.html|.\\[10pt]
+NIST Database für Spektrallinien von Atomen und Molekülen.\\ \texttt{https://www.nist.gov/pml/atomic-spectra-database} und\\ \verb|https://physics.nist.gov/PhysRefData/ASD/lines_form.html|.\\[10pt]
 \noindent
 Balmer Linie
 \begin{align*}
@@ -846,3 +846,237 @@ Die gesamte Wellenfunktion des Wasserstoffatoms
 \end{align*}
 $ g_s = $ $ g $-Faktor = 2 $ \Rightarrow $ Q.E.D
 
+% 8.05.19
+
+\begin{itemize}
+	\item Zusammensetzung $ \verb|l| $ $ \vec{s} $
+	\item Feinstruktur des Wasserstoffatoms
+\end{itemize}
+\begin{equation*}
+\vec{j} = \vec{l} + \vec{s} \qquad \tx{Gesamtdrehimpuls}
+\end{equation*}
+$ j_x; j_y; j_z $
+\begin{equation*}
+\left[j_x,j_y\right] = \left[l_x + s_x ; l_y + s_y\right] = \ub{\left[l_x, l_y\right]}_{i \hbar l_z} + \left[l_x, s_y\right] + \left[s_x, l_y\right] + \ub{\left[s_x, s_y\right]}_{i \hbar s_z} = i \hbar \left\{l_z + s_z\right\} = i \hbar j_z
+\end{equation*}
+$ \vec{j} $ Drehimpulsoperator
+\begin{equation*}
+\begin{array}{cl}
+\ub{j^2; j_z} & \\
+\ub{l^2; l_z} & \Rightarrow \ssf_{lm}(\theta, \varphi) \\
+\ub{s^2; s_z} & \Rightarrow \chi_{\nicefrac{1}{2}}; m_s
+\end{array}
+\end{equation*}
+\begin{align*}
+j^2 \to j(j+1)\hbar^2 \quad & \tx{Eigenwerte} \qquad j \tx{ Gesamtdrehimpulsquantenzahl}\\
+j_z \to m_j \hbar \quad & \tx{Eigenwerte} \quad -j \le m_j \le j
+\end{align*}
+Quantenzahlen  $ l $ und $ s $ angegeben $ \Rightarrow  j = ? $\\[5pt]
+Wasserstoffatom in einem $ p $-Zustand $ \quad 2p $ $ \begin{array}{cc}
+l=1 & \Rightarrow m_l = \pm 1; 0 \\ s= \frac{1}{2} & \Rightarrow m_s = \pm \frac{1}{2}
+\end{array} $
+\begin{equation*}
+\vec{j} = \vec{l} + \vec{s} \qquad \begin{array}{cc}
+j_z = l_z + s_z \\
+\downarrow \\
+m_j = m_l + m_s
+\end{array}
+\end{equation*}
+
+
+
+%Damian zeugs und Tikz
+%T1
+\hfw
+\hft
+
+
+\noindent
+\begin{align*}
+m_j = - \frac{3}{2} \Rightarrow j = \frac{3}{2} \quad & \Rightarrow m_j = - \frac{3}{2} ; -\frac{1}{2} ; + \frac{1}{2} ; + \frac{3}{2} \\
+m_j = - \frac{1}{2} \Rightarrow j = \frac{1}{2} \quad & \Rightarrow m_j = \phantom{- \frac{3}{2}} - \frac{1}{2} ; + \frac{1}{2}
+\end{align*}
+
+\subsubsection*{Zusammensetzung zweier Bahndrehimpulse}
+
+\begin{equation*}
+\tx{Helium} \quad \custo{\rightarrow}{\vec{l}_1}{\vec{r}_1} \quad \custo{\rightarrow}{\vec{l}_2}{\vec{r}_2} \qquad \vec{L} = \vec{l}_1 + \vec{l}_2 \qquad L^2 \Rightarrow L(L+1) \hbar^2 \quad L_z \Rightarrow m_L \hbar
+\end{equation*}
+$ l_1 = 1 \quad \Rightarrow m_{l_1} = \pm 1; 0 $\\
+$ l_2 = 2 \quad \Rightarrow m_{l_2} = \pm 2; \pm 1; 0 $
+\begin{equation*}
+\left[j_x,j_y\right] = \left[l_{1x} + l_{2x} ; l_{1y} + l_{2y}\right] = \ub{\left[l_{1x}, l_{1y}\right]}_{i \hbar l_{1z}} + \left[l_{1x}, l_{2y}\right] + \left[l_{2x}, l_{1y}\right] + \ub{\left[l_{2x}, l_{2y}\right]}_{i \hbar l_{2z}} = i \hbar \left\{l_{1z} + l_{2z}\right\} = i \hbar L_z
+\end{equation*}
+
+
+
+
+%T2
+\hft
+
+
+
+\begin{align*}
+(-1;0) &= (m_{l_1} = -1; m_{l_2} = 0 ) \\
+(0;-1) &= (m_{l_1} = 0 ; m_{l_2} = -1)
+\end{align*}
+\begin{align*}
+m_L = 3 \Rightarrow L_3 \quad & \Rightarrow m_L = \pm 3; \pm 2; \pm 1; 0 \\
+m_L = 2 \Rightarrow L_2 \quad & \Rightarrow m_L = \pm 2; \pm 1; 0 \\
+m_L = 1 \Rightarrow L_1 \quad & \Rightarrow m_L = \pm 1; 0
+\end{align*}
+\begin{align*}
+\begin{array}{c}
+l_1 = 1 \\ l_2 = 2
+\end{array} \quad &\Rightarrow \quad L = 1,2,3  & \qquad \qquad \rmbox{ | l_2 - l_1 | \le L \le l_1 + l_2 } \quad \rmbox{ -L \le m_L \le L } \\
+\begin{array}{c}
+l = 1 \\ s = \frac{1}{2}
+\end{array} \quad &\Rightarrow \quad j = \frac{1}{2} ; \frac{3}{2} & \qquad \qquad \rmbox{ | l - s | \le j \le l + s } \ \ \quad \rmbox{ -j \le m_j \le j }
+\end{align*}
+
+\subsubsection*{Vektormodell}
+
+$ \vec{l}; l_z $
+
+
+%T3
+\hft
+
+
+\begin{align*}
+\langle j_x \rangle &= 0 \\
+\langle j_x \rangle &= 0
+\end{align*}
+$ \vec{j} = \vec{l} + \vec{s} $\\[5pt]
+$$ l^2; l_z; s^2; s_z $$
+\begin{equation*}
+\ssf_{lm}(\theta, \varphi) \quad \chi_{\nicefrac{1}{2}, m_s}
+\end{equation*}
+
+
+%T4
+\hft
+
+\noindent
+$$ j^2; j_z; l^2; s^2 $$
+\begin{equation*}
+j_z \Rightarrow m_j = \frac{1}{2} \begin{array}{c}
+\nearrow \\ \searrow
+\end{array} \begin{array}{l}
+m_l = 0 ; \ m_s = \frac{1}{2} \\[10pt] m_l = 1; \ m_s = - \frac{1}{2}
+\end{array}
+\end{equation*}
+
+
+%T5
+\hft
+
+
+\noindent
+1s:  $ m = 1 \quad s \Rightarrow l = 0 \qquad l = 0 \tx{und} b = \frac{1}{2} \Rightarrow j = \frac{1}{2} \qquad \qquad q s_{\nicefrac{1}{2}} $
+
+
+%Damian
+\hfw
+
+
+\section{Feinstruktur des Wasserstoffatoms}
+
+\begin{equation*}
+\begin{array}{l}
+\left.\begin{array}{l}
+E_{1s} \approx -13{,}6 \, \tx{eV} \\
+E_{2s} \approx -3{,}4 \, \tx{eV}
+\end{array} \right\} \approx 10 \, \tx{eV} \\
+E_{3s} \approx -1{,}5 \, \tx{eV} \big\} \approx 2 \, \tx{eV}
+\end{array}
+\end{equation*}
+Feinstruktur $ \approx 10^{-4} \div 10^{-5} \, \tx{eV} $
+\begin{itemize}
+	\item (Rest-) Ruheenergie des Elektrons
+	\item Darwin Term (Compton Wellenlänge)
+	\item Spin-Bahn Kopplung
+\end{itemize}
+
+\subsection{Restenergie des Elektrons}
+
+\begin{equation*}
+E = \sqrt{m_e^2 c^2 + p^2 c^2} \qquad \qquad m_e^2 c^2 \gg p^2 c^2
+\end{equation*}
+\begin{equation*}
+E = m_e c^2 \left[1 + \frac{p^2 c^2}{m_e^2 c^4}\right]^{\nicefrac{1}{2}} \qquad \qquad x = \frac{p^2 c^2}{m_e^2 c^4} \approx 0 \qquad \qquad \left[1 + x\right]^{\nicefrac{1}{2}} = 1 + \frac{1}{2} x - \frac{1}{8}x^2
+\end{equation*}
+\begin{equation*}
+E = m_e c^2 \left\{ 1 + \frac{1}{2} \frac{p^2 c^2}{m_e^2 c^4} - \frac{1}{2} \left(\frac{p^2 c^2}{m_e^2 c^4}\right)^2 \right\} = \custo{\rightarrow}{m_e c^2}{\tx{Verschiebung}} + \custo{\rightarrow}{\frac{p^2}{2 m_e}}{- \frac{\hbar^2 \vabla^2}{2 m_e}} \rmbox{- \frac{1}{8} \frac{p^4}{m_e^3 c^2} }
+\end{equation*}
+$ \psi_{nlm}(\vec{r}) $
+\begin{equation*}
+\Delta E_1 = \langle \psi_{nlm}(\vec{r}) | - \frac{1}{8} \frac{p^4}{m_e^3 c^2} | \psi_{nlm}(\vec{r}) \rangle = \int \dd \vec{r} \psi_{nlm}^{*} \left[- \frac{p^4}{m_e^3 c^2}\right] \psi_{nlm}(\vec{r})
+\end{equation*}
+$ \vec{p} \Rightarrow - i \hbar \vabla $ einsetzen liefert:
+
+\frbox{Korrekturterm}{
+\begin{equation*}
+\Delta E_1 = - E_n \frac{\alpha^2}{n^2} \left[\frac{3}{4} - \frac{n}{e + \frac{1}{2}}\right]
+\end{equation*}}
+$ n = $ Hauptquantenzahl\\
+$ \alpha = $ Feinstrukturkonstante $ \alpha = \frac{e^2}{4 \pi \epsilon_0 \hbar c} \approx \frac{1}{137} $\\[10pt]
+$ n=1, l=0 $ 1s Zustand
+\begin{equation*}
+\Delta E_1 = - E_{100} \frac{\alpha^2}{1} \left[\frac{3}{4} - \frac{1}{\frac{1}{2}}\right] = -E_{100} \alpha^2 \left(- \frac{5}{4}\right) = \frac{5}{4} \alpha^2 E_{100} \simeq 9 \cdot 10^{-4} \, \tx{eV}
+\end{equation*}
+\begin{equation*}
+E_{100} = E_{nlm} = - 13{,}5 \, \tx{eV}
+\end{equation*}
+
+\subsection{Darwin Term (Compton Wellenlänge)}
+
+
+%T6
+\hft
+
+
+\begin{equation*}
+V(r) = -\frac{e^2}{4 \pi \epsilon_0} \frac{1}{r}
+\end{equation*}
+$ \lambda \nu = c \quad \Rightarrow \quad \nu = \frac{c}{\lambda} $
+\begin{equation*}
+\left. \begin{array}{l}
+E = m_e c^2  \\
+E = h\nu = h \frac{c}{\lambda}
+\end{array} \right\} \Rightarrow m_e c^{\cancel{2}} = h \frac{\cancel{c}}{\lambda} \quad \Rightarrow \quad \lambda = \frac{h}{m_e c}
+\end{equation*}
+\begin{equation*}
+V(r) = -\frac{e^2}{4 \pi \epsilon_0} \frac{1}{r}
+\end{equation*}
+\begin{equation*}
+\Rightarrow \quad V_{\tx{eff}}(r) = \int \dd \vec{r}' \frac{e}{4 \pi \epsilon | \vec{r} - \vec{r}'|} \rho (\vec{r} + \vec{r}')
+\end{equation*}
+Im folgenden soll $ \lambda_{C} $ die reduzierte Compton-Wellenlänge also $ \frac{\lambda_C}{2 \pi} $ bezeichnen.
+
+
+%T7
+\hft
+
+
+\noindent
+\begin{equation*}
+\lambda_{C} = \frac{h}{m_e c} \frac{1}{2 \pi}
+\end{equation*}
+\begin{equation*}
+\rho(\vec{r} + \vec{r}') = \casess{- \frac{e}{\left(\frac{4}{3} \pi \lambda^3 c \right)}}{| \vec{r}'| < \lambda_C}{0}{| \vec{r}'| > \lambda_C}
+\end{equation*}
+\begin{equation*}
+V_{\tx{eff}} (\vec{r}) = V(r) + \frac{\pi}{2} \lambda^2 c \frac{e^2}{4 \pi \epsilon_0} \custo{\rightarrow}{\delta(\vec{r})}{\tx{Dirac Delta}}
+\end{equation*}
+\begin{equation*}
+\Delta E_2 = \frac{\pi}{2} \lambda^2 c \frac{e^2}{4 \pi \epsilon_0} \quad \langle \psi_{nlm}(\vec{r}) | \delta(\vec{r}) | \psi_{nlm}(\vec{r}) \rangle
+\end{equation*}
+$ l=0 $ $ s $-Zustände
+\begin{equation*}
+\Delta E_2 = - E_n \frac{\alpha^2}{n}
+\end{equation*}
+mit $ n $ der Hauptquantenzahl
+\begin{equation*}
+\frac{\Delta E_2}{E_{100}} = - \alpha^2 = - 5{,}3 \cdot 10^{-5}
+\end{equation*}
