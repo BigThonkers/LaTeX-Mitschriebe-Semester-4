@@ -1,0 +1,322 @@
+\chapter{Messungen, Zustände, Operatoren im Hilbertraum}
+
+Nun die etwas mathematischere Fassung, die letztlich (streng) durch die Theorie selbst-adjungier\-ter Operatoren im Hilbertraum gegeben ist \footnote{s. linear Operations in Hilbertspace, Joachim Weidmann, Springer-Vlg}. Ziel der mathematischen Darstellung, ist letztlich eine geometrische Anschauung des Hilbertraums.
+
+\section{Zustände und Projektoren im Hilbertraum}
+
+Zustandsvektor, abstrakt geschrieben: $ |\psi\rangle $\footnote{Diese schreibweise kommt aus der notation von ,,maps to`` $ \mapsto $ und wurde später zu $ | \dots \rangle $.} (stellt $ \hat{e}_p $), entsprechend $ |1\rangle $ statt $ \hat{e}_x $, $ |0\rangle $ statt $ \hat{e}_y $, $ c_1 $ statt $ \cos \theta $, $ c_0 $ statt $ \sin \theta $ in \eqref{spektrale zerlegung},
+\begin{equation}
+\Rightarrow \quad |\psi\rangle \overset{\eqref{spektrale zerlegung}}{=} c_0 |0\rangle + c_1 |1\rangle
+\label{psi lin kombi}
+\end{equation}
+wobei wir außerdem $ c_0 $ und $ c_1 $ kompaktwertig wählen \footnote{siehe Übungsaufgabe zu ellipisch polarisierten EM-Wellen}\\[10pt]
+\noindent
+Gemäß \eqref{psi lin kombi} ist $ | \psi \rangle $ ein Vektor in einem komplexen, zweidimensionalen Vektorraum, der zusätzlich mit dem \textbf{kanonischen Skalarprodukt} $ ( \cdot , \cdot) $ verziert sein soll.
+\begin{equation}
+\begin{aligned}
+c_0 = \left(|0\rangle , |\psi \rangle \right) \eqdef \langle 0 | \psi \rangle \qquad c_1 = \left(| 1 \rangle , | \psi \rangle \right) \eqdef \langle 1 | \psi \rangle\\
+|c_0|^2 + |c_1|^2 = 1 \quad (\tx{s.o. \eqref{spektrale zerlegung} und \eqref{cos2sin2}}) \qquad \langle 0 | 1 \rangle = \langle 1 | 0 \rangle = 0
+\end{aligned}
+\end{equation}
+Verallgemeinerung dieser Struktur auf Vektorraum $ \ham $ mit abzählbbarer Dimension $ \dim \ham \eqdef d_{\ham} $, das zusätzlich vollständig\footnote{d.h. alle Cauchy-Folgen konvergieren in $ \ham $.}\footnote{s. z. B. Barner, Flohr, Analysis I, S1199, Analysis II, S145} bzgl. des durch das iobige Skalarprodukt induzierter Norm:
+\begin{equation}
+|| \cdot || = ( \cdot , \cdot )^{\nicefrac{1}{2}}
+\label{norm}
+\end{equation}
+sein soll. Ein solcher Vektorraum heißt \textbf{Hilbertraum}.\\[10pt]
+Weitere Schreibweisen für $ |\varphi \rangle, | \psi \rangle \in \ham $:
+\begin{equation}
+\begin{aligned}
+\left(|\varphi \rangle, | \psi \rangle\right) &= \left( (\varphi_1, \dots, \varphi_{d_\ham}) ^\top , (\psi_1, \dots, \psi_{d_{\ham}} ) ^\top\right) = (\varphi_1^*, \dots, \varphi_{d_{\ham}}^*) \cdot \begin{pmatrix}
+\psi_1 \\ \vdots \\ \psi_{d_{\ham}}
+\end{pmatrix}\\
+&= \sum_{j=1}^{d_{\ham}} \varphi_j^* \psi_j = \langle\varphi | \psi \rangle
+\end{aligned}
+\label{scalarproduct}
+\end{equation}
+Damit festgelegt:
+\begin{equation*}
+|\psi \rangle = \begin{pmatrix}
+\psi_1 & \dots & \psi_{d_{\ham}}
+\end{pmatrix}^\top = \begin{pmatrix}
+\psi_1 \\ \vdots \\ \psi_{d_{\ham}}
+\end{pmatrix}
+\end{equation*}
+\begin{equation}
+\langle \varphi | = \begin{pmatrix}
+\varphi_1^* & \dots & \varphi_{d_{\ham}}^*
+\end{pmatrix} = \left(| \varphi \rangle ^\top \right)^* \eqdef | \varphi \rangle ^\dagger
+\label{adjungiert}
+\end{equation}
+$ |\varphi \rangle^\dagger = \langle \varphi | $ heißt der zu $ | \varphi \rangle $ \textbf{adjungierte} Vektor, ,,$ \dagger $`` wird ,,kreuz``, ,,cross``, ,,dagger`` gelesen. Analog zu \eqref{psi lin kombi} können wir jedem Zustand $ |\psi \rangle $ in der zugehörigen Orthonormalbasis (ONB) die Darstellung:
+\begin{equation}
+| \psi \rangle = \sum_{j=1}^{d_{\ham}} \langle j | \psi \rangle | j \rangle
+\label{psi j}
+\end{equation}
+Wir fordern die Normierung der Wellenfunktion $ \psi $:
+\begin{equation}
+\langle \psi | \psi \rangle = || \psi ||^2 = 1
+\end{equation}
+\begin{equation*}
+\eqref{psi j} \quad \widehat{=} \quad \sum | j \rangle \langle j | \psi \rangle \qquad \forall | \psi \rangle
+\end{equation*}
+zuordnen.
+\begin{equation*}
+|\psi \rangle = \sum | j\rangle \langle j | \psi \rangle \qquad \forall | \psi \rangle
+\end{equation*}
+\frbox{Zerlegung der Eins / Vollständigkeitsrelation}{%
+\begin{equation}
+\Rightarrow \quad \sum \ub{| j \rangle \langle j |}_{\tx{Projektor}} = \mathbbm{1} = (\tx{id})
+\label{zerlegungeins}
+\end{equation}}
+Die Zerlegung der Einst $ \equiv $ Identität in die ,,\textbf{Projektionsoperatoren}``
+\begin{equation*}
+| j \rangle \langle j | | j \rangle \langle j | = | j \rangle \langle j | j \rangle \langle j | = |j \rangle \langle j |
+\end{equation*}
+$ |j\rangle \langle j | $ nennt man auch das \textbf{dyadische Produkt} von $ |j \rangle $mit sich selbst.
+\begin{equation}
+P_j = | j \rangle \langle j |
+\label{2 9}
+\end{equation}
+Man sieht leicht, dass die ,,\textbf{Idempotenz}`` der $ P_j $: 
+\begin{equation}
+P^2_j = P_j \qquad \forall j
+\label{210}
+\end{equation}
+Zu jedem $ P_j $ definieren wir die ,,\textbf{Orthogonalprojektion}``
+\begin{equation}
+Q_j \defeq 1 - P_j
+\label{2 11}
+\end{equation}
+Hier gilt häufig $ 1 \defeq \mathbbm{1} = \tx{id} $\\[10pt]
+Eine andere Schreibweise für $ \langle j | \psi \rangle $ ist $ \vec{\psi} = \sum_j (\hat{e}_j , \vec{\psi}) \hat{e}_j $. Außerdem gilt: $ \langle \phi | \psi \rangle = (| \phi \rangle , | \psi \rangle) $
+\begin{equation}
+P_j \cdot Q_j = Q_j \cdot P_j = P_j - \ub{P_j^2}_{\overset{\eqref{210}}{P_j}} = 0
+\end{equation}
+Vollständig konsistent mit der geometrischen Anschauung orthogonaler Projektionen.\par
+Gleiches lässt sich für Summen von Projektoren sagen:
+\begin{equation}
+P = \sum_{j=1}^{M} P_j \qquad Q = 1 - P = \sum_{j=M+1}^{s_{\ham}} P_j
+\end{equation}
+\begin{equation}
+P^2 = P \qquad Q^2 = Q \qquad PQ = QP = 0 
+\end{equation}
+Man erinnere sich an das Beispiel in \eqref{1 2}
+
+
+%T1
+\hft
+
+\subsection*{\emph{Bemerkungen}}
+
+\begin{enumerate}[(a)]
+	\item Die abstrakte Schreibweise $ | \psi \rangle $ bzw. $ \langle \psi | $ geht auf Dirac zurück, daher auch ,,\textbf{Dirac-Notation}`` genannt.
+	\item $ | \psi \rangle $ nennt auch (Zustands-) ,,\textbf{Ket}`` (-Vektor), $ \langle \psi | $ entsprechend ,,\textbf{Bra}`` ($ \to $ Bracket /Klammer). In etwas mathematischerer Weise wird $ \langle \psi | $ auch als das zu $ | \psi \rangle $ gehörende lineare Funktional im zu Hilbertraum $ \ham $ dualen Raum aufgefasst, das vermöge \eqref{scalarproduct} jedem Ket $ |\phi \rangle \in \ham $ die Zahl $ (|\psi \rangle , |\phi \rangle \overset{\eqref{scalarproduct}}{=}) \langle \psi | \phi \rangle $ zuordnet \footnote{Cohen-Tannodji, TI Chap. II B2 b, p110} \footnote{Sakurai, p.13}.
+	\item In (II.1, 4-6, 8) haben wir ein bestimmmtes, durch vorgegebene, orthogonale Filterstellungen definiertes Basissystem $ \{ |0\rangle, |1 \rangle, \dots , | j \rangle , \dots \} $ gewählt. Dies entspricht den Eigenvektoren unseres Messoperators (siehe \eqref{1 2}) die auf ein eindeutiges Messresultat führen. Durch die (a priori beliebige) Wahl einer bestimmten ONB wähöt man eine bestimmte ,,\textbf{Darstellung}``\footnote{$ \to $Analogie ,,darstellende Matrix`` in Lin. Algebra, z.B. Fischer, Vieweg 1984 p.186 f.}, die man natürlich wechseln kann (z.B. durch Drehung des Basissystems).
+\end{enumerate}
+
+\section{Lineare, normale hermitesche, selbstadjungierte Operatoren}
+
+Die oben eingeführten Projektoren $ P_j $ sind offenbar \textbf{lineare} Operatoren, denn es gilt:
+\begin{equation}
+P_j \Big(\lambda |\phi \rangle + \mu | \psi \rangle \Big) = \lambda P_j |\phi \rangle + \mu P_j |\psi \rangle \qquad  \forall \lambda, \mu \in \mathbb{C}, | \phi \rangle, | \psi \rangle \in \ham
+\end{equation}
+Im Folgenden werden wir es ganz allgemein mit linearen Operatoren auf Hilberträumen zu tun haben, die auf Kets gemäß
+\begin{equation}
+A | u \rangle = | v \rangle
+\label{A}
+\end{equation}
+und auf Bras gemäß
+\begin{equation}
+\langle s | B = \langle t |
+\label{B}
+\end{equation}
+operieren. Man sagt $ A $ wirkt in \eqref{A} ,,nach rechts`` und $ B $ in \eqref{B} ,,nach links``. Interessiert man sich für die Wirkung von $ A $ aus \eqref{A} für einen Bra $ \langle w | $, so verschafft man sich zunächst die Wirkung von $ A $ auf eine vollständige (Ket-) Basis:
+\begin{equation}
+A | j \rangle = | j' \rangle  \qquad \forall j = 1 , \dots , d_{\ham}
+\end{equation}
+daraus, die ,,\textbf{Matrixelemente}``
+\begin{equation}
+ \langle w | A | j \rangle = \langle w | j' \rangle
+\end{equation}
+(wird auch als $ A_{wj} $ geschrieben) was die Darstellung:
+\begin{equation}
+\langle w | A \overset{*}{=} \sum_{j} \langle w | A | j \rangle \langle j |
+\label{2 20}
+\end{equation}
+Bei $ * $ spricht man auch vom Einsetzten/Anwenden von rechts ,,der Eins``. Entsprechend gilt:
+\begin{equation}
+A | u\rangle = \sum_{j} | j \rangle \langle j | A | u \rangle 
+\label{2 21}
+\end{equation}
+Daher gilt:
+\begin{equation}
+\langle w | A | u \rangle \overset{\eqref{2 20}}{=} \sum_j \langle w | A | j \rangle \langle j | u \rangle \overset{\eqref{2 21}}{=} \sum_{j} \langle w | j \rangle \langle j | A | u \rangle
+\end{equation}
+
+
+% | und | vor erstem gleich hervorheben und summe und | j \rangle \langle j | ebenfalls
+
+
+\noindent
+Der zu $ A $ in \eqref{A} ,,\textbf{adjungierte}`` Operator $ A^{\dagger} $ ist dadurch definiert, dass er auf $ \langle u | $ genauso operiert wie $ A $ auf $ | u \rangle $, d.h. für beliebige $ | u \rangle $, $ | v \rangle $ in  \eqref{A}:
+\begin{equation}
+\langle u | A^\dagger = \langle v |
+\label{2 23}
+\end{equation}
+Dies impliziert wegen \eqref{adjungiert}
+\begin{equation}
+\begin{aligned}
+\langle v | &\, \overset{\eqref{adjungiert}}{=} \left(| v \rangle ^\top\right)^* \overset{\eqref{A}}{=} \left((A | u \rangle)^\top \right)^* \overset{\eqref{2 21}}{=} \left(\sum_{j} | j \rangle \langle j | A | u \rangle \right)^{\top *}\\
+& \ \ = \left(\sum_{j} \langle j | A | u \rangle | j \rangle^{\top}\right)^{*} = \sum_j \langle j | A | u \rangle^{*} \langle j | \\
+&\overset{\substack{\eqref{zerlegungeins} \\ \eqref{2 23}}}{=} \sum_j \langle u | A^\dagger | j \rangle \langle j | \quad \tx{und insbesondere für} \quad \langle u | A = \langle v |
+\end{aligned}
+\end{equation}
+\begin{equation}
+\langle j | A | u \rangle ^{*} = \langle u | A | j \rangle
+\label{2 25}
+\end{equation}
+d.h. die Matrixdarstellung von $ A $ geht durch Transposition und komplexe Konjugation in sich selbst über, bzw. die Matrixdarstellung von $ A $ ist bis auf komplexe Konjugation symmetrisch (bzgl. Spiegelung an der Diagonalen).\par
+Kürzer:
+\begin{equation}
+A^\dagger \overset{\substack{\eqref{scalarproduct} \\ \eqref{adjungiert}}}{=} (A^{\top})^{*} = (A^{*})^{\top} = A
+\label{2 26}
+\end{equation}
+$ A $ heißt dann ,,\textbf{hermitesch}``.
+
+%7.05.19
+
+kurze Widerholung
+\begin{equation*}
+|\psi \rangle = \sum \langle j | \psi \rangle | j \rangle \qquad \begin{pmatrix}
+\langle 1 | \psi \rangle \\ \langle 2 | \psi \rangle \\ \vdots \\ \langle d_{\ham} | \psi \rangle
+\end{pmatrix}
+\end{equation*}
+\begin{equation*}
+\langle j | A | u \rangle \overset{\eqref{2 25}}{=} \langle u | A | j \rangle
+\end{equation*}
+\begin{equation*}
+A_{j u}^{*} \qquad \qquad A_{u j}
+\end{equation*}
+
+\subsubsection*{\emph{Bemerkung:}}
+
+
+
+% change double footnote below \footnotetext{footnote with two references}
+
+
+
+
+\begin{enumerate}[(a)]
+	\item Häufig wird ,,\textbf{hermitesch}`` synonym mit dem Begriff ,,selbsadjungiert`` gebraucht, was jedoch nur in endlichdimensionalen Hilberträumen korrekt ist. D.h. es ist gut für viele aber eben nicht für alle Anwendungen\footnote{M. Reed, B Simon, Methods in Modern Mathematical Physics, Academie Press, Vol I-IV.}. I.a. muss für Selbstadjungiertheit noch fordern, dass der Definitionsbereich von $ A $ mit jedem von $ A^\dagger $ übereinstimmt\footnote{$ \to $ z.B. R- S, Vol I, p.255; I.a. $ D(A) \subset D(A^\dagger) $}.
+	
+	\subsubsection{Etwas formalere Definition (nach \texorpdfstring{$ ^9 $}{9})}
+	
+	Sei $ A $ ein Operator auf $ \ham $ mit dem Definitionsbereich $ D(A) $ dicht in $ \ham $. $ D(A^\dagger) \equiv $ die Menge aller $ |\phi \rangle \in \ham $ zu denen ein $ |\eta \rangle \in \ham $ existiert, derart, dass (s.o. \eqref{scalarproduct}). \hfw
+	\begin{equation*}
+	(| \phi \rangle , A | \psi \rangle) = (| \eta \rangle , | \psi \rangle)  \qquad \forall | \psi | \psi \rangle \in D(A)
+	\end{equation*}
+	\hfw
+	\item Statt ,,hermitesch`` wird in der mathematischen Literatur auch der Begriff ,,\textbf{symmetrisch}`` gebraucht.
+	\item In der mathematischen Literatur wird statt $ A^\dagger $ auch häufig $ A^* $ geschrieben, was zwingend zu Durcheinander führen muss\footnote{$ \to $ RS I, p.252}.
+	\item Wir fassen die Wirkung der Operation ,,$ \dagger $`` (Adjunktion) auf Skalare, Vektoren und Operatoren zusammen:
+	\begin{equation*}
+	\langle u | v \rangle^\dagger \overset{\tx{Skalar}}{=} \langle u | v \rangle^* \overset{\tx{Skalarprodukt}}{=} \langle v | u \rangle
+	\end{equation*}
+	\begin{equation*}
+	| u \rangle ^\dagger = \langle u |
+	\end{equation*}
+	\begin{equation}
+	(A B | u \rangle)^\dagger = \left[(A B | u \rangle)^\top\right]^* = \left[ (| u \rangle)^\top B^\top A^\top \right]^* \overset{\eqref{2 26}}{=} \langle u | B^\dagger A^\dagger
+	\end{equation}
+	\item Die Projektoren $ P_j $ aus \eqref{2 9} sind offenbar selbsadjungiert
+	\begin{equation*}
+	P_j = | j \rangle \langle j |
+	\end{equation*}
+	\begin{equation*}
+	\left(\left(P_j\right)^\top\right)^* = \left[\left(| j \rangle \langle j |\right)^\top\right]^* = \left[\left(\langle j |\right)^\top \left(| j \rangle\right)^\top \right]^* = | j \rangle \langle j |
+	\end{equation*}
+	\item Eine etwas größere Klasse von Operatoren sind die sogenannten ,,\textbf{Normaloperatoren}``, die durch die Eigenschaft:
+	\begin{equation}
+	A A^\dagger = A^\dagger A \qquad \left[A, A^\dagger\right] = A A^\dagger - A^\dagger A = 0
+	\end{equation}
+	definiert sind.
+	\item Ein linearer Operator $ A $ heißt ,,\textbf{invertierbar}`` mit dem \textbf{inversen Operator} $ A^{-1} $, wenn die durch \eqref{A} definierte Abbildung \textbf{eindeutig umkehrbar} ist. Es also einen Operator $ A^{-1} $ mit der Eigenschaft:
+	\begin{equation*}
+	| u \rangle = A^{-1} | v \rangle \qquad \forall |u\rangle , |v \rangle \in \ham \quad \tx{im Sinne von \eqref{A}}
+	\end{equation*}
+	gibt.
+\end{enumerate}
+
+\section{Der Spektralsatz für Normaloperatoren}
+
+\setcounter{equation}{29}
+
+Der womöglich zentralste Satz der Funktionalanalysis für die Quantenmechanik:\\[5pt]
+Jeder Normaloperator $ A $ lässt sich schreiben als:
+\begin{equation}
+\rmbox{A = \sum_{a} a | a \rangle \langle a | = \sum_{a} a P_a}
+\label{spektralsatz}
+\end{equation}
+mit Eigenvektoren $ |a\rangle $ von $ A $ d.h.
+\begin{equation}
+ A | a \rangle = a | a \rangle \qquad P_a = | a \rangle \langle a |
+\end{equation}
+Jede in eine Potenzreihe entwickelbare Funktion $ f(A) $ von $ A $ ist dann darstellbar als:
+\begin{equation}
+\rmbox{f(A) = \sum_{a} f(a) | a \rangle \langle a | = \sum_{a} f(a) P_a}
+\end{equation}
+Zur Verdeutlichung: Es gilt allgemein dass:
+\begin{equation*}
+| a \rangle = \sum \langle j | a \rangle | j \rangle
+\end{equation*}
+Z.B.:
+\begin{equation*}
+| \psi _t \rangle = \exp(- i \ham t / \hbar) | \psi_0 \rangle = \sum_j \exp(- i E_j t / \hbar) | E_j \rangle \langle E_j | \psi_0 \rangle
+\end{equation*}
+
+\subsubsection*{\emph{Beweisskizze:}}
+
+[ $ A $ Normaloperator $ \Rightarrow $ \eqref{spektralsatz}; ,,$ \Leftarrow $`` in den Übungen]\\[10pt]
+Sei $ |a_1 \rangle $ ein (normierter) Eigenvektor von $ A $ zum Eigenwert $ a_i $,
+\begin{equation}
+ A | a_1 \rangle = a_1 | a_1 \rangle \tag{i}
+ \label{i}
+\end{equation}
+
+
+% fix multiple refs below
+
+
+
+\noindent
+Aus (II, 5, 16, 23)
+\begin{equation}
+\langle a_i | A^\dagger = \langle a_1 | a_1^{*} \tag{ii}
+\label{ii}
+\end{equation}
+Also gilt $ \langle a_1 | A | a_1 \rangle = a_1 $ und $ \langle a_1 | A^\dagger | a_1 \rangle = a_1^{*} $. Aus der letzteren Gleichung folgt (siehe \eqref{2 11})
+\begin{equation}
+A^\dagger |a_1\rangle = a_1^{*} |a_1\rangle + | b \rangle \tag{iii}
+\label{iii}
+\end{equation}
+mit 
+\begin{equation}
+\langle a_1 | b \rangle = 0 \tag{iv}
+\label{iv}
+\end{equation}
+Nach Voraussetzung ist $ A $ normal, d.h.
+\begin{align*}
+\langle a_1 | A A^\dagger - A^\dagger A | a_1 \rangle &= \langle a_1 | A A^\dagger | a_1 \rangle - \ub{\langle a_1 | A^\dagger A | a_1 \rangle}_ {|a_1|^2 \langle a_1 | a_1 \rangle = | a_1 | ^2} \\
+&\overset{(*)}{=} \left(\langle a_1 | a_1 + \langle b |\right) \left(a_1^{*} | a_1 \rangle + | b \rangle\right) - | a_1 |^2 \\
+&\overset{\phantom{(*)}}{=} |a_1|^2 + \langle b | b \rangle - |a_1|^2 = \langle b | b \rangle \\
+&\overset{\tx{L.S.}}{=} \left[A, A^\dagger\right] = 0
+\end{align*}
+Bei $ (*) $ wurden die Gleichungen \eqref{i}, \eqref{ii}, \eqref{iii} und \eqref{iv} verwendet.
+\begin{align*}
+\Rightarrow |b\rangle &= 0, & A^{\dagger}|a_1\rangle &=a_1^*|a_1\rangle & \textrm{bzw}\qquad \langle a_1|A &=\langle a_1|a_1
+\end{align*}
+Im n"achsten Schritt definieren wir $A'\defeq A-a_1|a_1\rangle\langle a_1|$. Dann verschwindet $A'$ auf $|a_1\rangle$ und auf $\langle a_1|$ wegen \eqref{iv}. %das soll ein ref zu der gleichung sein
+Sei $|a_2\rangle$ Eigenvektor von $A'$ mit Eigenwert $a_2$ und $\langle a_1|a_2\rangle=0$.
+Danach Verfahren wie oben mit $|a_1\rangle$, etc, um schlie\ss lich die Darstellung $A-\sum_l a_l |a_l\rangle \langle a_l|=0$ zu gewinnen $\rightarrow$ Behauptung. %das rightarrow ist ein halbkreis pfeil nach unten 

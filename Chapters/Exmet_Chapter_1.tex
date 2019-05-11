@@ -1,0 +1,122 @@
+\chapter{Wechselwirkung geladener Teilchen mit Materie}
+
+Nachweis durch Wirkung des Teilchens auf die Materie
+
+\begin{itemize}
+	\item Ionisation, Szintillation
+	\item \v{C}evenkov-, Übergangsstrahlung
+	\item Rückstoß
+\end{itemize}
+$ \Rightarrow $ Teilcheneigenschaften verändert
+\begin{itemize}
+	\item Energieverlust
+	\item Richtungsänderung
+	\item Identitätsverlust
+\end{itemize}
+
+\section{Klassische Betrachtung der Rutherfordstreuung}
+
+\begin{itemize}
+	\item stimmt mit QM in niederster Ordnung überein\\[5pt]
+	solange: ,,schwere Teilchen``\\
+	$ v \gg v_{e \tx{ in Hülle}} $\\
+	$ \Delta E \gg \tx{Bindungsenergie von } e^- $
+\end{itemize}
+
+%T1
+\hft
+
+Typisches Beispiel:
+\begin{equation*}
+\mu^+ + \tx{Atom} \to \mu^+ + (\tx{Atom} + e^-)
+\end{equation*}
+Coulomb-Kraft
+\begin{equation*}
+F_{\parallel}(x) = F_{\parallel}(-x)
+\end{equation*}
+\begin{equation*}
+F_{\perp} = \frac{1}{4 \pi \epsilon_0} \frac{z \cdot e \cdot Z \cdot e}{r^2} \frac{b}{|\vec{r}|}
+\end{equation*}
+Impulsübertrag
+\begin{equation*}
+\Delta \rho_{T} = \int_{- \infty}^{\infty} F_{\perp} \dd f = \frac{e^2}{4 \pi \epsilon_0} \cdot \frac{2 Z \cdot z}{\beta c b}
+\end{equation*}
+$ \beta = \frac{v}{c} $
+\lcom{Mehr zum Thema und die genaue Rechnung findet man im Lehrbuch von Jackson.}\\
+\textbf{Energieübertrag}\\
+\folie{Energieverlust: klassisch nach Bohr}
+\begin{equation*}
+\Delta E = \frac{\Delta \rho_{T}^2}{2 M} = \frac{e^4}{(4 \pi \epsilon_0)^2} \cdot \frac{Z^2 z^2}{M \beta^2 c^2 b^2} \propto \frac{1}{b^2}
+\end{equation*}
+bei Kohärenter Streuung
+\begin{equation*}
+\frac{\Delta E \tx{ Elektronenhülle}}{\Delta E \tx{ Kern}} = \frac{2 m_p}{m_e} \approx 4000
+\end{equation*}
+Hülle: $ M = Z \cdot m_e $\\
+Kern: $ M = A \cdot m_p = 2 Z \cdot m_p $\\
+\ribox{$ \Rightarrow $ Die Streuung am Kern ist vernachlässigbar}\\
+Der gesamte (mittlere) Energieverlust ist dann:
+\begin{align*}
+\langle\dd E\rangle &= \int \Delta E \cdot \ub{2 \pi b \ \dd b}_{\mathclap{\tx{Volumenelement}}} \ \cdot Z \cdot \ub{\frac{\rho \cdot N_A}{A}}_{= n_e} \dd x
+\end{align*}
+\frbox{Bethe-Bloch Beziehung}{
+\begin{align*}
+\left\langle \frac{\dd E}{\dd x} \right\rangle &= D \cdot \ub{\frac{Z \cdot \rho}{A}}_{\mathclap{\tx{Medium}}} \ \cdot \ \ub{\left(\frac{z}{\beta}\right)^2}_{\mathclap{\tx{Projektil}}} \cdot \ub{\ln\left(\frac{b_{\tx{max}}}{b_{\tx{min}}}\right)}_{\frac{1}{2} \ln \left( \frac{2 m_e c^2 \gamma^2 \beta^2}{I} T_{\tx{max}}\right) } \\
+&= D \cdot \ub{\frac{Z \cdot \rho}{A}}_{\mathclap{\tx{Medium}}} \ \cdot \ \ub{\left(\frac{z}{\beta}\right)^2}_{\mathclap{\tx{Projektil}}} \cdot \ \frac{1}{2} \ln \left( \frac{2 m_e c^2 \gamma^2 \beta^2}{I} T_{\tx{max}} \right)
+\end{align*}}
+\noindent
+mit $ I = \hbar \omega $: Ionisationspotential des Streuzentrums\\
+und $ T_{\tx{max}} $: der Energie des $ e^- $ tragen kann\\[5pt]
+\folie{Energieverlust}\\
+\folie{Mittlerer Energieverlust nach Bethe Bloch}\\
+\folie{Relativistischer Anstieg}\\
+\folie{Materialabhängigkeit des mittleren Energieverlusts}\\
+\folie{Minimaler Energieverlust}\\
+\folie{Abhängigkeit vom Ionisationspotential}\\
+\folie{Reichweite von Teilchen in Materie}\\
+\folie{Bragg-Kurve} (Einstrahl-Tiefe in einen Menschen)\\
+\folie{Anwendung Teilchenidentifizierung}\\
+\folie{Energieverlust von Teilchen durch Ionisation}
+
+% 6.05.19
+
+\section{Energieverlust von Elektronen \texorpdfstring{$ e^- $}{e-} und Positronen \texorpdfstring{$ e^+ $}{e+}}
+
+Bremsstrahlung führt zu zusätzlichem Energieverlust.
+\begin{equation*}
+E_{K} \approx \frac{600 \dots 700}{Z} \, \tx{MeV} \qquad \textbf{kritische Energie}
+\end{equation*}
+$ Z $ des Materials. Unterschiede zwischen fest, flüssig, gasförmig.
+\begin{center}
+	\begin{tabular}{l|c}
+		Material & $ E_K $ \\
+		\hline
+		Luft: & 84,0 MeV\\
+		Pb: & 7,4 MeV
+	\end{tabular}
+\end{center}
+\begin{equation*}
+\prd{E}{x} \bigg|_{\tx{Brems}} \propto \frac{Z^2}{m^2} \ \ \begin{array}{l} \tx{Target} \\ \tx{Projektil} \end{array}
+\end{equation*}
+Bremsstrahlung wichtig für $ e^{\pm} $
+\begin{equation*}
+\frac{m_\mu^2}{m_e^2} \left(\frac{100}{0{,}5}\right)^2 = 40000
+\end{equation*}
+(Eigentlich 105 statt 100)\\[5pt]
+Bremsstrahlung führt zu
+\begin{align*}
+\prd{E}{x} &= E_e \cdot 4 \alpha r_e^2 N_A \frac{\rho Z}{A} \left\{ \ln \frac{183}{Z^{\nicefrac{1}{3}}} + \frac{1}{18} - f(z) \right\}\\
+f(z) &= \alpha Z \left\{  \frac{1}{1 + \alpha^2 Z^2} + 0.2 + \mathcal{O}(\alpha Z^2)\right\}
+\end{align*}
+$ \alpha $: gemessene Konstante $ \alpha = 5{,}3 $ für H $ \big| 3 $ Pb
+
+\subsection{Strahlungslänge}
+
+\begin{equation*}
+\frac{1}{L_{\tx{rad}}} = 4 \alpha r_e^2 N_A \frac{\rho Z}{A} \left\{ \ln \frac{183}{Z^{\nicefrac{1}{3}}} + \frac{1}{18} - f(z) \right\} = \prd{E}{x} \cdot \frac{1}{E_e}
+\end{equation*}
+(Die Formale stammt von Bether Heitler).\\
+Die Strahlungslänge ist die Distanz, in der die $ e^{\pm} $ den Bruchteil $ (1 - \nicefrac{1}{e}) $ der Energie durch Bremsstrahlung verlieren.
+\begin{equation*}
+\prd{E}{x} \bigg|_{\tx{Brems}} = \frac{E_e}{L_{\tx{rad}}}
+\end{equation*}
