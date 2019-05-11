@@ -1080,3 +1080,115 @@ mit $ n $ der Hauptquantenzahl
 \begin{equation*}
 \frac{\Delta E_2}{E_{100}} = - \alpha^2 = - 5{,}3 \cdot 10^{-5}
 \end{equation*}
+
+\subsection*{Programm Heute}
+\begin{itemize}
+\item Spin-Bahn Kopplung
+\item Feinstruktur des Wasserstoffs
+\item Zeeman Effekt $\begin{matrix}\rightarrow \textrm{Anomaler Zeeman Effekt} \\ \rightarrow \textrm{Normaler Zeeman Effekt} \\ \rightarrow \textrm{Paschen-Back Effekt}\end{matrix}$ % OwO
+\item Spin Bahn Kopplung
+\end{itemize}
+\begin{minipage}{0.4\textwidth}
+\begin{align*}
+L &= 1:2_{} & 2p & \rightarrow \begin{matrix}2p_{\nicefrac{1}{2}} \\ 2p_{\nicefrac{3}{2}}\end{matrix} \\
+& \bar{L} \Rightarrow \vec{\mu}_C = -\frac{\mu_B}{\hbar}\vec{L} \\
+& \bar{s} \Rightarrow \vec{\mu}_s = -g_s \frac{\mu_B}{\hbar}\vec{s}
+\end{align*}
+\end{minipage}
+\begin{minipage}{0.4\textwidth}
+%T1
+\hft
+\end{minipage}
+
+\begin{minipage}{0.4\textwidth}
+Bezugssystem des Elektrons:
+
+%T2
+\hft
+
+\end{minipage}
+\begin{minipage}{0.4\textwidth}
+Bio Savart Gesetz:
+\begin{align*}
+\mathrm{d}\bar{B} &= \frac{\mu_0}{4\pi} I \frac{\mathrm{d}I\times\Delta\vec{r}}{|\Delta r|^3} & \Rightarrow B &= \frac{\mu_0I}{2r} \\
+I &= \frac{e}{T} \frac{ev_K}{2\pi r_K} & \rightarrow B&= \frac{\mu_0}{2r} \frac{ev_K}{2\pi r_K} = \frac{\mu_0 e v_K r_K}{4 \pi r_K^3}
+\end{align*}
+\end{minipage}
+\\
+\\
+\begin{equation*}
+B = \frac{\mu_0 e v_K r_K}{4\pi r_K^3} \Rightarrow \vec{B} = \frac{\mu_0 e }{4 \pi r_K^3} = \frac{\mu_0 e}{4 \pi r_K^3 m_e}\vec{r}_K \times m_e \vec{v}_K
+\end{equation*}
+
+\[
+B = \frac{\mu_0 e}{4 \pi r^3 m_e} (\vec{r} \times m_e \vec{v})\underbrace{\frac{1}{2}}_{\mathclap{\substack{\textrm{Thomas Faktor aus} \\ \textrm{Lorenz Transformation}}}}
+\]
+
+\begin{align*}
+\rmbox{ B = \frac{\mu_0 e }{8 \pi r^3 m_e}\vec{L}} & & \vec{L} &= \vec{r} \times \m_e \vec{v} = \vec{r}\times\vec{p}
+\end{align*}
+
+\[
+E = -\underbrace{\vec{\mu}_s}_{{\substack{\textrm{Magnetisches} \\ \textrm{Dipolmoment}}}} \cdot \underbrace{\vec{B}_r}_{{\substack{\textrm{"au\ss eres} \\ \textrm{ Magnetfeld}}}} = -\underbrace{(-g_s \frac{\mu_B}{\hbar} \vec{s})}_{\mu_s} \cdot \underbrace{\frac{\mu_0 e}{8 \pi r^3 m_e} \vec{L}}_{B} = \underbrace{g_s \mu_B \frac{\mu_0e}{8 \pi r^3 m_e}\frac{1}{\hbar}\vec{s}\vec{L}}_{\mathclap{\textrm{nur abh"angig von }r,\ \vec{s},\ \vec{L}}}
+\] % I'm so sorry.
+
+\[\textrm{Suchen }\vec{s}\cdot\vec{L}:\ \vec{j} = \vec{L} + \vec{s} \Rightarrow \vec{j}^2 = \vec{L}^2 + \vec{s}^2 + 2\vec{L} \cdot\vec{s} \Leftrightarrow \vec{L} \cdot \vec{s} = \frac{1}{2}(j^2 - L^2 - s^2)\]
+Eigenzust"ande: $j^1;\ L^2;\ s^2$ \\
+Basen: $\{ L^2;\ L_2;\ s^2;\ s_2\ \underbrace{\rmbox{\{j^2;\ L_2;\ s^2;\ j_2}}_{\textrm{Fokus auf die 2. da dort }j\textrm{ dabei ist.}}$
+
+\[
+E = \frac{\mu e^2}{8 \pi r^3 m_2^2}\cdot \vec{s}\cdot \vec{L} = \frac{\mu_0 e^2}{8\pi r^3 m_e^2} \frac{1}{2} [j^2 - L^2 - s^2] \Rightarrow H_{SO} = \textrm{Spin-Bahn Kopplung}
+\]
+
+\[
+E = \langle H_{SO}\rangle = \frac{\mu_- e^2}{8\pi m_e^2} \frac{1}{2} \left\langle njLsj_z\Bigg|\frac{1}{r^3}Lj^2 - L^2 - s^2 \Bigg| njLsj_2\right\rangle
+\]
+% Quantenzahlen unseres Systems in neuer Basis davor |n, L, m\langle;|nLmm_s\rangle diesmal aber nicht benutzbar. (Da wir immer die Eigenzust"ande w"ahlen m"ussen.)
+
+\[
+E = \langle H_{SO}\rangle = \underbrace{\frac{\mu_0 e^2}{8\pi m_e^2} \frac{1}{2} \frac{1}{r^3nL}}_{\textrm{radial Anteil}} \underbrace{\langle jLsj_z | Lj^2-L^2-s^2 | jLsj_z\rangle}_{\textrm{Winkelanteil}}
+\]
+
+\[
+\left\langle\nicefrac{1}{r^3}\right\rangle = \left\langle nL | \nicefrac{1}{r^3} |nL\right\rangle = \frac{1}{r^3m_e}
+\]
+
+\[
+E = \langle H_{SO}\rangle = \frac{\mu_0 e^2}{8\pi m_e^2} \frac{1}{2} \frac{1}{r^3m_e}\{j(j+1)\hbar^2 - L(L+1)\hbar^2 - s(s+1)\hbar^2\}
+\]
+
+\[
+\rmbox{
+E = \langle H_{SO} \rangle = \frac{a}{2} [j(j+1) - L(L+1) - s(s+1)]}\qquad a = \frac{\mu_0 e^2}{8\pi m_e^2}\frac{1}{rm_e} \hbar^2
+\]
+
+\begin{itemize}
+\item 
+$j = L-\frac{1}{2}$ \begin{align*} E=\langle H_{SO}\rangle &= \frac{a}{2}[(L-\nicefrac{1}{2})(L+\nicefrac{1}{2}) - L(L+1) - \nicefrac{3}{4}] \\
+&=-\frac{a}{2}(L+1)
+\end{align*}
+\item 
+$j = L+\frac{1}{2}$ \begin{align*} E=\langle H_{SO}\rangle &= \frac{a}{2}[(+-\nicefrac{1}{2})(L+\nicefrac{1}{2}) - L(L+1) - \nicefrac{3}{4}] \\
+&=\frac{aL}{2}
+\end{align*}
+\end{itemize}
+
+Aufspaltung der Energie einmal gr"o\ss er einmal kleiner.
+%T3
+\hft
+\[
+\frac{\Delta e_3}{E_{210}} = -\frac{\alpha^2}{12} = -4\cdot44\cdot10^{-6}
+\]
+\[
+210 \Rightarrow n=2,\ L=1 \Rightarrow \textrm{2p Zustand} \Rightarrow j=\frac{3}{2}
+\]
+$\Delta E_1,\ \Delta E_2,\ \Delta E_3$ alle Beschrieben
+\frbox{Feinstruktur der Energieniveaus}{
+\[\Delta E_\mathrm{FStruktur} = \Delta E_1 + \Delta E_2 + \Delta E_3 = E_m\left[\frac{\alpha^2}{n}\left(\frac{1}{j+\nicefrac{1}{2}} - \frac{3}{4n}\right)\right]\]
+}
+nur von $n$ und $j$ abh"angig.
+
+%T4
+\hft
+
+\hfw
