@@ -97,6 +97,7 @@ Vollständig konsistent mit der geometrischen Anschauung orthogonaler Projektion
 Gleiches lässt sich für Summen von Projektoren sagen:
 \begin{equation}
 P = \sum_{j=1}^{M} P_j \qquad Q = 1 - P = \sum_{j=M+1}^{s_{\ham}} P_j
+\label{2 13}
 \end{equation}
 \begin{equation}
 P^2 = P \qquad Q^2 = Q \qquad PQ = QP = 0 
@@ -110,7 +111,7 @@ Man erinnere sich an das Beispiel in \eqref{1 2}
 \subsection*{\emph{Bemerkungen}}
 
 \begin{enumerate}[(a)]
-	\item Die abstrakte Schreibweise $ | \psi \rangle $ bzw. $ \langle \psi | $ geht auf Dirac zurück, daher auch ,,\textbf{Dirac-Notation}`` genannt.
+	\item Die abstrakte Schreibweise $ | \psi \rangle $ bzw. $ \langle \psi | $ geht auf Dirac zurück, daher auch ,,\textbf{Dirac-} \textbf{Notation}`` genannt.
 	\item $ | \psi \rangle $ nennt auch (Zustands-) ,,\textbf{Ket}`` (-Vektor), $ \langle \psi | $ entsprechend ,,\textbf{Bra}`` ($ \to $ Bracket /Klammer). In etwas mathematischerer Weise wird $ \langle \psi | $ auch als das zu $ | \psi \rangle $ gehörende lineare Funktional im zu Hilbertraum $ \ham $ dualen Raum aufgefasst, das vermöge \eqref{scalarproduct} jedem Ket $ |\phi \rangle \in \ham $ die Zahl $ (|\psi \rangle , |\phi \rangle \overset{\eqref{scalarproduct}}{=}) \langle \psi | \phi \rangle $ zuordnet \footnote{Cohen-Tannodji, TI Chap. II B2 b, p110} \footnote{Sakurai, p.13}.
 	\item In (II.1, 4-6, 8) haben wir ein bestimmmtes, durch vorgegebene, orthogonale Filterstellungen definiertes Basissystem $ \{ |0\rangle, |1 \rangle, \dots , | j \rangle , \dots \} $ gewählt. Dies entspricht den Eigenvektoren unseres Messoperators (siehe \eqref{1 2}) die auf ein eindeutiges Messresultat führen. Durch die (a priori beliebige) Wahl einer bestimmten ONB wähöt man eine bestimmte ,,\textbf{Darstellung}``\footnote{$ \to $Analogie ,,darstellende Matrix`` in Lin. Algebra, z.B. Fischer, Vieweg 1984 p.186 f.}, die man natürlich wechseln kann (z.B. durch Drehung des Basissystems).
 \end{enumerate}
@@ -320,3 +321,157 @@ Bei $ (*) $ wurden die Gleichungen \eqref{i}, \eqref{ii}, \eqref{iii} und \eqref
 Im n"achsten Schritt definieren wir $A'\defeq A-a_1|a_1\rangle\langle a_1|$. Dann verschwindet $A'$ auf $|a_1\rangle$ und auf $\langle a_1|$ wegen \eqref{iv}. %das soll ein ref zu der gleichung sein
 Sei $|a_2\rangle$ Eigenvektor von $A'$ mit Eigenwert $a_2$ und $\langle a_1|a_2\rangle=0$.
 Danach Verfahren wie oben mit $|a_1\rangle$, etc, um schlie\ss lich die Darstellung $A-\sum_l a_l |a_l\rangle \langle a_l|=0$ zu gewinnen $\rightarrow$ Behauptung. %das rightarrow ist ein halbkreis pfeil nach unten 
+
+%13.05.19
+
+\section{Observablen, vollständige Sätze von Observablen, Tensorräume}
+
+\textbf{Bisher:} Hilbertraumstruktur erschlossen aus der Wirkung von Polarisationsfiltern auf Photon wohldefinierter Eingangspolarisation, daraus folgte die Dimension des Hilbertraums.\\[5pt]
+Jetzt \textbf{allgemeiner:} Selbstadjungierte Operatoren $ A $, deren Eigenvektoren eine Orthonormalbasis des Hilbertraums $ \ham $ darstellen, mit anderen Worten: der Vollständigkeitsrelation \eqref{zerlegungeins} genügen, bezeichnen wir als ,,\textbf{Observable}``.\par
+Dies stellt jedoch nicht sicher, dass die Basisvektoren von $ \ham $ durch das Eigenwertspektrum von $ A $ eindeutig unterscheidbar sind, da letztere entartet sein können.\par
+Daher bedarf es i.d.R. eines ,,\textbf{vollständigen Satzes von Observablen}`` $ A, B, C, \dots $ derart, dass:
+\begin{enumerate}[a)]
+	\item $ A, B, C, \dots $ paarweise \textbf{kommutieren} (oder auch ,,\textbf{vertauschen}``), d.h. $ AB = BA $, $ AC = CA $, $ BC = CB $ , \dots oder, in der üblichen \textbf{Kommutator-Schreibweise} $ [A,B]=0 $, $ [A,C]=0 $, $ [B,C]=0 $ \dots mit 
+	\begin{equation}
+	[A,B]=0 = AB-BA
+	\label{2 33}
+	\end{equation}
+	Die Vertauschbarkeit impliziert, dass $ A, B, C, \dots $ gleichzeitig diagonalisierbar sind, d.h. eine gemeinsame Eigenbasis besitzen (Beweis s.u.).
+	\item Die Eigenwerte $ \{ a_j, b_j, c_j, \dots \} $ von $ A, B, C, \dots $ die \textbf{eindeutige} Identifikation jedes Eigenvektors erlauben. $ \{ a_j, b_j, c_j, \dots \} $ heißen dann für den jeweiligen Eigenzustand charakteristische ,,Quantenzahlen``.
+\end{enumerate}
+
+\subsubsection*{\emph{Beweis}}
+
+\textbf{Beweis der Äquivalenz von Vertauschbarkeit und Existenz einer gemeinsamen Basis zweier selbsadjungierten Operatoren $ A $ und $ B $.}
+\begin{enumerate}[(i)]
+	\item \textbf{gemeinsames Eigensystem $ \Rightarrow $ Vertauschbarkeit}\\
+	Sei $ |c\rangle $ Eigenvektor von $ A $ und $ B $, mit $ A | c \rangle = a | c \rangle $ und $ B|c\rangle = b | c\rangle $ so folgt:
+	\begin{equation*}
+	A B | c \rangle = b A | c \rangle = b a | c \rangle = a b | c \rangle = a B | c \rangle = B a | c \rangle = B A | c \rangle
+	\end{equation*}
+	Gilt dies (nach Voraussetzung) für alle Eigenvektoren von $ A $ und $ B $, dann auch für alle Vektoren in $ \ham $.
+	\item \textbf{Vertauschbarkeit $ \Rightarrow $ Existenz einer gemeinsamen Basis}\\
+	Zunächst sollen $ A $ und $ B $ jeweils nichtentartete Spektren haben. Dann folgt aus
+	$ A|a\rangle = a |a\rangle $ und $ AB = BA $, dass $ AB |a\rangle = BA|a\rangle = aB|a\rangle $, d.h. $ B|a\rangle $ ist Eigenvektor von $ A $ zum selben Eigenwert $ a $, d.h. wegen Nichtentartung der Spektren, $ B|a\rangle = \lambda|a\rangle $, daher $ |a\rangle $ auch Eigenvektor von $ B $.\par
+	Ist dagegen $ a $ ein entarteter Eigenwert von $ A $. Dann lässt sich jeder Eigenvektor $ |a_n\\rangle $ von $ A $ aus dem zu a gehörigen, entarteten Unterraum schreiben als
+	\begin{equation*}
+	|a_n\rangle = \sum_{b} \langle b | a_n \rangle | b \rangle
+	\end{equation*}
+	mit $ B|b\rangle = b |b\rangle $. Da $ |a_n\rangle $ Eigenvektor von $ A $ zum Eigenwert $ a $, folgt
+	\begin{equation*}
+	\sum_b(A-a) \langle b | a_n \rangle | b \rangle = 0
+	\end{equation*}
+	Angenommen, $ (A - a)|b\rangle \neq 0 $, dann gilt, wegen $ AB = BA $,
+	$$ B(A-a)|b\rangle = (A-a)B|b\rangle = b(A-a) |b\rangle $$
+	, d.h. $ (A-a)|b\rangle $ ist Eigenvektor von $ B $, also $ (A-a)|b\rangle $ linear unabhängig $ \forall |b\rangle $ $ \Rightarrow \langle b|a_n \rangle = 0 \Rightarrow $ \lightning\\[5pt]
+	Ergo $ (A-a)|b\rangle = 0 \ \forall |b\rangle \ \ $ $ \Rightarrow \ \ |b\rangle $ ist Eigenvektor von $ A $ zum Eigenwert $ a $.
+	\begin{equation*}
+	\tx{,,} A - a \tx{``} \ \widehat{=} \ A - a \mathbbm{1}
+	\end{equation*}
+	[Verallgemeinerung für Observablen $ A, B, C, \dots $ analog (paarweise)]
+\end{enumerate}
+
+\subsection{Beispiele:}
+
+\FloatBarrier
+
+\begin{figure}[ht]
+	\begin{minipage}{.5\linewidth}
+	(inspiriert durch die sogenannte $ \Lambda $-Konjiguration z.B. in Ionen-fallen-Physik/ion trap physics)
+	\end{minipage}%
+	\begin{minipage}{.15\linewidth}
+		$ \phantom{look behind you} $
+	\end{minipage}%
+	\begin{minipage}{.35\linewidth}
+	\flushright
+	%t1:
+	\begin{tikzpicture}
+		\draw[->] (0,-.5) -- (0,2.5) node[above] {\tx{Energieachse}};
+		\coordinate (a) at (1,0);
+		\coordinate (b) at (2,2);
+		\coordinate (c) at (3,0);
+		\foreach \c\n in {a/1,b/2,c/3}
+		\draw ($ (\c) - (0.25,0) $) -- ++(0.5,0) node[right] {$ |\n \rangle $};
+		\draw[orange] (a) -- node[shift={(0.25,.5)}, rotate=62, anchor=south east] {\tx{Laser}} (b);
+		\draw[orange] (b) -- node[shift={(-0.25,.6)}, rotate=-62, anchor=south west] {\tx{\small{Kopplung}}} (c);
+	\end{tikzpicture}
+	\captionof{figure}{Beispielhafte Darstellung der Zustände eines Quantensystems.}
+	\end{minipage}%
+\end{figure}
+
+\noindent
+Wir betrachten einen dreidimensionalen Hilbertraum mit Basisvektoren $ |u_1\rangle, | u_2\rangle, | u_3 \rangle $, sowie Operatoren $ H $ und $ B $ mit folgender Matrixdarstellung (in der gegebenen Basis)
+\begin{equation}
+H = \hbar \omega_0 \begin{pmatrix}
+1 & 0 & 0 \\ 0 & -1 & 0 \\ 0 & 0 & -1
+\end{pmatrix} \qquad B = b \begin{pmatrix}
+1 & 0 & 0 \\ 0 & 0 & 1 \\ 0 & 1 & 0
+\end{pmatrix}
+\label{2 34}
+\end{equation}
+$ \hbar, \omega_0, b $ reell
+\begin{enumerate}[(a)]
+	\item Offenbar sind $ B $ und $ H $ selbstadjungiert (siehe \eqref{2 26})
+	\item Aus der Matrixdarstellung von $ H $ und $ B $ in $ \left\{ |u_1 \rangle , |u_2 \rangle , | u_3 \rangle \right\} $ folgt sofort, dass $ | u_1 \rangle $ ein $ H $ und $ B $ gemeinsamer Eigenvektor ist; entsprechend:
+	\begin{equation}
+	HB|u_1\rangle = BH |u_1 \rangle
+	\label{2 35}
+	\end{equation}
+\end{enumerate}
+
+\textbf{Beispiel zu (b)}
+
+\begin{align*}
+H &= \hbar \omega_0 \phantom{b} \left( | u_1 \rangle \langle u_1 | - | u_2 \rangle \langle u_2 | - | u_3 \rangle \langle u_3 | \right) \\
+B &= b \phantom{\omega_0 \hbar} \left(| u_1 \rangle \langle u_1 | + | u_2 \rangle \langle u_3 | + | u_3 \rangle \langle u_2 | \right)
+\end{align*}
+
+Bleibt nun noch das durch $ | u_2 \rangle $ und $ | u_3 \rangle $ aufgespannte, orthogonale Uterraum zu untersuchen: $ \ham_2 = \tx{span}\{ |u_2 \rangle , | u_3 \rangle \} $\par
+Der Projektor auf 
+\begin{equation}
+\ham_2, P_2 = | u_2 \rangle \langle u_2 | + | u_3 \rangle \langle u_3 |
+\label{2 36}
+\end{equation}
+(Vergleiche \eqref{2 13}) \\[5pt]
+erlaubt die Einschränkung von $ H $ und $ B $ auf $ \ham_2 $ vermöge
+\begin{equation}
+P_2 H P_2 = - \hbar \omega_0 \begin{pmatrix}
+1 & 0 \\ 0 & 1
+\end{pmatrix} = - \hbar \omega_0 \mathbbm{1}_{2}
+\label{2 37}
+\end{equation}
+\begin{equation}
+P_2 B P_2 = b \begin{pmatrix}
+0 & 1 \\ 1 & 0
+\end{pmatrix}
+\label{2 38}
+\end{equation}
+Wegen \eqref{2 37} kommutieren $ H $ und $ B $ somit auf ganz $ \ham $.\\[5pt]
+Man überzeugt sich leicht davon, dass
+\begin{align*}
+|P_2\rangle &= \frac{1}{\sqrt{2}} \left(|u_2\rangle + |u_3\rangle\right) \\
+|P_3\rangle &= \frac{1}{\sqrt{2}} \left(|u_2\rangle - |u_3\rangle\right)
+\label{2 39}
+\end{align*}
+orthogonale Eigenvektoren von $ P_2 B P_2 $ mit Eigenwerten $ b $ und $ -b $ sind.
+\begin{center}
+	\begin{tabular}{c|cc}
+		 & Eigenwert von $ H $ & Eigenwert von $ B $ \\
+		\hline
+		$ |u_1\rangle $ & $ \hbar \omega_0 $ & $b$ \\
+		$ |P_2\rangle $ & $ -\hbar \omega_0 $ & $b$ \\
+		$ |P_3\rangle $ & $ -\hbar \omega_0 $ & $-b$ \\
+	\end{tabular}
+\end{center}
+
+.\\\\\\
+\noindent
+Students:\\
+
+\noindent
+Quantenzahlen: $ \exists $
+
+
+
+
+
