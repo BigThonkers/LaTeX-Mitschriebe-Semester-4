@@ -471,6 +471,110 @@ Students:\\
 \noindent
 Quantenzahlen: $ \exists $
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Lecture 14.05 began with a recap %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Tensor spaces}
+
+$\ham_A$, $\ham_B$, $\ham_C$ Hilbert spaces
+\[A\quad B\quad C\]
+\[\ham = \ham_A \otimes \ham_B \otimes \ham_C\quad \textrm{Hilbert space}\]
+\begin{align*}
+A|a\rangle &= a|a\rangle\in\ham_A \\
+B|b\rangle &= b|b\rangle\in\ham_B \\
+C|c\rangle &= c|c\rangle\in\ham_C
+\end{align*}
+\begin{align*}
+|a\rangle \otimes &|b\rangle \otimes |c\rangle \\
+|a\rangle &|b\rangle |c\rangle \\
+|a,&b,c\rangle \\
+\end{align*}
+
+\begin{itemize}
+\item $\ham$ is a vector space
+\[\ham = \ham_A \otimes \ham_B\]
+\begin{align*}
+\lambda (|a\rangle\otimes|b\rangle) &= (\lambda|a\rangle)\otimes|b\rangle\quad \forall\lambda\in\mathbb{C} \\
+&= |a\rangle\otimes(\lambda|b\rangle)\quad \forall|a\rangle\in\ham_A,\ \forall|b\rangle\in\ham_B \\
+(|a_1\rangle + |a_2\rangle)\otimes|b\rangle &= |a_1\rangle\otimes|b\rangle + |a_2\rangle \otimes|b\rangle \\
+|a\rangle\otimes(|b_1\rangle + |b_2\rangle) &= |a\rangle \otimes|b_1\rangle + |a\rangle \otimes |b_2\rangle
+\end{align*}
+\item $\dim\ham=?$ \\
+\begin{align*}
+\textrm{Basis } &\ham_A:\{|a_j\rangle\}_{j=1\ldots\dim\ham_A}\\
+&\ham_A:\{|a_j\rangle\}_{j=1\ldots\dim\ham_A} \\
+\textrm{Basis } &\ham:\{|a_j\rangle\otimes|b_k\rangle\}_{\substack{j=1\ldots\dim\ham_A \\ k=1\ldots\dim\ham_B}}
+\end{align*}
+\begin{align*}
+|\psi\rangle &= |\phi\rangle \otimes |\chi\rangle & |\phi&\in\ham_A \\
+&&|\chi\rangle &\in\ham_B \\
+|\phi\rangle &= \sum_jc_j|a_j\rangle \\
+|\chi\rangle &= \sum_kd_k|b_k\rangle \\
+|\psi\rangle &= \left(\sum_jc_j|a_j\rangle\right)\otimes\left(\sum_kd_k|b_k\rangle\right) \\
+&= \sum_{jk}c_jd_k|a_j\rangle\otimes|b_k\rangle
+\end{align*}
+\textbf{Example} Polarizer $\ham=\mathrm{span}\{|0\rangle,|1\rangle\}$
+\[
+\ham\otimes\ham=\mathrm{span}\{|0\rangle\otimes|0\rangle,|0\rangle\otimes|1\rangle,|1\rangle\otimes|0\rangle,|1\rangle\otimes|1\rangle\}
+\]
+\[
+|\psi\rangle = \frac{1}{\sqrt{2}}|-\rangle\circ|0\rangle+\frac{1}{\sqrt{2}}|1\rangle\otimes|1\rangle
+\]
+\item Scalar product:
+\begin{align*}
+\ham &= \ham_A\otimes\ham_B \\
+|\psi\rangle &= |\phi\rangle\otimes|\chi\rangle \\
+|\zeta\rangle &= |\nu\rangle\otimes|\zeta\rangle \\
+\langle\phi|\zeta\rangle &= ? \\
+\langle\psi|\zeta\rangle &= (\langle\phi|\otimes\langle\chi|)(|\nu\rangle\otimes|\zeta\rangle) \\
+&= \langle\phi|\nu\rangle \cdot \langle\chi|\zeta\rangle \\
+|\psi\rangle &=\sum_{jk}c_j c_{jk}|a_j\rangle\otimes|b_k\rangle \\
+|\zeta\rangle &= \sum_{lm}d_{lm}|a_l\rangle\otimes|b_m\rangle \\
+\langle\psi|\zeta\rangle &= \left(\sum_{jk}c_{jk}^*\langle a_j|\otimes\langle b_k|\right)\left(\sum_{lm}d_{lm}|a_l\rangle\otimes|b_m\rangle\right) \\
+&= \sum_{jklm}c_{jk}^*d_{lm}\underbrace{\langle a_j|a_l\rangle}_{\delta_{jl}}\underbrace{\langle b_k|b_m\rangle}_{\delta_{km}} = \sum_{jk}c_{jk}^*d_{jk}
+\end{align*}
+\item \textbf{Operators} $A$ acts on $\ham_A$, $B$ acts on $\ham_B$
+\begin{align*}
+A&\to(A\otimes1_B) \\
+B &\to (1_A\otimes B)
+\end{align*}
+\begin{align*}
+(A\otimes 1_B)|\phi\rangle\otimes|\chi\rangle &= (A|\phi\rangle)\otimes|\chi\rangle \\
+(1_A\otimes B)|\phi\rangle\otimes|\chi\rangle &= |\phi\rangle \otimes (B|\chi\rangle)
+\end{align*}
+\begin{align*}
+A|a\rangle &= a|a\rangle \\
+B|b\rangle &= b|b\rangle \\
+(A\otimes 1_B)|a\rangle \otimes |b\rangle &= a|a\rangle \otimes|b\rangle \\
+(1_A \otimes B)|a\rangle \otimes |b\rangle &= b|a\rangle \otimes |b\rangle \\
+(A\otimes B)|\phi\rangle \otimes|\chi\rangle &= (A|\phi\rangle)\otimes(B|\chi\rangle) \\
+&= (A\otimes 1_B)(1_A\otimes B)|\phi\rangle \otimes|\chi\rangle \\
+&= (A\otimes 1_B)[|\phi\rangle \otimes(B|\chi\rangle)]
+\end{align*}
+General form:
+\begin{align*}
+R &= \sum_j S^A_j \otimes T^B_j \\
+|\psi\rangle &= \sum_{jk} c_{jk} |\phi_j\rangle \otimes |\chi_k\rangle \qquad \phi\in\ham_A,\ \chi\in\ham_B
+\end{align*}
+General $|\psi\rangle \nshortmid |\phi\rangle \otimes |\chi\rangle$ ''Entangled'' % I don't know what this sign is supposed to be. It looks a bit more like a circle than a slash in the middle of the line.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% This is ugly as fuck pls fix %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{align*}
+\ham_B &\backslash\ham_A \to &|\phi_1&\rangle, &|\phi_2&\rangle, &\ldots \\
+\downarrow & &|\phi_1\rangle \otimes|chi_1\rangle &\ldots \\
+|\chi_1\rangle & &.\\
+|\chi_2\rangle & &.\\
+. & &.\\
+.\\
+.
+\end{align*}
+
+\end{itemize}
+
 
 
 
