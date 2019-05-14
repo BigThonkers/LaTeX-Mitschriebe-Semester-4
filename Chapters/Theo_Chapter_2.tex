@@ -69,6 +69,7 @@ zuordnen.
 \Rightarrow \quad \sum \ub{| j \rangle \langle j |}_{\tx{Projektor}} = \mathbbm{1} = (\tx{id})
 \label{zerlegungeins}
 \end{equation}}
+\noindent
 Die Zerlegung der Einst $ \equiv $ Identität in die ,,\textbf{Projektionsoperatoren}``
 \begin{equation*}
 | j \rangle \langle j | | j \rangle \langle j | = | j \rangle \langle j | j \rangle \langle j | = |j \rangle \langle j |
@@ -337,23 +338,23 @@ Daher bedarf es i.d.R. eines ,,\textbf{vollständigen Satzes von Observablen}`` 
 	\label{2 33}
 	\end{equation}
 	Die Vertauschbarkeit impliziert, dass $ A, B, C, \dots $ gleichzeitig diagonalisierbar sind, d.h. eine gemeinsame Eigenbasis besitzen (Beweis s.u.).
-	\item Die Eigenwerte $ \{ a_j, b_j, c_j, \dots \} $ von $ A, B, C, \dots $ die \textbf{eindeutige} Identifikation jedes Eigenvektors erlauben. $ \{ a_j, b_j, c_j, \dots \} $ heißen dann für den jeweiligen Eigenzustand charakteristische ,,Quantenzahlen``.
+	\item Die Eigenwerte $ \{ a_j, b_j, c_j, \dots \} $ von $ A, B, C, \dots $ erlauben die \textbf{eindeutige} Identifikation jedes Eigenvektors. $ \{ a_j, b_j, c_j, \dots \} $ heißen dann für den jeweiligen Eigenzustand charakteristische ,,\textbf{Quantenzahlen}``.
 \end{enumerate}
 
 \subsubsection*{\emph{Beweis}}
 
 \textbf{Beweis der Äquivalenz von Vertauschbarkeit und Existenz einer gemeinsamen Basis zweier selbsadjungierten Operatoren $ A $ und $ B $.}
 \begin{enumerate}[(i)]
-	\item \textbf{gemeinsames Eigensystem $ \Rightarrow $ Vertauschbarkeit}\\
+	\item \textbf{gemeinsames Eigenbasis $ \Rightarrow $ Vertauschbarkeit}\\
 	Sei $ |c\rangle $ Eigenvektor von $ A $ und $ B $, mit $ A | c \rangle = a | c \rangle $ und $ B|c\rangle = b | c\rangle $ so folgt:
 	\begin{equation*}
 	A B | c \rangle = b A | c \rangle = b a | c \rangle = a b | c \rangle = a B | c \rangle = B a | c \rangle = B A | c \rangle
 	\end{equation*}
 	Gilt dies (nach Voraussetzung) für alle Eigenvektoren von $ A $ und $ B $, dann auch für alle Vektoren in $ \ham $.
-	\item \textbf{Vertauschbarkeit $ \Rightarrow $ Existenz einer gemeinsamen Basis}\\
+	\item \textbf{Vertauschbarkeit $ \Rightarrow $ Existenz einer gemeinsamen Eigenbasis}\\
 	Zunächst sollen $ A $ und $ B $ jeweils nichtentartete Spektren haben. Dann folgt aus
-	$ A|a\rangle = a |a\rangle $ und $ AB = BA $, dass $ AB |a\rangle = BA|a\rangle = aB|a\rangle $, d.h. $ B|a\rangle $ ist Eigenvektor von $ A $ zum selben Eigenwert $ a $, d.h. wegen Nichtentartung der Spektren, $ B|a\rangle = \lambda|a\rangle $, daher $ |a\rangle $ auch Eigenvektor von $ B $.\par
-	Ist dagegen $ a $ ein entarteter Eigenwert von $ A $. Dann lässt sich jeder Eigenvektor $ |a_n\\rangle $ von $ A $ aus dem zu a gehörigen, entarteten Unterraum schreiben als
+	$ A|a\rangle = a |a\rangle $ und $ AB = BA $, dass $ AB |a\rangle = BA|a\rangle = aB|a\rangle $, d.h. $ B|a\rangle $ ist Eigenvektor von $ A $ $ \big( A(B|a\rangle) = a(B|a\rangle) \big) $ zum selben Eigenwert $ a $, d.h. wegen Nichtentartung der Spektren, $ B|a\rangle = \lambda|a\rangle $, daher $ |a\rangle $ auch Eigenvektor von $ B $.\par
+	Ist dagegen $ a $ ein entarteter Eigenwert von $ A $. Dann lässt sich jeder Eigenvektor $ |a_n\rangle $ von $ A $ aus dem zu $ a $ gehörigen, entarteten Unterraum schreiben als
 	\begin{equation*}
 	|a_n\rangle = \sum_{b} \langle b | a_n \rangle | b \rangle
 	\end{equation*}
@@ -365,6 +366,8 @@ Daher bedarf es i.d.R. eines ,,\textbf{vollständigen Satzes von Observablen}`` 
 	$$ B(A-a)|b\rangle = (A-a)B|b\rangle = b(A-a) |b\rangle $$
 	, d.h. $ (A-a)|b\rangle $ ist Eigenvektor von $ B $, also $ (A-a)|b\rangle $ linear unabhängig $ \forall |b\rangle $ $ \Rightarrow \langle b|a_n \rangle = 0 \Rightarrow $ \lightning\\[5pt]
 	Ergo $ (A-a)|b\rangle = 0 \ \forall |b\rangle \ \ $ $ \Rightarrow \ \ |b\rangle $ ist Eigenvektor von $ A $ zum Eigenwert $ a $.
+	$ \Rightarrow \{|b\rangle\} $ definiert eine gemeinsame Basis von $ A $ und $ B $ !\\[5pt]
+	Es wurde die folgende Schreibweise als Abkürzung benutzt:
 	\begin{equation*}
 	\tx{,,} A - a \tx{``} \ \widehat{=} \ A - a \mathbbm{1}
 	\end{equation*}
@@ -377,7 +380,7 @@ Daher bedarf es i.d.R. eines ,,\textbf{vollständigen Satzes von Observablen}`` 
 
 \begin{figure}[ht]
 	\begin{minipage}{.5\linewidth}
-	(inspiriert durch die sogenannte $ \Lambda $-Konjiguration z.B. in Ionen-fallen-Physik/ion trap physics)
+	(inspiriert durch die sogenannte $ \Lambda $-Konfiguration z.B. in Ionen-fallen-Physik/ion trap physics)
 	\end{minipage}%
 	\begin{minipage}{.15\linewidth}
 		$ \phantom{look behind you} $
@@ -400,7 +403,7 @@ Daher bedarf es i.d.R. eines ,,\textbf{vollständigen Satzes von Observablen}`` 
 \end{figure}
 
 \noindent
-Wir betrachten einen dreidimensionalen Hilbertraum mit Basisvektoren $ |u_1\rangle, | u_2\rangle, | u_3 \rangle $, sowie Operatoren $ H $ und $ B $ mit folgender Matrixdarstellung (in der gegebenen Basis)
+Wir betrachten einen dreidimensionalen Hilbertraum mit Basisvektoren $ |u_1\rangle, | u_2\rangle, | u_3 \rangle $ (Euklidische Orthonormalbasis), sowie Operatoren $ H $ und $ B $ mit folgender Matrixdarstellung (in der gegebenen Basis)
 \begin{equation}
 H = \hbar \omega_0 \begin{pmatrix}
 1 & 0 & 0 \\ 0 & -1 & 0 \\ 0 & 0 & -1
@@ -417,59 +420,59 @@ $ \hbar, \omega_0, b $ reell
 	HB|u_1\rangle = BH |u_1 \rangle
 	\label{2 35}
 	\end{equation}
+	
+	\textbf{Beispiel zu (b)}
+	\begin{align*}
+	H &= \hbar \omega_0 \phantom{b} \left( | u_1 \rangle \langle u_1 | - | u_2 \rangle \langle u_2 | - | u_3 \rangle \langle u_3 | \right) \\
+	B &= b \phantom{\omega_0 \hbar} \left(| u_1 \rangle \langle u_1 | + | u_2 \rangle \langle u_3 | + | u_3 \rangle \langle u_2 | \right)
+	\end{align*}
+	Bleibt nun noch der durch $ | u_2 \rangle $ und $ | u_3 \rangle $ aufgespannte, orthogonale Uterraum zu untersuchen: $ \ham_2 = \tx{span}\{ |u_2 \rangle , | u_3 \rangle \} $\par
+	Der Projektor auf $ \ham_2 $
+	\begin{equation}
+	P_2 \defeq | u_2 \rangle \langle u_2 | + | u_3 \rangle \langle u_3 |
+	\label{2 36}
+	\end{equation}
+	(Vergleiche \eqref{2 13}) \\[5pt]
+	erlaubt die Einschränkung von $ H $ und $ B $ auf $ \ham_2 $ vermöge
+	\begin{equation}
+	P_2 H P_2 = - \hbar \omega_0 \begin{pmatrix}
+	1 & 0 \\ 0 & 1
+	\end{pmatrix} = - \hbar \omega_0 \mathbbm{1}_{2}
+	\label{2 37}
+	\end{equation}
+	\begin{equation}
+	P_2 B P_2 = b \begin{pmatrix}
+	0 & 1 \\ 1 & 0
+	\end{pmatrix}
+	\label{2 38}
+	\end{equation}
+	Wegen \eqref{2 37} kommutieren $ H $ und $ B $ somit auf ganz $ \ham $.\\[5pt]
+	Man überzeugt sich leicht davon, dass
+	\begin{align*}
+	|p_1\rangle &= \frac{1}{\sqrt{2}} \left(|u_2\rangle + |u_3\rangle\right) \\
+	|p_2\rangle &= \frac{1}{\sqrt{2}} \left(|u_2\rangle - |u_3\rangle\right)
+	\label{2 39}
+	\end{align*}
+	orthogonale Eigenvektoren von $ P_2 B P_2 $ mit Eigenwerten $ b $ und $ -b $ sind.
+	\begin{center}
+		\begin{tabular}{c|cc}
+			 & $\substack{\tx{Eigenwert} \\ \tx{von } $ H $}$ & $\substack{\tx{Eigenwert} \\ \tx{von } $ B $}$ \\[5pt]
+			\hline
+			$ |u_1\rangle $ & $ \phantom{-}\hbar \omega_0 $ & $\phantom{-}b$ \\
+			$ |p_2\rangle $ & $ -\hbar \omega_0 $ & $\phantom{-}b$ \\
+			$ |p_3\rangle $ & $ -\hbar \omega_0 $ & $-b$ \\
+		\end{tabular}
+	\end{center}
 \end{enumerate}
 
-\textbf{Beispiel zu (b)}
+%.\\\\\\
+%\noindent
+%Students:\\
+%
+%\noindent
+%Quantenzahlen: $ \exists $
 
-\begin{align*}
-H &= \hbar \omega_0 \phantom{b} \left( | u_1 \rangle \langle u_1 | - | u_2 \rangle \langle u_2 | - | u_3 \rangle \langle u_3 | \right) \\
-B &= b \phantom{\omega_0 \hbar} \left(| u_1 \rangle \langle u_1 | + | u_2 \rangle \langle u_3 | + | u_3 \rangle \langle u_2 | \right)
-\end{align*}
-
-Bleibt nun noch das durch $ | u_2 \rangle $ und $ | u_3 \rangle $ aufgespannte, orthogonale Uterraum zu untersuchen: $ \ham_2 = \tx{span}\{ |u_2 \rangle , | u_3 \rangle \} $\par
-Der Projektor auf 
-\begin{equation}
-\ham_2, P_2 = | u_2 \rangle \langle u_2 | + | u_3 \rangle \langle u_3 |
-\label{2 36}
-\end{equation}
-(Vergleiche \eqref{2 13}) \\[5pt]
-erlaubt die Einschränkung von $ H $ und $ B $ auf $ \ham_2 $ vermöge
-\begin{equation}
-P_2 H P_2 = - \hbar \omega_0 \begin{pmatrix}
-1 & 0 \\ 0 & 1
-\end{pmatrix} = - \hbar \omega_0 \mathbbm{1}_{2}
-\label{2 37}
-\end{equation}
-\begin{equation}
-P_2 B P_2 = b \begin{pmatrix}
-0 & 1 \\ 1 & 0
-\end{pmatrix}
-\label{2 38}
-\end{equation}
-Wegen \eqref{2 37} kommutieren $ H $ und $ B $ somit auf ganz $ \ham $.\\[5pt]
-Man überzeugt sich leicht davon, dass
-\begin{align*}
-|P_2\rangle &= \frac{1}{\sqrt{2}} \left(|u_2\rangle + |u_3\rangle\right) \\
-|P_3\rangle &= \frac{1}{\sqrt{2}} \left(|u_2\rangle - |u_3\rangle\right)
-\label{2 39}
-\end{align*}
-orthogonale Eigenvektoren von $ P_2 B P_2 $ mit Eigenwerten $ b $ und $ -b $ sind.
-\begin{center}
-	\begin{tabular}{c|cc}
-		 & Eigenwert von $ H $ & Eigenwert von $ B $ \\
-		\hline
-		$ |u_1\rangle $ & $ \hbar \omega_0 $ & $b$ \\
-		$ |P_2\rangle $ & $ -\hbar \omega_0 $ & $b$ \\
-		$ |P_3\rangle $ & $ -\hbar \omega_0 $ & $-b$ \\
-	\end{tabular}
-\end{center}
-
-.\\\\\\
-\noindent
-Students:\\
-
-\noindent
-Quantenzahlen: $ \exists $
+% 14.05.19
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Lecture 14.05 began with a recap %
@@ -481,16 +484,13 @@ $\ham_A$, $\ham_B$, $\ham_C$ Hilbert spaces
 \[A\quad B\quad C\]
 \[\ham = \ham_A \otimes \ham_B \otimes \ham_C\quad \textrm{Hilbert space}\]
 \begin{align*}
-A|a\rangle &= a|a\rangle\in\ham_A \\
-B|b\rangle &= b|b\rangle\in\ham_B \\
-C|c\rangle &= c|c\rangle\in\ham_C
+A|a\rangle &= a|a\rangle \ \ ,\quad |a\rangle\in\ham_A \\
+B|b\rangle &= \,b|b\rangle \ \ ,\quad |b\rangle\in\ham_B \\
+C|c\rangle &= \,c|c\rangle \ \ ,\quad |c\rangle\in\ham_C
 \end{align*}
-\begin{align*}
-|a\rangle \otimes &|b\rangle \otimes |c\rangle \\
-|a\rangle &|b\rangle |c\rangle \\
-|a,&b,c\rangle \\
-\end{align*}
-
+\begin{equation*}
+|a\rangle \otimes |b\rangle \otimes |c\rangle \defeq |a\rangle |b\rangle |c\rangle \defeq |a,b,c\rangle
+\end{equation*}
 \begin{itemize}
 \item $\ham$ is a vector space
 \[\ham = \ham_A \otimes \ham_B\]
@@ -501,13 +501,16 @@ C|c\rangle &= c|c\rangle\in\ham_C
 |a\rangle\otimes(|b_1\rangle + |b_2\rangle) &= |a\rangle \otimes|b_1\rangle + |a\rangle \otimes |b_2\rangle
 \end{align*}
 \item $\dim\ham=?$ \\
+\begin{equation*}
+\dim \ham = \dim \ham_A \cdot \dim \ham_B
+\end{equation*}
 \begin{align*}
 \textrm{Basis } &\ham_A:\{|a_j\rangle\}_{j=1\ldots\dim\ham_A}\\
-&\ham_A:\{|a_j\rangle\}_{j=1\ldots\dim\ham_A} \\
+&\ham_B:\{|a_k\rangle\}_{k=1\ldots\dim\ham_A} \\
 \textrm{Basis } &\ham:\{|a_j\rangle\otimes|b_k\rangle\}_{\substack{j=1\ldots\dim\ham_A \\ k=1\ldots\dim\ham_B}}
 \end{align*}
 \begin{align*}
-|\psi\rangle &= |\phi\rangle \otimes |\chi\rangle & |\phi&\in\ham_A \\
+|\psi\rangle &= |\phi\rangle \otimes |\chi\rangle & |\phi \rangle&\in\ham_A \\
 &&|\chi\rangle &\in\ham_B \\
 |\phi\rangle &= \sum_jc_j|a_j\rangle \\
 |\chi\rangle &= \sum_kd_k|b_k\rangle \\
@@ -519,59 +522,76 @@ C|c\rangle &= c|c\rangle\in\ham_C
 \ham\otimes\ham=\mathrm{span}\{|0\rangle\otimes|0\rangle,|0\rangle\otimes|1\rangle,|1\rangle\otimes|0\rangle,|1\rangle\otimes|1\rangle\}
 \]
 \[
-|\psi\rangle = \frac{1}{\sqrt{2}}|-\rangle\circ|0\rangle+\frac{1}{\sqrt{2}}|1\rangle\otimes|1\rangle
+|\psi\rangle = \frac{1}{\sqrt{2}}|0\rangle\otimes|0\rangle+\frac{1}{\sqrt{2}}|1\rangle\otimes|1\rangle
 \]
 \item Scalar product:
 \begin{align*}
 \ham &= \ham_A\otimes\ham_B \\
 |\psi\rangle &= |\phi\rangle\otimes|\chi\rangle \\
-|\zeta\rangle &= |\nu\rangle\otimes|\zeta\rangle \\
-\langle\phi|\zeta\rangle &= ? \\
-\langle\psi|\zeta\rangle &= (\langle\phi|\otimes\langle\chi|)(|\nu\rangle\otimes|\zeta\rangle) \\
-&= \langle\phi|\nu\rangle \cdot \langle\chi|\zeta\rangle \\
-|\psi\rangle &=\sum_{jk}c_j c_{jk}|a_j\rangle\otimes|b_k\rangle \\
-|\zeta\rangle &= \sum_{lm}d_{lm}|a_l\rangle\otimes|b_m\rangle \\
-\langle\psi|\zeta\rangle &= \left(\sum_{jk}c_{jk}^*\langle a_j|\otimes\langle b_k|\right)\left(\sum_{lm}d_{lm}|a_l\rangle\otimes|b_m\rangle\right) \\
+|\xi\rangle &= |\eta\rangle\otimes|\zeta\rangle \\
+\langle\psi|\xi\rangle &= (\langle\phi|\otimes\langle\chi|)(|\eta\rangle\otimes|\zeta\rangle) 
+= \langle\phi|\eta\rangle \cdot \langle\chi|\zeta\rangle \\
+|\psi\rangle &=\sum_{jk}c_{jk}|a_j\rangle\otimes|b_k\rangle \\
+|\xi\rangle &= \sum_{lm}d_{lm}|a_l\rangle\otimes|b_m\rangle \\
+\langle\psi|\xi\rangle &= \left(\sum_{jk}c_{jk}^*\langle a_j|\otimes\langle b_k|\right)\left(\sum_{lm}d_{lm}|a_l\rangle\otimes|b_m\rangle\right) \\
 &= \sum_{jklm}c_{jk}^*d_{lm}\underbrace{\langle a_j|a_l\rangle}_{\delta_{jl}}\underbrace{\langle b_k|b_m\rangle}_{\delta_{km}} = \sum_{jk}c_{jk}^*d_{jk}
 \end{align*}
+\begin{equation*}
+\langle\psi|\xi\rangle = \langle\phi|\eta\rangle \cdot \langle\chi|\zeta\rangle
+\end{equation*}
 \item \textbf{Operators} $A$ acts on $\ham_A$, $B$ acts on $\ham_B$
 \begin{align*}
-A&\to(A\otimes1_B) \\
-B &\to (1_A\otimes B)
+A&\to(A\otimes \mathbbm{1}_B) \\
+B &\to (\mathbbm{1}_A\otimes B)
 \end{align*}
 \begin{align*}
-(A\otimes 1_B)|\phi\rangle\otimes|\chi\rangle &= (A|\phi\rangle)\otimes|\chi\rangle \\
-(1_A\otimes B)|\phi\rangle\otimes|\chi\rangle &= |\phi\rangle \otimes (B|\chi\rangle)
+(A\otimes \mathbbm{1}_B)|\phi\rangle\otimes|\chi\rangle &= (A|\phi\rangle)\otimes|\chi\rangle \\
+(\mathbbm{1}_A\otimes B)|\phi\rangle\otimes|\chi\rangle &= |\phi\rangle \otimes (B|\chi\rangle)
 \end{align*}
 \begin{align*}
 A|a\rangle &= a|a\rangle \\
 B|b\rangle &= b|b\rangle \\
-(A\otimes 1_B)|a\rangle \otimes |b\rangle &= a|a\rangle \otimes|b\rangle \\
-(1_A \otimes B)|a\rangle \otimes |b\rangle &= b|a\rangle \otimes |b\rangle \\
+(A\otimes \mathbbm{1}_B)|a\rangle \otimes |b\rangle &= a|a\rangle \otimes|b\rangle \\
+(\mathbbm{1}_A \otimes B)|a\rangle \otimes |b\rangle &= b|a\rangle \otimes |b\rangle \\
 (A\otimes B)|\phi\rangle \otimes|\chi\rangle &= (A|\phi\rangle)\otimes(B|\chi\rangle) \\
-&= (A\otimes 1_B)(1_A\otimes B)|\phi\rangle \otimes|\chi\rangle \\
-&= (A\otimes 1_B)[|\phi\rangle \otimes(B|\chi\rangle)]
+&= (A\otimes \mathbbm{1}_B)(\mathbbm{1}_A\otimes B)|\phi\rangle \otimes|\chi\rangle \\
+&= (A\otimes \mathbbm{1}_B)[|\phi\rangle \otimes(B|\chi\rangle)]
 \end{align*}
 General form:
 \begin{align*}
 R &= \sum_j S^A_j \otimes T^B_j \\
 |\psi\rangle &= \sum_{jk} c_{jk} |\phi_j\rangle \otimes |\chi_k\rangle \qquad \phi\in\ham_A,\ \chi\in\ham_B
 \end{align*}
-General $|\psi\rangle \nshortmid |\phi\rangle \otimes |\chi\rangle$ ''Entangled'' % I don't know what this sign is supposed to be. It looks a bit more like a circle than a slash in the middle of the line.
+General $|\psi\rangle \neq |\phi\rangle \otimes |\chi\rangle$ ``Entangled''
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% This is ugly as fuck pls fix %
+% This is ugly as fuck pls fix %  % fixed it
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{align*}
-\ham_B &\backslash\ham_A \to &|\phi_1&\rangle, &|\phi_2&\rangle, &\ldots \\
-\downarrow & &|\phi_1\rangle \otimes|chi_1\rangle &\ldots \\
-|\chi_1\rangle & &.\\
-|\chi_2\rangle & &.\\
-. & &.\\
+%\begin{align*}
+%\ham_B &\backslash\ham_A \to &|\phi_1&\rangle, &|\phi_2&\rangle, &\ldots \\
+%\downarrow & & \\
+%|\chi_1\rangle & &|\phi_1\rangle \otimes|\chi_1\rangle &\ldots\\
+%|\chi_2\rangle & &.\\
+%. & &.\\
+%.\\
+%.
+%\end{align*}
+
+\begin{equation*}
+\begin{array}{c|ccc}
+\begin{tikzpicture}[scale=0.7]
+	\draw (-.6,.6) -- (.6,-.6);
+	\node at (-.3,-.3) {$\ham_{B}$};
+	\node at ( .3, .3) {$\ham_{A}$};
+\end{tikzpicture} &|\phi_1 \rangle, & |\phi_2 \rangle, &\ldots \\[5pt] \hline \\[-5pt]
+|\chi_1\rangle &|\phi_1\rangle \otimes|\chi_1\rangle &\ldots\\
+|\chi_2\rangle &.\\
+. &.\\
 .\\
 .
-\end{align*}
+\end{array}
+\end{equation*}
 
 \end{itemize}
 
