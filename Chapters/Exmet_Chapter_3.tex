@@ -1,0 +1,154 @@
+\chapter{Detektoren für die Orts- und Zeitmessung}
+
+Programm Heute:
+\begin{itemize}
+	\item Ionisationsdetektoren
+	\item Szintillation
+	\item Photomultiplier (PM)
+\end{itemize}
+,,Rekation`` im Material auf elektrische geladenes Teilchen oder Quanten
+\begin{equation*}
+\tx{Ionisation durch Projektil} \begin{array}{c}
+\nearrow \\ \searrow
+\end{array} \begin{array}{c c l}
+\tx{freie Ladungsträger} & \rightarrow & \tx{Nachweis } e^- \tx{ / Ionen} \\[10pt]
+\tx{Szintillation / Fluoreszens} & \rightarrow & \tx{Nachweis Licht}
+\end{array}
+\end{equation*}
+
+\section{Ionisationsdetektoren}
+
+\begin{itemize}
+	\item mit flüssigem oder gasförmigen Edelgas $ + $ Beimischungen als ,,Quentscher``
+	\item Halbleiter
+\end{itemize}
+\begin{equation*}
+\tx{beide messen} \begin{array}{c}
+\nearrow \\[5pt] \searrow
+\end{array} \begin{array}{c}
+\begin{array}{c}
+\tx{nur primär erzeugte } e^- \\ \tx{(Halbleiter, Ionisationskammer)}
+\end{array} \\[20pt] \begin{array}{c}
+\tx{primäre $ e^- $ $ + $ Influenz von driftenden Ionen} \\ \tx{(Prop Zähler)}
+\end{array}
+\end{array}
+\end{equation*}
+
+
+
+%T1
+\hft Strohalmdetektor
+
+
+\noindent
+Elektrisches Feld aus statischen Maxwellgleichungen:
+\begin{align*}
+\vabla \cdot \vec{E} &= \frac{1}{\epsilon_0} \rho \\
+\int_{S} \vec{E} \dd \vec{S} &= \frac{1}{\epsilon_0} \int_{V} \rho \dd V
+\end{align*}
+auf Drahtlänge $ \Delta z $ befindet sich die Ladung $ \Delta Q $
+\begin{equation*}
+E(r) \cdot 2 \pi r \Delta z = \frac{1}{\epsilon_0} \Delta Q
+\end{equation*}
+\begin{equation*}
+\Rightarrow \quad E(r) = \frac{1}{2 \pi \epsilon_0} \frac{1}{r} \prd{Q}{z}
+\end{equation*}
+Das $ \vec{E} $-Feld wird durch angelegte Spannung erzeugt. Aus der Abbildung %ref T1
+oben folgt dann:
+\begin{equation*}
+\int_{r_i}^{r_a} E(r) \dd r = U = \frac{1}{2 \pi \epsilon_0} \cdot \ln\left(\frac{r_a}{r_i}\right) \cdot \prd{Q}{z}
+\end{equation*}
+\begin{equation*}
+E(r_0) = \frac{U}{r_0 \ln \left(\frac{r_a}{r_i}\right)}
+\end{equation*}
+\folie{Arbeitsbereiche von Gasionisationsdetektoren}\\
+\folie{Funktionsprinzip Gasionisationsdetektoren}\\
+Ionisationszähler $ \rightarrow $Dosimetrie / Dosimeter\\
+Proportionalitätsbereich $ \rightarrow $ Teilchennachweis (Ort und Zeit)\\
+Geiger Müller Zähler ist selbst verstärkend $ \rightarrow $ keine extra Geräte notwendig\\[5pt]
+Elektronen \& Ionen, die im Abstand $ r_0 $ erzeugt werden driften zur Anode/Kathode.\\
+z:.B.
+\begin{equation*}
+\Delta t^- = \int_{r_i}^{r_a} \frac{\dd r}{\theta_0^-} = \int_{r_i}^{r_a} \frac{\dd r}{\mu^- \cdot E} = \frac{\ln \left(\frac{r_a}{r_i}\right)}{2 \mu^- E}
+\end{equation*}
+\folie{Eigenschaften von Edelgasen}\\
+\folie{Vieldrahtproportional- und Driftkammern}\\
+\folie{MICROMEGAS}\\
+\folie{GEM / THGEM}
+
+\section{Halbleiterzähler}
+
+Kristallines Si \& Ge. Ideoal für $ \prd{E}{x} $ hochauflösende Ortsmessung\\[5pt]
+
+\subsection{Funktionsprinzip:}
+
+\begin{itemize}
+	\item Diode in Sperrrichtung
+	\item ionisierende Strahlung erzeugt $ e^- $/Loch Paare
+	\item äußere Betriebsspannung saugt $ e^- $/Löcher ab
+\end{itemize}
+\textbf{Vorteile:}
+\begin{enumerate}[a)]
+	\item $ \langle E \rangle $ zur Erzeugung eines $ e^- $/Loch Paars $ \langle E \rangle_{\tx{Si}} = 3{,}6 \, \tx{eV} $ und $ \langle E \rangle_{\tx{Ge}} = 2{,}8 \, \tx{eV} $.\par
+	Zum Vergleich $ \langle E \rangle _{\tx{Gas}} \approx 10{.}40 \, \tx{eV} $ und $ \langle E \rangle_{\tx{Szint}} = 100 \, \tx{eV} \tx{-} 1 \, \tx{keV} $
+	\item hohe spezifische Dichte $ \Rightarrow \prd{E}{x} $ groß
+	\item sehr schnelle \hfw
+	\item kompakte \hfw
+\end{enumerate}
+
+\subsection{Grundlagen}
+
+Festkörper:
+
+
+%T2
+\hft
+
+
+
+\noindent
+Direkte Rekombination $ \mathcal{O}(s) $ weil $ e^- $ \& Loch Energie- und Impulserhaltung.\\
+\folie{Funktionsprinzip (Halbleiter)}\\
+\folie{Funktionsprinzip: Streifenzähler}\\
+\folie{Ultrasonic Bonding}\\
+\folie{ATLAS Silizium Spurdetektor}\\
+\folie{Silizium Detektoren als Spur Detektor (CMS: Currently the Most Silicon)}\\
+\folie{Halbleiter-Pixelzähler}\\
+\folie{Zukunft: 3D-Technologie}
+
+\section{Szintillationsdetektor}
+
+$ \prd{E}{x} \to $ Anregung der Atome/Moleküle $ \to $ Lichtemission $ \propto \prd{E}{x} $.\\[5pt]
+Wichtig dabei ist die Transparenz des Detektors für das erzeugte Licht. Vorteilhaft ist deswegen, wenn die Spektralemission im sichtbaren Bereich ist.\\[5pt]
+Typen:
+\begin{itemize}
+	\item organische Kristalle, Flüssigkeiten oder Plastik
+	\item anorganische Kristalle
+	\item flüssige, gasförmige Edelgase
+\end{itemize}
+
+\subsection{Funktionsprinzip}
+
+\begin{enumerate}[a)]
+	\item Anorganisch
+	\begin{itemize}
+		\item Dotieren mit Farbzentren (Aktivatorzentren) (Leerstellen im Gitter)
+		\item Ionisation führt zu freien $ e^- $
+		\item $ \Rightarrow $ Rekombination in Aktivatorzentren $ \to $ Anregung selbige $ \to $ Übergang in Grundzustand unter \hfw $ \left. \right\} \mathcal{O}(\mu s) $
+	\end{itemize}
+	\item Organisch
+	\begin{itemize}
+		\item Ionisation \& Anregung von Molekülen
+		\item $ \to $ emittiert beim Zerfall UV- Licht + Wellenlängenverschiebung $ \Rightarrow $ sichtbares Licht
+	\end{itemize}
+\end{enumerate}
+\folie{Szintillatoren}\\
+\folie{Einsatzprinzip}\\
+\folie{Emission}\\
+\folie{Organische Szintillatoren - Licht Absorption}
+
+\section{Photomultiplier}
+
+\folie{Photomultiplier}\\
+\folie{Quanteneffizienz}\\
+\folie{PMT und Szintillator Handhabung}
