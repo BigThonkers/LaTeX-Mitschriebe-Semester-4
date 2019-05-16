@@ -988,7 +988,7 @@ m_l = 0 ; \ m_s = \frac{1}{2} \\[10pt] m_l = 1; \ m_s = - \frac{1}{2}
 E_{1s} \approx -13{,}6 \, \tx{eV} \\
 E_{2s} \approx -3{,}4 \, \tx{eV}
 \end{array} \right\} \approx 10 \, \tx{eV} \\
-E_{3s} \approx -1{,}5 \, \tx{eV} \big\} \approx 2 \, \tx{eV}
+\hspace{6.5pt} E_{3s} \approx -1{,}5 \, \tx{eV} \big\} \approx 2 \, \tx{eV}
 \end{array}
 \end{equation*}
 Feinstruktur $ \approx 10^{-4} \div 10^{-5} \, \tx{eV} $
@@ -1085,7 +1085,7 @@ mit $ n $ der Hauptquantenzahl
 \begin{itemize}
 \item Spin-Bahn Kopplung
 \item Feinstruktur des Wasserstoffs
-\item Zeeman Effekt $\begin{matrix}\rightarrow \textrm{Anomaler Zeeman Effekt} \\ \rightarrow \textrm{Normaler Zeeman Effekt} \\ \rightarrow \textrm{Paschen-Back Effekt}\end{matrix}$ % OwO
+\item Zeeman Effekt $\begin{array}{l}\rightarrow \textrm{Anomaler Zeeman Effekt} \\ \rightarrow \textrm{Normaler Zeeman Effekt} \\ \rightarrow \textrm{Paschen-Back Effekt}\end{array}$ % OwO
 \item Spin Bahn Kopplung
 \end{itemize}
 \begin{minipage}{0.4\textwidth}
@@ -1192,3 +1192,214 @@ nur von $n$ und $j$ abh"angig.
 \hft
 
 \hfw
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Hier Fehlt etwas von Damian %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+% 16.05.19
+
+\subsubsection*{Programm Heute:}
+
+\begin{itemize}
+	\item Anormaler Zeeman Effekt $ j $
+	\item Normaler Zeeman Effekt
+	\item Paschen-Back Effekt
+	\item Hyperfeinstruktur (Wasserstoffatom): Atomuhr
+	\item Lamb Shift
+\end{itemize}
+
+\subsection{Normaler Zeeman Effekt}
+
+$ \vec{S} = 0 \quad $ Helium $ \vec{S} = \vec{s}_1 + \vec{s}_2 $ \lcom{Beim Heliumatom gibt es zwei Spins für die beiden Elektronen. Es gibt hier zwei Möglichkeiten: entweder up-up und down-down \textbf{oder} up-down und down-up. Deher gibt es zwei Möglichkeiten für den Gesamtspin.}
+\begin{equation*}
+\vec{S} \begin{array}{c}
+\nearrow \\[5pt] \searrow
+\end{array} \ \begin{array}{l}
+S = 0 \quad \Rightarrow \tx{Normaler Zeeman Effekt} \\[10pt] S = 1 \quad \Rightarrow \tx{Anormaler Zeeman Effekt}
+\end{array}
+\end{equation*}
+\begin{equation*}
+H = H_0 + \frac{\mu_B}{\hbar_0} \vec{L} \cdot \vec{B} \qquad \vec{L} = \vec{l_1} + \vec{l}_2
+\end{equation*}
+Energie Verschiebung
+\begin{equation*}
+E_B = \frac{\mu_B}{\hbar_0} \vec{L} \cdot \vec{B} = \frac{\mu_B}{\hbar_0} L_z \cdot B
+\end{equation*}
+mit $ L_z = m_z \hbar $
+\begin{equation*}
+\rmbox{E_B = \frac{\mu_B}{\cancel{\hbar_0}} m_z \cancel{\hbar_0} B = \mu_B m_z B } 
+\end{equation*}
+
+% lcom von damian
+
+\subsection{Pasch-Bach Effekt}
+
+$ E_{so} \ll E_{B} $
+\begin{equation*}
+H = H_0 + \frac{\mu_B}{\hbar} \left(\vec{l} + 2 \vec{s}\right) \cdot \vec{B} = H_0 + \frac{\mu_B}{\hbar} \left(l_z + 2 s_z\right) \cdot B
+\end{equation*}
+Operatoren $ l^2; l_z; s^2, s_z $
+\begin{equation*}
+\rmbox{ E_B = \frac{\mu_B}{\hbar} \left(m_l \hbar + 2 m_s \hbar \right) \cdot B = \mu_B \left(m_l + 2 m_s\right) \cdot B }
+\end{equation*}
+Betrachten wir hierzu ein Beispiel:\\[5pt]
+Was passiert mit dem $ p $-Zustand wenn wir ein starkes äußeres Magnetfeld anlegen, sodass die Spin-Bahn-Kopplung vernachlässigbar klein wird: $ p $-Zustand $\quad  l=1 \quad s = \frac{1}{2} $\\
+%t1: (schon als tabelle gemacht)
+\begin{tabular}{c|c|c}
+	$ m_l $ & $ m_s $ & $ m_l + 2 m_s $ \\ \hline
+	$ -1 $ & $ -\nicefrac{1}{2} $ & $ -2 $ \\
+	\color{green!50!black}$ \mathbf{-1} $ & \color{green!50!black}$ +\nicefrac{1}{2} $ & \color{green!50!black}$ \mathbf{0} $ \\
+	$ 0 $ & $ -\nicefrac{1}{2} $ & $ -1 $ \\
+	$ 0 $ & $ +\nicefrac{1}{2} $ & $ +1 $ \\
+	\color{green!50!black}$ \mathbf{1} $ & \color{green!50!black}$ -\nicefrac{1}{2} $ & \color{green!50!black}$ \mathbf{0} $ \\
+	$ 1 $ & $ +\nicefrac{1}{2} $ & $ +2 $ \\
+\end{tabular}
+$ B \neq 0 $
+
+%T2
+\hft
+
+
+\noindent
+$ p \dots $ mit $ l=1 \quad s = \frac{1}{2} \quad m_l = 0; \pm 1 \quad m_s = \pm \frac{1}{2} $\\
+\folie{Anormaler Zeeman- und Paschen-Bach-Effekt Kombination beider Effekte}\\
+\folie{Natrium Energieniveaus} $ \quad [\tx{Na}] = [\tx{NA}] 3 s^1 \ n^{2 s +1} \ L_j $\\
+$ n^{2s + 1} L_j  \quad \vec{J} = \vec{L} + \vec{S} $\\
+$ s = \frac{1}{2} = S \quad 2 S + 1 = 2 $\\
+$ l = 0 = L $\\[5pt]
+$ \Rightarrow \vec{J} = L + S = \frac{1}{2} $
+
+\subsection{Hyperfeinstruktur}
+
+$ 10^{-6} \div 10^{-8} \, \tx{eV} $\\
+\begin{minipage}{.7\linewidth}
+	Drehimpuls des Kerns $ \vec{I} $ (des Protons) Wasserstoff
+	\begin{equation*}
+	E_{HFS} = - \vec{\mu_I} \cdot \vec{B}_j \qquad \vec{\mu_I} = g_I \frac{\mu_K}{\hbar} \vec{I}
+	\end{equation*}
+	$ g_I = $ Kern $ \rho $ Faktor\\
+	$ \mu_{K} = $ Kernmagneton
+\end{minipage}%
+\begin{minipage}{.3\linewidth}
+	\flushright
+	%t3:
+	\begin{tikzpicture}[scale=0.75]
+		\draw[dashed] (0,0) circle (1.5cm);
+		\draw[fill=black] (0,0) circle (1pt) node[anchor=north east] {$ e $};
+		\coordinate (e) at (1.5,0);
+		\draw[thick, ->] (e) -- ++(0,1) node[anchor=north west] {$ e $};
+		\draw[fill=blue, draw=black] (e) circle (2pt);
+	\end{tikzpicture}
+\end{minipage}%
+\begin{equation*}
+\mu_{K} = \frac{e}{2 m_p} \hbar = \frac{e}{2 m_e} \hbar \frac{m_e}{m_p} = \mu_B \frac{m_e}{m_p} = \mu_{B} \frac{1}{1836}
+\end{equation*}
+$ \vec{B}_i \propto - \vec{i} $
+\begin{equation*}
+E_{HFS} = - \vec{\mu}_I \cdot \vec{B}_{j} = - |\vec{\mu}_j| \cdot B_j \cos(\vec{\mu}_I , \vec{B}_j) = \rmbox{| \vec{\mu}_I| B_j \cos(\vec{I}, \vec{j}) }
+\end{equation*}
+\begin{equation*}
+\cos(\vec{j}, \vec{I}) = \frac{\vec{j} \vec{I}}{|\vec{j}| |\vec{I}|} \quad \Rightarrow \quad \vec{j} \cdot \vec{I}
+\end{equation*}
+\begin{equation*}
+\vec{F} = \vec{I} + \vec{j} = \ \tx{Gesamtdrehimpuls des Atoms} \quad \begin{array}{l}
+\vec{I} \Rightarrow \tx{Kern (proton)} \\ \vec{j} \Rightarrow \tx{Elektron}
+\end{array}
+\end{equation*}
+\begin{equation*}
+|\vec{F}| = \sqrt{F(F+1)} \hbar \qquad \qquad -f \le m_F \le f
+\end{equation*}
+\begin{equation*}
+\cos(\vec{I}, \vec{j}) = \frac{1}{2} \frac{\left(F^2 - I^2 - j^2\right)}{| \vec{j} | | \vec{I} |} = \frac{1}{2} \frac{\left[F(F+1)\hbar^2 - I(I+1) \hbar^2 - j(j+1) \hbar ^2\right]}{\sqrt{j(j+1)} \hbar \sqrt{I(I+1)} \hbar}
+\end{equation*}
+\lcom{Ähnliches wurde Vorhin in der Vorlesung bei der Spin-Bahn Kopplung festgestellt.}
+\begin{align*}
+E_{HFS} = | \vec{\mu}_I | B_j \cos(\vec{I}, j) &= | \vec{\mu}_I | B_j \frac{1}{2} \frac{\left[F(F+1) - I(I+1) - j(j+1)\right]}{\sqrt{j(j+1)} \sqrt{I(I+1)}}\\
+&= \rmbox{\frac{A}{2} \left[ F(F+1) - I(I+1) - j(j+1) \right]}
+\end{align*}
+\begin{equation*}
+A = \frac{g_I \mu_K B_j}{\sqrt{j(j+1)}}
+\end{equation*}
+
+\subsubsection{Wasserstoff Grundzustand}
+
+\begin{equation*}
+\begin{array}{clc}
+l=0 \quad s = \frac{1}{2} & \tx{Elektron} & j = \frac{1}{2} \\[5pt]
+I = \frac{1}{2} & \tx{Proton} & I = \frac{1}{2}
+\end{array} \quad \Rightarrow \vec{F} = \vec{I} + \vec{j} |I-j| \le F \le I+j \begin{array}{c}
+\nearrow \\[5pt] \searrow
+\end{array} \begin{array}{c}
+F = 1 \\[10pt] F = 0
+\end{array}
+\end{equation*}
+\begin{align*}
+E_{HFS} (F=0) &= \frac{A}{2} \left[F(F+1) - I(I+1) - j(j+1)\right] = \frac{A}{2} \left[-\frac{1}{2} \left(\frac{1}{2} + 1\right) - \frac{1}{2} \left(1 + \frac{1}{2}\right)\right]\\
+&= \frac{A}{2} \left(-\frac{3}{2}\right) = \frac{-3A}{2} \\
+E_{HFS} (F=1) &= \frac{A}{2} \left[ 1 \cdot 2 - \frac{3}{4} - \frac{3}{4}\right] = \frac{A}{4}
+\end{align*}
+
+
+%T4 
+\hft
+
+\noindent % make left on minipage
+$ \Delta E = 5{,}9 \cdot 10^{-6} \, \tx{eV} $\\
+$ \nu = 1420 \, \tx{MHz} $\\
+$ \lambda = 21 \, \tx{cm} $ (Radioastronomie)
+
+\subsubsection{Wasserstoff erster angeregter Zustand}
+
+\begin{equation*}
+\begin{array}{cccc}
+l=1 \quad s =\frac{1}{2} & \tx{Elektron} & j = \frac{1}{2}; \frac{3}{2} & \qquad j = \frac{1}{2} ; I = \frac{1}{2} \quad \Rightarrow \quad F = 0,1 \\[10pt]
+I = \frac{1}{2} & \tx{Proton} & I=\frac{1}{2} & \qquad j = \frac{3}{2} ; I = \frac{1}{2} \quad \Rightarrow \quad F = 1,2
+\end{array}
+\end{equation*}
+\folie{Atomuhr}\\
+\lcom{Die Zeit wird hierbei mit einem Bestimmten Energieübergang definiert. Hierfür ist die Hyperfeinstruktur sehr wichtig.}\\
+\folie{Cäsium energy levels}
+
+\subsection{Lamb Shift}
+
+Feinstrukturen $ n; j \qquad \qquad 2 s_{\nicefrac{1}{2}}; 2 p_{\nicefrac{1}{2}} \quad \Rightarrow $ Lamb Shift\\[10pt]
+In der Quantenelektrodynamik (QED) gilt:
+\begin{equation*}
+\Delta E \Delta t \ge \frac{\hbar}{2}
+\end{equation*}
+\begin{center}
+	%t5
+	\begin{tikzpicture}
+	\draw[->] (-1.5,0) -- node[above] {$ e $} (0,0);
+	\draw[->] (0,0) -- ++(1,-1);
+	\draw[->] (1,-1) -- ++(1,1);
+	\draw[->] (2,0) -- ++(1,-1);
+	\draw[->] (3,-1) -- ++(1,1);
+	\draw[decorate, decoration={snake, segment length=2mm, amplitude=0.5mm}, red, ->] (0,0) -- (1,1);
+	\draw[decorate, decoration={snake, segment length=2mm, amplitude=0.5mm}, red, ->] (0,-2) -- (1,-1);
+	\draw[decorate, decoration={snake, segment length=2mm, amplitude=0.5mm}, red, ->] (2,0) -- ++(1,1);
+	\draw[decorate, decoration={snake, segment length=2mm, amplitude=0.5mm}, red, ->] (2,-2) -- ++(1,1);
+	\draw[decorate, decoration={snake, segment length=2mm, amplitude=0.5mm}, red, ->] (4,0) -- ++(1,1);
+	\end{tikzpicture}
+\end{center}
+
+
+Zitterbewegung:
+%T6 Zitterbewegung
+\hft
+
+
+\noindent
+\begin{equation*}
+E_{\tx{pot}} = - \frac{e^2}{4 \pi \epsilon_0} \frac{1}{r} \quad \Rightarrow \quad \langle E_{\tx{pot}} \rangle = - \frac{e^2}{4 \pi \epsilon_0} \left\langle \frac{1}{r + \delta r} \right\rangle
+\end{equation*}
+\begin{equation*}
+\begin{array}{cc}
+2s_{\nicefrac{1}{2}} & 2 p_{\nicefrac{1}{2}} \\ l=0 & l=1 \\ \left\langle \frac{1}{r + \delta r} \right\rangle_{2s} & \left\langle \frac{1}{r + \delta r} \right\rangle_{2p} \\ 2 s_{\nicefrac{1}{2}} & 2 p_{\nicefrac{1}{2}} \\
+\Delta E = 4{,}3 \cdot 10^{-6} \, \tx{eV} & \Delta E = - 5{,}95 \cdot 10^{-8} \, \tx{eV}
+\end{array}
+\end{equation*}
+\folie{Lamb-Verschiebung: Lamb-Rutherford Experiment}
+
