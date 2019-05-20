@@ -383,7 +383,7 @@ Daher bedarf es i.d.R. eines ,,\textbf{vollständigen Satzes von Observablen}`` 
 	(inspiriert durch die sogenannte $ \Lambda $-Konfiguration z.B. in Ionen-fallen-Physik/ion trap physics)
 	\end{minipage}%
 	\begin{minipage}{.15\linewidth}
-		$ \phantom{look behind you} $
+		$ \phantom{t} $
 	\end{minipage}%
 	\begin{minipage}{.35\linewidth}
 	\flushright
@@ -488,9 +488,21 @@ A|a\rangle &= a|a\rangle \ \ ,\quad |a\rangle\in\ham_A \\
 B|b\rangle &= \,b|b\rangle \ \ ,\quad |b\rangle\in\ham_B \\
 C|c\rangle &= \,c|c\rangle \ \ ,\quad |c\rangle\in\ham_C
 \end{align*}
-\begin{equation*}
+%
+%
+%
+\setcounter{equation}{43}
+%
+%
+%
+\begin{equation}
 |a\rangle \otimes |b\rangle \otimes |c\rangle \defeq |a\rangle |b\rangle |c\rangle \defeq |a,b,c\rangle
-\end{equation*}
+\end{equation}
+Auch genannt ,,tripatit`` oder ,,multipatit`` und auf englisch ``multipartition''. Erweiterungen von $ A $, $ B $ tec. auf $ \ham $:
+\begin{align*}
+A &\to A \otimes \mathbbm{1} \otimes \mathbbm{1} \dots \\
+B &\to \mathbbm{1} \otimes B \otimes \mathbbm{1} \dots
+\end{align*}
 \begin{itemize}
 \item $\ham$ is a vector space
 \[\ham = \ham_A \otimes \ham_B\]
@@ -517,6 +529,7 @@ C|c\rangle &= \,c|c\rangle \ \ ,\quad |c\rangle\in\ham_C
 |\psi\rangle &= \left(\sum_jc_j|a_j\rangle\right)\otimes\left(\sum_kd_k|b_k\rangle\right) \\
 &= \sum_{jk}c_jd_k|a_j\rangle\otimes|b_k\rangle
 \end{align*}
+\noindent
 \textbf{Example} Polarizer $\ham=\mathrm{span}\{|0\rangle,|1\rangle\}$
 \[
 \ham\otimes\ham=\mathrm{span}\{|0\rangle\otimes|0\rangle,|0\rangle\otimes|1\rangle,|1\rangle\otimes|0\rangle,|1\rangle\otimes|1\rangle\}
@@ -595,7 +608,127 @@ General $|\psi\rangle \neq |\phi\rangle \otimes |\chi\rangle$ ``Entangled''
 
 \end{itemize}
 
+%20.05.19
 
+\subsubsection{\emph{Bemerkungen:}}
 
+\begin{enumerate}
+	\item[(1)] war der Rest der letzten Vorlesung über Tensorräume
+	\item[(2)] Für einen Operator der Form $ O = A + B + C $ mit $ A|a\rangle = a | c \rangle \dots $ gilt:
+	%
+	%
+	%
+	\setcounter{equation}{59}
+	%
+	%
+	%
+	\begin{equation}
+	O | a, b, c \rangle = (a + b + c) |a, b, c \rangle
+	\end{equation}
+	
+	\subsubsection{\emph{Beispiel:}}
+	
+	Helium-Atom ohne e-e-Wechselwirkung\\[5pt]
+	Anreguns:
+	\begin{equation*}
+	H_{He} = H_{Z=2}^{(1)} + H_{Z=2}^{(2)} = -\frac{1}{2n_1^2} - \frac{1}{2n_2^2}
+	\end{equation*}
+	Die $ H_{Z=2} $ Terme sind klassische Wasserstoffähnliche Atome. 
+\end{enumerate}
+Allgemeinster (Zustands-) Vektor im bipartitem Hilbertraum $ \ham = \ham_{A} \otimes \ham_{B} $
+%
+%
+%
+\setcounter{equation}{56}
+%
+%
+%
+\begin{equation*}
+|\psi \rangle = \sum_{jk} c_{jk} | \varphi_j \rangle \otimes | \chi_{k} \rangle
+\end{equation*}
+$ |\varphi_j \rangle $ und $ |\chi_{k}\rangle $ sind beliebig und nicht notwendig Basisvektoren !
+\begin{equation*}
+| \psi \rangle \neq | \varphi \rangle \otimes | \chi \rangle \quad , \quad \forall |\varphi \rangle \in \ham_{A} , |\chi \rangle \in \ham_{B}
+\end{equation*}
+heißt \textbf{verschränkt} oder \textbf{nicht-separabel} $ \Big| $ entangled or non-entangled.\\[5pt]
+Wichtiges Hilfsmittel zur Charakterisierung des Verschänkungsgehalts bipartiter Systeme:\\
+\textbf{Schmidt-}\textbf{Zerlegung}
+$ \forall | \psi \rangle \in \ham = \ham_{A} \otimes \ham_{B} $ gibt es eine ONB $ \left\{ |j_{A}\rangle \right\}, \left\{ |j_{B}\rangle \right\} $ von $ \ham_{A} $ und $ \ham_{B} $, sowie Koeffizienten $ \lambda_j \in \mathbb{R}_{0}^{+}, \sum \lambda_j^2 = 1 $:
+%
+%
+%
+\setcounter{equation}{60}
+%
+%
+%
+\frbox{Schmidt-Zerlesung}{
+\begin{equation}
+|\psi \rangle = \sum_{j} \lambda_j | j_{A} \rangle \otimes | j_{B} \rangle
+\label{2 61}
+\end{equation}}
+\noindent
+Dies ist eine erhebliche Vereinfachung gegenüber II.49 und II.57\\[10pt]
+%
+%
+%
+% correct eqrefs oben
+%
+%
+%
+\textbf{Bisher:} Einbettung der Elemente der Faktorräume in den Tensorraum.\\[5pt]
+\textbf{Jetzt:} umgekehrte Richtung - lassen sich $ |\psi\rangle $ aus $ \ham $ in eindeutiger Weise mit Zuständen der Faktorräume identifizieren ?\\[5pt]
+Sei $ |\psi\rangle \in \ham $, dann ist gemäß \eqref{2 9} der Projektor auf $ |\psi\rangle $ durch:
+\begin{equation}
+P_{|\psi\rangle} \overset{\eqref{2 9}}{=} |\psi\rangle \langle \psi | \overset{\eqref{2 61}}{=} \sum_{j j'} \lambda _j \lambda _{j'} | j_{A}\rangle \langle j_{A}' | \otimes | j_{B} \rangle \langle j_{B}' |
+\label{2 62}
+\end{equation}
+Zunächst nehmen wir an, $ |\psi\rangle $ besitze nur einen nichtverschwindenden Schmidt-Koeffizienten, d.h. $ \lambda_j = \delta_{jk} $, womit folgt:
+\begin{equation}
+| \psi \rangle \langle \psi | = | k_{A} \rangle \langle k_{A} | \otimes | k_{B} \rangle \langle k_{B} |
+\label{2 63}
+\end{equation}
+Bilden wir die \textbf{partielle Spur} dieses Projektionsoperators über eine vollständige Basis von $ \ham_{B} $, so erhalten wir:
+\begin{equation*}
+\begin{aligned}
+\custo{\leftarrow}{\tx{tr}_{B}}{\tx{``trace''}} |\psi \rangle \langle \psi| &= \custo{\leftarrow}{\tx{Sp}_{B}}{\tx{,,Spur``}} | \psi \rangle \langle \psi| = \sum_{m} \phantom{\rangle}_{B}\langle m|\psi \rangle \langle\psi|m\rangle_{B} \\
+&= \sum_{m} \phantom{|}_{B}\langle m | \bigg[ | k_{A} \rangle \langle k_{A} | \otimes | k_B \rangle \langle k_B| \bigg] |m \rangle_{B} \\
+& \hspace{-7.5pt} \overset{\eqref{2 63}}{=} \sum_{m} |k_{A} \rangle \langle k_{A} | _{B}\langle m|k_{B}\rangle \langle k_{B}| m \rangle_{B} \\
+&= |k_{A} \rangle \langle k_{A}| \sum_{m} \langle k_{B} | m \rangle_{B} \langle m | k_B \rangle \\
+&= |k_{A} \rangle \langle k_{A} | \langle k_B | \ub{\sum_{m} | m \rangle_{B} \phantom{|}_{B} \langle m | }_{\mathclap{= \mathbbm{1} : \tx{ Vollständigkeit !}}} | k_{B} \rangle = | k_A\rangle \langle k_A| \ub{\langle k_B| k_B\rangle}_{\overset{\eqref{2 61}}{=} 1}\\
+&= | k_{A} \rangle \langle k_{A} |
+\end{aligned}
+\end{equation*}
+wobei $ _{B}\langle m | $ und $ | m \rangle_{B} $ ONB-Vektoren aus $ \ham_{B} $ sind.\\[5pt]
+Es gilt also:
+\begin{equation}
+\tx{tr}_{B} |\psi \rangle \langle\psi | = | k_A \rangle \langle k_A |
+\label{2 64}
+\end{equation}
+Dies liefert also eine eindeutige Zuordnung zwischen $ |\psi\rangle \in \ham $ (mit der Voraussetzung $ \lambda_j = \delta_{jk} $ !!!) und $ |k_{A}\rangle \in \ham_{A} $ (nach Ausspuren der $ \ham_{B} $-Komponente von $ |\psi \rangle $).\par
+Völlig analog gilt:
+\begin{equation}
+\tx{tr}_{A} | \psi \rangle \langle \psi | = | k_{B} \rangle \langle k_{B} |
+\label{2 65}
+\end{equation}
 
+\subsubsection{Interpretation von (II.64, II.65)}
 
+Verzicht auf die in den Basiszuständen des Faktorraums, über den gespurt wird, kodierte Information bringt \textbf{keinen} Informationsverlust bzgl. des in den Basiszuständen des verbleibenden Faktorraums eingeschriebene Struktur.\par
+Die Situation verändert sich grundlegend, wenn wir mehr als einen nichtverschwindenden Schmidt-Koeffizienten $ \lambda_j $ in \eqref{2 61} zulassen:\par
+Mit \eqref{2 62} erhält man für die Spur über $ \ham_{B} $:
+\begin{equation}
+\begin{aligned}
+\tx{tr}_{B}|\psi \rangle \langle \psi | \hspace{7.5pt} & \hspace{-7.5pt}\overset{\eqref{2 62}}{=} \sum_{m} \sum_{jj'} \lambda_{j} \lambda_{j'} | j_{A} \rangle \langle j_{A}' | \ub{_{B} \langle m | j_{B} \rangle}_{\delta_{mj}} \ub{\langle j_{B}' | m \rangle_{B}}_{\delta_{mj'}} \\
+&= \sum_{m} \lambda_m^2 | m_a \rangle \langle m_a |
+\end{aligned}
+\end{equation}
+Dies ist ein diagonaler Operator auf $ \ham_{A} $, mit Eigenwerten $ \lambda_m^2 < 1 $. Da aber jeder Projektor $ | \varphi \rangle \langle \varphi | $ auf einen beliebigen Zustand $ |\varphi \rangle \in \ham_{A} $ Eigenwerte $ 0 $ und $ 1 $ hat, lässt sich $ \tx{tr}_{B} |\psi \rangle \langle \psi | $ im allgemeinen \textbf{nicht} mit einem Zustandsvektor in $ \ham_{A} $ identifizieren!
+\begin{equation}
+\rmbox{
+\begin{aligned}
+\tx{tr}_{B} | \psi \rangle \langle \psi | &= \rho_{A} \\
+\tx{tr}_{A} | \psi \rangle \langle \psi | &= \rho_{B}
+\end{aligned}}
+\label{2 67}
+\end{equation}
+Dabei ist $ \rho $ der \textbf{reduzierte/r Dichtematrix -operator} oder \textbf{statistischer Operator}
