@@ -653,7 +653,7 @@ $ |\varphi_j \rangle $ und $ |\chi_{k}\rangle $ sind beliebig und nicht notwendi
 heißt \textbf{verschränkt} oder \textbf{nicht-separabel} $ \Big| $ entangled or non-entangled.\\[5pt]
 Wichtiges Hilfsmittel zur Charakterisierung des Verschänkungsgehalts bipartiter Systeme:\\
 \textbf{Schmidt-}\textbf{Zerlegung}
-$ \forall | \psi \rangle \in \ham = \ham_{A} \otimes \ham_{B} $ gibt es eine ONB $ \left\{ |j_{A}\rangle \right\}, \left\{ |j_{B}\rangle \right\} $ von $ \ham_{A} $ und $ \ham_{B} $, sowie Koeffizienten $ \lambda_j \in \mathbb{R}_{0}^{+}, \sum \lambda_j^2 = 1 $:
+$ \forall | \psi \rangle \in \ham = \ham_{A} \otimes \ham_{B} $ gibt es eine ONB $ \left\{ |j_{A}\rangle \right\}, \left\{ |j_{B}\rangle \right\} $ von $ \ham_{A} $ und $ \ham_{B} $, sowie Koeffizienten: $$ \lambda_j \in \mathbb{R}_{0}^{+}, \sum \lambda_j^2 = 1 $$
 %
 %
 %
@@ -661,7 +661,7 @@ $ \forall | \psi \rangle \in \ham = \ham_{A} \otimes \ham_{B} $ gibt es eine ONB
 %
 %
 %
-\frbox{Schmidt-Zerlesung}{
+\frbox{Schmidt-Zerlegung}{
 \begin{equation}
 |\psi \rangle = \sum_{j} \lambda_j | j_{A} \rangle \otimes | j_{B} \rangle
 \label{2 61}
@@ -719,9 +719,11 @@ Mit \eqref{2 62} erhält man für die Spur über $ \ham_{B} $:
 \begin{equation}
 \begin{aligned}
 \tx{tr}_{B}|\psi \rangle \langle \psi | \hspace{7.5pt} & \hspace{-7.5pt}\overset{\eqref{2 62}}{=} \sum_{m} \sum_{jj'} \lambda_{j} \lambda_{j'} | j_{A} \rangle \langle j_{A}' | \ub{_{B} \langle m | j_{B} \rangle}_{\delta_{mj}} \ub{\langle j_{B}' | m \rangle_{B}}_{\delta_{mj'}} \\
-&= \sum_{m} \lambda_m^2 | m_a \rangle \langle m_a |
+&= \sum_{m} \lambda_m^2 | m_a \rangle \langle m_a | \eqdef \rho_{A} = \tx{ reduzierte Dichtematrix}
 \end{aligned}
+\label{2 66}
 \end{equation}
+mit $ |\psi \rangle = $ Zustand(-s-Vektor) und $ \rho = $ Zustand.\\[5pt]
 Dies ist ein diagonaler Operator auf $ \ham_{A} $, mit Eigenwerten $ \lambda_m^2 < 1 $. Da aber jeder Projektor $ | \varphi \rangle \langle \varphi | $ auf einen beliebigen Zustand $ |\varphi \rangle \in \ham_{A} $ Eigenwerte $ 0 $ und $ 1 $ hat, lässt sich $ \tx{tr}_{B} |\psi \rangle \langle \psi | $ im allgemeinen \textbf{nicht} mit einem Zustandsvektor in $ \ham_{A} $ identifizieren!
 \begin{equation}
 \rmbox{
@@ -731,4 +733,73 @@ Dies ist ein diagonaler Operator auf $ \ham_{A} $, mit Eigenwerten $ \lambda_m^2
 \end{aligned}}
 \label{2 67}
 \end{equation}
-Dabei ist $ \rho $ der \textbf{reduzierte/r Dichtematrix -operator} oder \textbf{statistischer Operator}
+Dabei ist $ \rho $ der \textbf{reduzierte/r Dichtematrix -operator} oder \textbf{statistischer Operator}.\\[5pt]
+
+%21.05.19
+
+\noindent
+Partielle Spurbildung über $ \ham_{A} $ oder $ \ham_{B} $ führt i.a. (d.h. für beliebige Verteilung der Schmidt-Koeffizienten von $ |\psi\rangle $) auf operatorwertige Objekte der Form \eqref{2 66}, die nur für separable $ |\psi\rangle $ projektorwertig sind.\par
+Dichtematrizen haben folgende Eigenschaften:
+\begin{equation}
+\begin{aligned}
+\rho_{A}^{\dagger} &= \rho_{A} \\
+\tx{tr}_{A} \rho_{A} \hspace{7.5pt} & \hspace{-7.5pt} \underset{\substack{\eqref{2 61}\\\eqref{2 66}}}{=} 1 = \tx{tr}_{A} \tx{tr}_{B} |\psi \rangle \langle \psi| \\
+\tx{tr} \rho_{A}^2 &\le 1 \\
+\rho_{A} &\ge 0
+\end{aligned}
+\label{2 68}
+\end{equation}
+Zur letzten Eigenschaft gilt: $ \tx{d.h. $ \rho_{A} $ hat nichtneg. EW} \quad \rho_{A} \tx{ positiver Operator} $.\\[5pt]
+Wegen $ \sum \lambda_{m}^2 = 1 $ und $ \lambda_m \in \mathbb{R}_{0}^{+} $ gilt, dass $ \tx{tr} \rho_{A}^2 = 1 $ genau dann, wenn:
+\begin{equation}
+\rho_{A} = |\varphi \rangle \langle \varphi| \quad \tx{mit} \quad |\varphi\rangle \in \ham_{A}
+\label{2 69}
+\end{equation}
+Gilt \eqref{2 69}, so bezeichnet man $ \rho_{A} $ als ,,\textbf{reinen Zustand}``, der m.a.W. dadurch gekennzeichnet ist, dass er mit einem Zustands-Vektor identifizierbar ist. Andernfalls heißt $ \rho_{A} $ ,,\textbf{gemischter Zustand}`` ($ \Leftrightarrow \tx{tr} \rho_{A}^2 \lneq 1 $).\par
+Motivation der Begrifflichkeit durch Wahl einer bestimmten Darstellung (d.h. in vorgegebener Basis) 
+\begin{equation}
+\begin{aligned}
+\rho_{A} &= | \varphi \rangle \langle \varphi | = \left( \sum_{j} c_j |j\rangle \right) \left(\sum_{l} c_l^{*} \langle l | \right) = \sum_{jl} c_j \cdot c_l^{*} |j\rangle\langle l|\\
+&= \begin{pmatrix}
+|c_1|^2 & c_1 c_2^{*} & c_1 c_3^{*} & \dots \\[3pt]
+c_1^{*} c_2 & |c_2|^2 & c_2 c_3^{*} & \dots \\[3pt]
+c_1^{*} c_3 & c_2^{*} c_3 & |c_3|^2 \\
+\vdots & \vdots & & \ddots
+\end{pmatrix}
+\end{aligned}
+\label{2 70}
+\end{equation}
+Diagonalisierung führt (da $ \rho_{A} $) ein Projektor ist) auf:
+\begin{equation*}
+\begin{pmatrix}
+1 & 0 & 0 & \dots \\
+0 & 0 & 0 & \dots \\
+0 & 0 & 0 \\
+\vdots & \vdots & & \ddots
+\end{pmatrix}
+\end{equation*}
+Dagegen wissen wir wegen \eqref{2 66}, dass ein gemischter Zustand die Diagonalform:
+\begin{equation}
+\begin{pmatrix}
+|c_1|^2 & 0  & \dots \\
+0 & |c_2|^2  & \dots \\
+\vdots & \vdots & \ddots
+\end{pmatrix}
+\label{2 71}
+\end{equation}
+hat, also \textbf{nicht} in die Form von \eqref{2 70} überführt werden kann (bei \eqref{2 71} mindestens 2 Diagonaleinträge $ \neq 0 $).\par
+Reminiszenz an Kapitel \ref{Isection1} (Doppelspalt) und \ref{Isection2} dort: Die Interferenzterme dort werden in \eqref{2 70} gerade durch die Nebendiagonalelemente bestimmt. Die relevante Information über die Interferenzfähigkeit des Systems ist den ,,\textbf{Kohärenzen}``
+\begin{equation*}
+c_ic_j^* = |c_i| |c_j| e^{i(\varphi_i - \varphi_j)}
+\end{equation*}
+in der vorgegebenen Basis eingeschrieben.
+
+
+%T1
+\hft
+
+
+\noindent
+Die Diagonalelemente der Dichtematrix heißen auch ,,\textbf{Populationen}`` (Wkt. für sich klassisch ausschließende Alternativen). Das Abklingen (d. Ausdämpfen) der Nebendiagonalelemente/Kohärenzen in einem dynamischen Prozess heißt ,,\textbf{Dekohärenz}``.\par
+Da man mit dem Verschwinden des Interferenzterms die Phänomenologie klassischer Teilchen am Doppelspalt gewinnt, vermittelt Dekohärenz der \textbf{quanten-klassischen Übergang}.\\[5pt]
+\lcom{Interessantes Paper zu Buckyballs auf ILIAS}

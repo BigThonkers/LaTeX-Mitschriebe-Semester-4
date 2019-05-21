@@ -1,0 +1,129 @@
+
+%20.05.19
+
+\chapter{Teilchenidentifikation}
+
+\subsubsection*{Programm Heute}
+
+\begin{itemize}
+	\item Cherenkov Strahlung
+	\item Übergangsstrahlung
+	\item Energiemessung
+	\item Elektromagnetische Kalorimeter
+	\item Hadronische Kalorimeter
+\end{itemize}
+
+\section{\texorpdfstring{\v{C}}{C}herenkov Strahlung}
+
+
+%T1
+%T2
+\hft
+
+
+\noindent
+\v{C}herenkov Strahlung wird emittert wenn $ v > v_{\tx{Phase}} $ (Medium) also bei $ \beta > \frac{1}{n_{\tx{Medium}}} $.\\[5pt]
+Der Abstrahlwinkel ist:
+\begin{equation*}
+\cos \theta = \frac{1}{\beta \cdot n} = \frac{v_{\tx{Phase} (\tx{Medium}) }}{v_{\tx{Teilchen}}} \Rightarrow \frac{c}{n} \cdot \frac{1}{v_{\tx{Teilchen}}}
+\end{equation*}
+mit $ n $ dem Brechungsindex im Medium.\\[5pt]
+Der maximale Abstrahlwinkel $ \varangle $:
+\begin{equation*}
+\Theta^{\tx{max}} = \arccos \frac{1}{n}
+\end{equation*}
+Schwellenenergie $ E_s $ ab der \v{C}herenkov Strahlung auftritt
+\begin{equation*}
+\gamma_{s} = \frac{E_{s}}{\color{red} m \color{black} c^2} = \frac{1}{\sqrt{1 - \beta_{s}^{2}}} = \frac{1}{\sqrt{1 - \frac{1}{\color{red} n^2 \color{black}}}}
+\end{equation*}
+\folie{Leuchten eines Kernreaktors}\\
+\folie{\v{C}herenkov Effekt}\\[5pt]
+Anzahl emittierter Photonen
+\begin{equation*}
+\prd{\mu}{\lambda} = 2 \pi \alpha Z^2 \left(1 - \frac{1}{(p_n)^2}\right) \frac{\dd \lambda}{\lambda^2} \approx 2 \pi \alpha Z^2 \frac{\lambda_2 - \lambda_1}{\lambda_1 \lambda_2} \sin^2 \theta
+\end{equation*}
+$ n = n(\lambda) $\\
+für $ [400 \, \tx{nm}, 700 \, \tx{nm}] $ $ \frac{\dd N}{\dd x} \approx \hfw $
+\begin{equation*}
+\left(\prd{E}{x}\right)_{\tx{\v{C}}} \approx 10^{-2} \left(\prd{E}{x'}\right)_{\tx{Ionis}}
+\end{equation*}
+als Radiator: alle transparente Stoffe: NaCl, Diamant, Bleiglas, H$ _{2} $O.\\[5pt]
+\folie{\v{C}renenkov Winkel vs. Teilchengeschwinkdigkeit}\\
+\folie{Photonenausbeute}\\
+\folie{Verschiedene Typen}
+
+\section{Übergangsstrahlung}
+
+%T3
+\hft
+
+
+\noindent
+Teilchen + Spiegelladung $ \Rightarrow $ veränderlicher Dipol $ \Leftrightarrow $ Übergangsstrahlung
+
+
+\hfw
+
+\noindent
+Abstrahlungscharakteristik
+\begin{equation*}
+\prd{E}{\omega \dd \Omega} = \frac{h \alpha}{\pi^2} \beta^2 \cdot f(\theta)
+\end{equation*}
+$ \omega : $ Plasmafrequenz
+\begin{enumerate}[a)]
+	\item nicht relativistischer Fall $ f(\theta) = \sin^2 \theta $
+	\item relativistischer Fall $ f(\theta) = \frac{\sin^2 \theta }{1 - \beta \cos ^2 \theta} $
+	\item $ v = \frac{E}{m} \gg 1000 $
+	u.s. Bereich der Röntgenstrahlung
+\end{enumerate}
+
+Polarisationsebene definiert durch
+\begin{itemize}
+	\item bewegte Ladung
+	\item Abstrahlrichtung des Photonen
+\end{itemize}
+Bsp $ e^- $ mit $ E = 15 \, \tx{GeV} $, $ \gamma_e = 30000 $, $ \gamma_{\pi} = 110 $\\[5pt]
+Wahrscheinlichster Abstrahlwinkel:
+\begin{equation*}
+\theta \approx \sqrt{\frac{1}{\gamma^2} + \frac{\omega_p}{\omega}} \approx \frac{1}{\gamma}
+\end{equation*}
+$ \Rightarrow $ \textbf{Kein Grenzwinkel!}
+verstärkung des Effekts durch mehrfache Übergänge zwischen Medien.\\[5pt]
+\folie{Winkelverteilung Übergangsstrahlungsstrahlung}\\
+\folie{Übergangsstrahlungsdetektoren}
+
+\section{Kalorimeter}
+
+Aufgabe: Messung der Gesamtenergie in Abhängigkeit von der Bauweise
+\begin{itemize}
+	\item homogene Schauerzähler/Kalorimeter
+	\item sampling Schauerzähler/Kalorimeter (Stichprobenmessung) $ \to $ Einfluss auf die Auflösung bei der Energiemessung
+\end{itemize}
+\begin{enumerate}[a)]
+	\item Elektron-Photon Schauer\\
+	Einfache Abschätzung
+	\begin{equation*}
+	N_{e^{\pm}, \gamma} \approx 2^t \qquad E(t) \approx \frac{E_0}{2^t}
+	\end{equation*}
+	$ t : $ konstante Zeit / Eindringtiefe Schnitte\\
+	$ x_0 = \frac{1}{C_{\tx{RAD}}} $ Strahlungslänge
+	\begin{itemize}
+		\item Elektronen: $ 1 - \frac{1}{e} \approx 63\% $ der Energie wird durch Abstrahlung in Photonen abgegeben
+		\item Photonen $ 1 - \frac{1}{e^{7/9}} \approx 54\% $ Intensität geht durch $ e^+, e^- $ Paarbildung verloren
+	\end{itemize}
+	$ t_{\tx{max}} = \frac{\ln\nicefrac{E_0}{E_{\tx{Krit}}}}{\ln2} \approx 10{,}5 X_0 $\\
+	$ N_{\tx{max}} = \frac{E_0}{E_{\tx{Krit}}} \approx 1400 $ für $ Z = 82 $\\
+	genau auf $ O(x3, \dots, x5) $ genauer mit EGS GEANT
+	\begin{equation*}
+	\prd{E}{t} \propto t^a e^{-bt}
+	\end{equation*}
+	mit $ t = \frac{x}{x_0} $ (Anzahl Strahlungslängen)
+	
+	\hfw
+	
+	
+	\folie{Bremsstrahlung (Bethe-Heitler)}\\
+	\folie{Naives Schauerbild}\\
+	\folie{Longitudinal und Transverse Schauer Profile}\\
+	\folie{Longitudinale Schauerentwicklung}
+\end{enumerate}

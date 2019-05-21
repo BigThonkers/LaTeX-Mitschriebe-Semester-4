@@ -1,0 +1,44 @@
+\chapter{Dynamik}
+
+\textbf{Bisher:} statische Struktur des Zustandsraums der Quantenmechanik.\\[5pt]
+\textbf{Jetzt:} Parametrisierung in der zeit (zunächste aber \textbf{ohne} Begründung der ,,Richtung`` der Zeit ($ \to $ Ausblick: Dekohärenztheorie als ein aktueller Kandidat für den Ursprung des Zeitpfeils.)).
+
+\section{Die Schrödinger-Gleichung}
+
+Forderungen an die zeitliche Entwicklung eines Zustandes $ |\psi\rangle: $ Stetigkeit, d.h.
+\begin{equation}
+\lim_{t\to t_0} |\psi(t)\rangle = |\psi(t_0)\rangle = |\psi_0\rangle \equiv \tx{Anfangszustand}
+\label{3.1}
+\end{equation}
+wobei $ t > t_0 $.\\
+Weiter werde der Zustand $ |\psi(t)\rangle $ durch Operation des \textbf{Zeitentwicklunngsoperators} $ U(t,t_0) $ auf $ |\psi_0\rangle $ erzeugt, d.h.
+\begin{equation}
+|\psi(t) \rangle = U(t,t_0) |\psi_0\rangle
+\label{3.2}
+\end{equation}
+Im Sinne der Interpretation von $ |\psi\rangle $ also Wahrscheinlichkeitsamplitude für Messergebnisse fordern wir die Normerhaltung im Laufe der Zeit, was die Unitarität von $ U(t,t_0) $ impliziert (daher auch Sprechweise $ U \equiv $ ''the unitary``).
+\begin{equation}
+U^{+}(t,t_0) U(t,t_0) = \mathbbm{1} \quad \tx{bzw.} \quad U^{+}(t,t_0) = U^{-1}(t,t_0)
+\label{3.3}
+\end{equation}
+Dies garantiert:
+\begin{equation}
+||\, |\psi(t)\rangle || = 1 \ \forall t
+\label{3.4}
+\end{equation}
+Im Sinne einer kontinuierlichen und in einzelnen Zeitintervalle zerlegbaren Entwicklung fordern wir außerdem:
+\begin{equation}
+U(t,t_0) = U(t_1,t_2) U(t,t_0) \qquad \forall t_2 > t_1 > t_0
+\label{3.5}
+\end{equation}
+Mit der Stetigkeitsbedingung \eqref{3.1} folgt für ein infinitesimales Zeitintervall $ \dd t $:
+\begin{equation}
+\lim_{\dd t \to 0} U(t_0 + \dd t , t_0) = \mathbbm{1}
+\label{3.6}
+\end{equation}
+Der Ansatz
+\begin{equation}
+U(t_0 + \dd t, t_0) = \mathbbm{1} - i \Omega \dd t
+\label{3.7}
+\end{equation}
+mit $ \Omega = \Omega^{+} $, erfüllt die Forderungen aus \eqref{3.3}, \eqref{3.5} und \eqref{3.6} - unter der Voraussetzung, dass Terme der Ordnung $ \dd t^2 $ vernachlässigbar sind.
