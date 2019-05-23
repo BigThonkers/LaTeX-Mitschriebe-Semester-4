@@ -1192,11 +1192,63 @@ nur von $n$ und $j$ abh"angig.
 %T4
 \hft
 
-\hfw
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Hier Fehlt etwas von Damian %
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection*{Zeeman Effekt:}
+Wechselwirkung mit dem äußeren Magnetfeld:\\
+\begin{equation}
+\ham_0+\xi(r)\vec{l}\vec{s}+\frac{\mu_{B}}{\hbar}(\vec{l}+2\vec{s})\vec{B}
+\end{equation}
+\begin{align*}
+&\xi(r)\vec{l}\vec{s}= \text{Spin-Bahn Kopplung}\\
+&\frac{\mu_{B}}{\hbar}(\vec{l}+2\vec{s})\vec{B}=\text{Wechselwirkung mit äußerem B-Feld}
+\end{align*}
+Die Wellenfunktionen kann man in zwei Fälle unterscheiden.\\
+\begin{itemize}
+	\item[1.] $\vec{l}\vec{s}=\frac{1}{2}[j-l^2-s^2]$ Dies sind Eigenzustände von den zwei Basen: $(j^2,l^2,s^2,j_z);(j,l,s,m)$
+	\item[2.] $\vec{l}+2\vec{s}B=(l_z+2s_z)B$ Wir wollen Eigenzustände von $l_z$ und $s_z$. D.h wir wählen als Basis: $(l^2,l_z,s^2,s_z);(l,m_l,s,m_s)$
+\end{itemize}
+In Fall 1 gilt $E_{B}\ll E_{so} \Rightarrow (j^2,l^2,s^2,j_z)$. Dieser Fall wird anomaler Zeeman-Effekt genannt.\\
+In Fall 2 gilt $E_{so}\ll E_{B} \Rightarrow (l^2,l_z,s^2,s_z)$. Dieser Fall wird anomaler Paschen-Back-Effekt genannt.\\
+Es existiert noch ein dritter Fall als ein Spezialfall von Fall 1 dieser ist der Klassische oder Normale-Zeeman-Effekt. Hierbei wird der Spin $0$ wodurch sich ein Klassischer Fall ergibt. $\Rightarrow H = H_{\text{z.B:He}}+\frac{\mu_{B}}{\hbar}\vec{l}\vec{B}$\\
+\ \\
+Für den Anormalen Zeeman-Effekt gilt:\\
+$$ \vec{l}\Rightarrow \vec{mu_l}=-\frac{\mu_{B}}{\hbar}\vec{l}$$
+$$ \vec{s}\Rightarrow \vec{mu_s}=-g_s\frac{\mu_{B}}{\hbar}\vec{s}$$
+$$\Rightarrow \vec{\mu}\vec{mu_l}+\vec{mu_s}=-\frac{e}{2m_e}(\vec{l}+2\vec{s}) \qquad \text{mit} \qquad g_s \approx 2$$
+\folie{Anomaler Zeeman Effekt 1}
+\folie{Anomaler Zeeman Effekt 2}
+Vorgehen:
+\begin{itemize}
+	\item[1.Schritt] $(\mu_{j})_j$ Berechnen
+	\item[2.Schritt] Zerlegen von $(\mu_{j})_jB\Rightarrow((\mu_{j})_j)_z$ Entlang der B-Feld Richtung.
+\end{itemize}
+\folie{Anomaler Zeeman Effekt 3}
+\begin{itemize}
+	\item[1.Schritt] $$<\vec{\mu_{j}}>=(\vec{\mu_{j}})_j=\ub{\vec{\mu_j}*\frac{\vec{j}}{|\vec{j}|}}_*=-\frac{e}{2m_e}(\vec{l}+2\vec{s})\frac{\vec{j}}{|\vec{j}|}=-\frac{e}{2m_e}\left(\frac{\vec{l}\vec{j}}{|\vec{j}|}+2\frac{\vec{s}\vec{j}}{|\vec{j}|}\right)$$
+	Wie vorher hergeleitet wurde gilt:
+	$\vec{j}=\vec{l}+\vec{s};\quad |\vec{j}|=[j(j+1)\hbar^2]$ 
+	$$ \vec{l}\vec{j}=\frac{1}{2}[\vec{j}^2+\vec{l}^2-\vec{s}^2]\Rightarrow\vec{l}\vec{j}=\frac{1}{2}[j(j+1)+l(l+1)-s(s+1)]\hbar$$
+	$$ \vec{s}\vec{j}=\frac{1}{2}[\vec{j}^2-\vec{l}^2+\vec{s}^2]\Rightarrow\vec{l}\vec{j}=\frac{1}{2}[j(j+1)-l(l+1)+s(s+1)]\hbar$$
+	$$\mu_{j}>=-g_j\frac{mu_B}{\hbar}|j|$$
+	Hier ist $g_j$ der Lande Faktor mit der folgenden Definition:
+	\frbox{Lande Faktor $g_j$}{$$g_j=1+\frac{j(j+1)-l(l+1)+s(s+1)}{2j(j+1)}$$}
+	\section*{Beispiel 1}
+	$s=0; j=l\Rightarrow g_j=1$\\	\rmbox{<\vec{\mu_j}>=-\frac{\mu_{B}}{\hbar}|\vec{j}|}
+	\section*{Beispiel 2}
+	$l=0; j=s\Rightarrow g_j=2$\\	$\rmbox{<\vec{\mu_j}>=-2\frac{\mu_{B}}{\hbar}|\vec{j}|}$
+	\ \\
+	\ \\ 
+	Wenn man sich den Anormalen Zeeman Effekt anschaut sieht man dass hier auch der Unterschied gerade der Faktor $g_s$ ist.\\
+	Elektron:\\
+	$$s=\frac{1}{2} \Rightarrow j=l+\frac{1}{2}\Rightarrow g_j=\frac{2l+2}{2l+1} \overset{\text{für}l=1}{\Rightarrow}g_j=\frac{2}{3}$$
+	$$s=-\frac{1}{2} \Rightarrow j=l-\frac{1}{2}\Rightarrow g_j=\frac{2l}{2l+1} \underset{\text{für}l=1}{\Rightarrow}g_j=\frac{2}{3}$$
+	Es spielt also eine Rolle für die Wechselwirkung mit dem B Feld wie $s$ und $l$ eingestellt sind. Mathematisch wird dies durch den Lende Faktor beschrieben.\\
+	\item[2.Schritt] Wir setzten nun das B-Feld entlang der z-Achse. D.h wir zerlegen unser $<\vec{\mu_{j}}>$ entlang der z-Achse\\
+	$$<\vec{\mu_{j}}>_z=-g_j\frac{\mu_{B}}{\hbar}; \quad j_z\overset{j_z \text{Eigenwert}}{=}-\frac{\mu_{B}}{\hbar}m_j\hbar=-g_j\mu_{B}m_j$$
+	$$E=-\mu_{j}B\Rightarrow E=-{g_j\mu_{B}m_j}B=m_jg_j\mu_{B}B$$
+	$\rmbox{\Delta Em_j=m_jg_j\mu_{B}B}\Rightarrow$Anormaler Zeeman-Effekt\\
+	\ \\
+	$g_j$ gibt an wie groß der Bahn-Spin Magnetismus ist.
+\end{itemize}
 
 
 % 16.05.19
