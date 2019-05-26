@@ -438,10 +438,9 @@ Das selbe gilt auch für $ l_y $: $ \langle l_y \rangle = 0 $\\
 \newpage
 \textbf{Beispiel:}\\
 $ l=2 $, $ m = -2, -1, 0, 1, 2 $\\[5pt]
-$ \Rightarrow |\vec{l}| = \sqrt{6}\hbar $
-
+$ \Rightarrow |\vec{l}| = \sqrt{6}\hbar $\\
 %t6
-\begin{minipage}[ht]{0.5\textwidth}
+\begin{minipage}{0.5\linewidth}
 \begin{tikzpicture}[decoration={brace,amplitude=10pt}]
 \draw[->,thick] (0,-2.5) -- (0,2.5) node[above] {$z$};
 %\centerarc[](0,0)(0:360:2);
@@ -473,7 +472,7 @@ $ \Rightarrow |\vec{l}| = \sqrt{6}\hbar $
 \captionof{figure}{Präzession um die $ z $-Achse hängt von der Quantenzahl $ m $ ab.}
 \end{minipage}%
 %t7
-\begin{minipage}[t]{0.5\textwidth}
+\begin{minipage}{0.5\linewidth}
 \begin{tikzpicture}
 \draw[->] (0,0) -- (0,2) node[above] {$\vec{B}$};
 \draw[->] (0,0) -- (2,0) node[right] {$\vec{l}$};
@@ -540,13 +539,13 @@ Alle weiteren bekannten Serien wie: Balmer, Lyman, Paschen, Brackett, und Pfund.
 \hft\\
 Energie des Wasserstoffatoms:
 $$E=\frac{p_k^2}{2M}+\frac{p_e}{2m_e}+V(r)=\ub{\frac{p_k^2}{2M}}_\text{Kern}+\ub{\frac{p_e^2}{2m_e}}_\text{Elektron}-\ub{\frac{e^2}{4\pi\epsilon_0}\frac{1}{r}}_\text{Coulomb}$$
-$$\vec{R_k}=\vec{R_{cM}}+\vec{r_k}$$
-$$\vec{R_1}=\vec{R_{cM}}+\vec{r_1}$$
+$$\vec{R}_k=\vec{R}_{cM}+\vec{r}_k$$
+$$\vec{R}_1=\vec{R}_{cM}+\vec{r}_1$$
 Energie des Wasserstoffatoms im Schwerpunktsystem:
 $$E=\frac{p^2_{cM}}{2M_{tot}}+\frac{p^2}{2\mu}-\frac{e^2}{4\pi\epsilon_0}\frac{1}{r}$$
 \begin{itemize}
 	\item $M_{tot}=M+m$
-	\item $\vec{m_{cM}}=(m_e+M)\vec{v_{cM}}$ Impuls des Schwerpunktes
+	\item $\vec{m}_{cM}=(m_e+M)\vec{v}_{cM}$ Impuls des Schwerpunktes
 	\item $\mu=\frac{m_eM}{m_e+M}=\frac{m_e}{\frac{m_e}{M}+1}\approx m_e$ Reduzierte Masse mit $m_e \ll M$
 	\item $\vec{p}=\frac{1}{M+m_e}[m_e\vec{p}_k-M\vec{p_1}]$ relatives Moment
 \end{itemize}
@@ -556,17 +555,17 @@ $$E_{cM}=\frac{p_{cm}^2}{2M_{tot}} \qquad \qquad E_0=\frac{p^2}{2\mu}-\frac{e^2}
 $$E\Rightarrow \hat{H}\equiv H$$
 $$H=H_{cM}+H_0$$
 \begin{align*}
-&H_{cm}=\frac{p^2_{cM}}{2M_{tot}}\overset{*}{=}-\frac{\hbar^2}{2M_{tot}}\nabla^2_{cM}\\
+&H_{cM}=\frac{p^2_{cM}}{2M_{tot}}\overset{*}{=}-\frac{\hbar^2}{2M_{tot}}\nabla^2_{cM}\\
 &H_0=\frac{p^2}{2\mu}-\frac{e^2}{4\pi \epsilon_0}\frac{1}{r}=-\frac{\hbar^2}{2\mu}\nabla^2-\frac{e^2}{4\pi \epsilon_0}\frac{1}{r}
 \end{align*}
 $(*)$ $p_{cM}$ als Operator da $H$ ein Operator ist: $ p_{cM}=-i\hbar \nabla_{cM} $
 Eigenzustände für $H_{cM}$ und $H_0$:\\
 \ \\
-$H_{cm}$ ist der Hamilton für ein freies Teilchen
+$H_{cM}$ ist der Hamilton für ein freies Teilchen
 $$\overset{\text{Schrödinger GL}}{\Rightarrow} H_{cM}*\Psi_{cM}=E_{cM}\Psi_{cM}\Rightarrow\frac{-\hbar^2}{2M_{tot}}\nabla^2\Psi_{cM}=E_{cM}\Psi_{cM}$$
 Für die Wellengleichung eines freien Teilchens gilt:
-$$\Psi_{cM}(\vec{R_{cM}})=Ce^{i(\vec{p_{cM}}\vec{R_{cM}})}\frac{1}{\hbar}$$
-$$\Rightarrow -\frac{\hbar^2}{2M_{tot}}\nabla^2\Psi_{cM}=-\frac{\cancel{\hbar^2}}{2M_{tot}}\frac{-\vec{p_{cM}^2}}{\cancel{\hbar^2}}\cancel{\Psi_{cM}}=E_{cM}\cancel{\Psi_{cM}}$$
+$$\Psi_{cM}(\vec{R}_{cM})=Ce^{i(\vec{p}_{cM}\vec{R}_{cM})}\frac{1}{\hbar}$$
+$$\Rightarrow -\frac{\hbar^2}{2M_{tot}}\nabla^2\Psi_{cM}=-\frac{\cancel{\hbar^2}}{2M_{tot}}\frac{-\vec{p}_{cM}^2}{\cancel{\hbar^2}}\cancel{\Psi_{cM}}=E_{cM}\cancel{\Psi_{cM}}$$
 $$\Rightarrow \frac{\vec{p}^2_{cM}}{2M_{tot}}=E_{cM}$$
 Schwerpunkt:
 $$H_0=\frac{p^2}{2\mu}-\frac{e^2}{4\pi\epsilon_0}\frac{1}{r}\overset{\mu=m_e}{\approx}\frac{p^2}{2m_e}-\frac{e^2}{4\pi\epsilon_0}$$
@@ -618,7 +617,7 @@ $$R_{10}=2(\frac{1}{a_0})^{\frac{3}{2}}e^{-\frac{r}{a_0}} \qquad \qquad \ub{a_0=
 \hft
 \folie{Spektrometer}
 
-NIST Database für Spektrallinien von Atomen und Molekülen.\\ \texttt{https://www.nist.gov/pml/atomic-spectra-database} und\\ \verb|https://physics.nist.gov/PhysRefData/ASD/lines_form.html|.\\[10pt]
+NIST Database für Spektrallinien von Atomen und Molekülen.\\ \url{https://www.nist.gov/pml/atomic-spectra-database} und\\ \url{https://physics.nist.gov/PhysRefData/ASD/lines_form.html}.\\[10pt]
 \noindent
 Balmer Linie
 \begin{align*}
@@ -656,8 +655,6 @@ n = 1 \qquad l = 0 \qquad m = 0 \quad \Rightarrow \quad 1 \qquad 1 s
 
 % hier für n=2 und n = 3 von Damians Aufschrieb in Arrays packen
 
-
-
 \noindent
 Entartungsgrad
 \begin{equation*}
@@ -694,7 +691,7 @@ n = 2 \qquad l = 1 \qquad R_{21}(r) = \frac{1}{\sqrt{3}} \left(\frac{1}{2 a_0}\r
 \end{array} \right.
 \end{equation*}
 \begin{equation*}
-\vec{p}_m = - \frac{e}{2 m_e} m_e v R \vec{u_n = - \frac{e}{2 m_e}}  \cdot \vec{l} = - \frac{e \hbar}{2 m_e \hbar} \vec{l} = - \mu_{B} \frac{\vec{l}}{\hbar}
+\vec{p}_m = - \frac{e}{2 m_e} m_e v R \vec{u}_n = - \frac{e}{2 m_e}  \cdot \vec{l} = - \frac{e \hbar}{2 m_e \hbar} \vec{l} = - \mu_{B} \frac{\vec{l}}{\hbar}
 \end{equation*}
 \begin{equation*}
 \mu_B = \frac{e \hbar}{2 m_e} = 9{,}27 \cdot 10^{-24} \, \frac{\tx{J}}{\tx{T}} \qquad \tx{\textbf{Bohrsches Magneton}}
@@ -748,7 +745,8 @@ $ \left[\ham_0 \ham_B\right] = 0 $
 \ham_B = \frac{\mu_B}{\hbar} B l_z \qquad \ham_{B} | \psi_{nlm}(\vec{r}) \rangle = \frac{\mu_B B}{\hbar} l_z | \psi_{nlm}(\vec{r}) \rangle = \frac{\mu_B B}{\cancel{\hbar}} \cdot m \cancel{\hbar} | \psi_{nlm}(\vec{r})
 \end{equation*}
 \begin{align*}
-\langle \psi_{nlm}(\vec{r}) | \ham_B | \psi_{nlm}(\vec{r}) \rangle = \langle \psi_{nlm}(\vec{r}) | \mu_B B m | \psi_{nlm}(\vec{r}) \rangle = \mu_B B m \langle \psi_{nlm}(\vec{r}) | \psi_{nlm}(\vec{r}) \rangle = \rmbox{\mu_B B m}
+\langle \psi_{nlm}(\vec{r}) | \ham_B | \psi_{nlm}(\vec{r}) \rangle &= \langle \psi_{nlm}(\vec{r}) | \mu_B B m | \psi_{nlm}(\vec{r}) \rangle\\
+&= \mu_B B m \langle \psi_{nlm}(\vec{r}) | \psi_{nlm}(\vec{r}) \rangle = \rmbox{\mu_B B m}
 \end{align*}
 
 \subsection{Stern-Gerlach Experiment}
@@ -846,7 +844,7 @@ Die gesamte Wellenfunktion des Wasserstoffatoms
 \end{align*}
 $ g_s = $ $ g $-Faktor = 2 $ \Rightarrow $ Q.E.D
 
-% 8.05.19
+% 9.05.19
 
 \begin{itemize}
 	\item Zusammensetzung $ \verb|l| $ $ \vec{s} $
@@ -1095,27 +1093,26 @@ L &= 1:2_{} & 2p & \rightarrow \begin{matrix}2p_{\nicefrac{1}{2}} \\ 2p_{\nicefr
 & \bar{L} \Rightarrow \vec{\mu}_C = -\frac{\mu_B}{\hbar}\vec{L} \\
 & \bar{s} \Rightarrow \vec{\mu}_s = -g_s \frac{\mu_B}{\hbar}\vec{s}
 \end{align*}
-\end{minipage}
-\begin{minipage}{0.4\textwidth}
+\end{minipage}%
+\begin{minipage}{0.6\textwidth}
 %T1
 \hft
-\end{minipage}
-
+\end{minipage}%
+\\
 \begin{minipage}{0.4\textwidth}
 Bezugssystem des Elektrons:
 
 %T2
 \hft
 
-\end{minipage}
-\begin{minipage}{0.4\textwidth}
+\end{minipage}%
+\begin{minipage}{0.6\textwidth}
 Bio Savart Gesetz:
 \begin{align*}
 \mathrm{d}\bar{B} &= \frac{\mu_0}{4\pi} I \frac{\mathrm{d}I\times\Delta\vec{r}}{|\Delta r|^3} & \Rightarrow B &= \frac{\mu_0I}{2r} \\
 I &= \frac{e}{T} \frac{ev_K}{2\pi r_K} & \rightarrow B&= \frac{\mu_0}{2r} \frac{ev_K}{2\pi r_K} = \frac{\mu_0 e v_K r_K}{4 \pi r_K^3}
 \end{align*}
-\end{minipage}
-\\
+\end{minipage}%
 \\
 \begin{equation*}
 B = \frac{\mu_0 e v_K r_K}{4\pi r_K^3} \Rightarrow \vec{B} = \frac{\mu_0 e }{4 \pi r_K^3} = \frac{\mu_0 e}{4 \pi r_K^3 m_e}\vec{r}_K \times m_e \vec{v}_K
@@ -1192,6 +1189,8 @@ nur von $n$ und $j$ abh"angig.
 %T4
 \hft
 
+% 10.05.19
+
 \subsubsection*{Zeeman Effekt:}
 Wechselwirkung mit dem äußeren Magnetfeld:\\
 \begin{equation}
@@ -1223,7 +1222,7 @@ Vorgehen:
 \end{itemize}
 \folie{Anomaler Zeeman Effekt 3}
 \begin{itemize}
-	\item[1.Schritt] $$<\vec{\mu_{j}}>=(\vec{\mu_{j}})_j=\ub{\vec{\mu_j}*\frac{\vec{j}}{|\vec{j}|}}_*=-\frac{e}{2m_e}(\vec{l}+2\vec{s})\frac{\vec{j}}{|\vec{j}|}=-\frac{e}{2m_e}\left(\frac{\vec{l}\vec{j}}{|\vec{j}|}+2\frac{\vec{s}\vec{j}}{|\vec{j}|}\right)$$
+	\item[1.Schritt] $$<\vec{\mu}_{j}>=(\vec{\mu}_{j})_j=\ub{\vec{\mu}_j*\frac{\vec{j}}{|\vec{j}|}}_*=-\frac{e}{2m_e}(\vec{l}+2\vec{s})\frac{\vec{j}}{|\vec{j}|}=-\frac{e}{2m_e}\left(\frac{\vec{l}\vec{j}}{|\vec{j}|}+2\frac{\vec{s}\vec{j}}{|\vec{j}|}\right)$$
 	Wie vorher hergeleitet wurde gilt:
 	$\vec{j}=\vec{l}+\vec{s};\quad |\vec{j}|=[j(j+1)\hbar^2]$ 
 	$$ \vec{l}\vec{j}=\frac{1}{2}[\vec{j}^2+\vec{l}^2-\vec{s}^2]\Rightarrow\vec{l}\vec{j}=\frac{1}{2}[j(j+1)+l(l+1)-s(s+1)]\hbar$$
@@ -1242,8 +1241,8 @@ Vorgehen:
 	$$s=\frac{1}{2} \Rightarrow j=l+\frac{1}{2}\Rightarrow g_j=\frac{2l+2}{2l+1} \overset{\text{für}l=1}{\Rightarrow}g_j=\frac{2}{3}$$
 	$$s=-\frac{1}{2} \Rightarrow j=l-\frac{1}{2}\Rightarrow g_j=\frac{2l}{2l+1} \underset{\text{für}l=1}{\Rightarrow}g_j=\frac{2}{3}$$
 	Es spielt also eine Rolle für die Wechselwirkung mit dem B Feld wie $s$ und $l$ eingestellt sind. Mathematisch wird dies durch den Lende Faktor beschrieben.\\
-	\item[2.Schritt] Wir setzten nun das B-Feld entlang der z-Achse. D.h wir zerlegen unser $<\vec{\mu_{j}}>$ entlang der z-Achse\\
-	$$<\vec{\mu_{j}}>_z=-g_j\frac{\mu_{B}}{\hbar}; \quad j_z\overset{j_z \text{Eigenwert}}{=}-\frac{\mu_{B}}{\hbar}m_j\hbar=-g_j\mu_{B}m_j$$
+	\item[2.Schritt] Wir setzten nun das B-Feld entlang der z-Achse. D.h wir zerlegen unser $<\vec{\mu}_{j}>$ entlang der z-Achse\\
+	$$<\vec{\mu}_{j}>_z=-g_j\frac{\mu_{B}}{\hbar}; \quad j_z\overset{j_z \text{Eigenwert}}{=}-\frac{\mu_{B}}{\hbar}m_j\hbar=-g_j\mu_{B}m_j$$
 	$$E=-\mu_{j}B\Rightarrow E=-{g_j\mu_{B}m_j}B=m_jg_j\mu_{B}B$$
 	$\rmbox{\Delta Em_j=m_jg_j\mu_{B}B}\Rightarrow$Anormaler Zeeman-Effekt\\
 	\ \\
@@ -1456,3 +1455,383 @@ E_{\tx{pot}} = - \frac{e^2}{4 \pi \epsilon_0} \frac{1}{r} \quad \Rightarrow \qua
 \end{equation*}
 \folie{Lamb-Verschiebung: Lamb-Rutherford Experiment}
 
+% 17.05.19
+
+\subsection{Energieniveaus im Wasserstoffatom}
+
+\begin{itemize}
+	\item Feinstruktur
+	\item Hyperfeinstruktur
+	\item Lamb-Shift
+\end{itemize}
+
+%T1
+\hft Feinstruktur Lambshift HFS
+
+\noindent
+Spektrale Übergänge:\\
+$ 3 \to 2 $, $ 4 \to 2 $, $ 3 \to 2 $\\
+\folie{Atom mit zwei Elektronen}
+
+\section{Helium}
+
+In einem Helium herrscht die Wechselwirkung zwischen Kern und den 2 $ e^- $ und die Wechselwirkung der beiden $ e^- $ untereinander. Die klassische Energie ist dann:
+\begin{equation*}
+E = \ub{ \frac{p_k^2}{2M} + \frac{p_1^2}{2 m_e} + \frac{p_2^2}{2 m_e} }_{E_{\tx{kin}}} - \ub{ \frac{2e^-}{4 \pi \epsilon_0 |\vec{r}_k - \vec{r}_1|} - \frac{2 e^-}{4 \pi \epsilon_0 | \vec{r}_k - \vec{r}_2|} + \frac{e^2}{4 \pi \epsilon_0|\vec{r}_2 - \vec{r}_1|} }_{\tx{Wechselwirkungen}}
+\end{equation*}
+mit $ M = $ Masse des Kerns: $ ^4 \tx{He} \approx 99{,}9\% $ und $ ^3 \tx{He} \approx 0{,}0002 \% $
+\begin{equation*}
+E = E_{CM} + E' \qquad \qquad E_{CM} = \frac{p_{CM}^2}{2 M_{\tx{Tot}}}
+\end{equation*}
+wobei $ CM $ für ``Center of Mass'' steht.
+\begin{equation*}
+\rmbox{  E' = \frac{p_1^2}{2 m_e} + \frac{p_2^2}{2 m_e} - \frac{2 e^-}{4 \pi \epsilon_0 r_1} - \frac{2 e^-}{4 \pi \epsilon_0 r_2} + \cancel{\frac{e^2}{4 \pi \epsilon_0 | \vec{r}_2 - \vec{r}_1 |}} }
+\end{equation*}
+Wir nehmen zunächst an, dass der letzte Term, der Ordnung $ -\mathcal{O}_e $ Näherungsweise nicht existiert.
+\begin{equation*}
+\begin{aligned}
+\vec{p}_1 &\Rightarrow - i \hbar \vabla_1 & \vec{p}_2 &\Rightarrow - i \hbar \vabla_2\\
+\vec{r}_1 &= \vec{r}_2 & \vec{r}_2 &\Rightarrow \vec{r}_2
+\end{aligned}
+\end{equation*}
+\begin{equation*}
+H' = - \frac{\hbar^2}{2 m_e} \vabla_{r_1}^2 - \frac{\hbar^2}{2 m_e} \vabla_{r_2}^2 - \frac{2e^2}{4 \pi \epsilon_0} \frac{1}{r_1} - \frac{2e^2}{4 \pi \epsilon_0}\frac{1}{r^2} + \frac{e^2}{4 \pi \epsilon_0 | \vec{r}_2 - \vec{r}_1|}
+\end{equation*}
+\begin{equation*}
+\rmbox{\begin{aligned}
+H' &= - \frac{1}{2} \vabla_{r_1}^2 - \frac{1}{2} \vabla_{r_2}^2 - \frac{2}{r_1} - \frac{2}{r_2} + \frac{1}{|\vec{r}_2 - \vec{r}_1|} & \qquad \qquad \frac{1}{|\vec{r}_2 - \vec{r}_1|} \defeq \frac{1}{r_{12}} \\[5pt]
+H'& \psi(\vec{r}_1, \vec{r}_2) = E \psi(\vec{r}_1, \vec{r}_2)
+\end{aligned}}
+\end{equation*}
+$ \psi(q_1, q_2) $, $ q \equiv (\vec{r},s) $ $ \begin{array}{c}
+q_1 = (\vec{r}_1 , s_1) \\
+q_2 = (\vec{r}_2 , s_2)
+\end{array} $
+\begin{equation*}
+\psi(q_1, q_2) = \psi(\vec{r}_1, \vec{r}_2) \chi(1,2)
+\end{equation*}
+Für Wasserstoff haben wir $ \chi_{\frac{1}{2}, \frac{1}{2}} $ und $ \chi_{\frac{1}{2}, - \frac{1}{2}} $\\
+\textbf{Wasserstoff:}
+\begin{equation*}
+\psi(a) = \psi(\vec{r}) \chi_{\frac{1}{2}, m_s}
+\end{equation*}
+\folie{Niels Bohr in Göttingen 1922}\\
+\folie{Wolfgang Pauli in Copenhagen 1922}\\
+\folie{Ausschließungsprinzip oder Pauli Prinzip/Verfahren}\\
+Die folgenden Aussagen sind damit \textbf{Aquivalent}:
+\begin{itemize}
+	\item keine 2 $ e^- $ besetzen den selben Quantenzustand
+	\item die Wellenfunktion muss Antisymmetrisch sein
+\end{itemize}
+(bei Fermionen, also Teilchen mit Halbzahligem Spin)\\
+(bei Bosonen (mit ganzzahligem Spin) muss $ \psi $ symmetrisch sein!)
+
+\subsection{Fermionen}
+
+$ \psi(q_1, q_2) $
+Bei Fermionen ist die Wellenfunktion Antisymmetrisch
+\begin{equation*}
+P \psi(q_1, q_2) = \psi(q_2, q_1) = - \psi(q_1, q_2)
+\end{equation*}
+Es gilt
+$ P \psi(q_1, q_2) = \psi(q_2, q_1) $\\[10pt]
+\textbf{Einschub: Bosonen}\\[5pt]
+Bei Bosonen ist die Wellenfunktion Symmetrisch
+\begin{equation*}
+P \psi(q_1, q_2) = \psi(q_2, q_1) = \psi(q_1, q_2)
+\end{equation*}
+Dies ist nur mit der Quantenfeldtheorie erklärbar.\\[10pt]
+Was passiert wenn beide $ e^- $ den selben Zustand besetzen ?\\
+$ q_1 = q, q_2 = q $
+\begin{equation*}
+\psi(q_2, q_1) = - \psi(q_1, q_2) \quad \Rightarrow \quad \psi(q,q) = - \psi(q,q) \quad \Rightarrow \quad \psi(q,q) = 0
+\end{equation*}
+$ P(\tx{2 $ e^- $ am selben Ort}) = 0 \quad \Rightarrow 2 e^- \tx{nie im selben Quantenzustand !} $\\[5pt]
+Der Permutator $ P $ vertauscht nicht nur $ \vec{r} $ sondern auch den Spin der Elektronen!\par
+Wie wollen eine Spinfunktionen $ \chi_{\frac{1}{2}, m_s} $ finden, die Symmetrisch oder Antisymmetrisch sind und mit Raumanteilen $ \psi(\vec{r}_1, \vec{r}_2) $ kombinieren, die umgekehrt also Antisymmetrisch oder Symmetrisch sind.\par
+Somit stellen wir sicher, dass $ \psi(q_1, q_2) $ immer Antisymmetrisch (bei Fermionen nötig) ist.
+
+\subsection{Spinfunktion}
+
+$ \chi_{1,2} $ Helium $ \quad \chi(1,2) \begin{array}{c}
+\tx{Symmetrisch} \\ \tx{Antisymmetrisch}
+\end{array} $\\
+bei Wasserstoff haben wir zwei Spinfunktionen eingeführt
+\begin{align*}
+\chi_{\frac{1}{2}, +\frac{1}{2}} \quad \uparrow \quad |\alpha\rangle \quad \alpha \\
+\chi_{\frac{1}{2}, -\frac{1}{2}} \quad \downarrow \quad |\beta\rangle \quad \beta
+\end{align*}
+Im Helium gilt:
+\begin{equation*}
+\begin{array}{ccc}
+\alpha(1) \quad \beta(1) \quad &\tx{Erstes Elektron} &\quad s_1^2;s_{z_1} \\[5pt]
+\alpha(2) \quad \beta(2) \quad &\tx{Zweites Elektron} &\quad s_2^2;s_{z_2}
+\end{array} \Rightarrow \vec{S} = \vec{s}_1 + \vec{s}_2 \quad S_z = s_{z_1} + s_{z_2}
+\end{equation*}
+Welche Quantenzahlen darf $ \vec{S} $ annehmen?
+\begin{equation*}
+|s_1 - s_2| \le S \le s_1 + s_2 \qquad s_1 = s_2 = \frac{1}{2} \quad \Rightarrow \quad 0 \le S \le 1 \quad \begin{array}{c}
+S = 0 \\ S = 1
+\end{array}
+\end{equation*}
+$ m_s = m_{s_1} + m_{s_2} = \pm 1 ; 0 $\\[5pt]
+Daraus ergeben sich vier Quantenzustände
+\begin{equation*}
+\begin{aligned}
+&S = 0 \quad \Rightarrow \quad m_s = 0 & \qquad \tx{Singulett Zustand} \\[5pt]
+&S = 1 \quad \Rightarrow \quad m_s = -1;0;+1 & \qquad \tx{Triplett Zustand}
+\end{aligned}
+\end{equation*}
+Wir erhalten also die Spinfunktionen:
+\begin{align*}
+\chi_1(1,2) &= \alpha(1) \alpha(2) \\
+\chi_2(1,2) &= \alpha(1) \beta(2) \\
+\chi_3(1,2) &= \beta(1) \alpha(2) \\
+\chi_4(1,2) &= \beta(2) \beta(2)
+\end{align*}
+Die Funktionen $ \chi_1 $ und $ \chi_4 $ sind Symmetrisch:
+\begin{align*}
+P \chi_1(1,2) &= \chi_1(2,1) = \alpha(2) \alpha(1) = \alpha(1) \alpha(2) = \chi_1(1,2) \\
+P \chi_4 (1,2) &= \chi_4(2,1) = \beta(2) \beta(1) = \beta(1) \beta(2) = \chi_4(1,2)
+\end{align*}
+Die Spinfunktionen $ \chi_2 $ und $ \chi_2 $ weisen keine besondere Symmetrieform auf. D.h. sie sind weder Symmetrisch noch Antisymmetrisch:
+\begin{align*}
+P \chi_2(1,2) &= \chi_2(2,1) = \alpha(2) \beta(1) = \chi_3(1,2) \neq \pm \chi_2 \\
+P \chi_3(1,2) &= \chi_3(2,1) = \beta(2) \alpha(1) = \chi_2(1,2) \neq \pm \chi_3
+\end{align*}
+Dafür haben aber $ \chi_2 $ und $ \chi_3 $ eine Verbindung untereinander.\par
+Um für $ \chi_2 $ und $ \chi_3 $ ebenfalls besondere Symmetrien zu erhalten erstellen wir neue Spinfunktionen aus Linearkombinationen der beiden.
+\begin{align*}
+P\{\chi_2(1,2) + \chi_3(1,2)\} &= \chi_3(1,2) + \chi_2(1,2) = \phantom{+}\{\chi_2(1,2) + \chi_3(1,2)\} \quad &\tx{ Symmetrisch} \\
+P\{\chi_2(1,2) - \chi_3(1,2)\} &= \chi_3(1,2) - \chi_2(1,2) = -\{\chi_2(1,2) - \chi_3(1,2)\} \quad &\tx{ Antisymmetrisch}
+\end{align*}
+\begin{center}
+	\begin{tabular*}{.9\textwidth}{@{\extracolsep{\fill}}ccccc}
+		\toprule
+		Zustand & Darstellung & Symmetrie & $ s $ & $ m_s $\\
+		\midrule
+		$ \chi_{0,0}(1,2) $ & $ \frac{1}{\sqrt{2}} \left[\alpha(1) \beta(2) - \beta(1) \alpha(2)\right] $ & Antisymmetrisch & 0 & 0 \\[5pt]
+		$ \chi_{1,1}(1,2) $ & $ \alpha(1) \alpha(2) $ & Symmetrisch & 1 & 1 \\[5pt]
+		$ \chi_{1,0}(1,2) $ & $ \frac{1}{\sqrt{2}} \left[\alpha(1) \beta(2) + \beta(1) \alpha(2)\right] $ & Symmetrisch & 1 & 0 \\[5pt]
+		$ \ \: \chi_{1,-1}(1,2) $ & $ \beta(1) \beta(2) $ & Symmetrisch & 1 & -1 \\
+		\bottomrule
+	\end{tabular*}
+\end{center}
+Wie kommt man nun auf den Wert für $ m_s $? (Notation: $ \chi_{a,b} : s=a, m_s=b $)\\
+Beispielrechnung für $ \chi_{1,-1} $:
+\begin{align*}
+S_z \chi_{1,-1}(1,2) &= S_z \beta(1) \beta(2) = (s_{z_1} + s_{z_2}) \beta(1) \beta(2) \\
+&= s_{z_1} \beta(1) \beta(2) + s_{z_2} \beta(1) \beta(2) \\
+&= \Big[s_{z_1} \beta(1)\Big] \beta(2) + \beta(1) \Big[s_{z_2} \beta(2) \Big] \\
+&= -\frac{1}{2} \hbar \beta(1) \beta(2) + \beta(1) \left(-\frac{1}{2} \hbar \right) \beta(2) \\
+&= \color{red!80!black}-\hbar\color{black} \beta(1) \beta(2)
+\end{align*}
+$ \Rightarrow $ $ \beta(1) \beta(2) $ ist Eigenzustand von $ S_z $ mit dem Eigenwert $ m_s \hbar = - 1 \cdot \hbar \Rightarrow m_s = -1 $\\[10pt]
+Für $ S^2 $ gilt:
+\begin{align*}
+S^2 \chi_{1,-1}(1,2) &= S^2 \beta(1) \beta(2) = \left[s_1^2 + s_2^2 + 2 \vec{s}_1 \cdot \vec{s}_2\right] \beta(1) \beta(2) \\
+&= \frac{3}{4} \hbar^2 \beta(1) \beta(2) + \frac{3}{4} \hbar^2 \beta(1) \beta(2) + 2 \vec{s}_1 \cdot \vec{s}_2 \beta(1) \beta(2) \\
+&= \frac{3}{2} \hbar \beta(1) \beta(2) + 2 \{ \ub{s_{1_x} s_{2_x} \ + \ s_{1_y} s_{2_y}}_{\tx{noch zu Beweisen}} \ + \ \ub{s_{1_z} s_{2_z}}_{\mathclap{\substack{\tx{kein Problem} \\ \tx{Eigenzustände}}}} \} \beta(1) \beta(2)
+\end{align*}
+Dies ist mit den Leiteroperatoren Lösbar:
+\begin{align*}
+s_{1_+} &= s_{1_x} + i s_{1_y}\\
+s_{1_-} &= s_{1_x} - i s_{1_y}
+\end{align*}
+\folie{Vektormodell mit 2 Spin}
+
+% 23.05.19
+
+\subsubsection*{Programm Heute}
+
+\begin{enumerate}[1)]
+	\item Modell der unabhängigen Elektronen
+	\item Zentralfeldnäherung
+	\item Zusammensetzung Drehimpulse (Termschema)
+	\item Angeregte Zustände \{ Coulomb-; Austauschintegral \}
+\end{enumerate}
+Aus der Schrödingergleichung des Wasserstoffatoms erhalten wir den Hamitonian als Lösung:
+\begin{equation*}
+H = - \frac{1}{2} \vabla_{r_1}^2 - \frac{1}{2} \vabla_{r_2}^2 - \frac{2}{r_1} - \frac{2}{r_2} + \frac{1}{r_{12}} = k_1 + k_2 + \frac{1}{r_{12}}
+\end{equation*}
+mit den einzelnen Hamilton-Operatoren ohne Kreuzterme:
+\begin{equation*}
+k_1 = -\frac{1}{2} \vabla_{r_1}^2 - \frac{2}{r_1} \qquad k_2 = -\frac{1}{2} \vabla_{r_2}^2 - \frac{2}{r_2}
+\end{equation*}
+Wir nähern:
+\begin{equation*}
+H \approx k_1 + k_2 \qquad \rmbox{H \psi^{(0)}(\vec{r}_1 , \vec{r}_2) = E^{(0)} \psi^{(0)}(\vec{r}_1 , \vec{r}_2)}
+\end{equation*}
+\begin{equation*}
+\psi^{(0)}(\vec{r}_1 , \vec{r}_2) = \psi_{n_1 l_1 m_1} (\vec{r}_1) \psi_{n_2l_2m_2} (\vec{r}_2)
+\end{equation*}
+$ n_i,l_i,m_i $ sind die Quantenzahlen eines Wasserstoffähnlichen Atoms mit $ Z = 2 $
+\begin{align*}
+k_1  \psi_{n_1 l_1 m_1} (\vec{r}_1) &= E_1^{(0)}  \psi_{n_1 l_1 m_1} (\vec{r}_1) \\
+k_2  \psi_{n_2 l_2 m_2} (\vec{r}_2) &= E_2^{(0)}  \psi_{n_2 l_2 m_2} (\vec{r}_2)
+\end{align*}
+\begin{align*}
+H \psi^{(0)}(\vec{r}_1,\vec{r}_2) &= (k_1+k_2) \psi^{(0) (\vec{r}_1, \vec{r}_2)} = (k_1+k_2) \psi_{n_1 l_1 m_1} (\vec{r}_1) \psi_{n_2l_2m_2} (\vec{r}_2)\\
+&=k_1 \cdot \psi_{n_1 l_1 m_1} (\vec{r}_1) \psi_{n_2l_2m_2} (\vec{r}_2) + k_2 \cdot \psi_{n_1 l_1 m_1} (\vec{r}_1) \psi_{n_2l_2m_2} (\vec{r}_2) \\
+&= \Big[ k_1 \cdot \psi_{n_1 l_1 m_1} (\vec{r}_1) \Big] \psi_{n_2l_2m_2} (\vec{r}_2) + \psi_{n_1 l_1 m_1} (\vec{r}_1) \Big[ k_2 \cdot \psi_{n_2l_2m_2} (\vec{r}_2) \Big] \\
+&= E_1^{(0)} \psi_{n_1 l_1 m_1} (\vec{r}_1) \psi_{n_2l_2m_2} (\vec{r}_2) + \psi_{n_1 l_1 m_1} (\vec{r}_1) E_2^{(0)} \psi_{n_2l_2m_2} (\vec{r}_2) \\
+&= \left[E_1^{(0)} + E_2^{(0)}\right] \psi_{n_1 l_1 m_1} (\vec{r}_1) \psi_{n_2l_2m_2} (\vec{r}_2) \\
+&= \left[E_1^{(0)} + E_2^{(0)}\right] \psi^{(0)} (\vec{r}_1, \vec{r}_2)
+\end{align*}
+\begin{equation*}
+\rmbox{ E^{(0)} = E_1^{(0)} + E_2^{(0)} }
+\end{equation*}
+\begin{equation*}
+E_1^{(0)} = -\frac{1}{2} \frac{Z^2}{n_1^2} \qquad E_1^{(0)} = - \frac{1}{2} \frac{Z^2}{n_2^2} \qquad E_{(0)} = - \frac{1}{2} \left\{ \frac{Z^2}{n_1^2} + \frac{Z^2}{n_2^2} \right\}
+\end{equation*}
+
+\subsection{Grundzustand}
+
+Es gilt im Folgenden immer $ n_1 = 1, n_2 = 1 $
+\begin{equation*}
+E^{(0)} = - \frac{1}{2} \left[Z^2 + Z^2\right] = - Z^2 = -4
+\end{equation*}
+\begin{equation*}
+\rmbox{E^{(0)} \approx -108{,}8 \, \tx{eV}}
+\end{equation*}
+
+
+%T2
+\hft Heliumatom mit 2 $ e^- $ oder schon Ionisiert mit nur einem $ e^- $\\
+
+
+\noindent
+Im Experiment stellen wir fest die erste und zweite Ionisationsenergien sind $ \hbar \omega_{\tx{XUV}} = 24{,}6 \, \tx{eV} = I_{p_1} $ und $ \hbar \omega_{\tx{XUV}_2} \approx 54{,}4 \, \tx{eV} = I_{p_2} $. $ I_p $ Steht hierbei für ,,Ionisationspotential``.\par
+Die Summe $ I_{p_1} + I_{p_2} \approx 79{,}0 \, \tx{eV} $, also
+$$ \rmbox{ E_{\tx{exp}} \approx - 79{,}0 \, \tx{eV} } $$
+ist aber wesentlich geringer, als die zuvor bestimmte Energie von $ E^{(0)} \approx - 108{,}8 \, \tx{eV} $. Allerdings bemerken wir:
+\begin{equation*}
+E = - 108{,}8 \, \tx{eV} \quad \Rightarrow \quad \frac{E}{2} = 54{,}4 \, \tx{eV}
+\end{equation*}
+Dies ist dasselbe wie die zweite Ionisationsenergie! In unserem Model wird also die Wechselwirkung der Elektronen miteinander nicht beschrieben, was zu dem falschen Ergebnis führt. Um eine bessere Näherung zu machen und ein besseres Modell aufzustellen verwenden wir im Folgenden die Störungstheorie.
+
+\subsection{Störungstheorie} % evtl subsubsection
+
+\begin{equation*}
+E^{(1)} = \left\langle \psi^{(0)} (\vec{r}_1,\vec{r}_2) \right| \frac{1}{r_{12}}  \left| \psi^{(0)} (\vec{r}_1,\vec{r}_2) \right\rangle \qquad \qquad \frac{1}{r_{12}} = \frac{1}{|\vec{r}_2 - \vec{r}_1|}
+\end{equation*}
+Wie sieht die Wellenfunktion $ \psi^{(0)} (\vec{r}_1,\vec{r}_2) $ im Grundzustand (Groundstate (GS)) aus?\par
+Es gilt: $ n_1 = 1, l_1 = 0, m_1 = 0, n_2 = 1, l_2 = 0, m_2 = 0 $.\par
+Zunächst einmal erhalten wir eine Symmetrischen Wellenfunktion:
+\begin{equation*}
+\psi_{GS}^{(0)}(\vec{r}_1,\vec{r}_2) = \psi_{100}(\vec{r}_1) \psi_{100}(\vec{r}_2)
+\end{equation*}
+Wir brauchen aber eine Antisymmetrische. Dies erreichen wir mit der Antisymmetrischen Spinfunktion $ \chi_{0,0} $.
+\begin{equation*}
+\psi_{GS}^{(0)} (q_1,q_2) = \ub{\psi_{GS}^{(0)} (\vec{r}_1,\vec{r}_2)}_{\tx{Symm.}} \ub{\chi_{0,0}(1,2)}_{\tx{Antisymm.}} = \psi_{GS}^{(0)} (\vec{r}_1,\vec{r}_2) \frac{1}{\sqrt{2}} \Big[ \alpha(1) \beta(2) - \beta(1) \alpha(2) \Big]
+\end{equation*}
+\begin{equation*}
+\Big[ \psi_{100}(\vec{r}_1) \psi_{100}(\vec{r}_2) - \psi_{100}(\vec{r}_2) \psi_{100}(\vec{r}_1) \Big] = 0
+\end{equation*}
+$ \Rightarrow \tx{ Es gibt keinen Antisymmetrischen Raumanteil für} \psi $
+\begin{align*}
+E^{(0)} &= \left\langle \psi^{(0)} (\vec{r}_1,\vec{r}_2) \right| \frac{1}{r_{12}} \left| \psi^{(0)} (\vec{r}_1,\vec{r}_2) \right\rangle \\
+&= \int \int \dd\vec{r}_1 \dd \vec{r}_2 \ub{\psi^{*}_{100}(\vec{r}_1) \psi^{*}_{100}(\vec{r}_2)}_{\psi^{*(0)}}(\vec{r}_1,\vec{r}_2) \frac{1}{r_{12}} \ub{\psi_{100}(\vec{r}_1) \psi_{100}(\vec{r}_2)}_{\psi^{(0)}(\vec{r}_1,\vec{r}_2)}
+\end{align*}
+Da $ \frac{1}{r_{12}} $ als Operator nur ein ein Vorfaktor ist und keine Ableitung oder ähnliches sind die Terme Vertauschbar.
+\begin{equation*}
+E^{(1)} = \int \int \dd\vec{r}_1 \dd \vec{r}_2 |\psi_{100}(\vec{r}_1)|^2      \frac{1}{r_{12}} |\psi_{100}(\vec{r}_2)|^2
+\end{equation*}
+\begin{equation*}
+\rho_{1}(\vec{r}_1) = |\psi_{100}(\vec{r}_1)|^2 \ (-e) \qquad \rho_{2}(\vec{r}_2) = |\psi_{100}(\vec{r}_2)|^2 \ (-e)
+\end{equation*}
+\begin{equation*}
+E^{(1)} = \int \int \dd\vec{r}_1 \dd \vec{r}_2 \rho_{1}(\vec{r}_1) \frac{1}{r_{12}} \rho_{2}(\vec{r}_2) = \int \int \dd\vec{r}_1 \dd \vec{r}_2 \rho_{1}(\vec{r}_1) \frac{1}{|\vec{r}_2 - \vec{r}_1|} \rho_{2}(\vec{r}_2) 
+\end{equation*}
+Die genaue Berechnung wird hier übersprungen.
+\begin{equation*}
+E^{(1)} = \frac{5}{8}Z \overset{Z=2}{=} \frac{5}{4}
+\end{equation*}
+\begin{equation*}
+E_{GS} = E^{(0)} + E^{(1)} = -Z^2 + \frac{5}{8}Z = -\frac{11}{4} \, \tx{a.u.} = \rmbox{ - 74{,}8 \, \tx{eV} }
+\end{equation*}
+a.u. steht hierbei für ``atomic units''.\\[5pt]
+Erwartet waren $ E = - 79{,}0 \, \tx{eV} $. Diese Näherung ist also schon um einiges Besser.
+
+\subsubsection{Zentralfeldnäherung}
+
+\begin{equation*}
+H = H_0 + H'
+\end{equation*}
+$ H' $ ist eine kleine Zentralfeldstörung
+\begin{align*}
+H_0 &= - \frac{1}{2} \vabla_{r_1}^2 + V_{\tx{eff}} (r_1) - \frac{1}{2} \vabla_{r_2}^2 + V_{\tx{eff}} (r_2) \\
+H' &= \frac{1}{r_{12}} - \frac{2}{r_1} - V_{\tx{eff}}(r_1) - \frac{2}{r_2} - V_{\tx{eff}}(r_2)
+\end{align*}
+$ V_{\tx{eff}} $ ist das Effektive Potential, dass nur von $ r = |\vec{r}| $ und nicht von $ \vec{r} $ abhängt.
+\begin{equation*}
+V_{\tx{eff}} = - \frac{2-S}{r} = \ub{-\frac{2}{r}}_{\mathclap{\substack{ \tx{Coulomb} \\ \tx{Potential} \\ \tx{mit } Z=2 }}} \ \ \ + \ \ \ \ub{\frac{S}{r}}_{\mathclap{\substack{ \tx{Abschirmungs-} \\ \tx{Konstante, die} \\ \tx{Kernpotential} \\ \tx{reduziert} }}}
+\end{equation*}
+$ S = $ Konstante oder Parameter\\
+$ S \approx 0{,}3 \quad \Rightarrow \quad Z' = Z_e = 1{,}7 $
+
+
+%T3
+\hft Heliumatom mit 2 Elektronen
+
+
+
+\noindent
+\begin{equation*}
+V_{\tx{eff}} = -\frac{Z_e}{r} \qquad Z_e = Z - S \quad \tx{effektive Kernladungszahl}
+\end{equation*}
+Im Grundzustand gilt dann:
+\begin{equation*}
+\psi_{0}(\vec{r}_1, \vec{r}_2) = \frac{Z_e^3}{\pi} e^{-Z_e(r_1 + r_2)}
+\end{equation*}
+Ansonsten ist der Term komplizierter.\par
+Die Variationsrechnung (Analytisch berechenbar) liefert:
+\begin{equation*}
+E\left[\psi_{0}(\vec{r}_1, \vec{r}_2)\right] = \frac{\langle \psi_0 | H_0 | \psi_0 \rangle}{\langle \psi_0 | \psi_0 \rangle} = Z_e^2 - 2 Z Z_e + \frac{5}{8} Z_e \quad \tx{mit } Z = 2
+\end{equation*}
+und
+\begin{equation*}
+Z_e \approx Z - \frac{5}{16} = Z - S \qquad \qquad S = \frac{5}{16}
+\end{equation*}
+\begin{equation*}
+\rmbox{E\left[\psi_0\right] \approx - 78{,}02 \, \tx{eV}}
+\end{equation*}
+Verglichen mit den Experimentell bestätigten $ E_{\tx{exp}} = - 79{,}0 \, \tx{eV} $ ist dies eine gute Näherung.
+
+\subsection{Angeregte Zustände des Heliumatoms}
+
+Die Wellenfunktion sieht dann folgendermaßen aus:
+\begin{equation*}
+\psi = \psi_{n_1 l_1 m_1} (\vec{r}_1) \psi_{n_2l_2m_2} (\vec{r}_2)
+\end{equation*}
+und hat keine besondere Form wie Symmetrie oder Antisymmetrie. Es gilt außerdem $ n_1, l_1, m_1 \neq n_2, l_2, m_2 $.\par
+Wir definieren:
+\begin{align*}
+\psi_{+} (\vec{r}_1, \vec{r}_2) &= \frac{1}{\sqrt{2}} \left\{ \psi_{n_1 l_1 m_1} (\vec{r}_1) \psi_{n_2l_2m_2} (\vec{r}_2) + \psi_{n_1 l_1 m_1} (\vec{r}_2) \psi_{n_2l_2m_2} (\vec{r}_1) \right\} \quad &\tx{Symmetrisch} \\
+\psi_{-} (\vec{r}_1, \vec{r}_2) &= \frac{1}{\sqrt{2}} \left\{ \psi_{n_1 l_1 m_1} (\vec{r}_1) \psi_{n_2l_2m_2} (\vec{r}_2) - \psi_{n_1 l_1 m_1} (\vec{r}_2) \psi_{n_2l_2m_2} (\vec{r}_1) \right\} \quad &\tx{Antisymmetrisch}
+\end{align*}
+Für den Grundzustand gilt also:
+\begin{align*}
+\psi_{+} (\vec{r}_1, \vec{r}_2) &= \psi_{100}(\vec{r}_1) \psi_{100}(\vec{r}_2) \quad \Rightarrow \quad \chi_{0,0}(1,2) \qquad \tx{ Singulett Zustand} \\
+\psi_{-} (\vec{r}_1, \vec{r}_2) &= 0 \qquad \qquad \qquad \quad \tx{(es gibt keinen Triplett Grundzustand.)}
+\end{align*}
+\begin{align*}
+\chi_{0,0}(1,2) \ \ \, \quad S = 0 \quad 2 S + 1 = 1 \qquad &\tx{Singulett Zustand} & \tx{Parahelium} \\
+\chi_{1,m_S}(1,2) \quad S = 1 \quad 2 S + 1 = 3 \qquad &\tx{Triplett Zustand} & \tx{Orthohelium}
+\end{align*}
+
+\subsubsection{Notation}
+
+\begin{equation*}
+\rmbox{n ^{2S + 1}L_{j}}
+\end{equation*}
+\begin{equation*}
+\vec{L} = \vec{l_1} + \vec{l}_2 \qquad \qquad |l_1 - l_2| \le L \le l_1 + l_2
+\end{equation*}
+\begin{align*}
+1^1S &\Rightarrow 1S \ 1S \\
+2^1S &\Rightarrow 1S \ 2S \quad S = 0\\
+2^3S &\Rightarrow 1S \ 2S \quad S = 1\\
+2^1P &\Rightarrow 1S \ 2P \quad S = 0\\
+2^3P &\Rightarrow 1S \ 2P \quad S = 1\\
+\end{align*}
