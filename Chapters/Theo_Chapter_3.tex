@@ -41,4 +41,162 @@ Der Ansatz
 U(t_0 + \dd t, t_0) = \mathbbm{1} - i \Omega \dd t
 \label{3.7}
 \end{equation}
-mit $ \Omega = \Omega^{+} $, erfüllt die Forderungen aus \eqref{3.3}, \eqref{3.5} und \eqref{3.6} - unter der Voraussetzung, dass Terme der Ordnung $ \dd t^2 $ vernachlässigbar sind.
+mit $ \Omega = \Omega^{\dagger} $, erfüllt die Forderungen aus \eqref{3.3}, \eqref{3.5} und \eqref{3.6} - unter der Voraussetzung, dass Terme der Ordnung $ \dd t^2 $ vernachlässigbar sind.
+
+%27.05.19
+
+\begin{equation*}
+\mathbbm{1} - i \Omega \dd t + i \Omega \dd t + \cancel{c \dd t^2}
+\end{equation*}
+$ \Omega $ in Gleichung \eqref{3.7} hat die Dimension $ [S^{-1}] $, was, zusammen mit der Rolle der klassischen Hamiltonfuntion als Erzeuger der Phasenraumdynamik (siehe insbesondere Liouville-Satz bzw. Liouville-Gleichung, die die Zeitentwicklung der Phasenraumvolumens beschreibt. $ \sim i \prt{f}{t} = L f $) und
+\begin{equation}
+E \sim \hbar \omega
+\label{3.8}
+\end{equation}
+(nach Planck) zu der Identifikation:
+\begin{equation}
+\Omega \defeq \frac{H}{\hbar}\
+\label{3.9}
+\end{equation}
+mit $ H \equiv $ Hamiltonfunktion, führt. In der QM bezeichnen wir $ H $ als den \textbf{Hamilton-Operator}, der für autonome (d.h. Zeitunabhängige) $ H $ mit dem Energieoperator identifiziert wird.\par
+Wir leiten nun die Bewegungsgleichungen für $ U $ her, um über beliebige Zeitintervalle propagieren zu können. Propagieren $ \leftrightarrow $ $ U = $ Propagator (siehe HöMa, Cauchy Integrale und Zusammenhang Propagator und Greensfunktionen).
+\begin{align*}
+U(t + \dd t, t_0) \overset{\eqref{3.5}}{=} U(t + \dd t, t) U(t, t_0) \overset{\substack{\eqref{3.7} \\ \eqref{3.9}}}{=} \left(\mathbbm{1} - i \frac{H}{\hbar} \dd t\right) U(t,t_0)
+\end{align*}
+\begin{equation*}
+U(t + \dd t, t_0) - U(t, t_0) = - i \frac{H}{\hbar} \dd t U(t, t_0)
+\end{equation*}
+woraus der Differenzquotient
+\begin{equation*}
+\lim_{\dd t \to 0} \frac{U(t + \dd t, t_0) - U(t,t_0)}{\dd t} = \prt{U}{t} = - i \frac{H}{\hbar} U(t, t_0)
+\end{equation*}
+\begin{equation}
+\rmbox{ i \hbar \prt{U(t,t_0)}{t} = H U(t,t_0) }
+\label{3.10}
+\end{equation}
+Durch Multiplikation von rechts mit $ |\psi_0\rangle $ erhalten wir die Schrödingergleichung:
+\frbox{Schrödingergleichung}{\begin{equation}
+i \hbar \prt{}{t} | \psi(t) \rangle = H | \psi(t) \rangle
+\label{3.11}
+\end{equation}}
+\noindent
+welche $ \forall t $ gültig ist.
+
+\subsection{Heisenberg- vs. Schrödinger-Bild}
+
+Die Gleichung \eqref{3.2} liefert die zeitliche Entwicklung des Zustandsvektors
+$$ |\psi(t)\rangle \custo{\rightarrow}{\sim}{\mathclap{\tx{Kap.I}}} c_0(t) | 0 \rangle + c_1(t) | 1 \rangle $$
+d.h. der Zustand $ |\psi(t)\rangle $ bewegt sich bezüglich eines festen Koordinatensystems. Völlig gleichberechtigt ist die Perspektive, wonach der Zustandsvektor zeitlich unveränderlich ist, sich jedoch das Koordinatensystem bewegt oder dreht. Während nach \eqref{3.2} also die Zustände die Zeitabhängigkeit tragen, wird in der alternativen Sichtweise die Zeitabhängigkeit vollständig auf die Observablen abgewälzt (die Observablen helfen ja über ihre Eigenvektoren die Vektorraumbasis geliefert).
+\begin{figure}[ht]
+	\centering
+	%t1
+	\begin{tikzpicture}
+		\draw[->] (0,0) -- (4,0) node[anchor=north west] {$ |0\rangle $};
+		\draw[->] (0,0) -- (0,4) node[anchor=south east] {$ |1\rangle $};
+		\draw[->,blue] (0,0) -- (30:4) node[right] {$ |\psi(t=0)\rangle $};
+		\draw[->,red] (0,0) -- (60:4) node[right] {$ |\psi(t>0)\rangle $};
+		\centerarc[->](0,0)(30:60:2.5);
+		\node at (45:3) {\eqref{3.2}};
+		\node at (2,-2) {\tx{\textbf{Schrödinger-Bild}}};
+		% 2tes
+		\coordinate (o) at (7,0);
+		\draw[->,blue] (o) -- ++(90:4) node[anchor=south east] {$ |1\rangle $};
+		\draw[->,blue] (o) -- ++( 0:4) node[right] {$ |0\rangle $};
+		\draw[->,red] (o) -- ++(70:4) node[right] {$ |1\rangle' $};
+		\draw[->,red] (o) -- ++(-20:4) node[right] {$ |0\rangle' $};
+		\draw[->] (o) -- ++(35:4) node[right] {$ |\psi(t=0)\rangle = |\psi_0\rangle $};
+		\node at ($ (o) + (2,-2) $) {\tx{\textbf{Heisenberg-Bild}}};
+	\end{tikzpicture}
+	\caption{Verschiedene Modelle zur Vorstellung einer Zeitabhängigen Wellenfunktion von Schrödinger und Heisenberg.}
+	\label{SHBild}
+\end{figure}
+\begin{equation}
+|\psi(t)\rangle _{\tx{Schrödinger}} \overset{\eqref{3.2}}{=} U(t,t_0) |\psi_0\rangle \quad \curvearrowright \quad |\psi_0\rangle \eqdef |\psi \rangle_{\tx{Heisenberg}} = U^{\dagger}(t,t_0) |\psi(t)\rangle_{\tx{Schrödinger}}
+\label{3.12}
+\end{equation}
+Erwartungswerte von Observablen sollten nicht von der Wahl des Bildes abhängen. Daher:
+\begin{equation}
+\begin{aligned}
+_{\tx{Schrödinger}} \left\langle \psi(t) \right| A_{\tx{Schrödinger}} \left| \psi(t) \right\rangle_{\tx{Schrödinger}} &\overset{\eqref{3.2}}{=} \ub{\left\langle \psi_0 \right| }_{\mathclap{\tx{Heisenberg} \langle\psi |}} U^{\dagger} (t,t_0) A_{\tx{Schrödinger}} U(t,t_0) \left| \psi_0 \right\rangle\\
+&\overset{\eqref{3.12}}{=} _{\tx{Heisenberg}} \langle\psi| A_{\tx{Heisenberg}} (t) | \psi \rangle_{\tx{Heisenberg}}
+\end{aligned}
+\label{3.13}
+\end{equation}
+mit
+\begin{equation}
+A_{\tx{Heisenberg}}(t) = U^{\dagger}(t,t_0) A_{\tx{Schrödinger}} U(t,t_0)
+\label{3.14}
+\end{equation}
+\noindent
+Anstelle der Schrödingergleichung \eqref{3.11} benötigen wir Entwicklungsgleichung für $ A_{\tx{Heisenberg}} $ die sich aus \eqref{3.10} und \eqref{3.14} gewinnen lässt:
+\begin{equation*}
+i \hbar \prt{}{t} A_{\tx{Heisenberg}} \overset{\eqref{3.14}}{=} i \hbar \left[\prt{U^{\dagger}}{t} A_{\tx{Schrödinger}} U + U^{\dagger} \prt{A_{\tx{Schrödinger}}}{t} U + U^{\dagger} \prt{U}{t}\right]
+\end{equation*}
+Umformen mit $ i \hbar \prt{U}{t} |\psi_0\rangle = H \ub{U |\psi_0\rangle}_{|\psi(t)\rangle} $
+\begin{equation*}
+= - U^{\dagger} H_{\tx{Schrödinger}} A_{\tx{Schrödinger}} U + U^{\dagger} A_{\tx{Schrödinger}} H_{\tx{Schrödinger}} U + i \hbar U^{\dagger} \prt{A_{\tx{Schrödinger}}}{t} U
+\end{equation*}
+\begin{equation}
+\Rightarrow \quad i \hbar \prt{}{t} A_{\tx{Heisenberg}} = U^{\dagger} \left[A_{\tx{Schrödinger}}, H_{\tx{Schrödinger}}\right] U + i \hbar U^{\dagger} \prt{A_{\tx{Schrödinger}}}{t} U
+\label{3.15}
+\end{equation}
+Mit $ U U^{\dagger} \overset{\eqref{3.3}}{=} \mathbbm{1} $ und $ A_{\tx{Heisenberg}} \overset{\eqref{3.14}}{=} U^{\dagger} A_{\tx{Schrödinger}} U $ wird \eqref{3.15} zu:
+\frbox{Äquivalente dynamik im Heisenberg Bild zu SGL}{\begin{equation}
+i \hbar \prt{}{t} A_{\tx{Heisenberg}} = \left[A_{\tx{Heisenberg}}, H_{\tx{Heisenberg}}\right] + i \hbar \left(\prt{A_{\tx{Schrösinger}}}{t}\right)_{\tx{Heisenberg}}
+\label{3.16}
+\end{equation}}
+\noindent
+\textbf{äquivalente} Dynamik zur Schrödinger-Gleichung \eqref{3.11} im Heisenberg Bild. Die direkte Analogie zur klassischen Hamilton'schen Dynamik in den Übungen.
+
+\subsection{Das Wechselwirkungsbild}
+
+$ \to $ Eine zwischen Schrödinger- und Heisenberg-Bild ,,interpolierende`` Perspektive, die eine Zerlegung des Hamiltonoperators voraussetzt, wobei $ H_0 $ die ,,triviale`` Dynamik (ungestört und bekannt!) erzeugt, $ V $ die Abweichung oder Störung davon induziert.
+
+
+\setcounter{equation}{17}
+
+
+\noindent
+\begin{equation}
+H = H_0 + V
+\label{3.18}
+\end{equation}
+Das \textbf{Wechselwirkungsbild} wälzt die $ H_0 $-Dynamik auf die Observable ab, die $ V $-Dynamik auf den Zustand ($ \to $ rotating wave approximation).\par
+Zustandsdynamik:
+\begin{equation}
+\begin{aligned}
+|\psi(t) \rangle_{\tx{Wechselwirkung}} &= U_{\tx{Wechsewirkung}} |\psi\rangle_{\tx{Heisenberg}} \\
+&= U_{\tx{Wechselwirkend}} |\psi_{0}\rangle
+\end{aligned}
+\label{3.19}
+\end{equation}
+und im Schrödinger-Bild:
+\begin{equation}
+|\psi(t)\rangle_{\tx{Schrödinger}} = U_0(t,t_0) U_{\tx{Wechselwirkung}} |\psi_{0}\rangle
+\label{3.20}
+\end{equation}
+beziehungsweise:
+\begin{equation}
+U(t,t_0) = U_0(t,t_0) U_{\tx{Wechselwirkend}} (t,t_0)
+\label{3.21}
+\end{equation}
+wobei $ U_{\tx{Wechselwirkung}} $ von $ V $, $ U_0 $ von $ H_0 $ erzeugt wird
+\begin{equation}
+\begin{aligned}
+i \hbar \prt{}{t} U(t,t_0) &\overset{\eqref{3.21}}{=} i \hbar \prt{}{t} (U_0 U_{\tx{WW}}) = i \hbar \left[\prt{U_0}{t} U_{\tx{WW}} + U_0 \prt{U_{\tx{WW}}}{t}\right] \\
+&\overset{\eqref{3.10}}{=} \rmbox{H_0 U_0 U_{\tx{WW}} + i \hbar U_0 \prt{U_{\tx{WW}}}{t}} \\
+&\overset{\substack{\eqref{3.10} \\ \eqref{3.18}}}{=} i \hbar (H_0 + V) U \overset{\eqref{3.21}}{=} \rmbox{H_0 U_0 U_{\tx{WW}} + V U_0 U_{\tx{WW}}}
+\end{aligned}
+\label{3.22}
+\end{equation}
+d.h.:
+\begin{equation*}
+i \hbar U_0 \prt{U_{\tx{WW}}}{t} = V U_0 U_{\tx{WW}}
+\end{equation*}
+\begin{equation}
+\begin{aligned}
+\overset{U_{0}^{\dagger} \cdot | \eqref{3.22}}{\Rightarrow} \quad i \hbar \prt{U_{\tx{WW}}}{t} &= U_0^{\dagger} V U_0 U_{\tx{WW}} \\
+&\defeq V_{\tx{WW}} U_{\tx{WW}}
+\end{aligned}
+\label{3.23}
+\end{equation}

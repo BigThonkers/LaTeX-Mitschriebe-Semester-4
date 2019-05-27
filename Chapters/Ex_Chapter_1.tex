@@ -1835,3 +1835,86 @@ Für den Grundzustand gilt also:
 2^1P &\Rightarrow 1S \ 2P \quad S = 0\\
 2^3P &\Rightarrow 1S \ 2P \quad S = 1\\
 \end{align*}
+
+%24.05.19
+
+\subsubsection{Programm Heute}
+
+\begin{itemize}
+	\item Angeregte Zustände des Heliumatoms (Coulomb-; Austauschintegral)
+	\item Spektren von Helium
+	\item Auswahlregeln (Übergänge)
+\end{itemize}
+
+\subsection{Angeregte Zustände}
+
+\begin{equation*}
+\psi_{+} (\vec{r}_1, \vec{r}_2) = \frac{1}{\sqrt{2}} \left\{ \psi_{n_1 l_1 m_1} (\vec{r}_1) \psi_{n_2l_2m_2} (\vec{r}_2) + \psi_{n_1 l_1 m_1} (\vec{r}_2) \psi_{n_2l_2m_2} (\vec{r}_1) \right\}
+\end{equation*}
+$ n_1 = 1, l_1 = 0, m_1 = 0 $
+\begin{align*}
+\psi_{+} (\vec{r}_1, \vec{r}_2) &= \frac{1}{\sqrt{2}} \left\{ \psi_{100} (\vec{r}_1) \psi_{nlm} (\vec{r}_2) + \psi_{100} (\vec{r}_2) \psi_{nlm} (\vec{r}_1) \right\}\\
+\psi_{-} (\vec{r}_1, \vec{r}_2) &= \frac{1}{\sqrt{2}} \left\{ \psi_{100} (\vec{r}_1) \psi_{nlm} (\vec{r}_2) - \psi_{100} (\vec{r}_2) \psi_{nlm} (\vec{r}_1) \right\}
+\end{align*}
+\begin{equation*}
+H' = \frac{1}{r_{12}} = \frac{1}{|\vec{r}_2 - \vec{r}_1|}
+\end{equation*}
+\begin{equation*}
+E_{\pm}^{(1)} = \left\langle \psi_{\pm}(\vec{r}_1, \vec{r}_2) \right| \frac{1}{r_{12}} \left| \psi_{\pm}(\vec{r}_1, \vec{r}_2) \right\rangle
+\end{equation*}
+Beim Folgenden wurde die Herleitung weggelassen. Wir erhalten jedoch für die Energien eine Aufspaltung in Singulett und Triplett Zustände:
+\begin{equation*}
+E_{+}^{(1)} = J_{nl} + K_{nl} \qquad \qquad E_{-}^{(1)} = J_{nl} - K_{nl}
+\end{equation*}
+Der erste Ausdruck $ J_{nl} $ ist dabei das Coulombintegral:
+\frbox{Coulombintegral}{
+\begin{equation*}
+J_{nl} = \int \int \dd \vec{r}_1 \dd \vec{r}_2 |\psi_{100}(\vec{r}_1)|^2 \frac{1}{r_{12}} |\psi_{nlm}(\vec{r}_2)|^2
+\end{equation*}
+}
+Wobei
+\begin{equation*}
+\rho_{100}(\vec{r}_1) = |\psi_{100}(\vec{r}_1)|^2 \qquad \qquad \rho_{nlm}(\vec{r}_2) = |\psi_{nlm}(\vec{r}_2)|^2
+\end{equation*}
+Der zweite Term ist das Austauschintegral:
+\frbox{Austauschintegral}{
+\begin{equation*}
+K_{nl} = \int \int \dd \vec{r}_1 \vec{r}_2 \psi_{100}^{*}(\vec{r}_1) \psi_{nlm}^{*}(\vec{r}_2) \frac{1}{r_{12}} \psi_{100}(\vec{r}_2) \psi_{nlm}(\vec{r}_1)
+\end{equation*}
+}
+Dieses Austauschintegral ist eine folge des Pauli-Prinzips. Wir erhalten also eine Singulett/Triplett Aufspaltung, obwohl wir mit einem Hamiltonoperator \textbf{ohne} Spinanteil begonnen haben.\par
+Schauen wir uns jetzt die Energien im Angeregten Zustand an.
+\begin{align*}
+E_{nl+} &= - \frac{Z^2}{2} \left(1 + \frac{1}{n^2}\right) + J_{nl} + K_{nl} \\
+E_{nl-} &= - \frac{Z^2}{2} \left(1 + \frac{1}{n^2}\right) + J_{nl} - K_{nl}
+\end{align*}
+Wobei $ K_{nl} > 0 $ gelten muss.
+\begin{equation*}
+1S \ 2S \quad \begin{array}{c}
+\nearrow \\[5pt] \searrow
+\end{array} \quad \begin{array}{ccc}
+2^1S & \tx{Singulett} & E_{1,2}^{(0)} + J_{20} + K_{20} \\[10pt]
+2^3S & \tx{Triplett} & E_{1,2}^{(0)} + J_{20} - K_{20}
+\end{array}
+\end{equation*}
+$ l = 1 \to $ P-Zustand\\[5pt]
+Die Energien sind dabei:
+\begin{equation*}
+\begin{array}{ccc}
+J_{20} = J_{1S,2S} \approx 9{,}1 \, \tx{eV} & \qquad & J_{21} = J_{1S,2P} \approx 10 \, \tx{eV} \ \ \\
+K_{20} = K_{1S,2S} \approx 0{,}4 \, \tx{eV} &  & K_{21} = K_{1S,2P} \approx 0{,}1 \, \tx{eV}
+\end{array}
+\end{equation*}
+\begin{equation*}
+E_{nl\pm} = J_{nl} - \frac{1}{2 \hbar^2} (\hbar^2 + s \vec{s}_1 \cdot \vec{s}_2) K_{nl} \qquad \Rightarrow \quad \vec{s}_1 \cdot \vec{s}_2
+\end{equation*}
+\begin{equation*}
+\vec{s}_1 \cdot \vec{s}_2 \qquad \vec{S} = \vec{s}_1 + \vec{s}_2 \qquad \Rightarrow \quad \vec{S}^2 = \vec{s}_1^2 + \vec{s}_2^2 + 2 \vec{s}_1 \cdot \vec{s}_2
+\end{equation*}
+\begin{equation*}
+\Rightarrow \quad \vec{s}_1 \cdot \vec{s}_2 = \frac{1}{2} \left\{ S^2 - s_1^2 - s_2^2 \right\}
+\end{equation*}
+Für den Singulett Zustand gilt: $ S = 0, s_1 = \frac{1}{2}, s_2 = \frac{1}{2} $
+\begin{equation*}
+\vec{s}_1 \cdot \vec{s}_2 = \frac{1}{2} \left\{ -\frac{1}{2} \left(1 + \frac{1}{2}\right) \hbar^2 - \frac{1}{2} \left(1 + \frac{1}{2}\right) \hbar^2 \right\} = \frac{1}{2} \left\{ -\frac{3}{4} 2 \hbar^2 \right\} = - \frac{3}{4}\hbar^2
+\end{equation*}
