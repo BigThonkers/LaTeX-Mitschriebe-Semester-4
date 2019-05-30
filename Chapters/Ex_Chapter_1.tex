@@ -1918,3 +1918,112 @@ Für den Singulett Zustand gilt: $ S = 0, s_1 = \frac{1}{2}, s_2 = \frac{1}{2} $
 \begin{equation*}
 \vec{s}_1 \cdot \vec{s}_2 = \frac{1}{2} \left\{ -\frac{1}{2} \left(1 + \frac{1}{2}\right) \hbar^2 - \frac{1}{2} \left(1 + \frac{1}{2}\right) \hbar^2 \right\} = \frac{1}{2} \left\{ -\frac{3}{4} 2 \hbar^2 \right\} = - \frac{3}{4}\hbar^2
 \end{equation*}
+Für den Triplett Zustand gilt: $ S = 1, s_1 = \frac{1}{2}, s_2 = \frac{1}{2} $
+\begin{equation*}
+\vec{s}_1 \cdot \vec{s}_2 = \frac{1}{2} \left\{ -1 \left(1 + 1\right) -\frac{1}{2} \left(1 + \frac{1}{2}\right) \hbar^2 - \frac{1}{2} \left(1 + \frac{1}{2}\right) \hbar^2 \right\} = \frac{1}{2} \left\{ 2 \hbar^2 -\frac{3}{2} \hbar^2 \right\} = - \frac{1}{4}\hbar^2
+\end{equation*}
+Die Idee dahinter war:
+\begin{equation*}
+\langle S, m_s, s_1, s_2 | \vec{s}_1 \cdot \vec{s}_2 | S, m_s, s_1, s_2 \rangle \qquad \qquad S^2 | S, m_s, s_1, s_2 \rangle = S(S+1)\hbar^2 | S, m_s, s_1, s_2 \rangle
+\end{equation*}
+Wir können nun $ E_{nl} $ berechnen:
+\begin{align*}
+E_{nl_{+}} &= J_{nl} - \frac{1}{2 \hbar^2} \left(\hbar^2 +  \cancel{4} \cdot \frac{-3}{\cancel{4}} \hbar^2 \right) K_{nl} = J_{nl} - \cancel{\frac{1}{2\hbar^2} \left(\hbar^2 - 3 \hbar^2\right)} K_{nl} = \rmbox{J_{nl} + K_{nl}} \\
+E_{nl_{-}} &= J_{nl} - \frac{1}{2 \hbar^2} \left(\hbar^2 + \cancel{4} \cdot \frac{\hbar^2}{\cancel{4}}\right) K_{nl} = \rmbox{J_{nl} - K_{nl}}
+\end{align*}
+
+\subsubsection{Spektrum Helium}
+
+\begin{equation*}
+\begin{array}{cccccl}
+1s3d & ^3D(l=2) & \rightarrow & 1s2p & ^3P(l=1) & \quad \lambda = 587{,}72 \, \tx{nm} \\[5pt]
+1s3s & ^3S(l=0) & \rightarrow & 1s2p & ^3P(l=1) & \quad \lambda = 706 \, \tx{nm} \\[5pt]
+1s4d & ^3D(l=2) & \rightarrow & 1s2p & ^3P(l=1) & \quad \lambda = 447 \, \tx{nm} \\[5pt]
+1s3p & ^3P(l=1) & \rightarrow & 1s2s & ^3S(l=0) & \quad \lambda = 380 \, \tx{nm} \\[5pt]
+1s4d & ^1D(l=2) & \rightarrow & 1s2p & ^1P(l=1) & \quad \lambda = 482 \, \tx{nm} \\[5pt]
+1s3s & ^1S(l=0) & \rightarrow & 1s2p & ^1P(l=1) & \quad \lambda = 727 \, \tx{nm}
+\end{array}
+\end{equation*}
+Wir bemerken: Ein Singulett Zustand geht immer in einen anderen Singulett Zustand und ein Triplett in einen anderen Triplett Zustand über. Außerdem gilt immer $ \Delta S = 0 $ und $ \Delta L = \pm 1 $.
+
+\subsection{Auswahlregeln}
+
+%T1
+\hft
+
+
+\noindent
+(die Regeln gelten gleichermaßen für Zerfall und Anregung)
+\begin{equation*}
+H_0 = \frac{p^2}{2m} - \frac{e^2}{4 \pi \epsilon_0} \frac{1}{r}
+\end{equation*}
+\begin{equation*}
+H = \frac{\left(\vec{p} + e \vec{A}\right)^2}{2m} - \frac{e^2}{4 \pi \epsilon_0}\frac{1}{r} = \frac{p^2}{2m} + \cancel{\frac{e^2 A^2}{2m}} + \frac{e}{2m} \vec{p} \cdot \vec{A} + \frac{e}{2m} \vec{A} \cdot \vec{p} - \frac{e^2}{4 \pi \epsilon_0} \frac{1}{r}
+\end{equation*}
+Wir machen hier eine Näherung für schwaches Vektorpotential $ \vec{A} $. Außerdem ist zu beachten, dass $ \vec{A} \cdot \vec{p} $ und $ \vec{p} \cdot \vec{A} $ nicht das selbe sind.
+\begin{equation*}
+\vec{A} = - \prt{\vec{E}}{t} \qquad \tx{Vektorpotential}
+\end{equation*}
+\begin{equation*}
+H = \frac{p^2}{2m} + \frac{e}{2m} \vec{p} \cdot \vec{A} + \frac{e}{2m} \vec{A} \cdot \vec{p} - \frac{e^2}{4 \pi \epsilon_0} \frac{1}{r}
+\end{equation*}
+Mit der Umformung $ \vec{p} = - i \hbar \vabla $ und der Coulomb-Eichung $ \vabla \cdot \vec{A} = 0 $ erhalten wir:
+\begin{equation*}
+H = \frac{-\hbar^2}{2m} \vabla^2 - \frac{e^2}{4 \pi \epsilon_0}\frac{1}{r} - \frac{i \hbar (e ?)}{(2?)m} \vec{A} \cdot \vabla
+\end{equation*}
+\hfw Muss dort oben nicht ein $ e $ hin ? und eine 2 unter dem Bruch?
+\begin{equation*}
+H = \ub{-\frac{\hbar^2}{2m} \vabla^2 - \frac{e^2}{4 \pi \epsilon_0}\frac{1}{r}}_{H_0} \ub{-\frac{i\hbar (e ?)}{(2?)m} \vec{A} \cdot \vabla}_{H'(t)}
+\end{equation*}
+Dieser Hamiltonian erfüllt dann die SGL:
+\begin{equation*}
+i \hbar \prt{\psi(\vec{r},t)}{t} = H \psi(\vec{r},t)
+\end{equation*}
+Oben wurde bei der Umformung von $ \frac{e}{2m} (-i\hbar \vabla) \vec{A} + \frac{e}{2m} \vec{A} (-i\hbar\vabla) $verwendet:
+\begin{equation*}
+\frac{e}{2m} (-i\hbar \vabla) \vec{A} \psi = \frac{e}{2m} (-i\hbar (\equalto{\vabla \vec{A}}{0}) \psi)  + \frac{e}{2m} (-i\hbar) \vec{A} \cdot \vabla \psi
+\end{equation*}
+Wobei wie schon erwähnt die Coulomb-Eichung verwendet wurde.
+
+\subsubsection{Grundzustand}
+
+\begin{equation*}
+\psi_{a}(\vec{r},t=0) = \psi_{a}(\vec{r}_0)
+\end{equation*}
+\begin{equation*}
+\rmbox{ \psi(\vec{r},t) = \sum_{k} c_k(t) \psi_{k}(\vec{r}) e^{-iE_kt/\hbar} }
+\end{equation*}
+\begin{equation*}
+\psi(\vec{r},t) = \psi_{a}(\vec{r}) e^{-iE_kt/\hbar}
+\end{equation*}
+mit $ c_a(t) = 1 $ und $ c_k(t) = 1 $ für $ k \neq a $
+\begin{equation*}
+M_{ba} = \langle \psi_{b} | e^{i \vec{k} \cdot \vec{r}} \vec{\epsilon} \vec{r} | \psi_{a} \rangle \qquad \qquad \vec{A} \propto e^{i \vec{k} \cdot \vec{r}} \vec{\epsilon}
+\end{equation*}
+
+\subsubsection{Dipolnäherung}
+
+$ a_0 \approx 10^{-10} \, \tx{m} = 1 \overset{\circ}{\tx{A}} $\\
+$ \lambda \approx 530 \cdot 10^{-9} , \tx{m} = 5{,}3 \cdot 10^{-7} \, \tx{m} \gg a_0 $\\
+(die folgenden Näherungen sind also nicht bei Röntgenstrahlung $ \lambda = 10^{-10} \, \tx{m} $ anwendbar)
+\begin{equation*}
+e^{i \vec{k} \cdot \vec{r}} \approx 1 + (i \vec{k} \cdot \vec{r}) + \frac{1}{2} (i \vec{k} \cdot \vec{r})^2 + \dots \approx 1
+\end{equation*}
+\begin{equation*}
+M_{ba} \propto - \frac{W_{ba}}{\hbar} \vec{\epsilon} \cdot \vec{r}_{ba} \qquad \qquad W_{ba} = \frac{E_b - E_a}{\hbar} \qquad \vec{r}_{ba} = \int \psi^{*}_{b} (\vec{r}) \vec{r} \psi_{a} (\vec{r}) \dd \vec{r}
+\end{equation*}
+
+\subsection{Auswahlregeln}
+
+\begin{align*}
+\psi_{a} & \rightarrow n_a l_a m_a s_a m_{s_a} \\
+\psi_{b} & \rightarrow n_b l_b m_b s_b m_{s_b}
+\end{align*}
+\begin{align*}
+\Delta L &= l_b - l_a = \pm 1 \\[5pt]
+\Delta m &= m_b - m_a = 0 ; \pm 1 &\qquad \tx{0 bei lin. pol. Licht, $ \pm 1 $ bei circ. pol. Licht} \\[5pt]
+\Delta S &= s_b - s_a = 0 &\qquad \tx{da $ \vec{r}_{ba} $ nur Raumanteil und Spin unabh. ist} \\[10pt]
+\Delta J &= 0 ; \pm 1 &\qquad J = 0 \ \cancel{\to} \ \notag J = 0 \tx{ Verboten!}\\
+\Delta m_j &= 0; \pm 1 
+\end{align*}
+
