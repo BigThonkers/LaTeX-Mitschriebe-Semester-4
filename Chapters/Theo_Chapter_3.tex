@@ -236,7 +236,8 @@ Wiederum aus der Unabhängigkeit der Erwartungswerte von Observablen von dem gew
 \begin{equation}
 \begin{aligned}
 i\hbar \prt{}{t} A_{\tx{WW}} &= \overset{\tx{s.a. Umgebung von \eqref{3.14}}}{\dots \dots \dots} = - U_{0}^{\dagger} H_0 \color{red} U_0 U_0^{\dagger} \color{black} A_S U_0 + U_0^{\dagger} A_S \color{red} U_0 U_0^{\dagger} \color{black} H_0 U_0 + i \hbar U_0^{\dagger} \prt{A_S}{t} U_0 \\
-&= - H_{0,\tx{WW}} A_{\tx{WW}} + A_{\tx{WW}} H_{0,\tx{WW}} + i \hbar \left(\prt{A_S}{t}\right) _{\tx{WW}} = \left[A_{\tx{WW}} , H_{0,\tx{WW}}\right] + i \hbar \left(\prt{A_S}{t}\right)_{\tx{WW}}
+&= - H_{0,\tx{WW}} A_{\tx{WW}} + A_{\tx{WW}} H_{0,\tx{WW}} + i \hbar \left(\prt{A_S}{t}\right) _{\tx{WW}} \\
+&= \left[A_{\tx{WW}} , H_{0,\tx{WW}}\right] + i \hbar \left(\prt{A_S}{t}\right)_{\tx{WW}}
 \end{aligned}
 \label{3.24}
 \end{equation}
@@ -264,7 +265,7 @@ Der Hamiltonoperator der Zweiniveausystems ist definiert durch die Eigenwertglei
 H_0 |j\rangle = E_j |j\rangle \qquad j = 0,1
 \label{3.26}
 \end{equation}
-Die Störung $ V $ von $ H_0 $ sei gegeben als:
+Die Störung $ V $ von $ H_0 $ sei gegeben als ,,Dipolnäherung``:
 \begin{equation}
 V = e \vec{r} \vec{F} \cos(\omega t)
 \label{3.27}
@@ -308,6 +309,112 @@ i \hbar \prd{|\psi\rangle}{t} &= i \hbar \dot{c}_0 e^{-iE_0t/\hbar} |0\rangle + 
 \end{equation*}
 ergo:
 \begin{equation}
-i\hbar \dot{c}_0 e^{-i E_0 t/\hbar} |0\rangle + i \hbar \dot{c}_1 e^{-i E_1 t/\hbar} |1\rangle = c_0 e^{-i E_0 t/\hbar} V |0\rangle + c_1 e^{-i E_1 t/\hbar} |1\rangle
+i\hbar \dot{c}_0 e^{-i E_0 t/\hbar} |0\rangle + i \hbar \dot{c}_1 e^{-i E_1 t/\hbar} |1\rangle = c_0 e^{-i E_0 t/\hbar} V |0\rangle + c_1 e^{-i E_1 t/\hbar} V |1\rangle
 \label{3.30}
 \end{equation}
+
+%03.06.19
+
+\noindent
+Um Entwicklungsgleichungen für $ c_0 $ und $ c_1 $ zu erhalten, filtern wir die entsprechenden Anteile durch (Skalare) Multiplikation von \eqref{3.30} von links  mit $ \langle 0 | $ bzw. $ \langle 1 | $ heraus. Dabei setzen wir zusätzlich voraus, dass die Diagonalelemente von $ V $ aus Paritätsgründen (d.h. Symmetriegründen, s. weiter unten - Begründung wird nachgeliefert) verschwinden sollen (häufig wahr):
+\begin{equation}
+\langle j | V | j \rangle = 0
+\label{3.31}
+\end{equation}
+Somit:
+\begin{equation}
+i \hbar \dot{c}_0 = c_1 \langle \phi_0 | V | \phi_0 \rangle \qquad i \hbar \dot{c}_1 = c_0 \langle \phi_1 | V | \phi_1 \rangle
+\label{3.32}
+\end{equation}
+mit $ |\phi_j\rangle = e^{-i E_j t / \hbar} | j \rangle $. Mit \eqref{3.27} wird das zu:
+\begin{equation*}
+\begin{aligned}
+\langle \phi_0 | V | \phi_0 \rangle &\overset{\eqref{3.32}}{=} e^{-i (E_1-E_0) t / \hbar} \langle 0 | V | 1 \rangle = e^{-i\omega_0t} e F \langle 0 | x | 1 \rangle \cos(\omega t) \\
+=& e^{-i \omega_0 t} \mathcal{V} \hbar \cos(\omega t)
+\end{aligned}
+\end{equation*}
+\begin{equation}
+\omega_0 \defeq \frac{E_1 - E_0}{\hbar} \qquad \qquad \mathcal{V} = \frac{e F \langle 0 | x | 1 \rangle}{\hbar}
+\label{3.33}
+\end{equation}
+worin $ \omega_0 $ die Übergangsfrequenz ist und $ \mathcal{V} $ die Kopplungsstärke, mit der Feldamplitude $ F $.\par
+Damit wird \eqref{3.32} zu:
+\begin{equation}
+i \dot{c}_0 = c_1 e^{-i\omega_0 t} \mathcal{V} \cos(\omega t) \qquad i \dot{c}_1 = c_0 e^{+i\omega_0 t} \mathcal{V}^{*} \cos(\omega t)
+\label{3.34}
+\end{equation}
+[Übungsaufgabe: Man zeige dass: $ ||\, |\psi\rangle \, || ^2 = 1 \forall t $]\par
+\eqref{3.34} kann für die Matrixelemente der $ |\psi\rangle $ repräsentierenden Dichtematrix $ \sigma $ umformuliert werden: Mit \eqref{2 71}
+\begin{align}
+\sigma_{00} &= |c_0|^2 = c_0 c_0^* \quad \ \ \, \sigma_{11} = |c_1|^2 = c_1 c_1^* \quad \equiv \tx{ Besetzung bzw. Population}
+\label{3.35}\\
+\sigma_{01} &= c_0 c_1^* \qquad \qquad \quad \sigma_{10} = c_1 c_0^* = \sigma_{01}^* \ \, \quad \equiv \tx{ Kohärenzen ,,coherences``}
+\label{3.36}
+\end{align}
+Aus der Kohärenz $ \to $ Phaseninformation, kodiert Energieskalare ($ E_0 - E_1 $) (für $ \mathcal{V} = 0 $).\par
+Mit \eqref{3.34} ergibt sich daher für die Zeitentwicklung der $ \sigma_{ij} $:
+\begin{equation}
+\begin{aligned}
+\dot{\sigma}_{11} &= - \dot{\sigma}_{00} = - i \cos(\omega t) \left[ \sigma_{01} \mathcal{V}^* e^{i \omega_0 t} - \sigma_{10} \mathcal{V} e^{-i\omega_0 t}\right] \\
+\dot{\sigma}_{01} &= \phantom{-}\dot{\sigma}_{10}^* = i \mathcal{V} \cos(\omega t) e^{-i \omega_0 t} \left[\sigma_{00} - \sigma_{11}\right]
+\end{aligned}
+\label{3.37}
+\end{equation}
+Mit $ \cos(\omega t) = \frac{1}{2} \left(e^{i\omega t} + e^{-i\omega t}\right) $ erhält man in \eqref{3.37} Terme der Form:
+\begin{equation}
+e^{\pm i (\omega + \omega_0) t} \quad \tx{ und } \quad e^{\pm i (\omega - \omega_0) t}
+\label{3.38}
+\end{equation}
+Unter der Voraussetzung nah-resonanten Antriebs [! remember your classical mechanics class - chapter on driven harmonic oszillators !] d.h. $ \omega \simeq \omega_0 $ \eqref{3.38} [``near-resonant driving''], \textbf{separieren} die mit $ \omega + \omega_0 $ und $ \omega - \omega_0 $ assozierten Zeitskalen, was die Vernachlässigung der schnell oszillierenden Terme $ (\sim e^{\pm i (\omega + \omega_0) t}) $ erlaubt. [Integration über $ t $ liefert Beiträge $ \sim \frac{1}{\omega + \omega_0} e^{+ i (\omega + \omega_0) t} $ bzw. $ \sim \frac{1}{\omega - \omega_0} e^{i(\omega - \omega_0) t} $, dessen letzterer mit einem \textbf{Resonanznenner} behaftet ist.]\par
+\emph{Bemerkung:} Mindestens zwei Möglichkeiten: ,,Starke Kopplung`` zu induzieren: a) $ F $ sehr groß! oder b) resonante Kopplung.\par
+In dieser \textbf{Drehwellnäherung} / ``otating wave approximation'' (RWA) [in anderem Zusammengang auch: Säkularnäherung] nimmt \eqref{3.37} die folgende Form an:
+\frbox{optische Bloch-Gleichungen}{
+\begin{equation}
+\begin{aligned}
+\dot{\sigma}_{11} &= - \frac{i}{2} \left[\sigma_{01} \mathcal{V}^* e^{i (\omega_0 - \omega) t} - \sigma_{10} \mathcal{V} e^{-i(\omega_0 - \omega) t}\right] \\
+\dot{\sigma}_{01} &= \frac{i}{2} \mathcal{V} e^{i (\omega - \omega_0) t} \left[\sigma_{00} - \sigma_{11}\right]
+\end{aligned}
+\label{3.39}
+\end{equation}}
+\noindent
+Die Voraussetzung dafür war die Gleichung \eqref{3.38}!\\[10pt]
+\textbf{Lösungsansatz:}
+\begin{equation}
+\begin{aligned}
+\sigma_{00} &= \sigma_{00}^{(0)} \exp(\lambda t) \qquad \sigma_{01} = \sigma_{01}^{(0)} \exp[ - i (\omega_0 - \omega) t] \exp(\lambda t) \\
+\sigma_{11} &= \sigma_{11}^{(0)} \exp(\lambda t) \qquad \sigma_{10} = \sigma_{10}^{(0)} \exp[ + i (\omega_0 - \omega) t] \exp(\lambda t)
+\end{aligned}
+\label{3.40}
+\end{equation}
+Einsetzen von \eqref{3.40} in \eqref{3.39} liefert:
+\begin{equation}
+\begin{pmatrix}
+-\lambda & 0 & \frac{1}{2} i \mathcal{V}^* & - \frac{1}{2} i \mathcal{V} \\[5pt]
+0 & - \lambda & - \frac{1}{2} i \mathcal{V} ^* & \frac{1}{2} i \mathcal{V} \\[5pt]
+\frac{1}{2}i \mathcal{V} & - \frac{1}{2} i \mathcal{V} & i ( \omega_0 - \omega) - \lambda & 0 \\[5pt]
+- \frac{1}{2} i \mathcal{V}^* & \frac{1}{2} i \mathcal{V} ^* & 0 & - i (\omega_0 - \omega) - \lambda
+\end{pmatrix} \begin{pmatrix}
+\sigma_{00}^{(0)} \\[5pt] \sigma_{11}^{(0)} \\[5pt] \sigma_{01}^{(0)} \\[5pt] \sigma_{10}^{(0)}
+\end{pmatrix} = 0
+\label{3.41}
+\end{equation}
+Die möglichen Werte ergeben sich aus dem Verschwinden der Determinante der Koeffizientenmatrix in \eqref{3.41}:
+\begin{equation}
+\lambda^2 \left[\lambda^2 + (\omega_0 - \omega)^2 + |\mathcal{V}|^2\right] = 0
+\label{3.42}
+\end{equation}
+mit den Wurzeln:
+\begin{equation}
+\begin{aligned}
+\lambda_1 = 0 , \quad \lambda_2 = i \Omega , \quad \lambda_3 = - i \Omega  \\
+\tx{mit} \quad \Omega = \sqrt{(\omega_0 - \omega)^2 + |\mathcal{V}|^2}
+\end{aligned}
+\label{3.43}
+\end{equation}
+Die allgemeinste Lösung von \eqref{3.40} ist demnach von der Form:
+\begin{equation}
+\sigma_{ij} = \sigma_{ij}^{(1)} + \sigma_{ij}^{(2)} \exp(i \Omega t) + \sigma_{ij}^{(3)} \exp(-i\Omega t)
+\label{3.44}
+\end{equation}
+wobei $ (1) $ sich hierbei auf die Lösung $ \lambda_1 $ bezieht.\par
+Wobei die $ \sigma_{ij}^{(k)} $ durch die $ \lambda $-unabhängigen Faktoren der rechten Seite der jeweiligen (durch $ i,j $ identifizierten) Gleichung in \eqref{3.40} gegeben sind.
