@@ -173,3 +173,151 @@ x \le X \le x + \dd x
 	\end{equation*}
 	bei $ n = 3 $: Schiefe
 \end{enumerate}
+
+%03.06.19
+
+\setcounter{section}{10}
+
+\section{Wichtige Verteilunge}
+
+\subsection*{Motivation}
+
+Experiment + Theorie $ \to $ PDF $ f(N,\bar{E},w) $.
+
+\subsection{Binomialverteilung}
+
+Versuch mit zwei möglichen Ereignissen $ A $ und $ \bar{A} $ Z.B. Münzwurf. Die Wahrscheinlichkeiten dafür sind jeweils $ P(A) = p $ und $ P\bar{A} = 1 - p = q $. Bei $ N $ Wiederholungen des Versuchs ist die Wahrscheinlichkeit für 
+\begin{equation*}
+X = (\ub{A,A,A, \dots , A }_{n}, \ub{\bar{A},\bar{A},\bar{A}, \dots, \bar{A}}_{N - n})
+\end{equation*}
+gleich
+\begin{equation*}
+P(X) = p^n \cdot q^{N-n}
+\end{equation*}
+Diese Ereignisse können an
+\begin{equation*}
+\begin{pmatrix}
+N \\ n
+\end{pmatrix} = \frac{N!}{n! (N-n)!}
+\end{equation*}
+auftreten.
+\begin{equation*}
+B = f(n,N,p) = \begin{pmatrix}
+N \\ n
+\end{pmatrix} p^n q^{N-n}
+\end{equation*}
+mit der Anzahl des Auftretens von $ A $ als Laufparameter $ n \in \mathbb{N}_{0} $.\\[10pt]
+
+\subsubsection{Erwartungswert}
+
+\begin{equation*}
+E(B(N,p)) = \sum_{n=0}^{N} n \begin{pmatrix}
+N \\ n
+\end{pmatrix} p^n q^{N-n} = \dots = N \cdot p
+\end{equation*}
+Summenregel für Erwartungswerte
+\begin{equation*}
+E[X_1+ \dots + X_N] = E[X_1] + E[X_2] + \dots + E[X_N] = N E[X_1] = N \cdot p
+\end{equation*}
+
+\subsubsection{Varianz}
+
+\begin{equation*}
+V[n] = E[n^2] - E[n]^2 = N \cdot p (1 - p) = N p q
+\end{equation*}
+Beispiel 1: Münzwurf wird übersprungen.\\[5pt]
+\textbf{Beispiel 2: 10 Exp Messungen einer Größe}\\[10pt]
+Fehler mit $ p = 0{,}683 $ liegt der Wahre Wert in dem Intervall $ [x, \pm \sigma] $
+\begin{equation*}
+B(10,10,0{,}683) = 0{,}683^{10} \approx 0{,}02
+\end{equation*}
+Man würde also erwarten, dass die Fehler überschätzt wurden.
+
+\subsection{Poisson Verteilung}
+
+Beschreibt im Wesentlichen die Binomialverteilung im Grenzfall für $ N \to \infty $ und $ p \to 0 $. $ \Rightarrow \ N \cdot p = \nu $ endlich.
+\begin{equation*}
+B(n, N, p) \to f(n,\nu) = \frac{\nu^n}{n!} e^{-\nu}
+\end{equation*}
+
+\subsubsection{Erwartungswert}
+
+\begin{equation*}
+E[n] =\sum_{n=0}^{\infty} n \cdot \frac{\nu^n}{n!} \cdot e^{-\nu} = \sum_{n=1}^{\infty} n \cdot \frac{\nu^n}{n!} \cdot e^{-\nu} = \nu e^{-\nu} \ub{\sum_{n=1}^{\infty} \frac{\nu^{n-1}}{(n-1)!}}_{e^{\nu}} = \nu
+\end{equation*}
+
+\subsubsection{Varianz}
+
+\begin{equation*}
+V[n] = \sum_{n=0}^{\infty} (n-\nu)^2 \frac{\nu^n}{n!} e^{-\nu} = \nu
+\end{equation*}
+Standartabweichung $ \sigma = \sqrt{\nu} $\\[5pt]
+\textbf{Beispiel 3: 50 Szintillatoren 1 Jahr Messen}\\[10pt]
+\begin{equation*}
+P(A) = 0{,}01 = 1\%
+\end{equation*}
+Wobei $ A \widehat{=} $ Szintillator kaputt nach $ \le 1 $ Jahr
+\begin{equation*}
+\tx{Binomial :} \quad B(0,50,0{,}01) = \begin{pmatrix}
+50 \\ 0
+\end{pmatrix} 0{,}01^{0} \cdot 0{,}93^{50} = 0{,}067
+\end{equation*}
+\begin{equation*}
+\tx{Poisson :} \quad f(0,0{,}5) = e^{-0{,}5} = 0{,}607
+\end{equation*}
+$ \nu = N \cdot p = 0{,}5 $
+
+\subsection{Gleichverteilung}
+
+\begin{equation*}
+f(x; \alpha, \beta) = \casess{\frac{1}{\beta - \alpha}}{\alpha \le x \le \beta}{0}{\tx{sonst}}
+\end{equation*}
+Erwartungswert und Varianz:
+\begin{align*}
+E[x] &= \frac{1}{2} (\alpha + \beta) \\
+V[x] &= \frac{1}{12} (\beta - \alpha)^2
+\end{align*}
+
+\subsection{Gauß-Verteilung / Normalverteilung}
+
+\emph{Definition} einer Wahrscheinlichkeitsdichte:
+\begin{enumerate}[1.]
+	\item $ f(x) \ge 0 \ \forall x $
+	\item $ f(x) $ muss integrierbar sein.
+	\item $ \int_{-\infty}^{\infty} f(x) \dd x = 1 $
+\end{enumerate}
+\begin{equation*}
+f(x;\mu,\sigma^2) = \frac{1}{\sqrt{2 \pi \sigma^2}} e^{\frac{-(x-\mu)^2}{2 \sigma^2}}
+\end{equation*}
+2 Parameter:
+\begin{itemize}
+	\item $ \mu = $ Mittelwert
+	\item $ \sigma =  $ Standartabweichung
+\end{itemize}
+
+\subsubsection{Erwartungswert}
+
+\begin{equation*}
+E[X] = \int_{-\infty}^{\infty} x \cdot f(x; \mu, \sigma^2) \dd x = \dots = \mu
+\end{equation*}
+
+\subsubsection{Varianz}
+
+\begin{equation*}
+V[X] = \int_{-\infty}^{\infty} (x - \mu)^2 \cdot f(x; \mu, \sigma^2) = \dots = \sigma^2
+\end{equation*}
+
+\begin{equation*}
+\tx{Verteilungs Dichte (PDF)} \overset{\tx{Integration}}{\longrightarrow} \tx{Verteilungsfunktion (CDF)}
+\end{equation*}
+Oft betrachtet man die Standard Normalverteilung:
+\begin{equation*}
+\mu = 0 \qquad \sigma = 1
+\end{equation*}
+\begin{equation*}
+x = \frac{x}{\sigma} - \mu
+\end{equation*}
+\begin{equation*}
+\Phi(x) = \frac{1}{\sqrt{2 \pi}} \int_{-\infty}^{\infty} e^{\frac{1}{2} t^2} \dd t
+\end{equation*}
+Verteilungsfunktion der Standard Normalverteilung

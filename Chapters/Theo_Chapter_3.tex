@@ -365,7 +365,7 @@ Mit $ \cos(\omega t) = \frac{1}{2} \left(e^{i\omega t} + e^{-i\omega t}\right) $
 e^{\pm i (\omega + \omega_0) t} \quad \tx{ und } \quad e^{\pm i (\omega - \omega_0) t}
 \label{3.38}
 \end{equation}
-Unter der Voraussetzung nah-resonanten Antriebs [! remember your classical mechanics class - chapter on driven harmonic oszillators !] d.h. $ \omega \simeq \omega_0 $ \eqref{3.38} [``near-resonant driving''], \textbf{separieren} die mit $ \omega + \omega_0 $ und $ \omega - \omega_0 $ assozierten Zeitskalen, was die Vernachlässigung der schnell oszillierenden Terme $ (\sim e^{\pm i (\omega + \omega_0) t}) $ erlaubt. [Integration über $ t $ liefert Beiträge $ \sim \frac{1}{\omega + \omega_0} e^{+ i (\omega + \omega_0) t} $ bzw. $ \sim \frac{1}{\omega - \omega_0} e^{i(\omega - \omega_0) t} $, dessen letzterer mit einem \textbf{Resonanznenner} behaftet ist.]\par
+Unter der Voraussetzung nah-resonanten Antriebs [! remember your classical mechanics class - chapter on driven harmonic oszillators !] d.h. $ \omega \simeq \omega_0 $ \eqref{3.38} [``near-resonant driving''], \textbf{separieren} die mit $ \omega + \omega_0 $ und $ \omega - \omega_0 $ assozierten Zeitskalen, was die Vernachlässigung der schnell oszillierenden Terme $ (\sim e^{\pm i (\omega + \omega_0) t}) $ erlaubt. [Integration über $ t $ liefert Beiträge $ \sim \frac{1}{\omega + \omega_0} e^{+ i (\omega + \omega_0) t} $ bzw. $ \sim \frac{1}{\omega - \omega_0} e^{i(\omega - \omega_0) t} $, dessen letzterer mit einem \textbf{Resonanznenner} behaftet ist.]\\[10pt]
 \emph{Bemerkung:} Mindestens zwei Möglichkeiten: ,,Starke Kopplung`` zu induzieren: a) $ F $ sehr groß! oder b) resonante Kopplung.\par
 In dieser \textbf{Drehwellnäherung} / ``otating wave approximation'' (RWA) [in anderem Zusammengang auch: Säkularnäherung] nimmt \eqref{3.37} die folgende Form an:
 \frbox{optische Bloch-Gleichungen}{
@@ -386,6 +386,9 @@ Die Voraussetzung dafür war die Gleichung \eqref{3.38}!\\[10pt]
 \end{aligned}
 \label{3.40}
 \end{equation}
+\begin{equation*}
+\sigma_{ij} \sim \dots \exp(\lambda t) \left[ \exp\left[ i (\omega - \omega_0) t\right]\right]
+\end{equation*}
 Einsetzen von \eqref{3.40} in \eqref{3.39} liefert:
 \begin{equation}
 \begin{pmatrix}
@@ -418,3 +421,101 @@ Die allgemeinste Lösung von \eqref{3.40} ist demnach von der Form:
 \end{equation}
 wobei $ (1) $ sich hierbei auf die Lösung $ \lambda_1 $ bezieht.\par
 Wobei die $ \sigma_{ij}^{(k)} $ durch die $ \lambda $-unabhängigen Faktoren der rechten Seite der jeweiligen (durch $ i,j $ identifizierten) Gleichung in \eqref{3.40} gegeben sind.
+
+%04.06.19
+
+\noindent
+RWA (at resonance), opt. Bloch Gleichungen.\\[5pt]
+Lösungen für spezielle Anfangsbedingungen
+\begin{equation}
+\begin{aligned}
+\sigma_{11}(t = 0) &= 0 \\
+\sigma_{01}(t = 0) &= 0
+\end{aligned}
+\label{3.45}
+\end{equation}
+Mit \eqref{3.44} und \eqref{3.45} in \eqref{3.39} ergeben sich die Lösungen ($ \to $ ÜA 25)
+\begin{equation}
+\begin{aligned}
+\sigma_{11}(t) &= \frac{|\mathcal{V}|^2}{\Omega^2} \sin^2 \left[\frac{1}{2} \Omega t\right] \\
+\sigma_{01}(t) &= e^{-i(\omega_0 - \omega )t} \frac{\mathcal{V}}{\Omega^2} \sin^2 \left[\frac{1}{2} \Omega t\right] \left[- (\omega_0 - \omega) \sin\left[\frac{1}{2} \Omega t\right] + i \Omega \cos \left[\frac{1}{2} \Omega t\right]\right]
+\end{aligned}
+\label{3.46}
+\end{equation}
+Speziell für \textbf{resonanten Antrieb} $ \omega = \omega_0 $ (mit \eqref{3.43})
+\frbox{Rabi.Oszillationen}{
+\begin{equation}
+\sigma_{11}(t) = \sin^2 \left(\frac{1}{2} | \mathcal{V} | t\right) \qquad \sigma_{01}(t) = i \frac{\mathcal{V}}{|\mathcal{V}|} \sin\left(\frac{1}{2} \Omega t\right) \cos\left(\frac{1}{2} \Omega t\right)
+\label{3.47}
+\end{equation}}
+Die Gleichungen \eqref{3.46}, \eqref{3.47} beschreiben die \textbf{Rabi-Oszillationen} der atomaren Population zwischen Grund- und angeregtem Zustand (s. \cref{3.43}, \eqref{3.46}). und \textbf{Rabi-Frequenzen} $ \Omega $ von der \textbf{Verstimmung} (``\textbf{detuning}'') der treibenden Frequenz $ \omega $ von der \textbf{Übergangsfrequenz} $ \omega_0 $ (``\textbf{Iteration frequency''}) \footnote{Colloquium 3.6.19 ``antibunching''}.
+\begin{equation}
+\Delta = \omega - \omega_0
+\end{equation}
+
+\subsection{Geometrische Interpretation - die Bloch-Kugel}
+
+Diese erhalten wir durch Re-Formulierung der optischen Bloch-Gleichungen \eqref{3.39}:
+\begin{equation}
+\tilde{\sigma}_{00} \defeq \sigma_{00} \quad \tilde{\sigma}_{11} \defeq \sigma_{11} \quad \tilde{\sigma}_{01} \defeq \sigma_{01} e^{i(\omega_0 - \omega)t} \quad \tilde{\sigma}_{10} = \tilde{\sigma}_{01}^*
+\label{3.49}
+\end{equation}
+\eqref{3.39} transformiert sich mit \eqref{3.49} zu:
+\begin{equation}
+\rmbox{%
+\begin{aligned}
+\dot{\tilde{\sigma}}_{11} = - \frac{i}{2} \left[\tilde{\sigma}_{01}\mathcal{V}^* - \tilde{\sigma}_{10} \mathcal{V}\right] \quad \ \ \dot{\tilde{\sigma}}_{00} = - \dot{\tilde{\sigma}}_{11} \qquad \dot{\tilde{\sigma}}_{01} = \frac{i}{2} \mathcal{V} \left[\tilde{\sigma}_{00} - \tilde{\sigma}_{11}\right] + i \Delta \tilde{\sigma}_{01} \quad \ \  \dot{\tilde{\sigma}}_{10} = \dot{\tilde{\sigma}}_{01}^*
+\end{aligned}}
+\label{3.50}
+\end{equation}
+Wobei $ \Delta = \omega - \omega_0 $, also die Verstimmung, ist.\\[10pt]
+Neue Variablen:
+\begin{equation}
+\begin{aligned}
+u &\defeq \tilde{\sigma}_{10} + \tilde{\sigma}_{01} \equiv \tx{ Realteil der Kohärenz} \\
+v &\defeq i (\tilde{\sigma}_{10} - \tilde{\sigma}_{01}) \equiv \tx{ Imaginärteil der Kohärenz} \\
+w &\defeq \tilde{\sigma}_{11} - \tilde{\sigma}_{00} \equiv \tx{ Populationsdifferenz}
+\end{aligned}
+\label{3.51}
+\end{equation}
+Unter der weiteren Anmerkung,dass $ \mathcal{V} $ reell sein soll (wenig einschränkend), nehmen die transformierten Bloch-Gleichungen \eqref{3.50} folgende Gestalt an:
+\begin{equation}
+\dot{u} = - \Delta v \qquad \dot{v} = - \mathcal{V}w + \Delta u \qquad \dot{w} = \mathcal{V} v
+\label{3.52}
+\end{equation}
+Der \textbf{Bloch Vektor}
+\begin{equation}
+\vec{S} = u \hat{x} + v \hat{y} + w \hat{z}
+\label{3.53}
+\end{equation}
+hat die Norm
+\begin{equation}
+|\vec{S}|^2 = |u|^2 + |v|^2 + |w|^2 \overset{!}{=} 1
+\label{3.54}
+\end{equation}
+mit
+\begin{equation}
+\prd{}{t} |\vec{S}|^2 = 0
+\label{3.55}
+\end{equation}
+und gehorcht der Bewegungsgleichung (komponentenweise)
+\begin{equation}
+\dot{\vec{S}} = \vec{Q} \times \vec{S} \quad \tx{, wobei } \quad \vec{Q} = \mathcal{V} \hat{x} + \Delta \hat{z} = (\mathcal{V},0,\Delta)
+\label{3.56}
+\end{equation}
+(i8m wesentlichen ist das \eqref{3.52} in disguise).\\[5pt]
+Wegen \eqref{3.55} kan eqref multiple equationsn daher die Dynamik des nah-resonant getriebenen Zwei-Niveau-Systems auf der Einheitskugel (\textbf{Bloch Kugel}) vollständig beschrieben werden.\par
+Mittelpunkt der Bloch-Kugel ist gegeben durch $ \vec{S} = 0 $, was
+\begin{equation}
+\sigma = \begin{pmatrix}
+\frac{1}{2} & 0 \\ 0 & \frac{1}{2}
+\end{pmatrix}
+\label{3.57}
+\end{equation}
+impliziert. $ \sigma_{\vec{S} = 0} $ heißt \textbf{maximal gemischter Zustand}.\\[10pt]
+\emph{Bemerkungen:}
+\begin{enumerate}[1.)]
+	\item Die Situation $ w = 1 $, d.h. wegen \eqref{3.51}, $ \sigma_{00} = 0 $, $ \sigma_{11} = 1 $ heißt \textbf{vollständige Inversion} (``complete inversion'') der atomaren Population (oben in der Bloch Kugel) ($ \to $ insbesondere Laser-Theorie).
+	\item $ w = -1 $, $ \sigma_{11} = 0 $, $ \sigma_{00} = 1 $, Atom im Grundzustand (unten in der Bloch Kugel).
+	\item $ \Delta = 0 \ \overset{\eqref{3.56}}{\Rightarrow} \ \vec{Q} = \mathcal{V} \hat{x} $, d.h. $ \vec{S} $ rotiert in einer durch $ \hat{x} $ definierten Ebene.
+\end{enumerate}
