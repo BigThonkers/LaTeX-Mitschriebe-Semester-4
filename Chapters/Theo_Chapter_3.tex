@@ -271,7 +271,8 @@ V = e \vec{r} \vec{F} \cos(\omega t)
 \label{3.27}
 \end{equation}
 mit $ H \overset{\eqref{3.18}}{=} H_0 + V $.\\
-$ e $ ist die Elementarladung des Elektrons, $ \vec{r} $ der Ortsvektor bzgl. des ortsfesten Kerns, $ \vec{F} $ ist die Feldamplitude und $ \omega $ Feldfrequenz.
+$ e $ ist die Elementarladung des Elektrons, $ \vec{r} $ der Ortsvektor bzgl. des ortsfesten Kerns, $ \vec{F} $ ist die Feldamplitude und $ \omega $ Feldfrequenz.\\
+Diese Störung ist klassisch also nicht Quantisiert, der Anteil $ H_0 $ ist quantisiert. Das ganze nennt man die \textbf{semi-klassische} Beschreibung der Licht-Materie-Wechselwirkung.
 
 
 %T2
@@ -367,7 +368,7 @@ e^{\pm i (\omega + \omega_0) t} \quad \tx{ und } \quad e^{\pm i (\omega - \omega
 \end{equation}
 Unter der Voraussetzung nah-resonanten Antriebs [! remember your classical mechanics class - chapter on driven harmonic oszillators !] d.h. $ \omega \simeq \omega_0 $ \eqref{3.38} [``near-resonant driving''], \textbf{separieren} die mit $ \omega + \omega_0 $ und $ \omega - \omega_0 $ assozierten Zeitskalen, was die Vernachlässigung der schnell oszillierenden Terme $ (\sim e^{\pm i (\omega + \omega_0) t}) $ erlaubt. [Integration über $ t $ liefert Beiträge $ \sim \frac{1}{\omega + \omega_0} e^{+ i (\omega + \omega_0) t} $ bzw. $ \sim \frac{1}{\omega - \omega_0} e^{i(\omega - \omega_0) t} $, dessen letzterer mit einem \textbf{Resonanznenner} behaftet ist.]\\[10pt]
 \emph{Bemerkung:} Mindestens zwei Möglichkeiten: ,,Starke Kopplung`` zu induzieren: a) $ F $ sehr groß! oder b) resonante Kopplung.\par
-In dieser \textbf{Drehwellnäherung} / ``otating wave approximation'' (RWA) [in anderem Zusammengang auch: Säkularnäherung] nimmt \eqref{3.37} die folgende Form an:
+In dieser \textbf{Drehwellnäherung} / ``\textbf{rotating wave approximation}'' (RWA) [in anderem Zusammengang auch: Säkularnäherung] nimmt \eqref{3.37} die folgende Form an:
 \frbox{optische Bloch-Gleichungen}{
 \begin{equation}
 \begin{aligned}
@@ -451,6 +452,7 @@ Speziell für \textbf{resonanten Antrieb} $ \omega = \omega_0 $ (mit \eqref{3.43
 Die Gleichungen \eqref{3.46}, \eqref{3.47} beschreiben die \textbf{Rabi-Oszillationen} der atomaren Population zwischen Grund- und angeregtem Zustand (s. \cref{3.43}, \eqref{3.46}). und \textbf{Rabi-Frequenzen} $ \Omega $ von der \textbf{Verstimmung} (``\textbf{detuning}'') der treibenden Frequenz $ \omega $ von der \textbf{Übergangsfrequenz} $ \omega_0 $ (``\textbf{Iteration frequency''}) \footnote{Colloquium 3.6.19 ``antibunching''}.
 \begin{equation}
 \Delta = \omega - \omega_0
+\label{3.48}
 \end{equation}
 
 \subsection{Geometrische Interpretation - die Bloch-Kugel}
@@ -485,10 +487,10 @@ Unter der weiteren Anmerkung,dass $ \mathcal{V} $ reell sein soll (wenig einschr
 \end{equation}
 Der \textbf{Bloch Vektor}
 \begin{equation}
-\vec{S} = u \hat{x} + v \hat{y} + w \hat{z}
+\vec{S} = \underbracket{u \hat{x} + v \hat{y}}_{\tx{Kohärenzen}} + w \hat{z}
 \label{3.53}
 \end{equation}
-hat die Norm
+(wobei w den Anteil des Grund- bzw. Angeregten Zustands ist) hat die Norm
 \begin{equation}
 |\vec{S}|^2 = |u|^2 + |v|^2 + |w|^2 \overset{!}{=} 1
 \label{3.54}
@@ -517,5 +519,43 @@ impliziert. $ \sigma_{\vec{S} = 0} $ heißt \textbf{maximal gemischter Zustand}.
 \begin{enumerate}[1.)]
 	\item Die Situation $ w = 1 $, d.h. wegen \eqref{3.51}, $ \sigma_{00} = 0 $, $ \sigma_{11} = 1 $ heißt \textbf{vollständige Inversion} (``complete inversion'') der atomaren Population (oben in der Bloch Kugel) ($ \to $ insbesondere Laser-Theorie).
 	\item $ w = -1 $, $ \sigma_{11} = 0 $, $ \sigma_{00} = 1 $, Atom im Grundzustand (unten in der Bloch Kugel).
-	\item $ \Delta = 0 \ \overset{\eqref{3.56}}{\Rightarrow} \ \vec{Q} = \mathcal{V} \hat{x} $, d.h. $ \vec{S} $ rotiert in einer durch $ \hat{x} $ definierten Ebene.
+	\item $ \Delta = 0 \ \overset{\eqref{3.56}}{\Rightarrow} \ \vec{Q} = \mathcal{V} \hat{x} $, d.h. $ \vec{S} $ rotiert in einer durch $ \hat{x} $ definierten Ebene. \label{drei}
+	%
+	%17.06.19
+	%
+	\item Ist die Feldamplitude $ \vec{F} = \vec{F}(t) $ zeitabhängig, so vererbt sich diese Zeitabhängigkeit auf $ \mathcal{V} $ (wegen \eqref{3.33}). Es lässt sich dann zeigen (insbesondere für $ \Delta = 0 $, s.o. \ref{drei}), dass der Blochvektor unter dem Einfluss von $ \vec{F}(t) $ eine Rotation um den Winkel
+	\begin{equation}
+	\theta(T) = \int_{0}^{T} \mathcal{V}(t') \dd t'
+	\label{3.58}
+	\end{equation}
+	durchläuft. Man nennt diese Größe auch die \textbf{Fläche unter dem Puls} (oder ``\textbf{area under the pulse}'').\par
+	Dies erlaubt die deterministische Initialisierung eines Zweiniveausystems (eines Qubits - für Quantencomputer bzw. eines Quantenregisters) beiispielsweise in einer kohärenten Überlagerung \`a la $ \frac{1}{\sqrt{2}} (|0\rangle \pm |1\rangle) $ per \textbf{$ \frac{\pi}{2} $-Puls} ($ \theta = \frac{\pi}{2} $) bzw. des angeregten Zustands $ |1\rangle $ durch einen \textbf{$ \pi $-Puls} (\textbf{Kohärente Kontrolle}).
+	\item \eqref{3.43}, \eqref{3.46} zeigen, dass im Falle nichttrivialer Störung die ungestörte charakteristische Frequenzdifferenz $ \omega - \omega_0 $ (einzige relevante Skala) ersetzt wird durch die \textbf{Rabi-Frequenz} $ \Omega $. Dynamik wird vermittelt durch $ U = e^{i H t / \hbar} $ vermittelt, mit durch die Eigenwerte von $ H $ per $ E_j \sim \hbar \omega_j $ definierten Frequenzen. Dass heißt die Modifikation $ (\omega - \omega_0) \overset{F = 0 \to F \gneq 0}{\longrightarrow} \Omega $ geht mit einer Modifikation der Eigenwerte von $ H $ einher.\par
+	Um die Verhältnisse zu veranschaulichen, trägt man $ \Omega $ als Funktion von $ \Delta $ auf.
+	
+	
+	%T1
+	\hft
+	
+	\noindent
+	\textbf{Vermiedene Kreuzung} oder ``\textbf{anti-crossing} vs. \textbf{Kreuzung}/``\textbf{crossing}'' von Energiieniveaus. $ \to $ entspricht allgemein dem Szenario der parametrischen \textbf{Entwicklung der Eigenniveaus} eines Hamiltonoperators (``parametric-level-evolution'' oder ``level dynamics'').\par
+	In obigem Bild ist der relevante Parameter die Feldfrequenz $ \omega $, bei festem $ \omega_0 $ und $ F $ (experimentell: frequency chirp).\par
+	Die Wirkung der Störung auf die spektrale Struktur ist am Stärksten bei $ \Delta = 0 $ [s.u. $ \to $ entartete Störungsrechnung (im Gegensatz zur nicht-entarteten) Störungstheorie].\par
+	Bei starker Verstimmung, d.h. $ \Delta \gg |\mathcal{V}| $, wird die Verschiebung gegenüber den ungestörten Niveaus immer kleiner und ist von der Ordnung $ \frac{|\mathcal{V}|^2}{\Delta^2} $, denn:
+	\begin{equation}
+	\Omega \overset{\substack{\eqref{3.48} \\ \eqref{3.44}}}{=} \sqrt{\Delta^2 + |\mathcal{V}|^2} = \Delta \sqrt{1 + \frac{|\mathcal{V}|^2}{\Delta^2}} \ \overset{|\mathcal{V}| \ll \Delta}{\simeq} \ \Delta \left(1 + \frac{1}{2} \frac{|\mathcal{V}|^2}{\Delta^2}\right)
+	\label{3.59}
+	\end{equation}
+	[Wichtige Konsequenz z.B. in der Atomphysik: unterschiedliches Verhalten der Spektren von atomarem Wasserstoff und von Alkaliatomen in statischen elektrischen Feldern] heißt im Jargon \textbf{AC Stark shift}, \textbf{dynamical Stark effect}. Betrachtet man nun die räumliche Variation der Feldamplitude (natürlicher weise gegeben durch das Profil der Feldmode), so ergibt sich eine \textbf{ortsabhängige}) Verschiebung der Energieniveaus, m.a.W. eine nichttriviale Potentiallandschaft. Dies impliziert per Kraft $ = - $ grad Potantial eine Kraft auf das Zweiniveauatom, die lediglich in Gleichgewichtspunkten verschwindet.
+	
+	
+	%T2
+	\hft
+	
+	\noindent
+	$ \to $ s.a. optical tweezers
+	\item $ \Omega^{-1} $ kleiner (d.h. schneller) als Zeitskala typischer Störeffekte (talk to Ranak o. Guiseppe Sansone. they know!)
 \end{enumerate}
+
+
+
