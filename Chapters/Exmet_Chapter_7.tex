@@ -1,0 +1,133 @@
+\setcounter{chapter}{6}
+
+\chapter{Stichproben und Schätzwerte}
+
+Die \textbf{Grundgesamtheit} entspricht allen (unendlich vielen) Werten. Die \textbf{Stichprobe} 1 und die Stichprobe 2 sind Teilmengen davon.\\[5pt]
+Stichprobenvektor $ \vec{X} (x_1, x_2, x_3, \dots, x_n) $ entspricht der Durchführung eines Experiments.\\[5pt]
+Die Wahrscheinlichkeitsdichte ist:
+\begin{equation*}
+f(X) = f(x_1) \cdot f(x_2) \cdot \dots \cdot f(x_n)
+\end{equation*}
+Die Aufgabe ist es dann die Wahrscheinlichkeitsdichte zu beschreiben mit
+\begin{equation*}
+f(X, \theta)
+\end{equation*}
+mittels einer geeigneten Schätzung.\\[5pt]
+$ \theta $: unbekannter wahrer Parameter\\
+$ \hat{\theta} $: Schätzwert von $ \theta $ (Achtung: ebenfalls Zufallsvariable).
+
+\subsection{Def: Konsistenz}
+
+\begin{equation*}
+\lim_{n \to \infty} P \left(|\hat{\theta} - \theta| \ge \epsilon\right) = 0
+\end{equation*}
+$ \Rightarrow $ d.h. Messung ist sinnvoll. Konsistenz ist Mindestanforderung an guten Schätzwert.\\
+Schätzwert finden: Parameter Anpassen
+
+\subsection{Def: Bias (Versatz) des Schätzwerts}
+
+Erwartungswert für Schätzwert $ \hat{\theta} $:
+\begin{equation*}
+E[\hat{\theta}(x)] = \int \int \int \hat{\theta}(x) f(x_1) f(x_2) f(x_3) \cdot \dots \cdot f(x_n) \dd x_1 \dots \dd x_n
+\end{equation*}
+Der Bias ist dann:
+\begin{equation*}
+b = E[\hat{\theta}] - \theta
+\end{equation*}
+Asymptotische Erwartungstreue bedeutet:
+\begin{equation*}
+\lim_{n \to \infty} b \to 0
+\end{equation*}
+$ \widehat{=} $ \textbf{``unbiased''} Messung
+
+\section{Arithmetisches Mittel}
+
+\subsection{Def:}
+
+
+\begin{equation*}
+\bar{x} = \frac{1}{n} \sum_{i = 1}^{n}x_i
+\end{equation*}
+$ \bar{x} $: Stichprobenmittel $ \neq $ Erwartungswert $ E[X] = \mu $\\
+Gesetz der großen Zahlen $ n \to \infty $ $ \Rightarrow $ $ \bar{x} \to \mu $
+\begin{equation*}
+E[X] = E\left[\frac{1}{n} \sum x_i\right] = \frac{1}{n} \sum \mu_i = \mu
+\end{equation*}
+d.h. Mittelwert ist ohne Bias.
+
+\subsection{Def: Varianz der Stichprobe}
+
+\begin{equation*}
+s^2 = \frac{1}{n-1} \sum (x_i - \bar{x})^2
+\end{equation*}
+Faktor $ \frac{1}{n-1} $ so gewählt, dass $ E[s^2] = \sigma^2 $\\[10pt]
+Analog für Wertepaare\\
+Kovarianz
+\begin{align*}
+V_{xy} &= \frac{1}{n-1} \sum (x_i - \bar{x}) (y_i - \bar{y}) \\
+&= \frac{n}{n-1} (\ol{xy} - \bar{x} \bar{y})
+\end{align*}
+
+\section{Anmerkungen zu Unsicherheit}
+
+\begin{enumerate}[a)]
+	\item \textbf{Statistische Unsicherheit}
+	\begin{itemize}
+		\item statistische Fluktuationen
+		\item zugrundeliegende Verteilung falsch angenommen
+		\item Messbedingungen identisch?
+		\item Weglassen von Datenpunkten
+	\end{itemize}
+	\textbf{Beispiel:} Messung mit Untergrund:
+	
+	%T1
+	\hft
+	
+	\noindent
+	gegeben: Messgröße $ \bar{x}_s = E[x_s] $\\[5pt]
+	Sei Erwartungswert der Ereignisklasse ,,Signal`` mit Wahrscheinlichkeitsverteilung $ f_s(x) $ und sei nicht trennbar von Untergrund. Der Anteil des Untergrunds ist $ \alpha \pm \delta \alpha $.\\[10pt]
+	\textbf{Lösung:} Unterteilen der Signalregion in $ 5 \sigma $ weg vom Signal $ \to $ 2 Messreihen
+	\begin{enumerate}[1.)]
+		\item Bestimme
+		\begin{equation*}
+		\bar{x}_n = E[x_n] = \frac{1}{n} \sum_{i=1}^{n} x_i
+		\end{equation*}
+		in Signalfreier Region.\\
+		Varianz:
+		\begin{equation*}
+		\sigma^2(\bar{x}_n) = \frac{\sum x_i^2 - m \bar{x}_n^2}{m (m - 1)} = \frac{s_n^2}{m}
+		\end{equation*}
+		\item Bestimme
+		\begin{equation*}
+		\bar{x}_n = E[x_n] = \frac{1}{n} \sum_{i=1}^{n} x_i
+		\end{equation*}
+		mit Varianz
+		\begin{equation*}
+		\sigma^2(\bar{x}) = \frac{\sum x_i^2 - n \bar{x}_n^2}{n (n - 1)} = \frac{s^2}{n}
+		\end{equation*}
+	\end{enumerate}
+	Wahrscheinlichkeitsverteilung in Signalregion:
+	\begin{equation*}
+	f(x) = (1-\alpha) f_s(x) + \alpha f_u(x)
+	\end{equation*}
+	\begin{equation*}
+	E[x] = (1-\alpha) E[x_s] + \alpha E[x_n]
+	\end{equation*}
+	\begin{equation*}
+	\bar{x}_s = \frac{1}{1-\alpha} \bar{x} - \frac{1}{1-\alpha} \bar{x}_n \pm d
+	\end{equation*}
+	\begin{equation*}
+	d^2 \frac{1}{(1-\alpha)^2} \frac{s^2}{n} + \frac{\alpha^2}{(1-\alpha)^2} \frac{s_n}{m} + \left(\frac{\bar{x} - x_u}{(1-\alpha)^2}\right)^2 \delta \alpha^2
+	\end{equation*}
+	\item \textbf{Systematische Unsicherheiten}\\[5pt]
+	Bsp.: Metermaß falsch skaliert. Messungen werden in gleicher Weise beeinträchtigt\\
+	$ \Rightarrow $ Messungen untereinander konsistent also falsch. können zu Bias führen.\\[5pt]
+	Unabhängige Systematische Unsicherheiten
+	\begin{equation*}
+	\sigma_{\tx{sys}}^2 = \sigma_{\tx{sys} 1}^2 + \sigma_{\tx{sys} 2}^2 + \dots
+	\end{equation*}
+	Am besten immer den statistischen und systematischen Fehler (Unsicherheit) getrennt angeben. z.B.:
+	\begin{equation*}
+	l = (1 \pm 0{,}5(\tx{stat}) \pm 0{,}1 (\tx{syst}))
+	\end{equation*}
+\end{enumerate}

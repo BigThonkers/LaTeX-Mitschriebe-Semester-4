@@ -1,0 +1,89 @@
+%18.06.19
+
+\chapter{Darstellungen}
+
+\textbf{Bisher:} Formulierung der QM in abstraktem Vektorraum, durch Zustände bzw. deren durch die Schrödingergleichung induzierte Dynamik, ohne jedoch die Frage zu stellen, wo das ,,Teilchen`` nun denn eigentlich sei (etwa im Orts- oder Impulsraum).\par
+\textbf{Komplikationen:} Orts- und Impulsvariable jeweils kontinuierliche Größen, d.h. die assoziierten Observablen haben kontinuierliches Eigenspektrum.
+
+\section{kontinuierliche Eigenwerte}
+
+Wir erinnern uns zunächst an die Vollständigkeitsrelation \eqref{zerlegungeins} ($ \sum_{j}|j\rangle\langle j| $), insbesondere also
+\begin{equation}
+|j\rangle = \sum_{m} |m\rangle\langle m| j \rangle = \sum_{m} |m\rangle \delta_{mj} \qquad \forall |j\rangle \in \tx{ONB}
+\label{4.1}
+\end{equation}
+Übergang zu kontinuierlichem Wertebereich von $ m $ legt folgende Verallgemeinerung nahe:
+\begin{equation}
+|q'\rangle = \int \dd q |q\rangle \langle q | q'\rangle
+\label{4.2}
+\end{equation}
+\eqref{4.2} erfordert entsprechend die Normierung
+\begin{equation}
+\langle q|q'\rangle = \delta(q-q')
+\label{4.3}
+\end{equation}
+anstelle von \eqref{2 7}, worin $ \delta(q-q') $ die Punktmasse, Diracsche Deltafunktion, allgemeiner ($ \to $ Mathematik, O.Forster, Analysis III) \textbf{Testfunktion} oder \textbf{Distribution} mit bekannten Eigenschaften (s.o. Skript (IV.4 - 11) o.z.B. Theo ED). Vermöge \eqref{4.3} liegen die mit unendlicher Norm ausgestattet $ |q\rangle $ nicht mehr in unserem Hilbertraum [$ \to $ konkretes Beispiel: ebene Wellen zu Wellenvektor $ \vec{k} $, s.u.]. Um demnach eine physikalisch konsistente Anschauung zu gewinnen, führt man mit $ |q\rangle $ assoziierte \textbf{Eigendifferentiale} ein [Funktionalanalysis $ \to $ Reed, Simon Band I].
+\setcounter{equation}{11}
+\begin{equation}
+|q\rangle_{\Delta q} = \frac{1}{\sqrt{\Delta q}} \int_{q}^{q + \Delta q} |q'\rangle \dd q'
+\label{4.12}
+\end{equation}
+,die folgende beruhigende Eigenschaft haben:
+\begin{equation}
+\begin{aligned}
+_{\Delta q} \langle q | q \rangle_{\Delta q} &= \frac{1}{\Delta q} \int_{q}^{q + \Delta q} \dd q' \int_{q}^{q + \Delta q} \dd q'' \langle q'' | q' \rangle \\
+&\overset{(\tx{IV}.3)}{=} \frac{1}{\Delta q} \int_{q}^{q + \Delta q} \dd q' \int_{q}^{q + \Delta q} \dd q'' \delta(q'' - q') \overset{(\tx{IV}.4)}{=} 1
+\end{aligned}
+\label{4.13}
+\end{equation}
+d.h. $ |q\rangle_{\Delta q} $ ist wieder ein normierbarer, näherungsweiser Eigenvektor zum Eigenwert $ q $ [$ \to $ s.u. Konstruktion von Wellenpaketen als normierbare Darstellung freier Teilchen]. Mit der so definierten Schar $ \{ |q\rangle \}_{q} $ von Basiszuständen lässt sich ein beliebiger Zustand wie folgt darstellen:
+\begin{equation}
+|\psi\rangle = \int \dd q c(q) |q\rangle
+\label{4.14}
+\end{equation}
+Zunächst: Wahrscheinlichkeit für $ q = y $, im Zustand $ |\psi\rangle $:
+\begin{equation}
+\begin{aligned}
+|\langle y|\psi\rangle|^2 &\overset{\eqref{4.14}}{=} \left|\int \dd q c(q) \langle y | q \rangle \right|^2 = \int \dd q' c^*(q') \langle q' | y \rangle \int \dd q c(q) \langle y | q \rangle \\
+&\overset{\eqref{4.3}}{=} \int \int \dd q' \dd q c^*(q') c(q) \delta(q'-y) \delta(y - q) \overset{\int \dd q}{=} \int \dd q' c^*(q') c(y) \delta (q' - y) \\
+&\hspace{3pt}\overset{\int \dd q'}{=} c^*(y) c(y) = |c(y)|^2\\
+|\langle y|\psi\rangle|^2 \hspace{-8pt}&\hspace{8pt}= |c(y)|^2
+\end{aligned}
+\label{4.15}
+\end{equation}
+[Beachte \textbf{strikte} Analogie zum diskreten Fall!]\\
+Entsprechend erhält man für die Norm von $ |\psi \rangle $ in der Basis $ \{ |q\rangle \} $ 
+\begin{equation}
+\langle \psi | \psi \rangle = \int \langle \psi | q \rangle \langle q | \psi \rangle \dd q = \int \ub{|\langle \psi | q \rangle |^2}_{\overset{\eqref{4.15}}{=} |c(q)|^2} \dd q = 1
+\label{4.16}
+\end{equation}
+Somit gibt $ |\langle \psi | q \rangle |^2 \dd q $ die Wahrscheinlichkeit an, den Ort $ q $ im Intervall $ [q , q + \dd q] $ (Analog zum $ \Delta q $ oben) zu messen.
+
+\begin{equation*}
+\delta (q - q') = \frac{1}{2 \pi} \int e^{ik(q-q')} \dd k \tag{IV.4}
+\end{equation*}
+\begin{equation*}
+l_2 \leftrightarrow \int \dd \mu (q) |c(q)|^2 < \infty
+\end{equation*}
+\begin{equation*}
+L_p \leftrightarrow \int \dots |c(q)|^2
+\end{equation*}
+\begin{equation}
+\langle q | q' \rangle = \delta (q - q') \overset{(\tx{IV}.5)}{=} \frac{1}{2\pi} \int e^{i k (q - q')} \dd k = \frac{1}{2\pi} \int e^{i k q} e^{-i k q'} \dd k
+\end{equation}
+Mit der de Broglie-Beziehung
+\begin{equation}
+p = \hbar k
+\label{4.17}
+\end{equation}
+wird $ \langle q | q' \rangle $ zu
+\begin{equation}
+\langle q | q' \rangle = \frac{1}{2 \pi \hbar} \int e^{i p q / \hbar} e^{-u p q' / \hbar} \dd p
+\label{4.18}
+\end{equation}
+Aufgrund der Interpretation von $ e^{i p q / \hbar} $ als (Ortsdarstellung) einer ebenen Welle mit Impuls $ p $ - vgl. ebene Welle mit Wellenvektor $ k $ in E-Dyn. identifizieren wir diese Größe als Ortsprojektion des Impulseigenzustandes $ |p\rangle $ zum Eigenwert p. D.h.
+\begin{equation}
+\langle q | p \rangle = \frac{1}{\sqrt{2 \pi \hbar}} e^{\nicefrac{i}{\hbar} p q}
+\label{4.19}
+\end{equation}
+Die Darstellung quantenmechanischer Zustände $ |\psi\rangle \in \ham $ in der Ortsbasis, d.h. durch Projektion von $ |\psi\rangle $ auf die kontinuierlich verteilte Ortszustände $ |q\rangle $ heißt daher auch (historisch) \textbf{Wellenmechanik}.
