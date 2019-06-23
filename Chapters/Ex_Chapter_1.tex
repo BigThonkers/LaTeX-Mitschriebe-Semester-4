@@ -2027,6 +2027,137 @@ M_{ba} \propto - \frac{W_{ba}}{\hbar} \vec{\epsilon} \cdot \vec{r}_{ba} \qquad \
 \Delta m_j &= 0; \pm 1 
 \end{align*}
 
+%24.05.19
+
+\subsubsection{Programm Heute}
+
+\begin{itemize}
+	\item Mehrelektronenatome
+	\item Alkali-Metalle
+	\item LS-Kopplung; jj-Kopplung (Beispiele)
+	\item Auswahlregeln
+	\item Zentralfeldnäherung
+	\item Hartree-Fock-Methode
+\end{itemize}
+
+\subsection{Alkali-Atome}
+
+\begin{align*}
+\tx{Ne} & \Rightarrow ^1 S _0 \\
+\tx{Ar} & \Rightarrow ^1 S _0
+\end{align*}
+
+\hft (Bild mit Valenzelektron außerhalb voller Elektronenhüllen bzw. innerhalb in nähe des Kerns)
+
+
+\begin{equation*}
+\frac{Z e}{4 \pi \epsilon_0 r} - \frac{(Z-1) e}{4 \pi \epsilon_0 r} = \frac{e}{4 \pi \epsilon_0 r} \qquad \vec{r} \to \infty
+\end{equation*}
+\begin{equation*}
+\frac{Z e}{4 \pi \epsilon_0 r} \qquad \vec{r} \to 0
+\end{equation*}
+\begin{align*}
+Z \to \infty \quad & V(r) \approx \frac{e}{4 \pi  \epsilon_0} \frac{1}{r} \\
+Z \to 0 \quad & V(r) \approx \frac{Z e}{4 \pi  \epsilon_0} \frac{1}{r}
+\end{align*}
+$ L \Rightarrow V(r) \propto \frac{1}{r} \quad \Rightarrow \quad E_n $\\[5pt]
+Wasserstoffatom S$ _{\tfrac{1}{2}} $ und P$ _{\tfrac{1}{2}} $ mit $ j = \tfrac{1}{2} $ gleiche Energie. Bei Natrium sind diese Energien Verschieden. Im Spektrum erkennt man einen kleinen Dip in der Mitte des Resonanzpeaks, was auf die zwei (nur mit besseren Spektrometern Auflösbaren) Energieniveaus hindeutet.\\
+\lcom{Hat kurz (und unvollständig) Doppler-Cooling erklärt. \hft}\\[5pt]
+Zentrifugalpotential
+\begin{equation*}
+\frac{l ( l+1) \hbar^2}{r^2}
+\end{equation*}
+\begin{equation*}
+E_n(S) < E_n(P) < E_n(D)
+\end{equation*}
+mit $ S \Rightarrow l = 0 $, $ P \Rightarrow l = 1 $ und $ D \Rightarrow l = 2 $ wie immer.
+
+\subsection{LS-Kopplung; jj-Kopplung}
+
+\textbf{Hartree-Fock-Methode}
+\begin{equation*}
+H = \sum_{i=1}^{m} \left(-\frac{1}{2} \vabla_{r_i}^2 - \frac{Z}{r_i}\right) + \sum_{i < J = 1}^{n} \frac{1}{r_{iJ}}
+\end{equation*}
+
+\subsubsection{Wasserstoffatom}
+
+$ \vec{l}, \vec{s} $ Spin-Bahn-Kopplung
+\begin{equation*}
+\left. \begin{array}{c}
+\vec{l}_1, \vec{l}_2, \dots , \vec{l}_n \\
+\vec{s}_1, \vec{s}_2, \dots , \vec{s}_n
+\end{array} \right\}  n\tx{ - Elektronen}
+\end{equation*}
+Zusätzliche Energien: Spin-bahn-Kopplung\\
+$ \vec{L} = \vec{l}_1 + \vec{l}_2 $ mit $ l_1 = l_2 = 1 $\\
+$ |l_1 - l_2| \le L \le l_1 + l_2 $ $ \Rightarrow \quad 0 \le L \le 2 \Rightarrow L = 0, 1, 2 $
+\begin{align*}
+W_{l_i,s_i} &= c_{ii} \ \vec{l}_i \cdot \vec{s}_i \\
+W_{l_i,l_J} &= c_{iJ} \ \vec{l}_i \cdot \vec{l}_J \\
+W_{s_i,s_J} &= b_{iJ} \ \vec{s}_i \cdot \vec{s}_J \\
+W_{l_i,s_J} &= d_{iJ} \ \vec{l}_i \cdot \vec{s}_J
+\end{align*}
+
+\subsubsection{LS-Kopplung}
+
+zwei Elektronen $ P^2 \quad l_1 = l_2 = 1 $, \textbf{leichte Atome}
+\begin{align*}
+\vec{L} &= \vec{l}_1 + \vec{l}_2 \, \,  \quad \Rightarrow \quad L = 0, 1, 2 \qquad (S, P, D) \\
+\vec{S} &= \vec{s}_1 + \vec{s}_2        \quad \Rightarrow \quad S = 0, 1 \qquad \tx{Singulett, Triplett}
+\end{align*}
+$ W \propto \vec{L} \cdot \vec{S} \quad \Rightarrow \quad J = 0, 1, 2 $
+\begin{equation*}
+J^2 = (\vec{L} + \vec{S})^2 = L^2 + S^2 + 2 \vec{L} \cdot \vec{S} \quad \Rightarrow \quad \vec{L} \cdot \vec{S} = \frac{1}{2} (J^2 - L^2 - S^2)
+\end{equation*}
+
+\subsubsection{jj-Kooplung}
+
+zwei Elektronen $ P^2 \quad l_1 = l_2 = 1 $ und $ s_1 = s_2 = \frac{1}{2} $, \textbf{schwere Atome}
+\begin{align*}
+\vec{j}_1 &= \vec{l}_1 + \vec{s}_1 \qquad j_1 = \frac{1}{2}; \frac{3}{2} \\
+\vec{j}_2 &= \vec{l}_2 + \vec{s}_2 \qquad j_2 = \frac{1}{2}; \frac{3}{2}
+\end{align*}
+$ W \propto \vec{j}_1 \cdot \vec{j}_2 $
+
+\subsection{Zentralfeldnäherung; Slater Determinante}
+
+\begin{equation*}
+H = \sum_{i = 1}^{n} \left\{ - \frac{\hbar^2}{2 m_e} \vabla_{r_i}^2 - \frac{Z e^2}{4 \pi \epsilon_0} \frac{1}{r_i} \right\} + \sum_{i < J = 1} \frac{e^2}{4 \pi \epsilon_0}\frac{1}{r_{iJ}}
+\end{equation*}
+\begin{equation*}
+H = H_c + H_i
+\end{equation*}
+wobei $ H_i $ einer Störung entspricht.
+\begin{align*}
+H_c &= \sum_{i=1}^{n} \left\{ - \frac{\hbar^2}{2 m_e} \vabla_{r_i}^2 + V(r_i) \right\} = \sum_{i=1}^{n} h_i \\
+H_i &= \sum_{i < J = 1} \frac{e^2}{4 \pi \epsilon_0}\frac{1}{r_{iJ}} - \left\{ \frac{Z e^2}{4 \pi \epsilon_0} \frac{1}{r_i} + V(r_i) \right\}
+\end{align*}
+\begin{equation*}
+\left[- \frac{\hbar^2}{2 m_e} \vabla_{r_i}^2 + V(r_i)\right] U_{\alpha_i} (\vec{r}_i) = E_{\alpha_i} U_{\alpha_i}(\vec{r}_i)
+\end{equation*}
+mit $ U_{\alpha_ii}(\vec{r}_i) $ einer Wellenfunktion und $ \alpha_i = (n_i,l_i,m_i) $
+
+\subsubsection{Slater Determinante}
+
+\begin{equation*}
+\psi(q_1, \dots, q_n) = \frac{1}{\sqrt{n !}} \begin{vmatrix}
+U_{\alpha} (q_1) & U_{\beta} (q_1) & \dots  & U_{\nu} (q_1) \\
+U_{\alpha} (q_2) & U_{\beta} (q_2) & \dots  & U_{\nu} (q_2) \\
+\vdots           & \vdots          & \ddots & \vdots \\
+U_{\alpha} (q_n) & U_{\beta} (q_n) & \dots  & U_{\nu} (q_n) \\
+\end{vmatrix}
+\end{equation*}
+wobei gilt:
+\begin{align*}
+\alpha &\equiv (n_\alpha, l_\alpha, m_\alpha, m_{s_\alpha}) \\
+\beta &\equiv (n_\beta, l_\beta, m_\beta, m_{s_\beta}) \\
+\nu &\equiv (n_\nu, l_\nu, m_\nu, m_{s_\nu})
+\end{align*}
+
+
+
+
+
 %31.05.19
 
 \subsubsection{Programm Heute}
@@ -2184,3 +2315,4 @@ Für Fluor gilt:
 3^{2}S _{\frac{1}{2}} \\ 3^{2}P_{\frac{1}{2}}
 \end{array}\right\} \quad \tx{ für alle Alkaliatome: K, Rb, Cs} 
 \end{equation*}
+
