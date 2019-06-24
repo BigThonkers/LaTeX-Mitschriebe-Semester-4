@@ -1,0 +1,177 @@
+%24.06.19
+
+\chapter{Schätzmethoden (Fit)}
+
+\section{Maximum Likelihood}
+
+\textbf{gegeben:} Zufallsvariablen $ X = \{x_1, x_2, x_3, \dots\} $\\
+\textbf{Annahme:} Wahrscheinlichkeitsdichte $ f: f(x,\theta) $ (= Hypothese)\\
+\textbf{gesucht:} Parameter $ \theta = (\theta_1, \theta_2, \theta_3, \dots) $\\[5pt]
+Bei $ n $ wiederholten Messungen von $ x $ ist die Wahrscheinlichkeit $ x_i $ im Intervall $ x_i \pm \dd x_i $ zu finden $ P(x,\theta) $. Für $ n $ Messungen gilt:
+\begin{equation*}
+P(x,\theta) = \prod_{i=1}^{n} f(x_i, \theta) \dd x_i
+\end{equation*}
+$ P(\theta) $:
+\begin{itemize}
+	\item groß wenn hypothese \& Parameter richtig
+	\item klein, falls H- \textbf{oder} P. falsch sind
+\end{itemize}
+\textbf{generelle Likelihood-Funktion}
+\begin{equation*}
+L(\theta) = \prod_{i=1}^{n} f(x_i, \theta)
+\end{equation*}
+Suche das Madimum:
+\begin{equation*}
+\prd{L}{\theta_i} = 0 \qquad i = 1, \dots, n
+\end{equation*}
+welches der beste Schätzwert für Parametersatz $ \theta: \{ \theta_1, \dots, \theta_n \} $\\[5pt]
+Im allgemeinen in der Praxis sucht man oft das Minimum der negativen Likelihood:
+\begin{equation*}
+L(\theta) \rightarrow - \ln(L(\theta))
+\end{equation*}
+Logarithmus sorgt dafür, dass das Produkt zu einer Summe wird (stammt auf Effizienzgründen in der Programmierung solcher Algorithmen).\\[5pt]
+Die Vorteile der Maximum Likelihood Methode:
+\begin{itemize}
+	\item Einfache Anwendung
+	\item erfordert kein ,,binning`` der Messwerte
+\end{itemize}
+Die Nachteile:
+\begin{itemize}
+	\item Analytische Berechnung der Varianz des für $ \theta $ (also auf den Schätzer) schwierig
+\end{itemize}
+Möglichkeiten die Varianz zu bestimmen:
+\begin{itemize}
+	\item grafisch
+	\item Monte Carlo Simulationen
+	\item Rao Cram\'e-Fressnell Ungleichung
+\end{itemize}
+\begin{equation*}
+V[\theta] \ge \left( 1 + \prd{\sigma}{\theta} \right)^2 \bigg/ E \left[- \prd{^2  \ln(L)}{\theta^2}\right]
+\end{equation*}
+,,$ = $`` Zeichen gilt für effiziente Schätzer (in meisten Fällen angenommen). $ \prd{\sigma}{\theta} $ wird meistens ,,$ = 0 $`` gesetzt.\\
+d.h. $ \sigma = E[\theta] - \theta = 0 $\\[10pt]
+\textbf{Beispiel:} Bestimmung mittlerer Lebensdauer $ \tau $ für Zerfall eines Kern
+\begin{enumerate}[a)]
+	\item \begin{equation*}
+	f(t,\tau) = \frac{1}{\tau} e^{- \frac{t}{\tau}}
+	\end{equation*}
+	mit $ \tau = \frac{1}{\lambda} $ und $ \lambda $ der Zerfallskonstante
+	\begin{equation*}
+	\ln(L(\tau)) = \sum_{i=1}^{n} \ln \left(f(t,\tau)\right) = \sum_{i=1}^{n} \ln \left(\frac{1}{\tau} - \frac{t_1}{\tau}\right)
+	\end{equation*}
+	\begin{equation*}
+	\prd{\ln(L)}{\tau} \overset{!}{=} 0 \Rightarrow \hat{\tau} = \frac{1}{n} \sum t_i
+	\end{equation*}
+	d.h. $ M_0 $, $ L_0 $ ist arithmetisches Mittel aller gemessener Werte $ t_i $ mit Erwartungswert
+	\begin{align*}
+	E\left[\hat{\tau} (t_1, t_2, \dots, t_n)\right] &= \int \dots \int \hat{\tau} (t_1, t_2, \dots, t_n) f(t_1, t_2, \dots, t_n; \tau) \dd t_1, \dots \dd t_n \\
+	&= \frac{1}{n} \sum_{i=1}^{n} \tau = \tau
+	\end{align*}
+	das entspricht dem Erwartungswert ohne Bias.
+	\item Bestimmung der Zerfallskonstanten
+	\begin{equation*}
+	\prd{L}{\theta} = \prd{L}{a} \cdot \prd{a}{\theta} = 0
+	\end{equation*}
+	\begin{equation*}
+	\prd{L}{a} = 0 \quad \tx{bei} \quad a = a(\theta)
+	\end{equation*}
+	\begin{equation*}
+	\Rightarrow \quad \hat{\lambda} = \frac{1}{\hat{\tau}} = \frac{n}{\sum_{i=1}^{n} t_i}
+	\end{equation*}
+	aber Achtung: Erwartungswert:
+	\begin{equation*}
+	E[\hat{\lambda}] = \lambda \cdot \frac{n}{n-1} = \frac{1}{\tau} \frac{n}{n-1}
+	\end{equation*}
+	biasfrei nur gültig wenn $ n \to \infty $
+\end{enumerate}
+Die Werte einfach logarithmisch aufzutragen und eine Gerade zu fitten hat einige Nachteile gegenüber dieser Methode.
+
+\section{Methode der kleinsten Quadrate}
+
+,,Least-squares Function``\\
+\textbf{gegeben:}
+\begin{itemize}
+	\item $ N $ unabhängig gemessenen Zufallsvariablen\\
+	$ y_i \quad i = 1, \dots, N $\\
+	die jeweils Gauß-Verteilung folgen:\\
+	$ \Rightarrow $ Mittelwerte $ \lambda_i $, Varianzen $ \sigma_i^2 $
+	\item Messwerte hängen von zweiter Variablen $ x_i $ ab
+	\item Messwerte sind unabhängig
+\end{itemize}
+\begin{equation*}
+\ln(L(\theta)) = - \frac{1}{2} \sum \frac{(y_i - \lambda(x_i,\theta))^2}{\sigma_i^2}
+\end{equation*}
+hat Maximum, wenn:
+\begin{equation*}
+\chi^2(\theta) = \sum_{i=1}^{n} \frac{(y_i - \lambda(x_i,\theta)^2}{\sigma_i^2}
+\end{equation*}
+im Minimum.\\
+Wir suchen also das Minimum von $ \lambda^2(\theta) $.\\[5pt]
+Bei $ N $-dim Gauß mit Kovarianz $ V $ (= Fehlermatrix)
+\begin{equation*}
+\ln(L(\theta)) = \frac{1}{2} \sum \left(y_i - \lambda(x_i, \theta)\right) \cdot V^{-1} \cdot y_i - \lambda(x_\theta)
+\end{equation*}
+\textbf{Beispiel:} Polynomfit\\[5pt]
+$ \theta = a, b, c $, $ \lambda = a + bx + cx^2 $
+\begin{equation*}
+\chi^2 = \sum_{i=1}^{N} \frac{1}{\sigma_i^2} \left( y_i - a - bx_i - cx_i^2 \right)^2
+\end{equation*}
+Ableitung für Minimum Suche
+\begin{align*}
+\prd{}{a} \chi^2 &= - 2 \sum \frac{1}{\sigma_i^2} (y_i - a - bx_i - x_i^2)^2 \overset{!}{=} 0\\
+\prd{}{b} \chi^2 &= - 2 \sum \frac{x_i}{\sigma_i^2} (-\tx{''}-) \overset{!}{=} 0\\
+\prd{}{c} \chi^2 &= - 2 \sum \frac{x_i^2}{\sigma_i^2} (-\tx{''}-) \overset{!}{=} 0
+\end{align*}
+umsortieren (alle $ \frac{1}{\sigma_i^2} $ weglassen!) [!!! Das geht nur bei Messungen mit gleicher Varianz!!!]
+\begin{align*}
+\sum y_i &= a \sum 1 + b \sum x_i + c \sum x_i^2 \\
+\sum x_i y_i &= a \sum x_i + b \sum x_i^2 + c \sum x_i^3 \\
+\sum x_i^2 y_i &= a \sum x_i^2 + b \sum x_i^3 + c \sum x_i^4
+\end{align*}
+Die Lösung ist dann
+\begin{equation*}
+\Delta = \begin{vmatrix}
+\sum 1 & \sum x_i & \sum x_i^2 \\
+\sum x_i & \sum x_i^2 & \sum x_i^3 \\
+\sum x_i^2 & \sum x_i^3 & \sum x_i^4
+\end{vmatrix}
+\end{equation*}
+und damit erhalten wir:
+\begin{align*}
+a &= \frac{1}{\Delta} \begin{vmatrix}
+\sum y_i & \sum x_i & \sum x_i^2 \\
+\sum x_i y_i & \sum x_i^2 & \sum x_i^3 \\
+\sum x_i^2 y_i & \sum x_i^3 & \sum x_i^4 
+\end{vmatrix} \\
+b &= \frac{1}{\Delta} \begin{vmatrix}
+\sum 1 & \sum y_i & \sum x_i^2 \\
+\sum x_i & \sum x_i y_i & \sum x_i^3 \\
+\sum x_i^2 & \sum x_i^2 y_i & \sum x_i^4
+\end{vmatrix} \\
+c &= \frac{1}{\Delta} \begin{vmatrix}
+\sum 1 & \sum x_i & \sum y_i \\
+\sum x_i & \sum x_i^2 & \sum x_i y_i \\
+\sum x_i^2 & \sum x_i^3 & \sum x_i^2 y_i
+\end{vmatrix}
+\end{align*}
+Allgemeine lineare Funktion:
+\begin{equation*}
+y(x) = a_o + \sum_{j=1}^{n} a_j X_j(x)
+\end{equation*}
+führt zur Lösung
+\begin{equation*}
+X_j \defeq \frac{\sum \frac{1}{\sigma_i^2} X_j (x_i)}{\sum \frac{1}{\sigma_i^2}} \qquad \ol{y} \defeq \frac{\sum \frac{1}{\sigma_i^2} y_i}{\sum \frac{1}{\sigma_i^2}}
+\end{equation*}
+Kovarianzmatrix:
+\begin{equation*}
+S_{jk}^2 = \frac{\frac{1}{n-1} \sum \frac{1}{\sigma_i^2} \left(X_i + \ol{X}_j\right) \left(X_k - \ol{X}_k\right)}{\frac{1}{n} \sum \frac{1}{\sigma_i^2}}
+\end{equation*}
+Varianz: $ s_j^2 = s_{ji}^2 $\\
+lineare Korrelations-Koeffizienten
+\begin{equation*}
+r_{jk} = \frac{s_{jk}^2}{s_j s_k}
+\end{equation*}
+Die Lösung ist dann:
+\begin{equation*}
+a_0 = \ol{y} - \sum a_j \ol{X}_j \quad j \cdot a_j = \frac{s_y}{s_j} \sum r_{ky} r^{-1}_{ky}
+\end{equation*}

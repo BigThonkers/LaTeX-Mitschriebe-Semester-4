@@ -68,9 +68,9 @@ l_2 \leftrightarrow \int \dd \mu (q) |c(q)|^2 < \infty
 \begin{equation*}
 L_p \leftrightarrow \int \dots |c(q)|^2
 \end{equation*}
-\begin{equation}
+\begin{equation*}
 \langle q | q' \rangle = \delta (q - q') \overset{(\tx{IV}.5)}{=} \frac{1}{2\pi} \int e^{i k (q - q')} \dd k = \frac{1}{2\pi} \int e^{i k q} e^{-i k q'} \dd k
-\end{equation}
+\end{equation*}
 Mit der de Broglie-Beziehung
 \begin{equation}
 p = \hbar k
@@ -87,3 +87,171 @@ Aufgrund der Interpretation von $ e^{i p q / \hbar} $ als (Ortsdarstellung) eine
 \label{4.19}
 \end{equation}
 Die Darstellung quantenmechanischer Zustände $ |\psi\rangle \in \ham $ in der Ortsbasis, d.h. durch Projektion von $ |\psi\rangle $ auf die kontinuierlich verteilte Ortszustände $ |q\rangle $ heißt daher auch (historisch) \textbf{Wellenmechanik}.
+
+%24.06.19
+
+\section{Ortsdarstellung quantenmechanischer Zustände und Operatoren}
+
+Analog zu obiger Verallgemeinerung der Zerlegung der $ \mathbbm{1} $ jetzt Verallgemeinerung des Spektralsatzes \eqref{spektralsatz} für Systeme mit kontinuierlichem Spektrum ($ \to $ s.a. Reed \& Simon Vol I for the mathematically more inclines).
+\begin{equation}
+Q \overset{\substack{\eqref{spektralsatz} \\ \eqref{4.2}}}{=} \int \dd q' \ q' | q' \rangle \langle q' |
+\label{4.20}
+\end{equation}
+Entsprechend ergibt sich als Eigenwertgleichung
+\begin{equation}
+\begin{aligned}
+Q | q\rangle  & \overset{\eqref{4.20}}{=} \int \dd q' \ q' |q'\rangle \ub{\langle q'|q\rangle}_{\overset{\eqref{4.3}}{=} \delta (q' - q)} \\
+&= q | q\rangle
+\end{aligned}
+\label{4.21}
+\end{equation}
+Für die Matrixelemente von Potenzen bzw. verallgemeinert Potenzreihen von $ Q $ folgt weiter:
+\begin{equation}
+\begin{aligned}
+\langle q | Q^{\nu} | q' \rangle &= q'^{\nu} \langle q | q' \rangle = q'^{\nu} \delta(q - q') \qquad \nu \in \mathbb{Z} \\
+\langle q |f(Q) | q' \rangle &= \sum_{j} c_{\nu} q'^{\nu} \langle q| q' \rangle = f(q') \delta(q - q')
+\end{aligned}
+\label{4.22}
+\end{equation}
+für $ f(Q) = \sum_{\nu = - \infty}^{+ \infty} c_{\nu} Q^{\nu} $ (Konvergenz vorausgesetzt; $ f(Q) \equiv $ verallgemeinerte Potenzreihe, setzt Existenz von $ Q^{-1} $ voraus).\par
+Ähnlich für die Matrixelemente des Impulsoperators $ P $:
+\begin{equation}
+\begin{aligned}
+\langle q | P | q' \rangle &\overset{\eqref{4.2}}{=} \int  \dd p \ \langle q | P | p \rangle \langle p | q' \rangle \custo{\leftarrow}{=}{P | p \rangle = p | p \rangle} \int \dd p \ p \langle q | p \rangle \langle p | q' \rangle \\
+&\overset{\eqref{4.18}}{=} \frac{1}{2 \pi \hbar} \int \dd p \ p e^{\tfrac{i}{\hbar} p (q - q')}\\
+\langle q | P | q' \rangle &\overset{(IV.10)}{=} - i \hbar \prd{}{q} \delta(q - q')
+\end{aligned}
+\label{4.23}
+\end{equation}
+Matrixelemente ganzzahliger Potenzen $ \nu $ von $ P $:
+\begin{equation}
+\langle q | P^{\nu} | q' \rangle = \int \dd p \ p^{\nu} \langle q | p \rangle \langle p | q' \rangle = \frac{1}{2 \pi \hbar} \int \dd p \ p^{\nu} e^{\tfrac{i}{\hbar} p (q - q')}
+\label{4.24}
+\end{equation}
+Speziell für $ \nu \ge 0 $, mit (IV.5), als Verallgemeinerung von (IV.10), folgt:
+\begin{equation}
+\langle q | P^{\nu} | q' \rangle = \left(- i \hbar \prd{}{q}\right)^{\nu} \delta(q - q') \quad \nu \ge 0 \tx{ ganzzahlig}
+\label{4.25}
+\end{equation}
+Somit haben wir eine Darstellung von $ Q^{\nu} $ und $ P^{\nu} $ in der Ortsbasis gewonnen und können die Wirkung dieser Operatoren auf beliebige $ |\psi\rangle \in \ham $, dargestellt in der Ortsbasis, erschließen.
+\begin{equation*}
+\langle q | Q^{\nu} | \psi \rangle \overset{(*)}{=} \int \dd q' \langle q | Q^{\nu} | q' \rangle \langle q' | \psi \rangle = \int \dd q' \ q'^{\nu} \langle q | q' \rangle \langle q' | \psi \rangle = q^{\nu} \langle q|\psi\rangle
+\end{equation*}
+$ (*) $: Einsetzen der Eins, mit $ \langle q | \psi \rangle $ gegeben\\[5pt]
+D.h.
+\begin{equation}
+\langle q | Q^{\nu} | \psi \rangle = q^{\nu} \langle q | \psi \rangle = q^{\nu} \psi(q)
+\label{4.26}
+\end{equation}
+$ \psi(q) $ heißt ,,\textbf{Wellenfunktion}`` des Zustandes $ |\psi\rangle $. M.a.W. ist die Wellenfunktion die Amplitude des Zustandes $ |\psi \rangle $ am Ort $ q $, repräsentiert durch $ |q\rangle $.\par
+Für $ P^{\nu} $ folgt entsprechend
+\begin{equation}
+\begin{aligned}
+\langle q | P^{\nu} | \psi \rangle & \overset{(*)}{=} \int \dd q' \ \langle q | P^{\nu} | q' \rangle \langle q' | \psi \rangle\\
+&= \int \dd q' \int \dd p \ \langle q | P^{\nu} | p \rangle \langle p | q' \rangle \langle q' | \psi \rangle = \int \int \dd q' \dd p \ p^{\nu} \langle q | p \rangle \langle p | q' \rangle \langle q' | \psi \rangle \\
+&\overset{\eqref{4.19}}{=} \int \dd q' \ \langle q' | \psi \rangle \frac{1}{2 \pi \hbar} \int \dd p \ p^{\nu} e^{\tfrac{i}{\hbar} p ( q - q')} = \langle q | P^{\nu} | \psi \rangle
+\end{aligned}
+\label{2.27}
+\end{equation}
+Dies vereinfacht sich für $ \nu \ge 0 $ (s. \eqref{4.24}, \eqref{4.25})
+\begin{equation}
+\begin{aligned}
+\langle q | P^{\nu} | \psi \rangle &\overset{\eqref{4.25}}{=} \int \dd q' \left(- i \hbar \prd{}{q}\right)^\nu \delta(q - q') \langle q' | \psi \rangle = \left(- i \hbar \prd{}{q}\right)^\nu \langle q| \psi \rangle\\
+\langle q | P^{\nu} | \psi \rangle &\overset{\nu > 0}{=} \left(- i \hbar \prd{}{q}\right)^\nu \psi(q)
+\end{aligned}
+\label{4.28}
+\end{equation}
+Die Gleichungen \eqref{4.25} und \eqref{4.28} besagen insbesondere, dass Orts- und Impulsoperator im (Vektor-) Raum der Wellenfunktionen $ \langle q | \psi \rangle = \psi (q) $ als \textbf{Multiplikations-} bzw. \textbf{Differentialoperator} wirken; d.h.:
+\begin{equation}
+\begin{aligned}
+\langle q | Q | \psi \rangle &\eqdef Q_{\{q\}} \langle q | \psi \rangle = Q_{\{q\}} \psi(q) = q \psi(q) \\
+\langle q | P | \psi \rangle &\eqdef P_{\{q\}} \langle q | \psi \rangle = P_{\{q\}} \psi(q) = - i \hbar \prd{}{q} \psi(q)
+\end{aligned}
+\label{4.29}
+\end{equation}
+Wiederholte Anwendung, $ \nu \ge 0 $:
+\begin{equation}
+\begin{aligned}
+Q^{\nu} \psi(q) &= q^{\nu} \psi(q) \\
+P^{\nu} \psi(q) &= \left(- i \hbar \prd{}{q} \right)^{\nu} \psi(q)
+\end{aligned}
+\label{4.30}
+\end{equation}
+Entsprechend wird eine Hamiltonfunktion bzw. der assoziierte quantenmechanische Hamiltonoperator der Form:
+\begin{equation}
+H = \frac{p^2}{2m} + V(q)
+\label{4.31}
+\end{equation}
+im Ortsraum die Darstellung
+\begin{equation*}
+H = - \frac{\hbar^2}{2m} \prd{^2}{q^2} + V(q)
+\end{equation*}
+haben, mit der zugehörigen Schrödingergleichung
+\begin{equation}
+H \psi(q,t) = i \hbar \partial_t \psi(q,t)
+\label{4.32}
+\end{equation}
+[$ V(q) $ ist hier Multiplikationsoperator, mit $ V $ angewendet am Skalar $ q $]
+
+\section{Impulsdarstellung}
+
+$ \to $ wichtig für Festkörperühysik o.a. Skrenphysik\\
+formal völlig analoges Vorgehen wie oben. Zwiedert ??, wegen \eqref{4.18}, \eqref{4.19}
+\begin{equation}
+\langle p | q \rangle = \frac{1}{\sqrt{2 \pi \hbar}} e^{-\tfrac{i}{\hbar} p q} = \ol{\langle p | q \rangle}
+\label{4.33}
+\end{equation}
+Angenommen $ \langle q | \psi \rangle $ sein bekannt, so ergibt sich $ \langle p | \psi \rangle $ wie folgt, mittels Einsetzen der Eins (in $ \{ |q\rangle \} $)
+\begin{equation}
+%
+%
+%
+\setcounter{equation}{35}
+%
+%
+%
+\begin{aligned}
+\langle q | \psi \rangle &= \int \dd q \ \langle p | q \rangle \langle q | \psi \rangle \\
+& \overset{\eqref{4.33}}{=} \frac{1}{\sqrt{2 \pi \hbar}} \int \dd q \ e^{- \tfrac{i}{\hbar} p q} \psi(q) \\ & \eqdef \hat{\psi}(p) \equiv \tx{Fouriertransformierte der Wellenfunktion}
+\end{aligned}
+\label{4.35}
+\end{equation}
+[$ \hat{\phantom{0}} $ oder alternativ $ \tilde{\phantom{0}} $, lässt man oft einfach weg, da das Argument von $ (\hat{\psi} = )\psi $ hinreichend klärt, in welcher Darstellung man arbeiten!]\\[5pt]
+Analog zu \eqref{4.22} bis \eqref{4.32} erklärt man \eqref{4.37}:
+\begin{equation}
+\langle p | P | \psi \rangle = p \langle p|\psi\rangle \eqdef p \psi(p)
+\label{4.36}
+\end{equation}
+\begin{equation}
+\begin{aligned}
+\langle q | Q | \psi \rangle &= \int \dd q \ \langle p | q \rangle \langle q | Q | \psi \rangle \\
+&= \int \dd q \ q \langle p | q \rangle \langle q | \psi \rangle \overset{\eqref{4.33}}{=} \int \dd q \ i \hbar \prd{}{p} \langle p | q \rangle \langle q | \psi \rangle\\
+&= i \hbar \prd{}{p} \int \dd q \langle p | q \rangle \langle q | \psi \rangle \overset{\eqref{4.35}}{=} i \hbar \prd{}{p} \psi(p)
+\end{aligned}
+\label{4.37}
+\end{equation}
+\begin{equation}
+\begin{aligned}
+P_{\{p\}} \langle p | \psi \rangle &= P_{\{p\}} \psi(p) = p \psi(p) \\
+Q_{\{p\}} \langle p | \psi \rangle &= Q_{\{p\}} = i \hbar \prd{}{p} \psi(p)
+\end{aligned}
+\label{4.38}
+\end{equation}
+ganzzahlige Potenzen:
+\begin{equation*}
+\langle p | Q^{\nu} | \psi \rangle = Q_{\{p\}}^{\nu} \langle p | \psi \rangle = Q_{\{p\}}^{\nu} \psi(p)
+\end{equation*}
+mit:
+\begin{equation*}
+Q_{\{p\}}^{\nu} = \frac{1}{2 \pi \hbar} \int \dd p' \ocircle \int \dd q q^{\nu} e^{- \tfrac{i}{\hbar} (p - p')q}
+\end{equation*}
+mit $ \ocircle $ dem Argument der Operators $ Q_{\{p\}}^{\nu} $
+\begin{equation}
+\langle p | P^{\nu} | \psi \rangle = P_{\{p\}}^{\nu} \langle p | \psi \rangle = P_{\{p\}}^{\nu} \psi(p) \quad \tx{mit} \quad P_{\{p\}}^{\nu} = p^{\nu}
+\label{4.39}
+\end{equation}
+Für $ \nu \ge 0 $ wird der Ausdruck für $ Q_{\{p\}}^{\nu} $ zu 
+\begin{equation}
+Q_{\{p\}}^{\nu} = \left(- i \hbar \prd{}{p}\right)^{\nu}
+\label{4.40}
+\end{equation}
