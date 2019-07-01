@@ -1,0 +1,255 @@
+\chapter{Zustände und Dynamik in einfachen Potentialproblemen}
+
+Die einfachste. aber bereits experimentell relevante physikalische Szenarien; Einzelteilchendynamik in Potentialtöpfen (quantumdots $ \equiv $ Quantenpunkt; Quantendrähte - experimentell unter guter Kontrolle seit ca. Mitte 80'er des letzten Jahrhunderts $ \to $ mesoskopische Physik, Nanophysik, Elektronenbillard).
+
+
+%T3
+\hft Stadion für Elektronenbillard
+
+\section{Gebundene Zustände im eindimensionalen Kastenpotential}
+
+Gegeben sei:
+\begin{equation}
+V(x) = \casess{0}{-a \le x \le a}{V_0 < \infty}{x < -a  \ \ \vee \ \  x > a}
+\label{5.1}
+\end{equation}
+Die zugehörige Eigenwertgleichung:
+\begin{equation}
+H | \psi \rangle = E | \psi \rangle
+\label{5.2}
+\end{equation}
+für den Energie- bzw. Hamiltonoperator lautet in der Ortsdarstellung wegen \eqref{4.32}:
+\begin{equation}
+\left[\prd{^2}{x^2} + \frac{2m}{\hbar^2} (E - V(x))\right] \psi(x) = 0
+\label{5.3}
+\end{equation}
+
+%T4
+\hft Potential außerhalb von $ -a \le x \le a $
+
+\noindent
+Zunächst Eigenwertgleichung in den Bereichen $ I, II, III $.
+\begin{equation}
+\begin{aligned}
+(I) \ \, \qquad \qquad x < -a \qquad &\left(\prd{^2}{x^2} - \kappa^2\right)  \psi_{I}(x) = 0 \\
+(II) \quad -a \le x \le -a \qquad &\left(\prd{^2}{x^2} - k^2\right)  \psi_{II}(x) = 0 \\
+(III) \ \ \qquad \qquad x > a \qquad &\left(\prd{^2}{x^2} - \kappa^2\right)  \psi_{III}(x) = 0 \\
+\end{aligned}
+\label{5.4}
+\end{equation}
+wobei
+\begin{equation}
+\kappa^2 = \frac{2 m (V_0 - E)}{\hbar^2} \qquad k^2 = \frac{2 m E}{\hbar^2}
+\label{5.5}
+\end{equation}
+\begin{equation}
+\tx{ Gebundene Zustände für } \quad E < V_0
+\label{5.6}
+\end{equation}
+legen den Ansatz
+\begin{equation}
+\begin{aligned}
+\psi_{I}(x) &= A_1 e^{\kappa x} \qquad x < -a \\
+\psi_{II}(x) &= A_2 e^{i k x} + B_2 e^{- i k x} \qquad - a \le x \le a \\
+\psi_{III}(x) &= B_3 e^{- \kappa x} \qquad x > a
+\end{aligned}
+\label{5.7}
+\end{equation}
+[Terme in $ e^{-\kappa x} $ bzw. $ e^{+\kappa x} $ unterdrückt, per $ B_1 = A_3 \defeq 0 $, wegen Normierbarkeit von $ \psi $]\\[5pt]
+Zur Bestimmung der Koeffizienten $ A_j $, $ B_j $ in \eqref{5.7} fordern wir die Stetigkeit von $ \psi(x) $ und ihrer Ableitung $ \psi'(x) $ in $ x = \pm a $. Die Forderung an $ \psi'(x) $ ergibt sich aus der Kontinuitätsgleichung der \textbf{quantenmechanischen Wahrscheinlichkeitsstromdichte} $ \vec{j} $.
+\begin{equation*}
+\begin{aligned}
+i \hbar \prt{}{t} |\psi(x)|^2 &= i \hbar \prd{}{t} (\psi^* \psi) = i \hbar (\partial_t \psi^*)\psi + i\hbar \psi^* \partial_t \psi \\
+&= - \psi H \psi^* + \psi^* H \psi \overset{\eqref{4.32}}{=} - \psi \left(- \frac{\hbar^2}{2m} \Delta + V \right) \psi^* + \psi^* \left(- \frac{\hbar^2}{2m} \Delta + V \right) \psi \\
+&\overset{(*)}{=} - \frac{\hbar^2}{2m} \left(\psi^* \Delta \psi -  \psi \Delta \psi^* \right) \overset{\Delta = \vabla^2}{=} \vabla \frac{\hbar^2}{2m} \left(\psi \vabla \psi^* -  \psi^* \vabla \psi \right)
+\end{aligned}
+\end{equation*}
+$ (*) $: $ V $ Multiplikationsoperator\\[5pt]
+Ergo:
+\begin{equation}
+\partial_t |\psi|^2 + \vabla \left[ \frac{\hbar}{2mi} \left(\psi^* \vabla \psi -  \psi \vabla \psi^*\right)\right] = 0
+\label{5.8}
+\end{equation}
+\frbox{QM Stromdichte}{
+\begin{equation}
+\vec{j}(x) \defeq \frac{\hbar}{2 m i} \left(\psi^* \vabla \psi -  \psi \vabla \psi^*\right)
+\label{5.9}
+\end{equation}}
+
+%01.07.19
+
+\noindent
+Aus der Stetigkeitsforderung an die Wellenfunktion und ihre erste Ableitung (wg. Kontinuitätsgleichung \eqref{5.8}) in $ x = \pm a $ folgt mit \eqref{5.7}:
+\begin{equation}
+\begin{pmatrix}
+-e^{-\kappa a} & e^{-ik a} & e^{i k a} & 0 \\
+- \kappa e^{- \kappa a} & i k e^{- i k a} & - i k e^{i k a} & 0 \\
+0 & e^{i k a} & e^{- i k a} & - e^{- \kappa a} \\
+0 & i k e^{i k a} & - i k e^{- i k a} & \kappa e^{- \kappa a}
+\end{pmatrix} \begin{pmatrix}
+A_1 \\ A_2 \\ B_2 \\ B_3
+\end{pmatrix}
+\label{5.10}
+\end{equation}
+Für nichttriviale Lösung muss Koeffizienten-Determinante verschwinden. Dies führt auf:
+\begin{equation}
+e^{- 2 \kappa a} \left[(\kappa^2 - k ^2) \sin(2 k a) + 2 \kappa k \cos(2 k a)\right] \overset{!}{=} 0
+\label{5.11}
+\end{equation}
+$ V_0 < \infty $ (wg. \eqref{5.1}) $ \overset{\eqref{5.5}}{\Rightarrow} \kappa^2 < \infty \Rightarrow e^{-2 \kappa a} \neq 0 $, zusätzlich mit $ \sin(2 k a) \neq 0 $ (o.E.d.A (!)), führt auf
+\begin{equation*}
+\kappa^2 - k^2 + 2 \kappa k \cot(2 k a) = 0
+\end{equation*}
+Mit binomischer Formel für $ \kappa ^2 + \dots $ folgen die zwei Lösungen
+%
+%
+%
+\setcounter{equation}{13}
+%
+%
+%
+\begin{equation}
+\kappa_1 = k \tan(k a) \qquad \kappa_2 = - l \cot(k a)
+\label{5.14}
+\end{equation}
+Einsetzen von \eqref{5.14} in \eqref{5.10}, speziell $ \kappa_1 = k \frac{\sin(ka)}{\cos(ka)} $; in \eqref{5.10} zunächst 2. Zeile:
+\begin{equation*}
+A_1 \kappa e^{- \kappa a} \overset{\eqref{5.14}}{=} A_1 k \frac{\sin(ka)}{\cos(ka)} e^{- \kappa a} = A_2 i k e^{-ika} - B_2 i k e^{ika}
+\end{equation*}
+\begin{equation*}
+A_1 e^{- \kappa a} \sin(ka) = A_2 i \cos/k a) e^{- i k a} - B2 i \cos(k a) e^{i k a} \tag{A}
+\end{equation*}
+1. Zeile aus \eqref{5.10}:
+\begin{equation*}
+A_1 e^{- \kappa a} = A_2 e^{i k a} + B_2 e^{i k a}
+\end{equation*}
+\begin{equation*}
+A_1 \sin(k a) e^{- \kappa a} = A_2 \sin(ka) e^{-ika} + B_2 \sin(ka) e^{ika} \tag{B}
+\end{equation*}
+Gleichungen (A) und (B) gleichsetzen liefert:
+\begin{equation*}
+A_2 i \cos(ka) e^{-ika} - B_2 i \cos(ka) e^{ika} = A_2 \sin(ka) e^{ika} + B:2 \sin(ka) e^{ika}
+\end{equation*}
+\begin{equation*}
+A_2 e^{-ika} (- \sin(ka) + i \cos(ka)) = B_2 e^{ika} ( \sin(ka) + i \cos(ka)
+\end{equation*}
+\begin{equation*}
+A_2 e^{-ika} i \ub{\left(\cos(ka) + i \sin(ka)\right)}_{e^{ika}} = B_2 e^{ika} i \ub{\left(\cos(ka) - i \sin(ka)\right)}_{e^{-ika}}
+\end{equation*}
+\begin{equation*}
+A_2 = B_2
+\end{equation*}
+insgesamt folgt
+\begin{equation}
+\begin{aligned}
+B_2^{(1)} &= A_2^{(1)} \\
+A_2^{(1)} &= A_1^{(1)} \\
+2 A_2^{(1)} \cos(ka) &= A_1^{(1)} e^{-\kappa_1 a} \\
+B_2^{(2)} &= - A_2^{(2)} \\
+B_3^{(2)} &= - A_1^{(2)} \\
+2 i A_2^{(2)} \sin(ka) &= - A_1^{(2)} e^{-\kappa_2 a}
+\end{aligned}
+\label{5.15}
+\end{equation}
+für $ \kappa_1 $ bzw. $ \kappa_2 $\\
+\eqref{5.15} in \eqref{5.7} liefert die Lösungen für $ \kappa_1 $:
+\begin{equation*}
+\psi^{(1)} (x) = \left\{ \begin{array}{l}
+A_1^{(1)} e^{\kappa_1 x} \\
+A_1^{(1)} e^{- \kappa_1 a} \frac{\cos(kx)}{\cos(ka)} \\
+A_1^{(1)} e^{- \kappa_1 x}
+\end{array} \right\} = \psi^{(1)} (-x) \qquad \tx{,,gerade`` Eigenfunktionen}
+\end{equation*}
+und für $ \kappa_2 $
+\begin{equation*}
+\psi^{(2)} (x) = \left\{ \begin{array}{l}
+A_1^{(2)} e^{\kappa_2 x} \\
+- A_1^{(2)} e^{- \kappa_2 a} \frac{\sin(kx)}{\sin(ka)} \\
+- A_1^{(2)} e^{- \kappa_2 x}
+\end{array} \right\} = - \psi^{(2)} (-x) \qquad \tx{,,ungerade`` Eigenfunktionen}
+\end{equation*}
+Da $ \psi^{(1,2)} (x) $ wegen ihrer Asymptotik bzw. Beschränktheit auf $ [-a, +a] $ integrabel, lässt sich $ A_1^{(1,2)} $ per Normierungsbedingung:
+%
+%
+%
+\setcounter{equation}{16}
+%
+%
+%
+\begin{equation}
+\int_{-\infty}^{\infty} |\psi^{(1,2)}(x)|^2 \dd x = 1
+\label{5.17}
+\end{equation}
+gewinnen.\par
+Eigenwerte zu \eqref{5.2}, \eqref{5.3} und (V.16) sind noch codiert durch \eqref{5.5} und \eqref{5.14}, lassen sich sber durch folgende Überlegung graphisch auffinden: wegen \eqref{5.5}
+\begin{equation}
+\kappa^2 a^2 + k^2 a^2 = \frac{2 m V_0 a^2}{\hbar^2}
+\label{5.18}
+\end{equation}
+gleichzeitig, wegen \eqref{5.14}:
+\begin{equation}
+\kappa a = k a \tan(ka) \quad \tx{bzw.} \quad \kappa a = - ka \cot(ka)
+\label{5.19}
+\end{equation}
+
+
+%T1
+\hft
+
+\noindent
+Aus obiger Skizze ergibt sich, dass für $ V_0 $ klein genug derart, dass
+\begin{equation}
+\frac{2 m V_0 a^2}{\hbar^2} < \frac{\pi^2}{4} \quad \tx{d.h.} \quad V_0 a^2 < \frac{\pi^2 \hbar^2}{8m}
+\label{5.20}
+\end{equation}
+nur ein einzelner gebundener Zustand existiert.\par
+Weitere Beobachtungen anhand von (V.16): Das gebundene Teilchen mit $ E < V_0 $ besitzt eine endliche Wahrscheinlichkeitsdichte (freilich exponentiell abfallend) im klassisch verbotenen Gebiet $ |x| > a $ (dort: $ E < V_0 $, $ \frac{p^2}{2m} + V = E \Rightarrow p_{cl} = \sqrt{2 m (E-V_0)} $) mit einer charakteristischen Eindringtiefe (penetration depth) $ \sim \kappa_{1,2}^{-1} $ [s.a. Optik, Feldverlauf an Grenzflächen von Materialien mit unterschiedlichen Brechungsindizes, insbesondere jenseits des Grenzwinkels für Totalreflektion $ \to $ evaneszente Welle Spiegel für Atome].\par
+Etwas einfacher: Grenzfall
+\begin{equation}
+V_0 \to \infty
+\label{5.21}
+\end{equation}
+in \eqref{5.1}, d.h. wegen \eqref{5.5}, $ \kappa \to \infty $, somit, wegen \eqref{5.7}, vereinfacht sich der Ansatz für die Lösungen zu:
+\begin{equation}
+\psi_{I}(x) \overset{\kappa \to \infty}{\longrightarrow} 0 \quad \psi_{II}(x) = A e^{ikx} + B e^{-ikx} \quad \psi_{III}(x) \overset{\kappa \to \infty}{\longrightarrow} 0
+\label{5.22}
+\end{equation}
+D.h. $ \psi $ verschwindet \textbf{am Rand} $ x = -a, +a $ des Potentials und in den Bereichen $ I $ und $ III $, als Gleichung
+\begin{equation}
+\psi_{II}(-a) = \psi_{II}(+a) = 0
+\label{5.23}
+\end{equation}
+Daraus mit \eqref{5.22}:
+\begin{equation}
+A e^{-ika} + B e^{ika} = 0 \quad A e^{ika} + B e^{-ika} = 0
+\label{5.24}
+\end{equation}
+und mit $ |\tx{Koeff. Matrix}| \overset{!}{=} 0 $ erhalten wir:
+\begin{equation*}
+e^{-2ika} - e^{2ika} = - 2 i \sin (2ka) = - 4 i \sin(ka) \cos(ka) = 0
+\end{equation*}
+\begin{equation}
+\Rightarrow \quad \sin(ka) = 0 \ \tx{ oder } \ \cos(ka) = 0
+\label{5.25}
+\end{equation}
+Daher
+\begin{equation}
+\begin{aligned}
+ka &= n \frac{\pi}{2} \quad n = 1,3,5, \dots \quad (\cos(ka) = 0) \\
+ka &= n \frac{\pi}{2} \quad n = 2,4,6, \dots \quad (\sin(ka) = 0)
+\end{aligned}
+\label{5.26}
+\end{equation}
+Eigenwerte \eqref{5.26} in Gleichungssystem \eqref{5.24} ergibt nach Addition/Subtraktion derselben:
+\begin{equation*}
+A 2 \cos(ka) + B 2 \cos(ka) = 0 \qquad - 2 i A \sin(ka) + 2 i B \sin(ka) = 0
+\end{equation*}
+ergo, für $ \cos(ka) = 0: A = B $ und für $ \sin(ka) = 0: A = - B $, und daher insgesamt
+\begin{equation}
+\psi_{II}(x) = \left\{ \begin{array}{ll}
+\frac{1}{\sqrt{a}} \cos \frac{n \pi x}{2 a} & n = 1,3,5,\dots \\
+\frac{1}{\sqrt{a}} \sin \frac{n \pi x}{2 a} & n = 2,4,6,\dots
+\end{array} \right\}
+\label{5.27}
+\end{equation}
+wobei der Vorfaktor wiederum aus der Normierungsbedingung folgt.

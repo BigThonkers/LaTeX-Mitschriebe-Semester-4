@@ -172,8 +172,8 @@ Die Gleichungen \eqref{4.25} und \eqref{4.28} besagen insbesondere, dass Orts- u
 Wiederholte Anwendung, $ \nu \ge 0 $:
 \begin{equation}
 \begin{aligned}
-Q^{\nu} \psi(q) &= q^{\nu} \psi(q) \\
-P^{\nu} \psi(q) &= \left(- i \hbar \prd{}{q} \right)^{\nu} \psi(q)
+Q^{\nu}_{\{q\}} \psi(q) &= q^{\nu} \psi(q) \\
+P^{\nu}_{\{q\}} \psi(q) &= \left(- i \hbar \prd{}{q} \right)^{\nu} \psi(q)
 \end{aligned}
 \label{4.30}
 \end{equation}
@@ -243,9 +243,9 @@ ganzzahlige Potenzen:
 \end{equation*}
 mit:
 \begin{equation*}
-Q_{\{p\}}^{\nu} = \frac{1}{2 \pi \hbar} \int \dd p' \ocircle \int \dd q q^{\nu} e^{- \tfrac{i}{\hbar} (p - p')q}
+Q_{\{p\}}^{\nu} = \frac{1}{2 \pi \hbar} \int \dd p' \odot \int \dd q q^{\nu} e^{- \tfrac{i}{\hbar} (p - p')q}
 \end{equation*}
-mit $ \ocircle $ dem Argument der Operators $ Q_{\{p\}}^{\nu} $
+mit $ \odot $ dem Argument der Operators $ Q_{\{p\}}^{\nu} $
 \begin{equation}
 \langle p | P^{\nu} | \psi \rangle = P_{\{p\}}^{\nu} \langle p | \psi \rangle = P_{\{p\}}^{\nu} \psi(p) \quad \tx{mit} \quad P_{\{p\}}^{\nu} = p^{\nu}
 \label{4.39}
@@ -255,3 +255,84 @@ Für $ \nu \ge 0 $ wird der Ausdruck für $ Q_{\{p\}}^{\nu} $ zu
 Q_{\{p\}}^{\nu} = \left(- i \hbar \prd{}{p}\right)^{\nu}
 \label{4.40}
 \end{equation}
+
+% 25.06.19
+
+\noindent
+noch einmal Zusammengefasst also:
+\begin{equation*}
+\begin{aligned}
+P_{\{p\}}^{\nu} \psi (p) &= p^{\nu} \psi (p) \\
+Q_{\{p\}}^{\nu} \psi (p) &= \left(i \hbar \prd{}{p} \right)^{\nu} \psi (p)
+\end{aligned}
+\end{equation*}
+Und noch einmal die Herleitung die vorhin übersprungen wurde:
+\begin{align*}
+\langle p | Q^{\nu} | \psi \rangle &= \int \langle p | q \rangle \langle q | Q^{\nu} | \psi \rangle \dd q = \int \dd q \langle p | q \rangle q^{\nu} \langle q | \psi \rangle \\
+&= \int \dd q \int \dd p' q^{\nu} \langle p | q \rangle \langle q | p' \rangle \langle p' | \psi \rangle \\
+&= \int \dd p' \langle p' | \psi \rangle \int \dd q \ q^{\nu} \frac{1}{2 \pi \hbar} e^{-\tfrac{i}{\hbar} (p-p') q} \\
+&= \frac{1}{2 \pi \hbar} \int \dd p' \ub{ \langle p' | \psi \rangle }_{\psi(p')}  \int \dd q \ q^{\nu} e^{-\tfrac{i}{\hbar} (p - p') q}
+\end{align*}
+Für Hamiltonoperatoren, die ganzzahlige Potenzen, beispielsweise von $ q $, enthalten (mit $ \nu < 0 $) wird die Impulsdarstellung der Schrödinger-Gleichung
+\begin{equation}
+H\left(Q_{\{p\}}, P_{\{p\}}\right) \psi(p,t) = i \hbar \prt{}{t} \psi(p,t)
+\label{4.41}
+\end{equation}
+i.d.R. \textbf{Integradifferentialform} annehmen [$ \to $ s. Übungsblatt 9]
+
+\section{Vertauschungsrelation für Ort und Impuls,\texorpdfstring{\\}{0} Unschärferelation}
+
+[bereits vorbereitet auf Übungsblatt 8]\\[5pt]
+Der Lagrange- und Hamilton-Formalismus der klassischen Mechanik baut auf verallgemeinerten Koordinaten $ q_i $ und den dazu jeweils kanonisch konjugierten Impulsen $ p_i = \nicefrac{\partial \lag}{\partial \dot{q}_i} $ auf, die paarweise jeweils eine Fläche im Phasenraum aufspannen. $ H $, gegeben in $ p_i $ und $ q_i $, liefert die \textbf{kanonischen} Bewegungsgleichungen:
+\begin{equation*}
+\dot{q}_i = \prt{H}{p_i} \qquad \dot{p}_i = - \prt{H}{q_i}
+\end{equation*}
+[Das Minus in der zweiten Gleichung ist notwendig, um zu Zeigen, dass die Liouville-Gleichung erfüllt und damit das Phasenraumvolumen Konstant ist.]\\[5pt]
+In der Quantenmechanik definiert man \textbf{kanonisch konjugierte Observablen} durch ihre Komutatorbeziehung; hier für $ Q $ und $ P $ [siehe Übungsaufgabe 27].
+\begin{equation*}
+\begin{aligned}
+\langle q | \left[Q,P\right] | \psi \rangle & \overset{\eqref{4.33}}{=} \langle q | QP - PQ | \psi \rangle = \langle q | QP | \psi \rangle - \langle q | PQ | \psi \rangle \\
+& \overset{\eqref{4.29}}{=} q \left(- i \hbar \prd{}{q} \right) \langle q | \psi \rangle - \left( - i \hbar 
+\prd{}{q}\right) q \ \langle q | \psi \rangle \\
+& \hspace{-7pt} \overset{\langle q | \psi \rangle = \psi(q)}{=} - i \hbar \left[q \prd{\psi}{q} - \psi (q) - q \prd{\psi}{q}\right] = i \hbar \psi(q) \quad , \quad \forall | \psi \rangle \in \ham
+\end{aligned}
+\end{equation*}
+\begin{equation}
+\Rightarrow \quad \rmbox{ [Q,P] = i \hbar \mathbbm{1} }
+\label{4.42}
+\end{equation}
+[siehe Übungsaufgabe 27!]\\[5pt]
+Erläuterung der Schritte oben mit $ | \chi \rangle = Q | \psi \rangle $:
+\begin{align*}
+\langle q | P Q | \psi \rangle &= \langle q | P | \chi \rangle \overset{\eqref{4.29}}{=} \left(- i \hbar \prd{}{q}\right) \langle q | \chi \rangle \\
+&= \left(- i \hbar \prd{}{q}\right) \langle q | Q | \psi \rangle \\
+&= \left(- i \hbar \prd{}{q}\right) q \ \langle q | \psi \rangle
+\end{align*}
+Allgemein: Observable $ A, B $ mit 
+\begin{equation}
+[A,B] = i \hbar \mathbbm{1}
+\label{4.43}
+\end{equation}
+heißen \textbf{kanonisch konjugiert} (,,tiling of phase space by areas $ \hbar $``).\par
+Mit Hilfe der Schwarzschen ungleichung:
+\begin{equation}
+\langle f | f \rangle \langle g | g \rangle \ge |\langle f | g \rangle|^2 \quad \forall |f\rangle, |g\rangle \in \ham
+\label{4.44}
+\end{equation}
+folgt aus \eqref{4.43} die:
+\frbox{Heisenbergsche Unschärferelation}{
+\begin{equation}
+\Delta a \Delta b \ge \frac{\hbar}{2}
+\label{4.45}
+\end{equation}}
+mit
+\begin{equation}
+\begin{aligned}
+(\Delta a)^2 &= \langle \psi | (A - \langle A \rangle)^2 | \psi \rangle \\
+(\Delta b)^2 &= \langle \psi | (B - \langle B \rangle)^2 | \psi \rangle \\
+\end{aligned}
+\label{4.46}
+\end{equation}
+den Varianzen der Messwerte für $ A $ und $ B $. Diese Streuung der Messwerte heißt auch ,,Messrauschen`` oder ,,Quantenfluktuation``.
+%T1 und T2
+\hft unschärfe Formen

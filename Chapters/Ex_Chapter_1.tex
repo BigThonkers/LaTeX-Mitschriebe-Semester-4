@@ -2373,3 +2373,76 @@ Helium: $ \Delta S = 0 $ (leichtes Atom $ \to $ LS-Kopplung bei schweren (Pb) jj
 \begin{equation*}
 E_{\tx{pot}} = \frac{-e^2}{4 \pi \epsilon_0} \left[\frac{1}{r_a} + \frac{1}{r_b} - \frac{1}{R}\right]
 \end{equation*}
+\begin{equation*}
+\left\{ \cancel{-\frac{\hbar^2}{2M} \vabla_{\vec{R}_a}^2} \cancel{-\frac{\hbar^2}{2M} \vabla_{\vec{R}_b}^2} - \frac{\hbar^2}{2m} \vabla_{\vec{r}}^2 + E_{\tx{pot}}(\vec{r},\vec{R}) \right\} \cdot \psi(\vec{r}, \vec{R}_a, \vec{R}_b) = E \psi(\vec{r}, \vec{R}_a, \vec{R}_b)
+\end{equation*}
+Dabei wurde die Näherung $ M \gg m $ also $ \frac{1}{M} \ll \frac{1}{m} $. Damit erhalten wir:
+\begin{equation*}
+\left\{- \frac{\hbar^2}{2m} \vabla_{\vec{r}}^2 + E_{\tx{pot}}(\vec{r},\vec{R}) \right\} \cdot \psi(\vec{r}, \vec{R}_a, \vec{R}_b) = E \psi(\vec{r}, \vec{R}_a, \vec{R}_b)
+\end{equation*}
+Hierbei ist zu beachten, dass $ \vec{r} $ variabel ist wobei $ \vec{R} $ nur ein Parameter ist.\\
+In der LCAO Näherung nehmen wir an, der Abstand zwischen den beiden Protonen sei groß. %T2
+\hft
+
+\noindent
+\begin{equation*}
+\psi(\vec{r},\vec{R}) = c_1 \psi_{1S}(\vec{r}_a) + c_2 \psi_{1S}(\vec{r}_b) \qquad \tx{LCAO Näherung}
+\end{equation*}
+\begin{align*}
+\psi_{1S} (\vec{r} + \tfrac{\vec{R}}{2}) = \tfrac{1}{\sqrt{\pi}} e^{-|\vec{r} - \frac{\vec{R}}{2}|} = \psi_{1S}(\vec{r}_b) \\
+\psi_{1S} (\vec{r} - \tfrac{\vec{R}}{2}) = \tfrac{1}{\sqrt{\pi}} e^{-|\vec{r} + \frac{\vec{R}}{2}|} = \psi_{1S}(\vec{r}_a)
+\end{align*}
+Nun müssen wir noch die Normierungsfaktoren $ c_1 $ und $ c_2 $ herausfinden. Verwenden wir hierzu die Normierungsbedingung:
+\begin{equation*}
+\int | \psi(\vec{r},\vec{R})|^2 \dd \vec{r} = 1 \quad \forall R !!
+\end{equation*}
+Parität $ [H,P] = 0 = HP-PH $ Vertauschungsregel. Unterscheidung von geraden oder ungeraden Zuständen.
+\begin{equation*}
+P \rho(\vec{r}) = \rho(-\vec{r})
+\end{equation*}
+\begin{equation*}
+P \left\{ P \rho(\vec{r}) \right\} = \rho(- (-\vec{r})) = \rho(\vec{r}) \quad \Rightarrow \quad P^2 = \mathbbm{1}
+\end{equation*}
+\begin{equation*}
+\lambda \ \tx{ Eigenwerte von } P \quad \Rightarrow \quad \lambda^2 = 1 \begin{array}{c}
+\nearrow \\ \searrow
+\end{array} \ \begin{array}{cl}
+\lambda = +1 \quad & \tx{gerader Zustand} \\[5pt]
+\lambda = -1 \quad & \tx{ungerader Zustand}
+\end{array}
+\end{equation*}
+\begin{align*}
+P \psi(\vec{r},\vec{R}) &= \psi(- \vec{r},\vec{R}) = \phantom{-} \psi(\vec{r},\vec{R}) \qquad \lambda = + 1 \quad \tx{gerader Zustand} \\
+P \psi(\vec{r},\vec{R}) &= \psi(- \vec{r},\vec{R}) = - \psi(\vec{r},\vec{R}) \qquad \lambda = - 1 \quad \tx{ungerader Zustand}
+\end{align*}
+\begin{align*}
+\psi(\vec{r},\vec{R}) &= c_1 \psi_{1S}(\vec{r}_a) + c_2 \psi_{1S}(\vec{r}_b) \\
+\psi(\vec{r},\vec{R}) &= c_1 \psi_{1S}(\vec{r} - \tfrac{\vec{R}}{2}) + c_2 \psi_{1S}(\vec{r} + \tfrac{\vec{R}}{2})
+\end{align*}
+\begin{equation*}
+P \psi(\vec{r},\vec{R}) = c_1 \psi_{1S}(-\vec{r} - \tfrac{\vec{R}}{2}) + c_2 \psi_{1S}(-\vec{r} + \tfrac{\vec{R}}{2}) = c_1 \psi_{1S}(\vec{r} + \tfrac{\vec{R}}{2}) + c_2 \psi_{1S}(\vec{r} - \tfrac{\vec{R}}{2})
+\end{equation*}
+\textbf{Gerader Zustand}
+\begin{equation*}
+P \psi(\vec{r},\vec{R}) = \psi(\vec{r},\vec{R}) = c_1 \psi_{1S}(\vec{r} - \tfrac{\vec{R}}{2}) + c_2 \psi_{1S}(\vec{r} + \tfrac{\vec{R}}{2})
+\end{equation*}
+\begin{equation*}
+\Rightarrow \quad \rmbox{c_1 = \phantom{-} c_2}
+\end{equation*}
+\textbf{Ungerader Zustand}
+\begin{equation*}
+P \psi(\vec{r},\vec{R}) = - \psi(\vec{r},\vec{R}) = - c_1 \psi_{1S}(\vec{r} - \tfrac{\vec{R}}{2}) - c_2 \psi_{1S}(\vec{r} + \tfrac{\vec{R}}{2})
+\end{equation*}
+\begin{equation*}
+\Rightarrow \quad \rmbox{c_1 = - c_2}
+\end{equation*}
+\textbf{Gerader Zustand}
+\begin{equation*}
+\psi(\vec{r},\vec{R}) = c_1 \left\{ \psi_{1S}(\vec{r}_a) + \psi_{1S}(\vec{r}_b) \right\}
+\end{equation*}
+\hft $ \psi $ positiv bei $ A $ und bei $ B $ $ \Rightarrow $ in der \textbf{Mitte verstärkt}\\[5pt]
+\textbf{Ungerader Zustand}
+\begin{equation*}
+\psi(\vec{r},\vec{R}) = c_1 \left\{ \psi_{1S}(\vec{r}_a) - \psi_{1S}(\vec{r}_b) \right\}
+\end{equation*}
+\hft $ \psi $ positiv bei $ A $ und negativ bei $ B $ $ \Rightarrow $ in der \textbf{Mitte ausgelöscht} $ \psi = 0 $\\[5pt]
