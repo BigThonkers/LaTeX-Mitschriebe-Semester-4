@@ -247,9 +247,165 @@ A 2 \cos(ka) + B 2 \cos(ka) = 0 \qquad - 2 i A \sin(ka) + 2 i B \sin(ka) = 0
 ergo, für $ \cos(ka) = 0: A = B $ und für $ \sin(ka) = 0: A = - B $, und daher insgesamt
 \begin{equation}
 \psi_{II}(x) = \left\{ \begin{array}{ll}
-\frac{1}{\sqrt{a}} \cos \frac{n \pi x}{2 a} & n = 1,3,5,\dots \\
-\frac{1}{\sqrt{a}} \sin \frac{n \pi x}{2 a} & n = 2,4,6,\dots
+\displaystyle \frac{1}{\sqrt{a}} \cos \left( \frac{n \pi x}{2 a} \right) & n = 1,3,5,\dots \\
+\displaystyle \frac{1}{\sqrt{a}} \sin \left( \frac{n \pi x}{2 a} \right) & n = 2,4,6,\dots
 \end{array} \right\}
 \label{5.27}
 \end{equation}
 wobei der Vorfaktor wiederum aus der Normierungsbedingung folgt.
+
+%02.07.19
+
+\noindent
+$ \Rightarrow $ \eqref{5.5} $ \kappa^2 = \frac{2 m (V_0 - E)}{\hbar^2} \qquad k^2 = \frac{2 m E}{\hbar^2} $ mit \eqref{5.26}
+\begin{equation}
+k^2 a^2 = \frac{n^2 \pi^2}{4} \quad \Rightarrow \quad E_n = \frac{n^2 \pi^2 \hbar^2}{8 m a^2} \quad n \in \mathbb{N}
+\label{5.28}
+\end{equation}
+\textbf{Wichtige Beobachtung/Eigenschaft:} $ E_n / E_1 = n^2 $, d.h. Anregungsenergien sind ganzzahlige Vielfache von $ E_1 $ (später ähnliche Situationen beim harmonischen Oszillator, aber beispielsweise \textbf{nicht} beim Wasserstoffatom!).
+\begin{equation*}
+\psi \propto e^{-i \ob{E_n t}^{\varphi_n} / \hbar} \qquad |\phi(t)\rangle = \sum c_n e^{-i E_n t / \hbar} |E_n\rangle
+\end{equation*}
+Angenommen $ E_1 t / \hbar = 2 \pi \Rightarrow E_n t / \hbar = n^2 E_1 t/\hbar = n^2 2 \pi $ d.h. Rephasierungsphänomen führt zu ``revivals''.
+\begin{equation*}
+\dot{\Theta} = \prt{H}{I} \qquad \dot{I} = -\prt{H}{\Theta}
+\end{equation*}
+
+\section{Paritätsoperator}
+
+Die Lösungen (V.16)  und \eqref{5.27} zerfallen in gerade und ungerade Lösungen unter Inversion $ x \to - x $ der Ortskoordinate, d.h. entweder $ \psi(x) = \psi(-x) $ oder $ \psi(x) = - \psi(-x) $. Diese \textbf{spezielle} Eigenschaft verdankt sich der \textbf{Invarianz} des Hamiltonoperators unter der Transformation $ x \mapsto -x $ (s. \eqref{5.1}). Allgemeiner spricht man von \textbf{Symmetrieeigenschaften} ($ \to $ Gruppentheorie, QM II).\par
+Wir definieren den \textbf{Paritätsoperator} $ \Pi $, der diese Transformation vermittelt:
+\begin{equation}
+\begin{aligned}
+\Pi | \psi\rangle &= \int |q\rangle \langle - q | \psi \rangle \dd q \qquad \forall | \psi \rangle \in \ham \\
+\Pi_{\{q\}} \langle q | \psi \rangle &= \langle q | \Pi | \psi \rangle = \psi(-q)
+\end{aligned}
+\label{5.29}
+\end{equation}
+Invarianz von $ H $ unter $ \Pi $ ist äquivalent zu
+\begin{equation}
+[\Pi, H] = 0
+\label{5.30}
+\end{equation}
+womit insbesondere folgt: $ H|\psi\rangle = i \partial_t |\psi\rangle $, dann auch
+\begin{equation}
+\begin{aligned}
+H \Pi |\psi\rangle &= i \partial_t |\psi\rangle \\
+H \Pi |\psi\rangle &\overset{\eqref{5.30}}{=} \Pi H | \psi\rangle = \Pi i \partial_t |\psi\rangle = i \partial_t \Pi |\psi\rangle
+\end{aligned}
+\label{5.31}
+\end{equation}
+Wegen $ \Pi^2 = \tx{id} $, folgt
+\begin{equation}
+\Pi^{-1} = \Pi
+\label{5.32}
+\end{equation}
+, sowie
+\begin{equation}
+\Pi^2 |\pi\rangle = \pi^2 | \pi \rangle = | \pi \rangle
+\label{5.33}
+\end{equation}
+mit $ |\pi\rangle $ EV von $ \Pi $ zum EW $ \pi $
+\begin{equation}
+\Rightarrow \quad \pi = \pm 1
+\label{5.34}
+\end{equation}
+Entsprechend heißen Zustände zum Eigenwert $ \pi = + 1 $ \textbf{Zustände gerader Parität} und zu $ \pi = - 1 $ \textbf{Zustände ungerader Parität}.\par
+Das zweiwertige Spektrum von $ \Pi $ erlaubt die Zerlegung des Hilbertraums in zwei Unterräume gerader bzw. ungerader Parität. Sei $ P_+ $ der Projektor auf den geraden, $ P_- $ jener auf den ungeraden Unterraum, so gilt $ \forall |\psi \rangle \in \ham $
+\begin{equation}
+|\psi \rangle = P_+ |\psi \rangle + P_- |\psi \rangle
+\label{5.35}
+\end{equation}
+Anwendung von $ \Pi $ auf \eqref{5.35} liefert
+\begin{equation}
+\Pi |\psi \rangle = P_+ | \psi \rangle - P_- | \psi \rangle
+\label{5.36}
+\end{equation}
+Entsprechend Definition gerader und ungerader Operatoren $ A $ und $ B $:
+\begin{equation}
+\Pi A \Pi^{-1} = A \qquad A \tx{ \textbf{gerade}} \qquad \Pi B \Pi^{-1} = - B \qquad B \tx{ \textbf{ungerade}}
+\label{5.37}
+\end{equation}
+Speziell folgern wir für Matrixelemente ungerader Operatoren bzgl. Zuständen $ |\pi, \dots \rangle $ wohldefinierte Parität:
+\begin{equation}
+\begin{aligned}
+\langle \pi \dots | B | \pi \dots \rangle &\overset{5.34}{=} \pi^2 \langle \pi \dots | B | \pi \dots \rangle \overset{\eqref{5.32}}{=} \langle \pi \dots | \Pi B \Pi^{-1} | \pi \dots \rangle \\
+&\overset{\eqref{5.37}}{=} - \langle \pi \dots | B | \pi \dots \rangle \quad \Rightarrow \quad \langle \pi \dots | B | \pi \dots \rangle = 0
+\end{aligned}
+\label{5.38}
+\end{equation}
+Dies hatten wir in \eqref{3.31} bereits genutzt - unter der Annahme, dass atomare Eigenzustände wohldefinierte Parität haben (was für $ H $-Eigenzustände \textbf{in der sphärischen Basis} auch zutrifft (s. späteres Kapitel)!).
+
+\section{Ungebundene Zustände des Kastenpotentials}
+
+Im Gegensatz zu \eqref{5.6} betrachten wir um Energien mit
+\begin{equation}
+E > V_0
+\label{5.39}
+\end{equation}
+im Kastenpotential, wählt aber auch den Energienullpunkt an anderer Stelle
+\begin{equation}
+V(x) = \casess{0}{x < -a \ \wedge \ x > a}{- V_0}{-a \le x \le a}
+\label{5.40}
+\end{equation}
+
+%T1
+\hft
+
+\noindent
+Mit der durch die Skizze vermittelten Intuition (einlaufende Amplitude von $ - \infty $) setzen wir als Lösung der Schrödingergleichung \eqref{5.3} an :
+\begin{equation}
+\begin{aligned}
+\psi_I(x) &= A_1 e^{ikx} + B_1 e^{-ikx} \\
+\psi_{II}(x) &= A_2 e^{iKx} + B_2 e^{-iKx} \\
+\psi_{III}(x) &= A_3 e^{ikx}
+\end{aligned}
+\label{5.41}
+\end{equation}
+mit
+\begin{equation}
+k = \sqrt{\frac{2mE}{\hbar^2}} \qquad K = \sqrt{\frac{2m (E+V_0)}{\hbar^2}}
+\label{5.42}
+\end{equation}
+\lcom{das negative $ V_0 $ sorgt für ein positives Vorzeichen und damit für ein reelles $ K $.}\\[5pt]
+Stetigkeitsforderung an $ \psi(x) $ und $ \psi'(x) $ in $ x = \pm a $ führt auf folgende Gleichungen:
+\begin{equation}
+\begin{aligned}
+A_1 e^{-ika} + B_1 e^{ika} &= A_2 e^{-iKa} + B_2 e^{iKa} \\
+k \left[A_1 e^{-ika} - B_1 e^{ika}\right] &= K \left[A_2 e^{-iKa} - B_2 e^{iKa}\right] \\
+A_3 e^{ika} &= A_2 e^{iKa} + B_2 e^{-iKa} \\
+k A_2 e^{ika} &= K \left[A_2 e^{iKa} - B_2 e^{-iKa}\right]
+\end{aligned}
+\label{5.43}
+\end{equation}
+Da dies vier Gleichungen für fünf Koeffizienten sind, ergeben sich Lösungen, parametrisiert durch $ A_1 $, für beliebige $ k, K $, d.h. Kontinuierliches Energiespektrum. Mit:
+\begin{equation}
+\begin{aligned}
+C &\defeq \left(1 - \frac{K}{k}\right)^2 e^{2ika} - \left(1 + \frac{K}{k}\right)^2 e^{-2iKa} \\
+&= - \frac{4 K}{k} \cos(2Ka) + 2i \left[1 + \left(\frac{K}{k}\right)^2\right] \sin(2 K a)
+\end{aligned}
+\label{5.44}
+\end{equation}
+findet man
+\begin{equation}
+\begin{aligned}
+B_1 &= A_1 \frac{2i}{c} \left[1 - \left(\frac{K}{k}\right)^2\right] \sin(2 K a) e^{-2ika} \\
+A_2 &= - A_1 \frac{2}{C} \left(1 + \frac{K}{k}\right) e^{-i(K+k)a} \\
+B_2 &= A_1 \frac{2}{C} \left(1 - \frac{K}{k}\right) e^{i(K-k)a} \\
+A_3 &= - A_1 \frac{4K}{Ck} e^{-2ika}
+\end{aligned}
+\label{5.45}
+\end{equation}
+Aus \eqref{5.45} gewinnt man aus der Verhältnissen der einlaufenden und auslaufenden Wahrscheinlichkeitsdichten den Transmissions und Reflexionskoeffizienten $ T $ und $ R $:
+\begin{equation}
+T \defeq \frac{|A_3|^2}{|A_1|^2} = \frac{j_3}{j_{1,\tx{in}}} \qquad \qquad R \defeq \frac{|B_1|^2}{|A_1|^2} = \frac{j_{1, \tx{out}}}{j_{1,\tx{in}}}
+\label{5.46}
+\end{equation}
+[vgl. aber Potentialschwelle]\\[5pt]
+\eqref{5.45} in \eqref{5.46}:
+\begin{equation*}
+T = \left[1 + \frac{1}{4} \left(\frac{K}{k} - \frac{k}{K}\right)^2 \sin^2(2Ka)\right]^{-1} \qquad R = \frac{1}{4} \left(\frac{K}{k} - \frac{k}{K}\right)^2 \sin^2(2Ka) \cdot T
+\end{equation*}
+mit $ R+T=1 $.\\[5pt]
+Obwohl $ E>V_0 $ finden wir i.a. $ R \ge 0 $, was im klassischen Fall nicht passieren würde $ \to $ Quantenreflexion.\par
+Ergebnis bleibt unverändert, wenn statt Potantialmulde Potentialbarriere sofern $ E > V_0 $ (d.h. \eqref{5.42} reell bleibt).

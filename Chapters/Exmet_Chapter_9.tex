@@ -1,0 +1,145 @@
+\setcounter{chapter}{9}
+
+\chapter{Pulsform und Signalübertragung}
+
+\section{Signale}
+
+Unterscheiden
+\begin{enumerate}[a)]
+	\item analog:
+	\begin{itemize}
+		\item kontinuierlich
+		\item beliebige Amplitude
+		\item wechselnde Spannungs- und Stromspannungspegel
+		\item Pulshöhe und Form enthalten Information
+	\end{itemize}
+	\item digital: (Spezialform eines Analogsignals)
+	\begin{itemize}
+		\item diskrete Amplituden
+		\item definierte Regel
+		\item Info im Zeitpunkt und Abfolge der Signale
+	\end{itemize}
+	\item unipolar (Gaus Peak oder einzelner Peak von Rechteck Signal)
+	\item bipolar (Teil einer Sinus Schwingung Oder Rechteckspannung mit pos. und neg. Anteilen)
+\end{enumerate}
+
+%T1
+\hft
+
+\noindent
+Signalbreite $ \widehat{=} $ Auge\\
+Bei Ursachen aus Kern- und Teilchenphysik\\
+Signalbreite 5 ns bis 100 $ \mu $s, steigende Flanke 2 ns bis 20 ns, fallende Flanke 10 ns bis 100 $ \mu $s
+
+\section{Fourierzerlegung}
+
+Jedes zeitkonstante Signal $ f(t) $ mit Periodenlänge $ T $ und Grundfrequenz $ f_0 = \frac{1}{T} $ ($ \Rightarrow $ Kreisfrequenz $ \omega_0 = 2 \pi f_0 $) kann angenähert werden durch
+\begin{equation*}
+f'(t) =  \sum_{m=0}^{M-1} g_m(\omega_0) \phi_m(t)
+\end{equation*}
+mit $ M $ Basisfunktionen $ \phi_m $ und $ M $ Amplituden $ g(\omega_0) $\\
+$ \Rightarrow $ Fourierreihenentwicklung
+\begin{equation*}
+f(t) = \sum_{k=-\infty}^{\infty} g_k(\omega_0) e^{ik\omega_o t}
+\end{equation*}
+mit komplexen Fourierkoeffizienten
+\begin{equation*}
+g_k = \frac{\omega_0}{2 \pi} \int_{0}^{T} f(t) e^{-i\omega_0 k t} \dd t
+\end{equation*}
+d.h. \textbf{alle} Frequenzen tragen zum Signal bei. Typisches Bild bei Signalübertragung:
+
+%T2
+\hft
+
+\noindent
+\textbf{Bandbreite:} Def: Abfall eines Signals um $ 3 \tx{dB} $: $ 10 \cdot \log \frac{P}{P_0} = - 3 \tx{ dB} $ mit $ \frac{P}{P_0} = \frac{1}{2} $
+
+\section{Signalübertragung}
+
+%T3
+\hft
+
+\noindent
+Betrachtung für unendlichlanges Kabel\\[5pt]
+Pegelsprung:
+\begin{align*}
+\Delta U (z,t) &= - R \Delta z I(z,t) = - L \Delta z \prt{I}{t}(z,t) \\
+\Delta I (z,t) &= - G \Delta z U(z,t) = - C \Delta z U(z,t)
+\end{align*}
+$ \Rightarrow $ \textbf{Telegraphengleichung}
+\begin{equation*}
+\prt{^2 U }{z^2} - LC \prt{^2 U}{t^2} = (LG + RC) \prt{U}{t} + RGU
+\end{equation*}
+Lösung:
+\begin{equation*}
+U(z,t) = U_0 e^{i \omega t - \gamma} \quad \tx{mit} \quad \gamma = \pm \sqrt{(R+i\omega L)(G + i \omega C)}
+\end{equation*}
+auf unendlichlanger Leitung z.B. für Koaxialkabel\\[5pt]
+Charakteristische Impedanz
+\begin{equation*}
+Z_0 = \frac{U}{I} = \sqrt{\frac{L}{c}}
+\end{equation*}
+für $ R, G = 0 $ d.h. verlustfreies Kabel.\\[10pt]
+Im Praktikum Koaxialkabel $ Z_0 = 50 \Omega $\\[5pt]
+Verlustbehaftete Kabel
+\begin{equation*}
+Z = \frac{U}{I} = \frac{R + i \omega L}{\gamma^2}
+\end{equation*}
+\begin{equation*}
+c = \frac{1}{\sqrt{LC}} = \frac{1}{\sqrt{\epsilon_\mu \epsilon_0 \mu}} = \frac{c}{\sqrt{\epsilon}}
+\end{equation*}
+
+\subsection{Impedanzanpassung}
+
+\begin{enumerate}[a)]
+	\item %T4
+	\hft
+	
+	\noindent
+	\begin{equation*}
+	Z_1 \overset{!}{=} \frac{R \cdot Z_2}{R + Z_2} \quad \Rightarrow \quad R = \frac{Z_1 Z_2}{Z_2 - Z_1}
+	\end{equation*}
+	(Parallelschaltung)
+	\item %T5
+	\hft
+	
+	\noindent
+	\begin{equation*}
+	Z_1 \overset{!}{=} R + Z_2 \quad \Rightarrow \quad R = Z_1 - Z_2
+	\end{equation*}
+\end{enumerate}
+
+\section{Analoge Signalfilter}
+
+\begin{enumerate}[a)]
+	\item CR-RC Pulsformung
+	
+	%T6
+	\hft
+	
+	\noindent
+	Hochpass: Unterdrückt Frequenz
+	\begin{equation*}
+	f \le \frac{1}{2 \pi R \cdot C}
+	\end{equation*}
+	differenziert Eingangssignal wenn $ \tau \ll $ Pulslänge am Eingang
+	
+	%T7
+	\hft
+	
+	\noindent
+	Tiefpass: Unterdrückt Frequenzen
+	\begin{equation*}
+	f \ge \frac{1}{2 \pi R \cdot C}
+	\end{equation*}
+	integriert Eingangssignal\\[5pt]
+	Für $ \tau \gg $ Pulslänge am Eingang\\[10pt]
+	Anwendung von Filtern von Rauschen:
+	
+	%T7
+	\hft
+	
+	\noindent
+	\color{red} Nachteil: Ratenabhängige Nullpunktverschiebung! \color{black}\\[10pt]
+	Beste Signalumformung: $ \tau = R_D C_D = R_1 C_1 $ $ \Rightarrow $ Signal/Rauschabstand $ \tau_{Diff} \approx \tau_{Int} $. möglicher Ausweg für Verschiebung der Nulllinie: Nachschalten einer weiteren Diff-Stufe $ \Rightarrow $ Resultat bipolares Signal.
+\end{enumerate}
