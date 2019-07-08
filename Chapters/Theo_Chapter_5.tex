@@ -403,9 +403,101 @@ T \defeq \frac{|A_3|^2}{|A_1|^2} = \frac{j_3}{j_{1,\tx{in}}} \qquad \qquad R \de
 \end{equation}
 [vgl. aber Potentialschwelle]\\[5pt]
 \eqref{5.45} in \eqref{5.46}:
-\begin{equation*}
+\begin{equation}
 T = \left[1 + \frac{1}{4} \left(\frac{K}{k} - \frac{k}{K}\right)^2 \sin^2(2Ka)\right]^{-1} \qquad R = \frac{1}{4} \left(\frac{K}{k} - \frac{k}{K}\right)^2 \sin^2(2Ka) \cdot T
-\end{equation*}
+\label{5.47}
+\end{equation}
 mit $ R+T=1 $.\\[5pt]
 Obwohl $ E>V_0 $ finden wir i.a. $ R \ge 0 $, was im klassischen Fall nicht passieren würde $ \to $ Quantenreflexion.\par
 Ergebnis bleibt unverändert, wenn statt Potantialmulde Potentialbarriere sofern $ E > V_0 $ (d.h. \eqref{5.42} reell bleibt).
+
+%08.08.19
+
+\section{Tunneleffekt}
+
+Zum Schluss betrachten wir die Situation $ V = + V_0 $ (Potentialbarriere) mit $ E < V_0 $. Dann wird
+\begin{equation}
+K = \sqrt{\frac{2 m (E-V_0)}{\hbar^2}}
+\label{5.48}
+\end{equation}
+imaginär und statt \eqref{5.47} findet man (jedoch völlig analoge Rechnung!).
+\begin{equation}
+T = \left[1 + \frac{1}{4} \left(\frac{\kappa}{k} - \frac{k}{\kappa}\right)^2 \sinh^2 \left(2 \kappa a\right)\right]^{-1}
+\label{5.49}
+\end{equation}
+mit $ K \defeq i \kappa $ und $ \kappa^2 = \frac{2 m (V_0 - E)}{\hbar^2} $.\\[5pt]
+$ T $ nimmt i.a. nichtverschwindende Werte an, was eine (klassisch verbotene) Durchlässigkeit der Potentialbarriere für Injektionsenergien $ E < V_0 $ impliziert. Dies ist der \textbf{Tunneleffekt}.
+
+%T1
+\hft Transmission in Abhängigkeit der Energie
+
+%T2
+\hft Verschiedene Bilder
+
+\noindent
+Bemerkungen:
+\begin{enumerate}[(1)]
+	\item Mathematisch betrachtet sind Tunneln durch Potentialbarrieren im Raum und Resonante Anregung eines Zweiniveau-Atoms und das (dynamische) Tunneln durch Phasenraumbarrieren (z.B. $ T^2 \equiv $ Zwei-Tori in einem 3D-Phasenraum) strikt äquivalent. Spektral werden alle diese Situationen durch antikreuzende Energieniveaus charakterisiert (Siehe Grafik $ E(\Delta) $ bei der ,,Vermiedenen Kreuzung``).
+	\item \eqref{5.47} entnimmt man, dass $ T = 1 $ für
+	\begin{equation}
+	2 K a = n \cdot \pi \quad \tx{ für } \quad n \in \mathbb{N}
+	\label{5.50}
+	\end{equation}
+	Für die Potentialmulde impliziert dies mit \eqref{5.42} \textbf{resonante} Energieniveaus
+	\begin{equation}
+	E_n = \ub{\frac{\pi^2 \hbar^2 n^2}{8 m a^2}}_{\mathclap{\substack{\tx{s.o. gebundene Energien} \\ \tx{im unendlich hohen} \\ \tx{Potentialtopf } \eqref{5.28}}}} - V_0
+	\label{5.51}
+	\end{equation}
+	, die \eqref{5.50} genügen, wobei $ E_n > 0 $, ergo $ n^2 \ge \frac{8ma^2 V_0}{\pi^2 \hbar^2} $.\par
+	Das Attribut ,,resonant```bezieht sich auf die Stehwellenbedingung \eqref{5.50}, wobei \eqref{5.28} die $ E_n $ aus \eqref{5.51} jedoch in das Kontinuum ungebundener Energien $ E > 0 $ eingebettet sind.
+	\item In der \textbf{Störungstheorie} sucht man allgemein (d.h. in $ n $ Dimensionen) nach einer Abbildung, die einlaufende auf auslaufende Amplituden abbildet: $ c_L^{\tx{in}} $, $ c_R^{\tx{in}} $, $ c_L^{\tx{out}} $ und $ c_R^{\tx{out}} $. Diese Abbildung wird durch die Streumatrix (Streuoperator) $ S $ vermittelt:
+	\begin{equation*}
+	\begin{pmatrix}
+	c_{L}^{\tx{out}} \\ c_{R}^{\tx{out}}
+	\end{pmatrix} = S \begin{pmatrix}
+	c_{L}^{\tx{in}} \\ c_{R}^{\tx{in}}
+	\end{pmatrix}
+	\end{equation*}
+	[siehe QM II].
+\end{enumerate}
+
+\section{Der lineare harmonische Oszillator}
+
+$ \to $ lokale Näherung an eine Vielzahl physikalischer Situationen\\
+$ \to $ grundlegende Rolle in (Quanten-) Optik, Begriff des Photons, Gitterschwingungen in Festkörpern, Quanteninformation ($ \to $ Daten-Bus von Quantencomputern), Dekohärenztheorie, Quantenfeldtheorie\\
+$ \to $ hier nur 1D harmonischer Oszillator
+\begin{equation}
+H = \frac{p^2}{2m} + \frac{m \omega^2}{2} x^2 = \frac{p^2}{2m} + \frac{1}{2} k x^2
+\label{5.52}
+\end{equation}
+Zur Quantisierung reskalieren wir:
+\begin{equation}
+H \longrightarrow \tilde{H} \defeq \frac{1}{\hbar \omega} H = \frac{p^2}{2 m \hbar \omega} + \frac{m \omega}{2 \hbar} x^2
+\label{5.53}
+\end{equation}
+\eqref{5.53} wird mit der Definition:
+\begin{equation}
+\tilde{p} \defeq \frac{p}{\sqrt{m \hbar \omega}} \qquad \tilde{x} \defeq \sqrt{\frac{m \omega}{\hbar}} x
+\label{5.54}
+\end{equation}
+\begin{equation}
+\tilde{H} = \frac{1}{2} (\tilde{p}^2 + \tilde{x}^2)
+\label{5.55}
+\end{equation}
+Weiter erhält man für den reskalierten Komutator von $ \tilde{p} $ und $ \tilde{x} $
+\begin{equation}
+[\tilde{x}, \tilde{p}] = i \mathbbm{1}
+\label{5.56}
+\end{equation}
+Zur algebraischen Lösung des Eigenwertproblems des HOs führen wir neue Operatoren ein:
+\begin{equation}
+a \defeq \frac{1}{\sqrt{2}} (\tilde{x} + i \tilde{p}) \qquad a^{\dagger} \defeq \frac{1}{\sqrt{2}} (\tilde{x} - i \tilde{p})
+\label{5.57}
+\end{equation}
+, die nicht mehr selbsadjungiert (noch normal) sind:
+\begin{equation}
+\begin{aligned}
+\left[a,a^\dagger\right] = \frac{1}{2} [\tilde{x}+ i \tilde{p}, \tilde{x} - i \tilde{p}] = \frac{1}{2} \left\{ [\tilde{x}, \tilde{x}] + [\tilde{p}, \tilde{p}] - i[\tilde{x}, \tilde{p}] + i [\tilde{p}, \tilde{x}] \right\} = \frac{1}{2} \cdot 2 \cdot i[\tilde{p}, \tilde{x}] = \mathbbm{1}
+\end{aligned}
+\label{5.58}
+\end{equation}
