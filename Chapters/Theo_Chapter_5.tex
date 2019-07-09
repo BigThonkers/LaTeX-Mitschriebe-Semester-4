@@ -501,3 +501,105 @@ a \defeq \frac{1}{\sqrt{2}} (\tilde{x} + i \tilde{p}) \qquad a^{\dagger} \defeq 
 \end{aligned}
 \label{5.58}
 \end{equation}
+
+%09.08.19
+
+\section*{Wiederholung}
+
+Systeme mit \textbf{mehreren Freiheitsgraden} $ \quad \leftrightarrow \quad $ vollständiger Satz kommutierender Observablen $ A, B, C, \dots $ $ \quad \leftrightarrow \quad $ $ \ham_{A}, \ham_{B}, \ham_{C}, \dots $ $ \qquad $ $ \ham = \ham_{A} \otimes \ham_{B} \otimes \ham_{C} \otimes \dots $\\[10pt]
+$ |\psi\rangle_{A} \otimes |\psi\rangle_{B} \otimes |\psi\rangle_{C} \in \ham $ \\[10pt]
+$ \sum c_{jkl} |\varphi_{j}\rangle_{A} \otimes |\chi_{k}\rangle_{B} \otimes |\eta_{l}\rangle_{C} = | \phi \rangle \in \ham $\\[10pt]
+Eindeutige Zuordnung von Elementen aus $ \ham_{j} $ zu Elementen in $ \ham $ \checkmark\\
+Eindeutige Zuordnung von Elementen aus $ \ham $ zu Elementen in $ \ham_{j} $ {\LARGE\lightning}\\
+\begin{equation*}
+\tx{tr}_{A (\tx{ oder } B)} |\phi \rangle\langle \phi| \neq |k\rangle\langle k| \quad |k\rangle \in \ham_j \qquad \tx{i.a. } \quad \sum_{j} P_j |k_j\rangle\langle k_j | \overset{\tx{nach Spur über } A}{=} \rho_B
+\end{equation*}
+wobei $ |\phi\rangle \in \ham = \ham_{A} \otimes \ham_{B} $ und $ |k\rangle\langle k | = \begin{pmatrix}
+1 & 0 & 0 \\ 0 & 0 & 0 \\ 0 & 0 & 0
+\end{pmatrix} $\\[10pt]
+\textbf{Reiner Zustand:} $ \tx{tr} \rho^2 = 1 $\\[10pt]
+\begin{equation*}
+\ham = \ham_{A} \otimes \ham_{B} \ni |\phi\rangle = \frac{1}{\sqrt{2}} \bigg[ \custo{\in}{|0\rangle}{\ham_{A}} \otimes \custo{\in}{|1\rangle}{\ham_{B}} + \custo{\in}{|1\rangle}{\ham_{A}} \otimes \custo{\in}{|0\rangle}{\ham_{B}} \bigg] \overset{?}{=} \custo{\in}{|\chi\rangle}{\ham_{A}} \otimes \custo{\in}{|\varphi\rangle}{\ham_{A}}
+\end{equation*}
+\begin{equation*}
+\tx{tr}_{A} |\chi\rangle_{A} \otimes |\varphi\rangle_{B} \ _{A}\langle \chi| \otimes _{B} \langle \varphi | = \ub{_{A}\langle \chi|\chi \rangle_{A}}_{1} \otimes |\varphi \rangle_{B} \ \ub{_{A}\langle \chi | \chi \rangle_{A}}_{1} \otimes _{B}\rangle \varphi | = | \varphi\rangle_{B} \ _{B} \langle \varphi | = \begin{pmatrix}
+1 & 0 \\ 0 & 0
+\end{pmatrix}
+\end{equation*}
+\begin{align*}
+|\phi\rangle\langle\phi| &= |0\rangle_{A} \otimes | 1 \rangle_{B} \ _{A} \langle 0 | \otimes _{B} \langle 1 | + | 0 \rangle_{A} \otimes |1\rangle_{B} \ _{A} \langle 1 | \otimes _{B} \langle 0 | \\
+& \phantom{\,} + |1\rangle_{A} \otimes |0\rangle_{B} \ _{A} \langle 0| \otimes_{B} \langle 1| + |1\rangle_{A} \otimes | 0 \rangle_{B} \ _{A}\langle 1| \otimes _{B} \langle 0 |
+\end{align*}
+\begin{equation*}
+\tx{tr}_{A} |\phi \rangle \langle \phi| = \frac{1}{2} \left(|1\rangle_{B} \ _{B} \langle 1 | + |0\rangle_{B} \ _{B} \langle 0 |\right) = \frac{1}{2} \begin{pmatrix}
+1 & 0 \\ 0 & 1
+\end{pmatrix} \qquad \Rightarrow \quad \tx{tr} \rho_{B}^2 \lneq 1
+\end{equation*}
+Es gibt demnach einen eindeutigen Zusammenhang zwischen der Struktur der Zustände und dem Reinheitsgrad der reduzierten Dichtematrix
+\begin{equation*}
+|\phi\rangle = |\chi\rangle \otimes | \varphi \rangle \quad \Leftrightarrow \quad \rho_{B} \tx{ \textbf{rein}} \quad \Leftrightarrow \quad |\phi\rangle \tx{ \textbf{separabel}}
+\end{equation*}
+\begin{equation*}
+|\phi\rangle \neq |\chi\rangle \otimes | \varphi \rangle \quad \Leftrightarrow \quad \rho_{B} \tx{ \textbf{gemischt}} \quad \Leftrightarrow \quad |\phi\rangle \tx{ \textbf{verschränkt}}
+\end{equation*}
+$ |\phi\rangle $ verschränkt, $ \in \ham = \ham_{A} \otimes \ham_{B} \quad \Rightarrow \quad \exists \lambda_{j} \neq 0 \quad \forall j = 1,2 $ mit $ \lambda_j $ dem \textbf{Schmidt-}\\\textbf{Koeffizienten}\\[5pt]
+$ \rho = |\phi\rangle\langle\phi| $\\[5pt]
+$ \lambda_j \equiv $ nichttriviale Eigenwerte von $ \tx{tr}_{A} \rho $ und ebenso von $ \tx{tr}_{B} \rho $\\[15pt]
+[Robert Musil: Der Mann ohne Eigenschaften]\\[5pt]
+[Daniel Keyes: Flowers for Algernon] (vorschlag von Sachibov)\\[5pt]
+Zurück zum linearen harmonischen Oszillator:\\[20pt]
+
+\noindent
+Ein anderes wichtiges Objekt ist:
+\begin{equation}
+N = a^\dagger a
+\label{5.59}
+\end{equation}
+Dies ist wegen:
+\begin{equation*}
+(a^\dagger a)^\dagger = (a)^\dagger (a^\dagger)^\dagger = a^\dagger a
+\end{equation*}
+hermitesch und mit
+\begin{equation}
+a^\dagger a \overset{\eqref{5.57}}{=} \frac{1}{2} \left(\tilde{x} - i \tilde{p}\right) \left(\tilde{x} + i \tilde{p}\right) = \frac{1}{2} \left[\tilde{x}^2 + \tilde{p^2} + i \tilde{x} \tilde{p} - i \tilde{p} \tilde{x}\right] \overset{\eqref{5.56}}{=} \frac{1}{2} \left(\tilde{x}^2 + \tilde{p}^2\right) - \frac{1}{2} \mathbbm{1}
+\label{5.60}
+\end{equation}
+\begin{equation}
+a a^\dagger \overset{\eqref{5.58}}{=} a^\dagger a + \mathbbm{1} \overset{\eqref{5.60}}{=} \frac{1}{2} \ub{\left(\tilde{x}^2 + \tilde{p}^2\right)}_{\overset{\eqref{5.55}}{=} \tilde{H}} + \frac{1}{2} \mathbbm{1}
+\label{5.61}
+\end{equation}
+\begin{equation}
+\Rightarrow \quad \tilde{H} = \frac{1}{2} (a a^\dagger + a^\dagger a)
+\label{5.62}
+\end{equation}
+mit \eqref{5.58} und \eqref{5.59} erhalten wir damit:
+\begin{equation}
+\tilde{H} = N + \frac{1}{2} \mathbbm{1}
+\label{5.63}
+\end{equation}
+Dies kommt aus: $ [a, a^\dagger] = \mathbbm{1} $ und $ [x,p] = i \hbar \mathbbm{1} $ wegen Unschärfe.\par
+Somit stimmen die Eigenwerte und Eigenvektoren von $ \tilde{H} $ und $ N $ i.a. überein, EWe und EVn bleiben noch zu bestimmen, Ansatz:
+\begin{equation}
+\tilde{H} |n\rangle = \left(n + \frac{1}{2}\right) |n\rangle
+\label{5.64}
+\end{equation}
+Wegen \eqref{5.53} hat man 
+\begin{equation}
+H |n\rangle = E_n »n\rangle \quad \tx{mit} \quad E_n = \left(n + \frac{1}{2}\right) \hbar \omega
+\label{5.65}
+\end{equation}
+Zum Wertebereich von $ n $ überlegen wir:
+\begin{equation}
+\ub{||a |n\rangle ||^2}_{\ge 0} = \langle n | a^\dagger a | n \rangle \overset{\eqref{5.59}}{=} \langle n | N | n \rangle \overset{\eqref{5.63}, \eqref{5.64}}{=} n
+\label{5.66}
+\end{equation}
+Daher gilt:
+\begin{equation}
+n \ge 0
+\label{5.67}
+\end{equation}
+Angenommen: $ n = 0 $ ist Eigenwert von $ N $, dann folgt wegen \eqref{5.66}, dass:
+\begin{equation}
+a | n = 0 \rangle = 0
+\label{5.68}
+\end{equation}
